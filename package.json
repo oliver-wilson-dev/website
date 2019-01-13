@@ -2,11 +2,14 @@
   "name": "react-portfolio-website",
   "version": "1.0.0",
   "description": "a personal website",
+  "homepage": "http://asos-oliverwilson.github.io/react-portfolio-website",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "oliver wilson",
   "license": "ISC",
@@ -35,6 +38,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.3",
     "eslint-plugin-standard": "^4.0.0",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "postcss-loader": "^3.0.0",
