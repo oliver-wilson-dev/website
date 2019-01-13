@@ -1,9 +1,20 @@
 import React from 'react';
 import styles from './index.css';
+import Footer from '../Footer';
+import Landing from '../Landing';
+import Sections from '../Sections';
+import SocialMedia from '../SocialMedia';
+import DownloadButton from '../DownloadButton';
 
 const App = () => (
-  <div>
-    <h1 className={styles.title}>Hello world</h1>
+  <div className={styles.app}>
+    <div className={styles.appContent}>
+      <Landing />
+      <Sections />
+      <DownloadButton />
+      <SocialMedia />
+      <Footer />
+    </div>
   </div>
 );
 
