@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> compoennt renders correctly 1`] = `
+<div
+  className="test-class-app"
+>
+  <div
+    className="test-app-content"
+  >
+    <Landing />
+    <Sections />
+    <DownloadButton />
+    <SocialMedia />
+    <Footer />
+  </div>
+</div>
+`;
+
+exports[`<App/> compoennt should render correctly 1`] = `
+<div
+  className="test-class-app"
+>
+  <div
+    className="test-app-content"
+  >
+    <Landing />
+    <Sections />
+    <DownloadButton />
+    <SocialMedia />
+    <Footer />
+  </div>
+</div>
+`;
