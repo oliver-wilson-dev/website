@@ -1,0 +1,14 @@
+.socialLogo {
+    height:50px;
+}
+
+.socialContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 30px;
+    margin-top: 15px;
+}
+
+.socialLink {
+    margin: auto 5px;
+}
