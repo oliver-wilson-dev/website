@@ -3,10 +3,12 @@
     "parser": "babel-eslint",
     "rules": {
         "react/jsx-filename-extension": "off",
-        "comma-dangle": "off"
+        "comma-dangle": "off",
+        "no-shadow": "off"
     },
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jest": true
     }
 }
