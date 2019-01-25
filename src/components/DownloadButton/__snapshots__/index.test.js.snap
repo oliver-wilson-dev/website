@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DeleteButton/> should render correctly 1`] = `
+<div
+  className="downloadButtonContainer flexCenter"
+>
+  <a
+    className="downloadButton"
+    download="Oliver Wilson Curriculum Vitae.pdf"
+    href="public/documents/CV.pdf"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    downlaod my cv
+  </a>
+</div>
+`;
