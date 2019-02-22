@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Landing/> should render correctly 1`] = `
+<div
+  className="container landing"
+>
+  <h1
+    className="landingHeader"
+  >
+    Oliver Wilson
+  </h1>
+  <h2
+    className="landingSubHeader"
+  >
+    Web developer
+  </h2>
+</div>
+`;

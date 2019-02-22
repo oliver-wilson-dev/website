@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> should render correctly 1`] = `
+<div
+  className="flexColumn flexCenter"
+>
+  <span
+    className="footerDisclaimer"
+  >
+    the code for this website can be found on
+     
+    <a
+      href="https://github.com/asos-oliverwilson/portfolio-website"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      github
+    </a>
+    . ©2019, Oliver Wilson
+  </span>
+</div>
+`;
