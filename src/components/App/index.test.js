@@ -46,7 +46,7 @@ jest.mock('./index.css', () => ({
 
 const render = () => shallow(<App />);
 
-describe('<App/> compoennt', () => {
+describe('<App/> component', () => {
   it('should exist', () => {
     expect(render().exists()).toBe(true);
   });

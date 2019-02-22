@@ -11,7 +11,7 @@ exports[`<DeleteButton/> should render correctly 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    downlaod my cv
+    download my cv
   </a>
 </div>
 `;

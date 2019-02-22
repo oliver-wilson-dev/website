@@ -10,7 +10,7 @@ exports[`<Footer/> should render correctly 1`] = `
     the code for this website can be found on
      
     <a
-      href="https://github.com/asos-oliverwilson/portfolio-website"
+      href="https://github.com/asos-oliverwilson/react-portfolio-website"
       rel="noopener noreferrer"
       target="_blank"
     >

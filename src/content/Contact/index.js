@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../index.css';
+import { EMAIL, PHONE_NUMBER } from './constants';
 
 export default {
   title: 'Get in touch',
@@ -9,13 +10,13 @@ export default {
       <h4 className={styles.contactDetail}>
         Phone:
       </h4>
-      <span>07580081310</span>
+      <span>{PHONE_NUMBER}</span>
     </p>
     <p>
       <h4 className={styles.contactDetail}>
         Email:
       </h4>
-      <span>oliver.wilson@asos.com</span>
+      <span>{EMAIL}</span>
     </p>
   </div>,
 };

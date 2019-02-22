@@ -16,7 +16,7 @@ export default {
     </p>
     <p>
       {`I've created this website as a small project for me to experiment with new technologies
-        and allow potential employers to gain an understanding of my skillset and interests.`}
+        and allow potential employers to gain an understanding of my skill set and interests.`}
     </p>
 
   </div>,

@@ -4,7 +4,7 @@
   the @value export abilities of css modules.
 */
 
-const idObj = new Proxy(
+module.exports = new Proxy(
   {},
   {
     get: function getter(target, key) {
@@ -19,6 +19,3 @@ const idObj = new Proxy(
     }
   }
 );
-
-module.exports = idObj;
-
