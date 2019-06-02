@@ -3,6 +3,7 @@
 exports[`<App/> component should render correctly 1`] = `
 <div
   className="app"
+  data-theme={true}
 >
   <div
     className="appContent"

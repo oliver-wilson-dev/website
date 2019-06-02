@@ -1,0 +1,8 @@
+@import "./index.css";
+
+[data-theme="false"] {
+    --primaryBackground: #333;
+    --primaryTextColor: #f8f8f8;
+    --primaryBorderColour: #f8f8f8;
+    --primaryBackgroundImage: linear-gradient(#333, #f8f8f8);;
+}

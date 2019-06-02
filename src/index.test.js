@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import global from 'global';
 import createStore from './state/createStore';
-import App from './components/App';
+import App from './containers/App';
 
 const mockStore = {
   mockKey: Symbol('test-store-value')
@@ -13,7 +13,7 @@ const mockElement = Symbol('test-app-div');
 jest.mock('react-dom');
 jest.mock('react-redux');
 jest.mock('./state/createStore');
-jest.mock('./components/App', () => () => null);
+jest.mock('./containers/App', () => () => null);
 jest.mock('global', () => ({
   document: {
     getElementById: jest

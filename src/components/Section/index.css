@@ -1,9 +1,9 @@
 .displayBox {
-    background: #f8f8f8;
-    -webkit-box-shadow: 8px 8px 0px #0b0a0a;
-    -moz-box-shadow: 8px 8px 0px #0b0a0a;
-    box-shadow: 8px 8px 0px #0b0a0a;
-    border: 3px solid #0B0A16;
+    background: var(--primaryBackground);
+    -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);
+    -moz-box-shadow: 8px 8px 0px var(--primaryBorderColour);
+    box-shadow: 8px 8px 0px var(--primaryBorderColour);
+    border: 3px solid var(--primaryBorderColour);
     padding: 10px;
 }
 
