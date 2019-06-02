@@ -5,11 +5,12 @@
   "homepage": "http://asos-oliverwilson.github.io/react-portfolio-website",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --watch",
+    "deploy": "gh-pages -d dist",
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "lint": "eslint src test --fix",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "test": "jest --watch"
   },
   "author": "oliver wilson",
   "license": "ISC",
