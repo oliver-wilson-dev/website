@@ -3,7 +3,7 @@
 exports[`Contact Section should render correctly 1`] = `
 Object {
   "content": <div>
-    <p>
+    <div>
       <h4
         className="contactDetail"
       >
@@ -12,8 +12,8 @@ Object {
       <span>
         07580081310
       </span>
-    </p>
-    <p>
+    </div>
+    <div>
       <h4
         className="contactDetail"
       >
@@ -22,7 +22,7 @@ Object {
       <span>
         oliver.wilson@asos.com
       </span>
-    </p>
+    </div>
   </div>,
   "title": "Get in touch",
 }

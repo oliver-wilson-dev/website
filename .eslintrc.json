@@ -1,14 +1,19 @@
 {
-    "extends": "airbnb",
-    "parser": "babel-eslint",
-    "rules": {
-        "react/jsx-filename-extension": "off",
-        "comma-dangle": "off",
-        "no-shadow": "off"
-    },
     "env": {
         "browser": true,
         "node": true,
         "jest": true
-    }
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+        "comma-dangle": "off",
+        "global-require": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "no-shadow": "off",
+        "react/jsx-filename-extension": "off"
+    },
+    "settings": {
+        "import/core-modules": ["global"]
+      }
 }

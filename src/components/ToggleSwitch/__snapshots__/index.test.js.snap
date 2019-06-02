@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch should render correctly 1`] = `
+<label
+  className="switch"
+  htmlFor="input-id"
+>
+  <input
+    id="input-id"
+    type="checkbox"
+  />
+  <span
+    className="slider round"
+  />
+</label>
+`;

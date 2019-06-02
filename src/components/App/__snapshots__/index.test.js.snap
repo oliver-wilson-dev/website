@@ -2,11 +2,12 @@
 
 exports[`<App/> component should render correctly 1`] = `
 <div
-  className="test-class-app"
+  className="app"
 >
   <div
-    className="test-app-content"
+    className="appContent"
   >
+    <ToggleSwitch />
     <Landing />
     <Sections />
     <DownloadButton />

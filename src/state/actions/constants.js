@@ -1,0 +1,2 @@
+export const TOGGLE_THEME = 'TOGGLE_THEME';
+export const SOME_OTHER_ACTION = 'SOME_OTHER_ACTION';

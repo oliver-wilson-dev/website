@@ -6,17 +6,17 @@ export default {
   title: 'Get in touch',
   content:
   <div>
-    <p>
+    <div>
       <h4 className={styles.contactDetail}>
         Phone:
       </h4>
       <span>{PHONE_NUMBER}</span>
-    </p>
-    <p>
+    </div>
+    <div>
       <h4 className={styles.contactDetail}>
         Email:
       </h4>
       <span>{EMAIL}</span>
-    </p>
+    </div>
   </div>,
 };

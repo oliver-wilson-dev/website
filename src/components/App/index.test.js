@@ -8,6 +8,13 @@ import Footer from '../Footer';
 import Landing from '../Landing';
 import Sections from '../Sections';
 import SocialMedia from '../SocialMedia';
+import ToggleSwitch from '../../containers/ToggleSwitch';
+
+jest.mock('../../containers/ToggleSwitch', () => {
+  const ToggleSwitch = () => null;
+
+  return ToggleSwitch;
+});
 
 jest.mock('../DownloadButton', () => {
   const DownloadButton = () => null;
@@ -38,11 +45,6 @@ jest.mock('../SocialMedia', () => {
 
   return SocialMedia;
 });
-
-jest.mock('./index.css', () => ({
-  app: 'test-class-app',
-  appContent: 'test-app-content'
-}));
 
 const render = () => shallow(<App />);
 
@@ -81,5 +83,9 @@ describe('<App/> component', () => {
 
   it('should render a <SocialMedia/> component', () => {
     expect(render().find(SocialMedia).exists()).toBe(true);
+  });
+
+  it('should render a <ToggleSwitch/> component', () => {
+    expect(render().find(ToggleSwitch).exists()).toBe(true);
   });
 });

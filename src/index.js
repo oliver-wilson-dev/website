@@ -1,5 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import global from 'global';
+import createStore from './state/createStore';
 import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+render(
+  <Provider store={createStore()}>
+    <App />
+  </Provider>, global.document.getElementById('app')
+);
