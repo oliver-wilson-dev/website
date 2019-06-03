@@ -2,7 +2,7 @@
   "name": "react-portfolio-website",
   "version": "1.0.0",
   "description": "a personal website",
-  "homepage": "http://oliver-wilson-dev.github.io/website",
+  "homepage": "http://oliver-wilson-dev.github.io/",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",

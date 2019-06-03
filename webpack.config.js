@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src'),
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/'),
     filename: 'index.bundle.js'
   },
   externals: {
@@ -37,9 +36,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    }),
-    new CopyWebpackPlugin([
-      { from: 'public', to: 'public' }
-    ])
+    })
   ]
 };
