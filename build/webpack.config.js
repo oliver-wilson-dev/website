@@ -1,10 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const projectRootDir = path.join(__dirname, '../index.html');
+const outputAssetsDir = path.join(__dirname, '../public');
+const entryDir = path.join(__dirname, '../src');
+
 module.exports = {
-  entry: path.join(__dirname, 'src'),
+  entry: entryDir,
   output: {
-    path: path.join(__dirname, '/'),
+    path: outputAssetsDir,
     filename: 'index.bundle.js'
   },
   externals: {
@@ -35,7 +39,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: path.join(__dirname, '../src/index.html'),
+      filename: projectRootDir,
     })
   ]
 };

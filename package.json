@@ -5,8 +5,8 @@
   "homepage": "http://oliver-wilson-dev.github.io/",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open --hot --config build/webpack.config.js",
+    "build": "webpack --mode production --config build/webpack.config.js",
     "test": "jest --watch",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
