@@ -14,14 +14,15 @@ body {
 }
 
 .app {
+  background-attachment: fixed;
+  background-color: var(--primaryBackground);
+  background-image: var(--primaryBackgroundImage);
+  color: var(--primaryTextColor);
   display: flex;
   flex-direction: column;
   font-family: 'futura-pt', sans-serif;
-  color: var(--primaryTextColor);
   font-size: 1.2em;
   max-width: 100vw;
-  background-image: var(--primaryBackgroundImage);
-	background-attachment: fixed;
 }
 
 .appContent {
@@ -91,7 +92,7 @@ flex
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-  .section-title {
+  .sectionTitle {
 		font-size: 28px;
 	}
 }
