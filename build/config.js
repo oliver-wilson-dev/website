@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const projectRootDir = path.join(__dirname, '../index.html');
-const outputAssetsDir = path.join(__dirname, '../public');
+const outputAssetsDir = path.join(__dirname, '../');
 const entryDir = path.join(__dirname, '../src');
 
 module.exports = {
@@ -10,6 +10,11 @@ module.exports = {
   output: {
     path: outputAssetsDir,
     filename: 'index.bundle.js'
+  },
+  devServer: {
+    contentBase: path.join(__dirname, '../'),
+    compress: true,
+    port: 9000
   },
   externals: {
     global: 'window'
