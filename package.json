@@ -5,7 +5,7 @@
   "homepage": "http://oliver-wilson-dev.github.io/",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot --config build/config.js",
+    "dev": "webpack-dev-server --mode development --hot --config build/config.js",
     "build": "webpack --mode production --config build/config.js",
     "test": "jest --watch"
   },
