@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SocialMedia/> should render correctly 1`] = `
+<div
+  className="socialContainer flexCenter"
+>
+  <a
+    className="socialLink"
+    href="https://www.linkedin.com/in/oliver-wilson-profile/"
+  >
+    <img
+      alt="my linkedIn profile"
+      className="socialLogo"
+      src="public/img/linkedin.svg"
+    />
+  </a>
+  <a
+    className="socialLink"
+    href="https://github.com/oliver-wilson-dev/"
+  >
+    <img
+      alt="my GitHub profile"
+      className="socialLogo"
+      src="public/img/github.svg"
+    />
+  </a>
+</div>
+`;

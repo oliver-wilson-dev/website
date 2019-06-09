@@ -5,11 +5,10 @@ import sectionContent from '../../content';
 const Sections = () => (
   <div>
     {
-        sectionContent.map(
+        Object.values(sectionContent).map(
           ({ title, content }) => <Section key={title} title={title} content={content} />,
         )
     }
   </div>
 );
-
 export default Sections;

@@ -9,7 +9,7 @@ const SocialMedia = () => (
       <img className={styles.socialLogo} src="public/img/linkedin.svg" alt="my linkedIn profile" />
     </a>
     <a className={styles.socialLink} href="https://github.com/oliver-wilson-dev/">
-      <img className={styles.socialLogo} src="public/img/github.svg" alt="my linkedIn profile" />
+      <img className={styles.socialLogo} src="public/img/github.svg" alt="my GitHub profile" />
     </a>
   </div>
 );

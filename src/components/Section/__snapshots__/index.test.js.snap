@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section/> should render correctly 1`] = `
+<div
+  className="flexColumn flexCenter"
+>
+  <h2
+    className="sectionTitle"
+  >
+    test-title
+  </h2>
+  <div
+    className="landingBlurb displayBox"
+  >
+    <p>
+      this is some content
+    </p>
+  </div>
+</div>
+`;
