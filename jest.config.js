@@ -5,5 +5,10 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': '<rootDir>/test/cssProxy.js',
     global: '<rootDir>/test/cssProxy.js' // has to point to an existing file
-  }
+  },
+  collectCoverageFrom: [
+    'src/**/*.js',
+    '!build/*',
+    '!test/*'
+  ],
 };

@@ -1,2 +1,2 @@
-export const EMAIL = 'contact.oliver.wilson@gmail.com';
+export const EMAIL = 'contact@oliverwilson.dev';
 export const PHONE_NUMBER = '07580081310';
