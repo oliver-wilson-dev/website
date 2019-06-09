@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a personal website",
   "homepage": "http://oliver-wilson-dev.github.io/",
+  "repository": "https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --hot --config build/config.js",
@@ -19,13 +20,14 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",

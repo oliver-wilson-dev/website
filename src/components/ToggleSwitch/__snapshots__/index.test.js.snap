@@ -7,6 +7,7 @@ exports[`ToggleSwitch should render correctly 1`] = `
 >
   <input
     id="input-id"
+    onClick={[MockFunction]}
     type="checkbox"
   />
   <span

@@ -2,7 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ToggleSwitch from './index';
 
-const render = overrideProps => shallow(<ToggleSwitch {...overrideProps} />);
+
+const defaultProps = {
+  toggleTheme: jest.fn()
+};
+const render = overrideProps => shallow(<ToggleSwitch {...defaultProps} {...overrideProps} />);
 
 describe('ToggleSwitch', () => {
   it('should exist', () => {

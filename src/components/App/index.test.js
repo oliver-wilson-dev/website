@@ -57,12 +57,10 @@ describe('<App/> component', () => {
     expect(render()).toMatchSnapshot();
   });
 
-
   it('should render a div with the data-theme attribute equal to the value of the useLightTheme prop', () => {
-    const mockUseLightTheme = Symbol('test-light-theme');
+    const mockUseLightTheme = true;
     expect(render({ useLightTheme: mockUseLightTheme }).find('div').first().prop('data-theme')).toBe(mockUseLightTheme);
   });
-
 
   it(`should render a div with the className ${styles.app}`, () => {
     expect(render().find('div').first().prop('className')).toBe(styles.app);
