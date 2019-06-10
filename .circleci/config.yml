@@ -13,4 +13,4 @@ jobs:
           command: npm install
       - run:
           name: run unit tests
-          command: npm run test
+          command: npm run ci

@@ -9,7 +9,8 @@
     "dev": "webpack-dev-server --mode development --hot --config build/config.js",
     "build": "webpack --mode production --config build/config.js",
     "test": "jest --watch",
-    "coverage": "jest --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "jest --coverage && open ./coverage/lcov-report/index.html",
+    "ci": "jest"
   },
   "author": "oliver wilson",
   "license": "ISC",
