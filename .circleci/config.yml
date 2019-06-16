@@ -31,7 +31,7 @@ jobs:
           command: git commit -a -m "$CIRCLE_BRANCH"
       - run:
           name: git push
-          command: git push origin master
+          command: git push origin develop:master
 
 workflows:
   version: 2
