@@ -5,9 +5,6 @@ jobs:
         - image: circleci/node
       steps:
         - checkout
-        filters:
-          tags:
-            only: develop
         - run:
             name: install npm
             command: 'sudo npm install -g npm@5'
