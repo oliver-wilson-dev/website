@@ -28,7 +28,7 @@ jobs:
           command: git add -A
       - run:
           name: add build files and commit
-          command: git commit -a -m "$CIRCLE_BRANCH"
+          command: git commit -a -m "Build no $CIRCLE_BUILD_NUM $CIRCLE_BUILD_URL"
       - run:
           name: git push
           command: git push origin develop:master
