@@ -24,6 +24,9 @@ jobs:
           name: set git name
           command: git config user.name "Circle CI Oliver Wilson"
       - run:
+          name: Git add all files
+          command: git add -A
+      - run:
           name: add build files and commit
           command: git commit -a -m "$CIRCLE_BRANCH"
       - run:
