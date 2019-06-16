@@ -18,11 +18,11 @@ jobs:
           name: build proejct
           command: npm run build
       - run:
-          name: set git username
-          command: git config --global user.name "Oliver Wilson"
-      - run:
           name: set git email
-          command: git config --global user.email "contact-oliver-wilson@gmail.com"
+          command: git config user.email "contact.oliver.wilson@gmail.com"
+      - run:
+          name: set git name
+          command: git config user.name "Circle CI Oliver Wilson"
       - run:
           name: add build files and commit
           command: git commit -a -m "$CIRCLE_BRANCH"
