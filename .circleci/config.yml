@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - develop
+    filters:
+        tags:
+            only: develop
       docker:
         - image: circleci/node
       steps:
