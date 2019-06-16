@@ -31,7 +31,7 @@ jobs:
           command: git commit -a -m "Build no $CIRCLE_BUILD_NUM $CIRCLE_BUILD_URL"
       - run:
           name: git push
-          command: git push origin develop:master
+          command: git push origin develop:master --force
 
 workflows:
   version: 2
