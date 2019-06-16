@@ -1,16 +1,28 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node
-    steps:
-      - checkout
-      - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@5'
-      - run:
-          name: install-npm-wee
-          command: npm install
-      - run:
-          name: run unit tests
-          command: npm run ci
+    branches:
+      only:
+        - develop
+      docker:
+        - image: circleci/node
+      steps:
+        - checkout
+        - run:
+            name: install npm
+            command: 'sudo npm install -g npm@5'
+        - run:
+            name: install packages
+            command: npm install
+        - run:
+            name: run unit tests
+            command: npm run ci
+        - run:
+            name: build proejct
+            command: npm run build
+        - run:
+            name: add build files and commit
+            command: git commit -a -m "$CIRCLE_BRANCH"
+        - run:
+            name: git push
+            command: git push origin master
