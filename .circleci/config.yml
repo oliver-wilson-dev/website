@@ -1,34 +1,34 @@
 version: 2
 jobs:
   build:
-      docker:
-        - image: circleci/node
-      steps:
-        - checkout
-        - run:
-            name: install npm
-            command: 'sudo npm install -g npm@5'
-        - run:
-            name: install packages
-            command: npm install
-        - run:
-            name: run unit tests
-            command: npm run ci
-        - run:
-            name: build proejct
-            command: npm run build
-        - run:
-            name: add build files and commit
-            command: git commit -a -m "$CIRCLE_BRANCH"
-        - run:
-            name: git push
-            command: git push origin master
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+          name: install npm
+          command: "sudo npm install -g npm@5"
+      - run:
+          name: install packages
+          command: npm install
+      - run:
+          name: run unit tests
+          command: npm run ci
+      - run:
+          name: build proejct
+          command: npm run build
+      - run:
+          name: add build files and commit
+          command: git commit -a -m "$CIRCLE_BRANCH"
+      - run:
+          name: git push
+          command: git push origin master
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build: 
+      - build:
         filters:
-            branches:
-              only: /develop/
+          branches:
+            only: develop
