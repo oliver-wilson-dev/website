@@ -22,7 +22,7 @@ export default {
       {'The site is built using React, Redux (at the moment the only use case is a potentially over-engineered light switch), PostCSS, Webpack, Babel and has 100% unit test code coverage using the Jest testing framework.'}
     </p>
     <p>
-      {'The site is hosted using Github Pages and the domain is configured through a combination of Google Domains and Cloudflare.'}
+      {"The site is hosted using Github Pages and the domain is configured through a combination of Google Domains and Cloudflare. I've used a CICD workflow, following a git flow enabled approach towards my development. CirdleCI is used to automate the path-to-live for code changes to this website."}
     </p>
     <p>
       {'I soon hope to add automation tests using Cypress.'}
