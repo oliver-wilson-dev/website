@@ -59,3 +59,21 @@
     margin-right: 10px;
     font-size: 30px;
 }
+
+.projectImages {
+    display: flex;
+}
+
+.projectImage {
+    flex-basis: 50%;
+    margin: 0px 10px 10px 0px;
+}
+.lastProjectImage {
+    margin-right: 0;
+}
+
+.projectImage img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px #ccc;
+}

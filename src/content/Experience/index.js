@@ -1,5 +1,5 @@
-
 import React from 'react';
+import classnames from 'classnames';
 import styles from '../index.css';
 
 export default {
@@ -35,5 +35,13 @@ export default {
         while using webpack to build the application as well as utilising babel and postcss
         to use the latest syntax available to developers.
     </p>
+    <div className={styles.projectImages}>
+      <div className={styles.projectImage}>
+        <img alt="ASOS Product Listing Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/feature/add-images-for-projects/public/img/plp.png?raw=true" />
+      </div>
+      <div className={classnames(styles.projectImage, styles.lastProjectImage)}>
+        <img alt="ASOS Saved Lists Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/feature/add-images-for-projects/public/img/saved-lists.png?raw=true" />
+      </div>
+    </div>
   </div>,
 };
