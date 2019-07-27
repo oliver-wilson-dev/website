@@ -43,7 +43,7 @@ Object {
       >
         <img
           alt="ASOS Product Listing Page"
-          src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/feature/add-images-for-projects/public/img/plp.png?raw=true"
+          src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/plp.png?raw=true"
         />
       </div>
       <div
@@ -51,7 +51,7 @@ Object {
       >
         <img
           alt="ASOS Saved Lists Page"
-          src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/feature/add-images-for-projects/public/img/saved-lists.png?raw=true"
+          src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/saved-lists.png?raw=true"
         />
       </div>
     </div>
