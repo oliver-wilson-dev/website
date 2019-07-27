@@ -37,10 +37,14 @@ export default {
     </p>
     <div className={styles.projectImages}>
       <div className={styles.projectImage}>
-        <img alt="ASOS Product Listing Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/plp.png?raw=true" />
+        <a href="https://www.asos.com/search/?q=jeans">
+          <img alt="ASOS Product Listing Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/plp.png?raw=true" />
+        </a>
       </div>
       <div className={classnames(styles.projectImage, styles.lastProjectImage)}>
-        <img alt="ASOS Saved Lists Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/saved-lists.png?raw=true" />
+        <a href="https://www.asos.com/saved-lists/">
+          <img alt="ASOS Saved Lists Page" src="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io/blob/master/public/img/saved-lists.png?raw=true" />
+        </a>
       </div>
     </div>
   </div>,

@@ -68,6 +68,7 @@
     flex-basis: 50%;
     margin: 0px 10px 10px 0px;
 }
+
 .lastProjectImage {
     margin-right: 0;
 }
@@ -75,5 +76,26 @@
 .projectImage img {
     width: 100%;
     height: auto;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 1px 1px 4px var(--primaryBorderColour);
+}
+
+@media (min-width: 786px) {
+    .projectImages {
+        flex-wrap: wrap;
+    }
+
+    .projectImage {
+        flex-basis: 100%;
+        margin: 10px 0px 0px 0px;
+        padding: 10px 15px;
+    }
+
+    .projectImage img {
+        box-shadow: 5px 5px 0px var(--primaryBorderColour);
+        border: 3px solid var(--primaryBorderColour)
+    }
+
+    .projectImage:first-child {
+        margin: 0;
+    }
 }
