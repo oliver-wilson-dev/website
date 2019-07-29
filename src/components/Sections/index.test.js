@@ -1,23 +1,54 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Sections from '.';
-import Section from '../Section';
-import sectionContent from '../../content';
+import Greeting from '../Greeting';
+import Education from '../Education';
+import Experience from '../Experience';
+import Contact from '../Contact';
 
-jest.mock('../Section', () => {
-  const Section = () => null;
+jest.mock('../Greeting', () => {
+  const Greeting = () => null;
 
-  return Section;
+  return Greeting;
 });
 
-jest.mock('../../content', () => ({
-  firstSection: { title: 'title', content: 'content' },
-  secondSection: { title: 'a second title', content: 'some more content' }
-}));
+jest.mock('../Education', () => {
+  const Education = () => null;
 
-const render = () => shallow(<Sections />);
+  return Education;
+});
+
+jest.mock('../Experience', () => {
+  const Experience = () => null;
+
+  return Experience;
+});
+
+jest.mock('../Contact', () => {
+  const Contact = () => null;
+
+  return Contact;
+});
+
+const defaultProps = {
+  fetchContent: jest.fn(),
+  sections: {
+    greeting: { [Symbol('test-key')]: Symbol('test-value') },
+    education: { [Symbol('test-key')]: Symbol('test-value') },
+    experience: { [Symbol('test-key')]: Symbol('test-value') },
+    contact: { [Symbol('test-key')]: Symbol('test-value') },
+  },
+  sectionsContentFetched: true
+};
+
+const render = () => shallow(<Sections {...defaultProps} />);
 
 describe('<Sections/>', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+
   it('should exist', () => {
     expect(render().exists()).toBe(true);
   });
@@ -26,20 +57,8 @@ describe('<Sections/>', () => {
     expect(render()).toMatchSnapshot();
   });
 
-  it('should render as many section components for the number of sectionContent values there are', () => {
-    expect(render().find(Section)).toHaveLength(2);
+  it('should call fetchContent() once', () => {
+    render();
+    expect(defaultProps.fetchContent).toHaveBeenCalledWith();
   });
-
-  test.each([{
-    content: sectionContent.firstSection,
-    section: render().find(Section).first()
-  }, {
-    content: sectionContent.secondSection,
-    section: render().find(Section).at(1)
-  }])(
-    'should render a Section with the content %p',
-    ({ content, section }) => {
-      expect(section.props()).toEqual(content);
-    },
-  );
 });
