@@ -4,18 +4,18 @@ import cn from 'classnames';
 import styles from './index.css';
 import sharedStyles from '../App/index.css';
 
-const Section = ({ title, content }) => (
+const Section = ({ title, children }) => (
   <div className={cn(sharedStyles.flexColumn, sharedStyles.flexCenter)}>
     <h2 className={sharedStyles.sectionTitle}>{title}</h2>
     <div className={(cn(styles.landingBlurb, styles.displayBox))}>
-      {content}
+      {children}
     </div>
   </div>
 );
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.element.isRequired
+  children: PropTypes.node.isRequired
 };
 
 export default Section;
