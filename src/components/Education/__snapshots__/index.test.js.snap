@@ -29,6 +29,11 @@ exports[`<Education/> component should match snapshot 1`] = `
   <p
     key="test-paragraph"
   >
+    <span
+      aria-label="university emoji"
+      className="paragraphEmoji"
+      role="img"
+    />
     test-paragraph
   </p>
   <p

@@ -6,6 +6,7 @@ import styles from './index.css';
 const Education = ({
   title,
   content,
+  emoji,
   universityName,
   courseName: { precedingInformation: courseNamePrefix, name: courseName },
   degreeClassification: { precedingInformation: degreePrefix, name: degreeClassification },
@@ -21,13 +22,21 @@ const Education = ({
 :
       <span>{degreeClassification}</span>
     </h4>
-    {content.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+    {content.map((paragraph, index) => (index === 0
+      ? (
+        <p key={paragraph}>
+          <span className={styles.paragraphEmoji} role="img" aria-label="university emoji">{emoji}</span>
+          {paragraph}
+        </p>
+      )
+      : <p key={paragraph}>{paragraph}</p>))}
   </Section>
 );
 
 Education.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.array.isRequired,
+  emoji: PropTypes.string.isRequired,
   courseName: PropTypes.object.isRequired,
   degreeClassification: PropTypes.object.isRequired,
   universityName: PropTypes.string.isRequired
