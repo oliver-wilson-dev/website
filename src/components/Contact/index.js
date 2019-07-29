@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Section from '../Section';
 import styles from './index.css';
 
-const Greeting = ({ title, phone: phoneNumber, email }) => (
+const Contact = ({ title, phone: phoneNumber, email }) => (
   <Section title={title}>
     <div>
       <h4 className={styles.contactDetail}>
@@ -20,10 +20,10 @@ const Greeting = ({ title, phone: phoneNumber, email }) => (
   </Section>
 );
 
-Greeting.propTypes = {
+Contact.propTypes = {
   title: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired
 };
 
-export default Greeting;
+export default Contact;
