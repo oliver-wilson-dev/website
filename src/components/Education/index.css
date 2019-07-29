@@ -1,0 +1,33 @@
+.degreeTitle + span {
+    background-color: rgba(255, 23, 68, 0.7);
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    margin-top:5px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+}
+
+.degreeClassification span {
+    background-color: rgba(0, 200, 83, 0.7);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+}
+
+.degreeTitle {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.universityTitle {
+    margin-bottom: 0px;
+}

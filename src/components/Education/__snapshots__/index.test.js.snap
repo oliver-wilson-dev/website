@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Education/> component should match snapshot 1`] = `
+<Section
+  title="test-title"
+>
+  <h3
+    className="universityTitle"
+  >
+    test-university-name
+  </h3>
+  <h4
+    className="degreeTitle"
+  >
+    test-course-name-prefix
+  </h4>
+  <span>
+    test-course-name
+  </span>
+  <h4
+    className="degreeClassification"
+  >
+    test-degree-prefix
+    :
+    <span>
+      test-degree-classification
+    </span>
+  </h4>
+  <p
+    key="test-paragraph"
+  >
+    test-paragraph
+  </p>
+  <p
+    key="test-paragraph"
+  >
+    test-paragraph
+  </p>
+</Section>
+`;
