@@ -7,9 +7,5 @@ const initialState = {
 export default (state = initialState, action) => new Proxy({
   [TOGGLE_THEME]: { ...state, useLightTheme: !state.useLightTheme },
 }, {
-  get: (reduceCases, actionType) => {
-    if (actionType in reduceCases) {
-      return reduceCases[actionType];
-    } return state;
-  }
+  get: (reduceCases, actionType) => (actionType in reduceCases ? reduceCases[actionType] : state)
 })[action.type];
