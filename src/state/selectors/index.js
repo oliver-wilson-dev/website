@@ -1,2 +1,3 @@
 export const getUseLightTheme = state => state.theme.useLightTheme;
-export const someOtherSelector = state => state.theme.someOtherProperty;
+export const getSections = state => state.sections.sections;
+export const getSectionsContentFetched = state => state.sections.sectionsContentFetched;

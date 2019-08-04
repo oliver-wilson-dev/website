@@ -11,7 +11,8 @@
         "global-require": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "no-shadow": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "react/forbid-prop-types": "off"
     },
     "settings": {
         "import/core-modules": ["global"]
