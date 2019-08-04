@@ -4,7 +4,7 @@ import Section from '.';
 
 const defaultProps = {
   title: 'test-title',
-  children: <p>this is some content</p>
+  content: <p>this is some content</p>
 };
 const render = () => shallow(<Section {...defaultProps} />);
 

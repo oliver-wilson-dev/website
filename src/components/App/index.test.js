@@ -6,7 +6,7 @@ import styles from './index.css';
 import DownloadButton from '../DownloadButton';
 import Footer from '../Footer';
 import Landing from '../Landing';
-import Sections from '../../containers/Sections';
+import Sections from '../Sections';
 import SocialMedia from '../SocialMedia';
 import ToggleSwitch from '../../containers/ToggleSwitch';
 
@@ -34,7 +34,7 @@ jest.mock('../Landing', () => {
   return Landing;
 });
 
-jest.mock('../../containers/Sections', () => {
+jest.mock('../Sections', () => {
   const Sections = () => null;
 
   return Sections;

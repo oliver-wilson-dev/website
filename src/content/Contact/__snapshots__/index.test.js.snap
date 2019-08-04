@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact Section should render correctly 1`] = `
+Object {
+  "content": <div>
+    <div>
+      <h4
+        className="contactDetail"
+      >
+        Phone:
+      </h4>
+      <span>
+        07580081310
+      </span>
+    </div>
+    <div>
+      <h4
+        className="contactDetail"
+      >
+        Email:
+      </h4>
+      <span>
+        contact@oliverwilson.dev
+      </span>
+    </div>
+  </div>,
+  "title": "Get in touch",
+}
+`;
