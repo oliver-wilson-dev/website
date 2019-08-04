@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact/> component should match snapshot 1`] = `
+<Section
+  title="test-title"
+>
+  <div>
+    <h4
+      className="contactDetail"
+    >
+      Phone:
+    </h4>
+    <span>
+      test-phone-number
+    </span>
+  </div>
+  <div>
+    <h4
+      className="contactDetail"
+    >
+      Email:
+    </h4>
+    <span>
+      test-email
+    </span>
+  </div>
+</Section>
+`;

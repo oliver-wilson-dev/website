@@ -1,16 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Sections/> should render correctly 1`] = `
-<div>
-  <Section
-    content="content"
-    key="title"
-    title="title"
-  />
-  <Section
-    content="some more content"
-    key="a second title"
-    title="a second title"
-  />
-</div>
+<Fragment>
+  <Greeting />
+  <Education />
+  <Experience />
+  <Contact />
+</Fragment>
 `;

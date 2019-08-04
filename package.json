@@ -15,21 +15,23 @@
   "author": "oliver wilson",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.6",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",

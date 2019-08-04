@@ -1,4 +1,4 @@
-import { getUseLightTheme, someOtherSelector } from '.';
+import { getUseLightTheme, getSections, getSectionsContentFetched } from '.';
 
 describe('getUseLightTheme', () => {
   it('returns the useLightTheme property in state', () => {
@@ -9,11 +9,20 @@ describe('getUseLightTheme', () => {
   });
 });
 
-describe('someOtherSelector', () => {
+describe('getSections', () => {
   it('returns the someOtherSelector property in state', () => {
-    const mockSomeOtherProperty = Symbol('test-use-light-theme');
-    expect(someOtherSelector({ theme: { someOtherProperty: mockSomeOtherProperty } })).toEqual(
-      mockSomeOtherProperty
+    const mockSections = Symbol('test-sections');
+    expect(getSections({ sections: { sections: mockSections } })).toEqual(
+      mockSections
+    );
+  });
+});
+
+describe('getSectionsContentFetched', () => {
+  it('returns the someOtherSelector property in state', () => {
+    const mockSectionsContentFetched = Symbol('test-sections-content-fetched');
+    expect(getSectionsContentFetched({ sections: { sectionsContentFetched: mockSectionsContentFetched } })).toEqual(
+      mockSectionsContentFetched
     );
   });
 });
