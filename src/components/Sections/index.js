@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Greeting from '../Greeting';
 import Education from '../Education';
 import Experience from '../Experience';
-import LoadingSpinner from '../LoadingSpinner';
 import Contact from '../Contact';
 
 
@@ -23,7 +22,7 @@ class Sections extends React.Component {
         <Experience {...sections.experience} />
         <Contact {...sections.contact} />
       </React.Fragment>
-    ) : <LoadingSpinner />;
+    ) : null;
   }
 }
 

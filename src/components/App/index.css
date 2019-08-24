@@ -23,17 +23,12 @@ body {
   font-family: 'futura-pt', sans-serif;
   font-size: 1.2em;
   max-width: 100vw;
-  min-height: 100vh;
 }
 
 .appContent {
 	max-width: 100%;
 	margin: 0 auto;
-  background: var(--primaryBackground);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+	background: var(--primaryBackground);
 }
 
 .cover-image {
