@@ -15,7 +15,7 @@ jobs:
           name: run unit tests
           command: npm run ci
       - run:
-          name: build proejct
+          name: build project
           command: npm run build
       - run:
           name: set git email

@@ -1,20 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Section/> should render correctly 1`] = `
-<div
-  className="flexColumn flexCenter"
+<Section
+  title="test-title"
 >
-  <h2
-    className="sectionTitle"
-  >
-    test-title
-  </h2>
   <div
-    className="landingBlurb displayBox"
+    className="flexColumn flexCenter"
   >
-    <p>
-      this is some content
-    </p>
+    <h2
+      className="sectionTitle"
+    >
+      test-title
+    </h2>
+    <div
+      className="landingBlurb displayBox"
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
   </div>
-</div>
+</Section>
+`;
+
+exports[`<Section/> when the display box content should be expandable and the section is expanded should render correctly 1`] = `
+<Section
+  title="test-title"
+>
+  <div
+    className="flexColumn flexCenter"
+  >
+    <h2
+      className="sectionTitle"
+    >
+      test-title
+    </h2>
+    <div
+      className="landingBlurb displayBox displayBoxExpanded"
+    >
+      <button
+        className="collapseExpand"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          −
+        </span>
+      </button>
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</Section>
+`;
+
+exports[`<Section/> when the display box content should be expandable should render an expandable button 1`] = `
+<Section
+  title="test-title"
+>
+  <div
+    className="flexColumn flexCenter"
+  >
+    <h2
+      className="sectionTitle"
+    >
+      test-title
+    </h2>
+    <div
+      className="landingBlurb displayBox"
+    >
+      <button
+        className="collapseExpand"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          +
+        </span>
+      </button>
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</Section>
 `;
