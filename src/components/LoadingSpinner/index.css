@@ -1,3 +1,6 @@
+@import "../../styles/darkTheme.css";
+@import "../../styles/lightTheme.css";
+
 .loadingSpinner,
 .loadingSpinner:after {
   border-radius: 50%;
@@ -7,18 +10,17 @@
 
 .loadingSpinner {
   margin: 60px auto;
-  font-size: 10px;
+  font-size: 15px;
   position: relative;
-  text-indent: -9999em;
-  border-top: 1.1em solid var(--primaryBackground);
-  border-right: 1.1em solid var(--primaryBackground);
-  border-bottom: 1.1em solid var(--primaryBackground);
-  border-left: 1.1em solid var(--primaryBorderColour);
+  border-top: 10px solid var(--spinnerTrailColour);
+  border-right: 10px solid var(--spinnerTrailColour);
+  border-bottom: 10px solid var(--spinnerTrailColour);
+  border-left: 10px solid var(--primaryBorderColour);
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
+  -webkit-animation: load8 1.5s infinite linear;
+  animation: load8 1.5s infinite linear;
 }
 
 @-webkit-keyframes load8 {
