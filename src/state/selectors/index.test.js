@@ -21,7 +21,11 @@ describe('getSections', () => {
 describe('getSectionsContentFetched', () => {
   it('returns the someOtherSelector property in state', () => {
     const mockSectionsContentFetched = Symbol('test-sections-content-fetched');
-    expect(getSectionsContentFetched({ sections: { sectionsContentFetched: mockSectionsContentFetched } })).toEqual(
+    expect(getSectionsContentFetched(
+      {
+        sections: { sectionsContentFetched: mockSectionsContentFetched }
+      }
+    )).toEqual(
       mockSectionsContentFetched
     );
   });

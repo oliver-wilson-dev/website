@@ -12,7 +12,7 @@ jobs:
           name: install packages
           command: npm install
       - run:
-          name: run unit tests
+          name: run unit tests, lint project
           command: npm run ci
       - run:
           name: build project
