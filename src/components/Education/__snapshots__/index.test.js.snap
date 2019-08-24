@@ -33,7 +33,9 @@ exports[`<Education/> component should match snapshot 1`] = `
       aria-label="university emoji"
       className="paragraphEmoji"
       role="img"
-    />
+    >
+      test-emoji
+    </span>
     test-paragraph
   </p>
   <p

@@ -1,10 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Sections from '.';
-import Greeting from '../Greeting';
-import Education from '../Education';
-import Experience from '../Experience';
-import Contact from '../Contact';
 
 jest.mock('../Greeting', () => {
   const Greeting = () => null;
@@ -41,7 +37,7 @@ const defaultProps = {
   sectionsContentFetched: true
 };
 
-const render = () => shallow(<Sections {...defaultProps} />);
+const render = overrideProps => shallow(<Sections {...defaultProps} {...overrideProps} />);
 
 describe('<Sections/>', () => {
   beforeEach(() => {
@@ -60,5 +56,11 @@ describe('<Sections/>', () => {
   it('should call fetchContent() once', () => {
     render();
     expect(defaultProps.fetchContent).toHaveBeenCalledWith();
+  });
+
+  describe('when the sections content is not fetched', () => {
+    it('should render correctly', () => {
+      expect(render({ sectionsContentFetched: false })).toMatchSnapshot();
+    });
   });
 });

@@ -14,7 +14,8 @@ const defaultProps = {
     precedingInformation: 'test-degree-prefix',
     name: 'test-degree-classification'
   },
-  universityName: 'test-university-name'
+  universityName: 'test-university-name',
+  emoji: 'test-emoji'
 };
 
 const render = overrideProps => shallow(<Education {...defaultProps} {...overrideProps} />);

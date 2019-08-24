@@ -8,3 +8,5 @@ exports[`<Sections/> should render correctly 1`] = `
   <Contact />
 </Fragment>
 `;
+
+exports[`<Sections/> when the sections content is not fetched should render correctly 1`] = `""`;

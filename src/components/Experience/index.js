@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Section from '../Section';
 import styles from './index.css';
 
-const Education = ({
+const Experience = ({
   companyName,
   content,
   emoji,
@@ -41,7 +41,7 @@ const Education = ({
   </Section>
 );
 
-Education.propTypes = {
+Experience.propTypes = {
   companyName: PropTypes.string.isRequired,
   content: PropTypes.array.isRequired,
   emoji: PropTypes.string.isRequired,
@@ -50,4 +50,4 @@ Education.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default Education;
+export default Experience;

@@ -5,6 +5,27 @@
     box-shadow: 8px 8px 0px var(--primaryBorderColour);
     border: 3px solid var(--primaryBorderColour);
     padding: 10px;
+    max-height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.displayBoxExpanded {
+    max-height: 1500px;
+}
+
+.collapseExpand {
+    margin: 5px 5px 5px auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 30px;
+    width: 35px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-weight: 900;
+    color: inherit;
 }
 
 @media all and (min-width: 786px) {
