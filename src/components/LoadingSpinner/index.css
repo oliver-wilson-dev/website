@@ -12,27 +12,26 @@
 }
 
 .wrapper {
-  margin: 10px 30px 10px 30px;
+  margin: 10px 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .loadingSpinner,
 .loadingSpinner:after {
   border-radius: 50%;
-  width: 10em;
-  height: 10em;
+  height: 10rem;
   transition: opacity 1s;
+  width: 10rem;
 }
 
 .loadingSpinner {
-  margin: 60px auto;
-  font-size: 15px;
-  position: relative;
-  border-top: 10px solid var(--spinnerTrailColour);
-  border-right: 10px solid var(--spinnerTrailColour);
+  animation: spin 1.5s infinite linear;
   border-bottom: 10px solid var(--spinnerTrailColour);
   border-left: 10px solid var(--primaryBorderColour);
+  border-right: 10px solid var(--spinnerTrailColour);
+  border-top: 10px solid var(--spinnerTrailColour);
   transform: translateZ(0);
-  animation: spin 1.5s infinite linear;
   
   &.hide {
     opacity: 0;
