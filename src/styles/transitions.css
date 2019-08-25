@@ -1,0 +1,5 @@
+:root {
+    --spinnerOpacityTransitionDuration: 1s;
+    --sectionOpacityTransitionDuration: 0.5s;
+    --sectionVisibilityTransitionDuration: 0s;
+}

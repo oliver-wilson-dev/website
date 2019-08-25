@@ -2,6 +2,13 @@
 
 exports[`<LoadingSpinner /> should render correctly 1`] = `
 <div
-  className="loadingSpinner"
-/>
+  className="wrapper"
+>
+  <div
+    className="loadingSpinner"
+    onTransitionEnd={[Function]}
+  />
+</div>
 `;
+
+exports[`<LoadingSpinner /> when the component is not loading should render correctly 1`] = `""`;

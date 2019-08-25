@@ -1,3 +1,25 @@
+@import "../../styles/transitions.css";
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.section {
+    transition: visibility var(--sectionVisibilityTransitionDuration), opacity var(--sectionOpacityTransitionDuration);
+    transition-delay: var(--spinnerOpacityTransitionDuration);
+    opacity: 0;
+    visibility: hidden;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+}
+
 .displayBox {
     background: var(--primaryBackground);
     -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);

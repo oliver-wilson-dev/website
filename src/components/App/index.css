@@ -28,7 +28,7 @@ body {
 
 .appContent {
 	max-width: 100%;
-	margin: 0 auto;
+	margin: 0;
   background: var(--primaryBackground);
   display: flex;
   flex-direction: column;
