@@ -1,3 +1,23 @@
+@keyframes fadeIn {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.section {
+    transition: visibility 0s, opacity 0.5s;
+    transition-delay: 1s;
+    opacity: 0;
+    visibility: hidden;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+}
+
 .displayBox {
     background: var(--primaryBackground);
     -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);

@@ -5,7 +5,7 @@ exports[`<Section/> should render correctly 1`] = `
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter"
+    className="flexColumn flexCenter section show"
   >
     <h2
       className="sectionTitle"
@@ -28,7 +28,7 @@ exports[`<Section/> when the display box content should be expandable and the se
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter"
+    className="flexColumn flexCenter section show"
   >
     <h2
       className="sectionTitle"
@@ -60,7 +60,7 @@ exports[`<Section/> when the display box content should be expandable should ren
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter"
+    className="flexColumn flexCenter section show"
   >
     <h2
       className="sectionTitle"

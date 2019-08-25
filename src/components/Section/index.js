@@ -10,7 +10,8 @@ class Section extends React.Component {
 
     this.state = {
       expanded: false,
-      expandable: false
+      expandable: false,
+      visible: false
     };
 
     this.getRef = this.getRef.bind(this);
@@ -21,7 +22,8 @@ class Section extends React.Component {
     this.setState(
       previousState => ({
         ...previousState,
-        expandable: this.displayBoxRef.offsetHeight >= 250
+        expandable: this.displayBoxRef.offsetHeight >= 250,
+        visible: true
       })
     );
   }
@@ -42,10 +44,13 @@ class Section extends React.Component {
       onButtonClick,
       getRef,
       props: { title, children },
-      state: { expanded, expandable },
+      state: { expanded, expandable, visible },
     } = this;
     return (
-      <div className={cn(sharedStyles.flexColumn, sharedStyles.flexCenter)}>
+      <div className={cn(sharedStyles.flexColumn, sharedStyles.flexCenter, styles.section, {
+        [styles.show]: visible
+      })}
+      >
         <h2 className={sharedStyles.sectionTitle}>{title}</h2>
         <div
           ref={getRef}
