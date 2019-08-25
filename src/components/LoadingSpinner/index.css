@@ -1,5 +1,4 @@
-@import "../../styles/darkTheme.css";
-@import "../../styles/lightTheme.css";
+@import "../../styles/transitions.css";
 
 @keyframes spin {
   0% {
@@ -21,7 +20,7 @@
 .loadingSpinner:after {
   border-radius: 50%;
   height: 10rem;
-  transition: opacity 1s;
+  transition: opacity var(--spinnerOpacityTransitionDuration);
   width: 10rem;
 }
 
