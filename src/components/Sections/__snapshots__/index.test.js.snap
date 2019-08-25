@@ -2,6 +2,9 @@
 
 exports[`<Sections/> should render correctly 1`] = `
 <Fragment>
+  <LoadingSpinner
+    loading={false}
+  />
   <Greeting />
   <Education />
   <Experience />
@@ -9,4 +12,10 @@ exports[`<Sections/> should render correctly 1`] = `
 </Fragment>
 `;
 
-exports[`<Sections/> when the sections content is not fetched should render correctly 1`] = `<LoadingSpinner />`;
+exports[`<Sections/> when the sections content is not fetched should render correctly 1`] = `
+<Fragment>
+  <LoadingSpinner
+    loading={true}
+  />
+</Fragment>
+`;

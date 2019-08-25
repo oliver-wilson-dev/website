@@ -16,14 +16,20 @@ class Sections extends React.Component {
   render() {
     const { props: { sections, sectionsContentFetched } } = this;
 
-    return sectionsContentFetched ? (
+    return (
       <React.Fragment>
-        <Greeting {...sections.greeting} />
-        <Education {...sections.education} />
-        <Experience {...sections.experience} />
-        <Contact {...sections.contact} />
+        <LoadingSpinner loading={!sectionsContentFetched} />
+        {sectionsContentFetched && (
+        <React.Fragment>
+          <Greeting {...sections.greeting} />
+          <Education {...sections.education} />
+          <Experience {...sections.experience} />
+          <Contact {...sections.contact} />
+        </React.Fragment>
+        )}
+
       </React.Fragment>
-    ) : <LoadingSpinner />;
+    );
   }
 }
 
