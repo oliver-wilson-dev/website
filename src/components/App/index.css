@@ -103,7 +103,7 @@ flex
 	}
 }
 
-@media (min-width: 786px) {
+@media (min-width: 1024px) {
   .appContent {
 		box-shadow: 8px 8px 0px #0b0a0a;
 		border: 3px solid #0b0a0a;
