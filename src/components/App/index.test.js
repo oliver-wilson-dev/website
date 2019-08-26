@@ -46,7 +46,9 @@ jest.mock('../SocialMedia', () => {
   return SocialMedia;
 });
 
-const render = overrideProps => shallow(<App useLightTheme {...overrideProps} />);
+const defaultProps = { theme: 'test-theme' };
+
+const render = overrideProps => shallow(<App {...defaultProps} {...overrideProps} />);
 
 describe('<App/> component', () => {
   it('should exist', () => {
@@ -57,9 +59,9 @@ describe('<App/> component', () => {
     expect(render()).toMatchSnapshot();
   });
 
-  it('should render a div with the data-theme attribute equal to the value of the useLightTheme prop', () => {
-    const mockUseLightTheme = true;
-    expect(render({ useLightTheme: mockUseLightTheme }).find('div').first().prop('data-theme')).toBe(mockUseLightTheme);
+  it('should render a div with the data-theme attribute equal to the value of the theme prop', () => {
+    const mockTheme = 'test-theme';
+    expect(render({ theme: mockTheme }).find('div').first().prop('data-theme')).toBe(mockTheme);
   });
 
   it(`should render a div with the className ${styles.app}`, () => {

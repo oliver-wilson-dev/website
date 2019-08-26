@@ -1,6 +1,6 @@
 @import "./index.css";
 
-[data-theme="true"] {
+[data-theme="LIGHT_THEME"] {
     --primaryBackground: #f8f8f8;
     --primaryTextColor: #333;
     --primaryBorderColour: #0b0a0a;

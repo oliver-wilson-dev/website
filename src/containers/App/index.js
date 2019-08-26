@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import App from '../../components/App';
-import { getUseLightTheme } from '../../state/selectors';
+import { getTheme } from '../../state/selectors';
 
 const mapStateToProps = state => ({
-  useLightTheme: getUseLightTheme(state)
+  theme: getTheme(state)
 });
 
 export default connect(mapStateToProps, undefined)(App);

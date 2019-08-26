@@ -1,10 +1,10 @@
-import { getUseLightTheme, getSections, getSectionsContentFetched } from '.';
+import { getTheme, getSections, getSectionsContentFetched } from '.';
 
-describe('getUseLightTheme', () => {
-  it('returns the useLightTheme property in state', () => {
-    const mockUseLightTheme = Symbol('test-use-light-theme');
-    expect(getUseLightTheme({ theme: { useLightTheme: mockUseLightTheme } })).toEqual(
-      mockUseLightTheme
+describe('getTheme', () => {
+  it('returns the theme property in state', () => {
+    const mockTheme = Symbol('test-use-light-theme');
+    expect(getTheme({ theme: { theme: mockTheme } })).toEqual(
+      mockTheme
     );
   });
 });

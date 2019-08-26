@@ -1,6 +1,6 @@
 @import "./index.css";
 
-[data-theme="false"] {
+[data-theme="DARK_THEME"] {
     --primaryBackground: #333;
     --primaryTextColor: #f8f8f8;
     --primaryBorderColour: #f8f8f8;

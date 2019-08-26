@@ -8,8 +8,8 @@ import Sections from '../../containers/Sections';
 import SocialMedia from '../SocialMedia';
 import ToggleSwitch from '../../containers/ToggleSwitch';
 
-const App = ({ useLightTheme }) => (
-  <div className={styles.app} data-theme={useLightTheme}>
+const App = ({ theme }) => (
+  <div className={styles.app} data-theme={theme}>
     <div className={styles.appContent}>
       <ToggleSwitch />
       <Landing />
@@ -22,7 +22,7 @@ const App = ({ useLightTheme }) => (
 );
 
 App.propTypes = {
-  useLightTheme: PropTypes.bool.isRequired
+  theme: PropTypes.string.isRequired
 };
 
 export default App;

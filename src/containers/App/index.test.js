@@ -1,7 +1,7 @@
 import testReduxComponent from '../../../test/helpers/testConnectedComponent';
 import ConnectedApp from '.';
 import App from '../../components/App';
-import { getUseLightTheme } from '../../state/selectors';
+import { getTheme } from '../../state/selectors';
 
 jest.mock('../../state/selectors');
 jest.mock('../../state/actions/toggleTheme');
@@ -14,5 +14,5 @@ const { testRender, testProp } = testReduxComponent(
 
 describe('connected App', () => {
   testRender();
-  testProp('useLightTheme', getUseLightTheme);
+  testProp('theme', getTheme);
 });
