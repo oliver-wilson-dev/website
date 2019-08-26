@@ -4,7 +4,8 @@ import ToggleSwitch from './index';
 
 
 const defaultProps = {
-  toggleTheme: jest.fn()
+  toggleTheme: jest.fn(),
+  checkBoxChecked: false
 };
 const render = overrideProps => shallow(<ToggleSwitch {...defaultProps} {...overrideProps} />);
 
@@ -30,5 +31,11 @@ describe('ToggleSwitch', () => {
     component.find('input').simulate('click');
 
     expect(mockToggleTheme).toHaveBeenCalledTimes(1);
+  });
+
+  describe('when the theme had been toggled from a previous browse to the website', () => {
+    it("should set the default click value to the value of the prop 'checkBoxChecked' prop", () => {
+      expect(render({ checkBoxChecked: true })).toMatchSnapshot();
+    });
   });
 });
