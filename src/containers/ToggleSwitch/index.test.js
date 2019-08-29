@@ -2,13 +2,11 @@ import testReduxComponent from '../../../test/helpers/testConnectedComponent';
 import ConnectedToggleSwitch from '.';
 import ToggleSwitch from '../../components/ToggleSwitch';
 import toggleTheme from '../../state/actions/toggleTheme';
-import { getCheckboxCheckedStatus } from '../../state/selectors';
 
 jest.mock('../../state/actions/toggleTheme');
 jest.mock('../../components/ToggleSwitch', () => () => null);
-jest.mock('../../state/selectors');
 
-const { testRender, testAction, testProp } = testReduxComponent(
+const { testRender, testAction } = testReduxComponent(
   ConnectedToggleSwitch,
   ToggleSwitch
 );
@@ -16,5 +14,4 @@ const { testRender, testAction, testProp } = testReduxComponent(
 describe('connected DeleteButton', () => {
   testRender();
   testAction('toggleTheme', toggleTheme);
-  testProp('checkBoxChecked', getCheckboxCheckedStatus);
 });
