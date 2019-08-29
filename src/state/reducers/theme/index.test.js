@@ -1,5 +1,5 @@
 import themeReducer from '.';
-import { TOGGLE_THEME, LIGHT_THEME, DARK_THEME } from '../../actions/constants';
+import { TOGGLE_THEME, LIGHT_THEME } from '../../actions/constants';
 import getInitialState from './getInitialState';
 import toggleTheme from './reduceCases/toggleTheme';
 
