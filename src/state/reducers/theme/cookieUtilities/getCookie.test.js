@@ -5,7 +5,7 @@ const cookieValue = 'test-cookie-value';
 
 jest.mock('global', () => ({
   document: {
-    cookie: 'test-cookie-name=test-cookie-value; test-another-cookie-name=test-another-cookie-value;'
+    cookie: 'test-cookie-name=test-cookie-value; test-some-other-name=test-another-cookie-value;'
   }
 }));
 

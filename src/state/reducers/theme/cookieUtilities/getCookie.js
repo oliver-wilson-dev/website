@@ -4,7 +4,7 @@ const getCookie = ({ name }) => {
   const cookies = global.document.cookie.split(';');
 
   const foundCookie = cookies
-    .find(cookie => !cookie.indexOf(`${name}=`));
+    .find(cookie => cookie.split('=')[0] === name);
 
   return foundCookie ? foundCookie.split('=')[1] : undefined;
 };
