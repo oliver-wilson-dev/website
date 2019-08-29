@@ -1,4 +1,6 @@
-import { getTheme, getSections, getSectionsContentFetched } from '.';
+import {
+  getTheme, getSections, getSectionsContentFetched, getCheckboxCheckedStatus
+} from '.';
 
 describe('getTheme', () => {
   it('returns the theme property in state', () => {
@@ -27,6 +29,19 @@ describe('getSectionsContentFetched', () => {
       }
     )).toEqual(
       mockSectionsContentFetched
+    );
+  });
+});
+
+describe('getCheckboxCheckedStatus', () => {
+  it('returns the checkBoxChecked property in state', () => {
+    const mockGetCheckboxCheckedStatus = Symbol('test-sections-content-fetched');
+    expect(getCheckboxCheckedStatus(
+      {
+        theme: { checkBoxChecked: mockGetCheckboxCheckedStatus }
+      }
+    )).toEqual(
+      mockGetCheckboxCheckedStatus
     );
   });
 });
