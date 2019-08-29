@@ -6,24 +6,6 @@ exports[`ToggleSwitch should render correctly 1`] = `
   htmlFor="input-id"
 >
   <input
-    defaultChecked={false}
-    id="input-id"
-    onClick={[MockFunction]}
-    type="checkbox"
-  />
-  <span
-    className="slider round"
-  />
-</label>
-`;
-
-exports[`ToggleSwitch when the theme had been toggled from a previous browse to the website should set the default click value to the value of the prop 'checkBoxChecked' prop 1`] = `
-<label
-  className="switch"
-  htmlFor="input-id"
->
-  <input
-    defaultChecked={true}
     id="input-id"
     onClick={[MockFunction]}
     type="checkbox"

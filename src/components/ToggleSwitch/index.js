@@ -5,15 +5,14 @@ import styles from './index.css';
 
 const inputId = 'input-id';
 
-const ToggleSwitch = ({ toggleTheme, checkBoxChecked }) => (
+const ToggleSwitch = ({ toggleTheme }) => (
   <label className={styles.switch} htmlFor={inputId}>
-    <input type="checkbox" id={inputId} onClick={toggleTheme} defaultChecked={checkBoxChecked} />
+    <input type="checkbox" id={inputId} onClick={toggleTheme} />
     <span className={classnames(styles.slider, styles.round)} />
   </label>
 );
 
 ToggleSwitch.propTypes = {
-  checkBoxChecked: PropTypes.bool.isRequired,
   toggleTheme: PropTypes.func.isRequired
 };
 
