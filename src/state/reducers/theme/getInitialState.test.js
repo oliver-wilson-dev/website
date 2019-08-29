@@ -7,6 +7,10 @@ jest.mock('./cookieUtilities');
 
 
 describe('getInitialState', () => {
+  it('should call getCookie with the theme cookie constant', () => {
+    getInitialState();
+    expect(getCookie).toHaveBeenCalledWith({ name: THEME_COOKIE });
+  });
   describe('when there is a cookie value already saved', () => {
     it('should return a representation of state with the given theme cookie and the boolean value of that cookie', () => {
       const mockThemeCookie = 'test-theme-cookie';
