@@ -8,6 +8,7 @@ exports[`ToggleSwitch should render correctly 1`] = `
   <input
     defaultChecked={false}
     id="input-id"
+    label="theme toggle"
     onClick={[MockFunction]}
     type="checkbox"
   />
@@ -25,6 +26,7 @@ exports[`ToggleSwitch when the theme had been toggled from a previous browse to 
   <input
     defaultChecked={true}
     id="input-id"
+    label="theme toggle"
     onClick={[MockFunction]}
     type="checkbox"
   />

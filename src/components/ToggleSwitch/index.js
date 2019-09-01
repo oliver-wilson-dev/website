@@ -7,7 +7,7 @@ const inputId = 'input-id';
 
 const ToggleSwitch = ({ toggleTheme, checkBoxChecked }) => (
   <label className={styles.switch} htmlFor={inputId}>
-    <input type="checkbox" id={inputId} onClick={toggleTheme} defaultChecked={checkBoxChecked} />
+    <input type="checkbox" id={inputId} label="theme toggle" onClick={toggleTheme} defaultChecked={checkBoxChecked} />
     <span className={classnames(styles.slider, styles.round)} />
   </label>
 );
