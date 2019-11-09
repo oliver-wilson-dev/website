@@ -45,7 +45,7 @@
                         var(--sectionFadeColourFrom), 
                         var(--sectionFadeColourTo) 90%);
         width: 100%;
-        height: 40px;
+        height: 20%;
     }
 }
 
@@ -70,5 +70,11 @@
 @media all and (min-width: 786px) {
     .landingBlurb {
         max-width: 800px;
+    }
+
+    .blurBottom {
+        &:after {
+            height: 70px;
+        }
     }
 }
