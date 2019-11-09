@@ -74,7 +74,7 @@
 
     .blurBottom {
         &:after {
-            height: 70px;
+            height: 30%;
         }
     }
 }
