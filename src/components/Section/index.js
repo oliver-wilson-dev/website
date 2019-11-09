@@ -46,6 +46,7 @@ class Section extends React.Component {
       props: { title, children },
       state: { expanded, expandable, visible },
     } = this;
+
     return (
       <div className={cn(sharedStyles.flexColumn, sharedStyles.flexCenter, styles.section, {
         [styles.show]: visible
@@ -55,7 +56,11 @@ class Section extends React.Component {
         <div
           ref={getRef}
           className={(cn(styles.landingBlurb, styles.displayBox,
-            { [styles.displayBoxExpanded]: expanded }))}
+            {
+              [styles.displayBoxExpanded]: expanded,
+              [styles.blurBottom]: expandable && !expanded
+            }))
+          }
         >
           {expandable && (
           <button className={styles.collapseExpand} type="button" onClick={onButtonClick}>

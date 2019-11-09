@@ -27,6 +27,7 @@ describe('<Section/>', () => {
 
       expect(render()).toMatchSnapshot();
     });
+
     describe('and the section is expanded', () => {
       it('should render correctly', () => {
         function mockGetRef() {
