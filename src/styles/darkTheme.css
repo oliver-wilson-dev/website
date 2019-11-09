@@ -2,8 +2,10 @@
 
 [data-theme="DARK_THEME"] {
     --primaryBackground: #333;
-    --primaryTextColor: #f8f8f8;
-    --primaryBorderColour: #f8f8f8;
     --primaryBackgroundImage: linear-gradient(#333, #333);
-    --spinnerTrailColour: rgba(248,248,248, 0.2)
+    --primaryBorderColour: #f8f8f8;
+    --primaryTextColor: #f8f8f8;
+    --spinnerTrailColour: rgba(248,248,248, 0.2);
+    --sectionFadeColourFrom: rgba(51, 51, 51, 0);
+    --sectionFadeColourTo: rgba(51, 51, 51, 1);
 }

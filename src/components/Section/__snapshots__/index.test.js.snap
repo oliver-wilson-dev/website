@@ -68,7 +68,7 @@ exports[`<Section/> when the display box content should be expandable should ren
       test-title
     </h2>
     <div
-      className="landingBlurb displayBox"
+      className="landingBlurb displayBox blurBottom"
     >
       <button
         className="collapseExpand"
