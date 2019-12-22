@@ -50,7 +50,7 @@
 }
 
 .displayBoxExpanded {
-    max-height: max-content;
+    max-height: none;
 }
 
 .collapseExpand {
