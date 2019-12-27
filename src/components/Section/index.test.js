@@ -23,7 +23,7 @@ describe('<Section/>', () => {
       function mockGetRef() {
         this.displayBoxRef = { offsetHeight: 250 };
       }
-      jest.spyOn(Section.prototype, 'getRef').mockImplementation(mockGetRef);
+      jest.spyOn(Section.prototype, 'setDisplayBoxRef').mockImplementation(mockGetRef);
 
       expect(render()).toMatchSnapshot();
     });
@@ -33,7 +33,7 @@ describe('<Section/>', () => {
         function mockGetRef() {
           this.displayBoxRef = { offsetHeight: 250 };
         }
-        jest.spyOn(Section.prototype, 'getRef').mockImplementation(mockGetRef);
+        jest.spyOn(Section.prototype, 'setDisplayBoxRef').mockImplementation(mockGetRef);
         const wrapper = render();
         wrapper.find('button').simulate('click');
         expect(wrapper).toMatchSnapshot();
