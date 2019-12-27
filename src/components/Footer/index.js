@@ -4,7 +4,7 @@ import additionalStyles from '../App/index.css';
 import styles from './index.css';
 
 
-export default () => (
+const Footer = () => (
   <div className={cn(additionalStyles.flexColumn, additionalStyles.flexCenter)}>
     <span className={styles.footerDisclaimer}>
 the code for this website can be found on
@@ -14,3 +14,5 @@ the code for this website can be found on
     </span>
   </div>
 );
+
+export default Footer;

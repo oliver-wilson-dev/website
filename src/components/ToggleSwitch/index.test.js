@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ToggleSwitch from './index';
+import { LIGHT_THEME, DARK_THEME } from '../../state/actions/constants';
 
 
 const defaultProps = {
   toggleTheme: jest.fn(),
-  checkBoxChecked: false
+  theme: LIGHT_THEME
 };
 const render = overrideProps => shallow(<ToggleSwitch {...defaultProps} {...overrideProps} />);
 
@@ -34,8 +35,8 @@ describe('ToggleSwitch', () => {
   });
 
   describe('when the theme had been toggled from a previous browse to the website', () => {
-    it("should set the default click value to the value of the prop 'checkBoxChecked' prop", () => {
-      expect(render({ checkBoxChecked: true })).toMatchSnapshot();
+    it("should set the default click value to the value of the prop 'theme' prop", () => {
+      expect(render({ theme: DARK_THEME })).toMatchSnapshot();
     });
   });
 });

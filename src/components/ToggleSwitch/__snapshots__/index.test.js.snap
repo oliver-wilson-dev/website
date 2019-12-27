@@ -6,6 +6,7 @@ exports[`ToggleSwitch should render correctly 1`] = `
   htmlFor="input-id"
 >
   <input
+    aria-label="The theme is currently the light theme. Use this to toggle the theme."
     defaultChecked={false}
     id="input-id"
     onClick={[MockFunction]}
@@ -17,12 +18,13 @@ exports[`ToggleSwitch should render correctly 1`] = `
 </label>
 `;
 
-exports[`ToggleSwitch when the theme had been toggled from a previous browse to the website should set the default click value to the value of the prop 'checkBoxChecked' prop 1`] = `
+exports[`ToggleSwitch when the theme had been toggled from a previous browse to the website should set the default click value to the value of the prop 'theme' prop 1`] = `
 <label
   className="switch"
   htmlFor="input-id"
 >
   <input
+    aria-label="The theme is currently the dark theme. Use this to toggle the theme."
     defaultChecked={true}
     id="input-id"
     onClick={[MockFunction]}
