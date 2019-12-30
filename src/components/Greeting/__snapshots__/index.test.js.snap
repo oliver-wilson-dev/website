@@ -6,7 +6,7 @@ exports[`<Greeting/> component should match snapshot 1`] = `
 >
   <p>
     <span
-      aria-label="university emoji"
+      aria-hidden={true}
       className="paragraphEmoji"
       role="img"
     >

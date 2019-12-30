@@ -8,13 +8,18 @@ class Section extends React.Component {
   constructor(props) {
     super(props);
 
+    this.displayBoxRef = null;
+    this.childrenRef = React.createRef();
+
     this.state = {
       expanded: false,
       expandable: false,
       visible: false
     };
 
-    this.getRef = this.getRef.bind(this);
+    this.setDisplayBoxRef = this.setDisplayBoxRef.bind(this);
+
+    this.canBeFocusedProgrammatically = -1;
   }
 
 
@@ -28,11 +33,18 @@ class Section extends React.Component {
     );
   }
 
-  getRef(elm) {
+  componentDidUpdate() {
+    const { state: { expanded } } = this;
+
+    if (expanded) { this.childrenRef.current.focus(); }
+  }
+
+  setDisplayBoxRef(elm) {
     this.displayBoxRef = elm;
   }
 
-  onButtonClick = () => {
+  onButtonClick = (e) => {
+    e.preventDefault();
     this.setState(previousState => ({
       ...previousState,
       expanded: !previousState.expanded
@@ -41,8 +53,9 @@ class Section extends React.Component {
 
   render() {
     const {
+      canBeFocusedProgrammatically,
       onButtonClick,
-      getRef,
+      setDisplayBoxRef,
       props: { title, children },
       state: { expanded, expandable, visible },
     } = this;
@@ -54,7 +67,7 @@ class Section extends React.Component {
       >
         <h2 className={sharedStyles.sectionTitle}>{title}</h2>
         <div
-          ref={getRef}
+          ref={setDisplayBoxRef}
           className={(cn(styles.landingBlurb, styles.displayBox,
             {
               [styles.displayBoxExpanded]: expanded,
@@ -63,11 +76,23 @@ class Section extends React.Component {
           }
         >
           {expandable && (
-          <button className={styles.collapseExpand} type="button" onClick={onButtonClick}>
+          <button
+            className={styles.collapseExpand}
+            type="button"
+            onClick={onButtonClick}
+            aria-expanded={expanded}
+            aria-label={expanded ? 'click to minimise this section' : 'click to expand this section to reveal more content'}
+          >
             <span>{expanded ? '−' : '+'}</span>
           </button>
           )}
-          {children}
+          <div
+            ref={this.childrenRef}
+            tabIndex={canBeFocusedProgrammatically}
+            aria-hidden={expandable && !expanded}
+          >
+            {children}
+          </div>
         </div>
       </div>
     );

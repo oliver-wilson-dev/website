@@ -5,17 +5,17 @@ import styles from './index.css';
 
 const Contact = ({ title, phone: phoneNumber, email }) => (
   <Section title={title}>
-    <div>
-      <h4 className={styles.contactDetail}>
+    <div aria-label={`my phone number is ${phoneNumber}`}>
+      <h4 className={styles.contactDetail} aria-hidden>
         Phone:
       </h4>
-      <span>{phoneNumber}</span>
+      <span aria-hidden>{phoneNumber}</span>
     </div>
-    <div>
-      <h4 className={styles.contactDetail}>
+    <div aria-label={`my email address is ${email}`}>
+      <h4 className={styles.contactDetail} aria-hidden>
         Email:
       </h4>
-      <span>{email}</span>
+      <span aria-hidden>{email}</span>
     </div>
   </Section>
 );

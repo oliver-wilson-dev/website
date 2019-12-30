@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import ToggleSwitch from '../../components/ToggleSwitch';
-import { getCheckboxCheckedStatus } from '../../state/selectors';
+import { getTheme } from '../../state/selectors';
 import toggleTheme from '../../state/actions/toggleTheme';
 
 const mapStateToProps = state => ({
-  checkBoxChecked: getCheckboxCheckedStatus(state)
+  theme: getTheme(state)
 });
 
 const mapDispatchToProps = dispatch => ({
