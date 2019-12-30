@@ -30,7 +30,7 @@ exports[`<Education/> component should match snapshot 1`] = `
     key="test-paragraph"
   >
     <span
-      aria-label="university emoji"
+      aria-hidden={true}
       className="paragraphEmoji"
       role="img"
     >

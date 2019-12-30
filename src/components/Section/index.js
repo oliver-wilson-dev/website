@@ -18,6 +18,8 @@ class Section extends React.Component {
     };
 
     this.setDisplayBoxRef = this.setDisplayBoxRef.bind(this);
+
+    this.canBeFocusedProgrammatically = -1;
   }
 
 
@@ -51,6 +53,7 @@ class Section extends React.Component {
 
   render() {
     const {
+      canBeFocusedProgrammatically,
       onButtonClick,
       setDisplayBoxRef,
       props: { title, children },
@@ -83,7 +86,7 @@ class Section extends React.Component {
             <span>{expanded ? '−' : '+'}</span>
           </button>
           )}
-          <div ref={this.childrenRef} tabIndex={-1} aria-hidden={expandable && !expanded}>
+          <div ref={this.childrenRef} tabIndex={canBeFocusedProgrammatically} aria-hidden={expandable && !expanded}>
             {children}
           </div>
         </div>

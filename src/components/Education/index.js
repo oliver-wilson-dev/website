@@ -25,7 +25,7 @@ const Education = ({
     {content.map((paragraph, index) => (index === 0
       ? (
         <p key={paragraph}>
-          <span className={styles.paragraphEmoji} role="img" aria-label="university emoji">{emoji}</span>
+          <span className={styles.paragraphEmoji} role="img" aria-hidden>{emoji}</span>
           {paragraph}
         </p>
       )
