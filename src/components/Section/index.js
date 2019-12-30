@@ -86,7 +86,11 @@ class Section extends React.Component {
             <span>{expanded ? '−' : '+'}</span>
           </button>
           )}
-          <div ref={this.childrenRef} tabIndex={canBeFocusedProgrammatically} aria-hidden={expandable && !expanded}>
+          <div
+            ref={this.childrenRef}
+            tabIndex={canBeFocusedProgrammatically}
+            aria-hidden={expandable && !expanded}
+          >
             {children}
           </div>
         </div>
