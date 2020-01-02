@@ -3,10 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.10
-    environment:
-      BUILD_NUMBER: "$CIRCLE_BUILD_NUM"
     steps:
       - checkout
+      - run:
+          name: set environment variables
+          command: echo 'export BUILD_NUMBER=$CIRCLE_BUILD_NUM' >> $BASH_ENV
       - run:
           name: install npm
           command: "sudo npm install -g npm@5"
