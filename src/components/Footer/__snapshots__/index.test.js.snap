@@ -7,7 +7,7 @@ exports[`<Footer/> should render correctly 1`] = `
   <span
     className="footerDisclaimer"
   >
-    the code for this website can be found on
+    The code for this website can be found on
      
     <a
       href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
