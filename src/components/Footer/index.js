@@ -10,7 +10,7 @@ const Footer = () => (
 the code for this website can be found on
       {' '}
       <a href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io" target="_blank" rel="noopener noreferrer">github</a>
-. ©2019, Oliver Wilson
+. ©2020, Oliver Wilson
     </span>
   </div>
 );
