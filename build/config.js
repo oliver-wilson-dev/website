@@ -1,9 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 
 const projectRootDir = path.join(__dirname, '../index.html');
 const outputAssetsDir = path.join(__dirname, '../');
 const entryDir = path.join(__dirname, '../src');
+
+const env = dotenv.config().parsed;
+
+const envKeys = Object.keys(env)
+  .reduce((prev, next) => ({
+    ...prev,
+    process:
+      {
+        env: {
+          ...(prev.process && prev.process.env && prev.process.env) || {},
+          [next]: JSON.stringify(env[next])
+        }
+      }
+  }), {});
 
 module.exports = {
   entry: entryDir,
@@ -42,9 +58,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin(envKeys),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
       filename: projectRootDir,
+      templateParameters: { BUILD_NUMBER: envKeys.process.env.BUILD_NUMBER }
     })
   ]
 };
