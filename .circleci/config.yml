@@ -17,6 +17,8 @@ jobs:
       - run:
           name: build project
           command: npm run build
+          environment:
+            BUILD_NUMBER: $CIRCLE_BUILD_NUM
       - run:
           name: set git email
           command: git config user.email "contact.oliver.wilson@gmail.com"
