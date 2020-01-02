@@ -21,7 +21,7 @@ const envKeys = Object.keys(env)
       }
   }), {});
 
-module.exports = {
+module.exports = (env, { mode }) => ({
   entry: entryDir,
   output: {
     path: outputAssetsDir,
@@ -62,7 +62,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
       filename: projectRootDir,
-      templateParameters: { BUILD_NUMBER: envKeys.process.env.BUILD_NUMBER }
+      templateParameters: { BUILD_NUMBER: mode === 'production' ? process.env.BUILD_NUMBER : envKeys.process.env.BUILD_NUMBER }
     })
   ]
-};
+});
