@@ -1,5 +1,5 @@
 .footerDisclaimer {
   font-size: .6em;
-  color: #777;
+  color: var(--primaryTextColor);
   padding-top: 10px;
 }
