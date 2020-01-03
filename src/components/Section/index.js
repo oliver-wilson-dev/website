@@ -1,103 +1,79 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
 import sharedStyles from '../App/index.css';
 
-class Section extends React.Component {
-  constructor(props) {
-    super(props);
+const Section = ({ title, children }) => {
+  const displayBoxRef = useRef(null);
+  const childrenRef = useRef(null);
 
-    this.displayBoxRef = null;
-    this.childrenRef = React.createRef();
+  const [expanded, setExpanded] = useState(false);
+  const [expandable, setExpandable] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-    this.state = {
-      expanded: false,
-      expandable: false,
-      visible: false
-    };
+  const canBeFocusedProgrammatically = -1;
+  useEffect(() => {
+    setExpandable(displayBoxRef.current.offsetHeight >= 250);
+    setVisible(true);
+  }, []);
 
-    this.setDisplayBoxRef = this.setDisplayBoxRef.bind(this);
+  useEffect(() => {
+    if (expanded) childrenRef.current.focus();
+  }, [expanded]);
 
-    this.canBeFocusedProgrammatically = -1;
-  }
-
-
-  componentDidMount() {
-    this.setState(
-      previousState => ({
-        ...previousState,
-        expandable: this.displayBoxRef.offsetHeight >= 250,
-        visible: true
-      })
-    );
-  }
-
-  componentDidUpdate() {
-    const { state: { expanded } } = this;
-
-    if (expanded) { this.childrenRef.current.focus(); }
-  }
-
-  setDisplayBoxRef(elm) {
-    this.displayBoxRef = elm;
-  }
-
-  onButtonClick = (e) => {
+  const onButtonClick = (e) => {
     e.preventDefault();
-    this.setState(previousState => ({
-      ...previousState,
-      expanded: !previousState.expanded
-    }));
-  }
+    setExpanded(!expanded);
+  };
 
-  render() {
-    const {
-      canBeFocusedProgrammatically,
-      onButtonClick,
-      setDisplayBoxRef,
-      props: { title, children },
-      state: { expanded, expandable, visible },
-    } = this;
-
-    return (
-      <div className={cn(sharedStyles.flexColumn, sharedStyles.flexCenter, styles.section, {
+  return (
+    <div className={cn(
+      sharedStyles.flexColumn,
+      sharedStyles.flexCenter,
+      styles.section, {
         [styles.show]: visible
-      })}
-      >
-        <h2 className={sharedStyles.sectionTitle}>{title}</h2>
-        <div
-          ref={setDisplayBoxRef}
-          className={(cn(styles.landingBlurb, styles.displayBox,
-            {
-              [styles.displayBoxExpanded]: expanded,
-              [styles.blurBottom]: expandable && !expanded
-            }))
+      }
+    )}
+    >
+      <h2 className={sharedStyles.sectionTitle}>{title}</h2>
+      <div
+        ref={displayBoxRef}
+        className={(cn(
+          styles.landingBlurb,
+          styles.displayBox,
+          {
+            [styles.displayBoxExpanded]: expanded,
+            [styles.blurBottom]: expandable && !expanded
           }
-        >
-          {expandable && (
+        ))
+          }
+      >
+        {expandable && (
           <button
             className={styles.collapseExpand}
             type="button"
             onClick={onButtonClick}
             aria-expanded={expanded}
-            aria-label={expanded ? 'click to minimise this section' : 'click to expand this section to reveal more content'}
+            aria-label={expanded
+              ? 'click to minimise this section'
+              : 'click to expand this section to reveal more content'
+            }
           >
             <span>{expanded ? '−' : '+'}</span>
           </button>
-          )}
-          <div
-            ref={this.childrenRef}
-            tabIndex={canBeFocusedProgrammatically}
-            aria-hidden={expandable && !expanded}
-          >
-            {children}
-          </div>
+        )}
+        <div
+          ref={childrenRef}
+          tabIndex={canBeFocusedProgrammatically}
+          aria-hidden={expandable && !expanded}
+        >
+          {children}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
