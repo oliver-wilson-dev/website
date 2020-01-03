@@ -1,3 +1,3 @@
 import { TOGGLE_THEME } from './constants';
 
-export default () => ({ type: TOGGLE_THEME });
+export default () => dispatch => dispatch(({ type: TOGGLE_THEME }));
