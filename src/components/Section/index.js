@@ -55,9 +55,9 @@ const Section = ({ title, children }) => {
             type="button"
             onClick={onButtonClick}
             aria-expanded={expanded}
-            aria-label={expanded
-              ? 'click to minimise this section'
-              : 'click to expand this section to reveal more content'
+            aria-label={`click to ${expanded
+              ? 'minimise this section'
+              : 'expand this section to reveal more content'}`
             }
           >
             <span>{expanded ? '−' : '+'}</span>
