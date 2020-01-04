@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Sections from '.';
 
 jest.mock('../Greeting', () => {
@@ -38,6 +38,7 @@ const defaultProps = {
 };
 
 const render = overrideProps => shallow(<Sections {...defaultProps} {...overrideProps} />);
+const renderMount = overrideProps => mount(<Sections {...defaultProps} {...overrideProps} />);
 
 describe('<Sections/>', () => {
   beforeEach(() => {
@@ -54,7 +55,7 @@ describe('<Sections/>', () => {
   });
 
   it('should call fetchContent() once', () => {
-    render();
+    renderMount();
     expect(defaultProps.fetchContent).toHaveBeenCalledWith();
   });
 

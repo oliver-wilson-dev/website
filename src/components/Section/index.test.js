@@ -19,21 +19,22 @@ describe('<Section/>', () => {
   });
 
   describe('when the display box content should be expandable', () => {
-    it('should render an expandable button', () => {
-      function mockGetRef() {
-        this.displayBoxRef = { offsetHeight: 250 };
-      }
-      jest.spyOn(Section.prototype, 'setDisplayBoxRef').mockImplementation(mockGetRef);
+    const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
 
+    beforeAll(() => {
+      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 250 });
+    });
+
+    afterAll(() => {
+      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', originalOffsetHeight);
+    });
+
+    it('should render an expandable button', () => {
       expect(render()).toMatchSnapshot();
     });
 
     describe('and the section is expanded', () => {
       it('should render correctly', () => {
-        function mockGetRef() {
-          this.displayBoxRef = { offsetHeight: 250 };
-        }
-        jest.spyOn(Section.prototype, 'setDisplayBoxRef').mockImplementation(mockGetRef);
         const wrapper = render();
         wrapper.find('button').simulate('click');
         expect(wrapper).toMatchSnapshot();
