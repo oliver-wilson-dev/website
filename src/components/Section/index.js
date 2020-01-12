@@ -1,31 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
 import sharedStyles from '../App/index.css';
+import SectionTile from '../SectionTile';
 
 const Section = ({ title, children }) => {
-  const displayBoxRef = useRef(null);
-  const childrenRef = useRef(null);
-
-  const [expanded, setExpanded] = useState(false);
-  const [expandable, setExpandable] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  const canBeFocusedProgrammatically = -1;
   useEffect(() => {
-    setExpandable(displayBoxRef.current.offsetHeight >= 250);
     setVisible(true);
   }, []);
 
-  useEffect(() => {
-    if (expanded) childrenRef.current.focus();
-  }, [expanded]);
-
-  const onButtonClick = (e) => {
-    e.preventDefault();
-    setExpanded(!expanded);
-  };
+  const childrenThatAreComponents = children.filter(child => (child.type instanceof Object));
+  const childrenThatAreNotComponents = children.filter(child => !(child.type instanceof Object));
 
   return (
     <div className={cn(
@@ -37,40 +25,24 @@ const Section = ({ title, children }) => {
     )}
     >
       <h2 className={sharedStyles.sectionTitle}>{title}</h2>
-      <div
-        ref={displayBoxRef}
-        className={(cn(
-          styles.landingBlurb,
-          styles.displayBox,
-          {
-            [styles.displayBoxExpanded]: expanded,
-            [styles.blurBottom]: expandable && !expanded
-          }
-        ))
-          }
-      >
-        {expandable && (
-          <button
-            className={styles.collapseExpand}
-            type="button"
-            onClick={onButtonClick}
-            aria-expanded={expanded}
-            aria-label={`click to ${expanded
-              ? 'minimise this section'
-              : 'expand this section to reveal more content'}`
-            }
-          >
-            <span>{expanded ? '−' : '+'}</span>
-          </button>
-        )}
-        <div
-          ref={childrenRef}
-          tabIndex={canBeFocusedProgrammatically}
-          aria-hidden={expandable && !expanded}
-        >
-          {children}
-        </div>
-      </div>
+      {childrenThatAreComponents.length
+        ? (
+          <div className={styles.tileContainer}>
+            { childrenThatAreComponents
+              .map((child, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <SectionTile key={index}>
+                  {child}
+                </SectionTile>
+              ))}
+          </div>
+        ) : null
+      }
+      {childrenThatAreNotComponents.length ? (
+        <SectionTile>
+          {childrenThatAreNotComponents}
+        </SectionTile>
+      ) : null}
     </div>
   );
 };

@@ -1,0 +1,62 @@
+.paragraphEmoji {
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.jobRole {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.jobRole + h4 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top:5px;
+    text-transform: uppercase;
+}
+
+.companyTitle {
+    margin-bottom: 0px;
+}
+
+.projectImages {
+    display: flex;
+}
+
+.projectImage {
+    flex-basis: 50%;
+    margin: 0px 10px 10px 0px;
+
+    &:last-of-type {
+        margin-right: 0px;
+    }
+}
+
+.projectImage img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 4px var(--primaryBorderColour);
+}
+
+@media (min-width: 786px) {
+    .projectImages {
+        flex-wrap: wrap;
+    }
+
+    .projectImage {
+        flex-basis: 100%;
+        margin: 10px 0px 0px 0px;
+        padding: 10px 15px;
+    }
+
+    .projectImage img {
+        box-shadow: 5px 5px 0px var(--primaryBorderColour);
+        border: 3px solid var(--primaryBorderColour)
+    }
+
+    .projectImage:first-child {
+        margin: 0;
+    }
+}

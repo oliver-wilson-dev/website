@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import Section from '../Section';
 import Workplace from '../Workplace';
 
-
 const Experience = ({ title, workplaces, emoji }) => (
   <Section title={title}>
-    {workplaces.map(workplace => (
+    {workplaces.map(({ companyName, ...rest }) => (
       <Workplace
-        key={workplace.companyName}
-        {...workplace}
+        key={companyName}
+        {...{ ...rest, companyName }}
         emoji={emoji}
       />
     ))}

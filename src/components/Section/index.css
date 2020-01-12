@@ -21,60 +21,36 @@
       }
 }
 
-.displayBox {
-    background: var(--primaryBackground);
-    -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    -moz-box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    border: 3px solid var(--primaryBorderColour);
-    padding: 10px;
-    max-height: 250px;
-    overflow: hidden;
-    position: relative;
-}
-
-.blurBottom {
+.tileContainer {
+    display: flex;
+    overflow-x: scroll;
+    padding: 0px 20px 20px 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    
     &:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        left: 0;
-        pointer-events: none;
-        background-image: linear-gradient(to bottom, 
-                        var(--sectionFadeColourFrom), 
-                        var(--sectionFadeColourTo) 90%);
-        width: 100%;
-        height: 20%;
+        content: "a";
+        display: block;
+        visibility: hidden;
     }
 }
 
-.displayBoxExpanded {
-    max-height: none;
+.tileContainer > * {
+    width: 90%;
+    box-sizing: border-box;
+    box-shadow: none;
 }
 
-.collapseExpand {
-    margin: 5px 5px 5px auto;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    font-size: 30px;
-    width: 35px;
-    border: none;
-    background: transparent;
-    font-family: inherit;
-    font-weight: 900;
-    color: inherit;
-}
+
 
 @media all and (min-width: 786px) {
-    .landingBlurb {
+    .tileContainer {
         max-width: 800px;
-    }
 
-    .blurBottom {
-        &:after {
-            height: 30%;
+        & > * {
+            min-width: 600px
         }
     }
 }
