@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section/> should render correctly 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox"
+  >
+    <div
+      aria-hidden={false}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<Section/> when the display box content should be expandable and the section is expanded should render correctly 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox displayBoxExpanded"
+  >
+    <button
+      aria-expanded={true}
+      aria-label="click to minimise this section"
+      className="collapseExpand"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        −
+      </span>
+    </button>
+    <div
+      aria-hidden={false}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<Section/> when the display box content should be expandable should render an expandable button 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox blurBottom"
+  >
+    <button
+      aria-expanded={false}
+      aria-label="click to expand this section to reveal more content"
+      className="collapseExpand"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        +
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<SectionTile/> should render correctly 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox"
+  >
+    <div
+      aria-hidden={false}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<SectionTile/> when the display box content should be expandable and the section is expanded should render correctly 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox displayBoxExpanded"
+  >
+    <button
+      aria-expanded={true}
+      aria-label="click to minimise this section"
+      className="collapseExpand"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        −
+      </span>
+    </button>
+    <div
+      aria-hidden={false}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<SectionTile/> when the display box content should be expandable should render an expandable button 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox blurBottom"
+  >
+    <button
+      aria-expanded={false}
+      aria-label="click to expand this section to reveal more content"
+      className="collapseExpand"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        +
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
