@@ -45,6 +45,14 @@ describe('Workplace', () => {
   });
 
   describe('when there is content', () => {
+    it('should just render a standard paragraph element for all items that do not have the index 0', () => {
+      expect(render({
+        overrideProps: {
+          content: ['test-content', 'test-content']
+        }
+      })).toMatchSnapshot();
+    });
+
     describe('when there are no projectImages', () => {
       it('should render correctly', () => {
         expect(render({

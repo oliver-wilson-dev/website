@@ -9,7 +9,7 @@ const Workplace = ({
   emoji,
   employmentPeriod,
   jobTitle,
-  projectImages = []
+  projectImages
 }) => (
   <React.Fragment>
     <h3 className={styles.companyTitle}>{companyName}</h3>
