@@ -4,13 +4,18 @@ import Experience from '.';
 import Section from '../Section';
 
 const defaultProps = {
-  companyName: 'test-company-name',
-  content: ['test-paragraph', 'test-paragraph'],
-  emoji: 'test-emoji',
-  employmentPeriod: 'test-employment-period',
-  jobTitle: 'test-job-title',
   title: 'test-title',
+  emoji: 'test-emoji',
+  workplaces: [
+    { companyName: 'test-company-name' }, { companyName: 'test-another-company-name' }
+  ]
 };
+
+jest.mock('../Workplace', () => {
+  const Workplace = () => null;
+
+  return Workplace;
+});
 
 const render = overrideProps => shallow(<Experience {...defaultProps} {...overrideProps} />);
 
