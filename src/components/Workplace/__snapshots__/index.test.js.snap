@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workplace when there is content when there are no projectImages should render correctly 1`] = `
+<Fragment>
+  <h3
+    className="companyTitle"
+  >
+    test-company-name
+  </h3>
+  <h4
+    className="jobRole"
+  >
+    test-job-title
+  </h4>
+  <h4>
+    test-employment-period
+  </h4>
+  <p
+    key="test-content"
+  >
+    <span
+      aria-label="an test-emoji emoji"
+      className="paragraphEmoji"
+      role="img"
+    >
+      test-emoji
+    </span>
+    test-content
+  </p>
+</Fragment>
+`;
+
+exports[`Workplace when there is content when there are projectImages should render correctly 1`] = `
+<Fragment>
+  <h3
+    className="companyTitle"
+  >
+    test-company-name
+  </h3>
+  <h4
+    className="jobRole"
+  >
+    test-job-title
+  </h4>
+  <h4>
+    test-employment-period
+  </h4>
+  <p
+    key="test-content"
+  >
+    <span
+      aria-label="an test-emoji emoji"
+      className="paragraphEmoji"
+      role="img"
+    >
+      test-emoji
+    </span>
+    test-content
+  </p>
+  <ProjectImages
+    projectImages={
+      Array [
+        "test-project-image",
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`Workplace when there is no content when there are no projectImages should render correctly 1`] = `
+<Fragment>
+  <h3
+    className="companyTitle"
+  >
+    test-company-name
+  </h3>
+  <h4
+    className="jobRole"
+  >
+    test-job-title
+  </h4>
+  <h4>
+    test-employment-period
+  </h4>
+</Fragment>
+`;
+
+exports[`Workplace when there is no content when there are projectImages should render correctly 1`] = `
+<Fragment>
+  <h3
+    className="companyTitle"
+  >
+    test-company-name
+  </h3>
+  <h4
+    className="jobRole"
+  >
+    test-job-title
+  </h4>
+  <h4>
+    test-employment-period
+  </h4>
+  <ProjectImages
+    projectImages={
+      Array [
+        "test-project-image",
+      ]
+    }
+  />
+</Fragment>
+`;

@@ -2,43 +2,72 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Section from '.';
 
+jest.mock('../SectionTile', () => {
+  const SectionTile = () => null;
+
+  return SectionTile;
+});
+
 const defaultProps = {
   title: 'test-title',
-  children: <p>this is some content</p>
+  children: [<p key="test-key">this is some content</p>]
 };
 
-const render = () => mount(<Section {...defaultProps} />);
+const render = ({ overrideProps } = { overrideProps: {} }) => mount(
+  <Section
+    {...defaultProps}
+    {...overrideProps}
+  />
+);
 
 describe('<Section/>', () => {
-  it('should exist', () => {
-    expect(render().exists()).toBe(true);
-  });
-
-  it('should render correctly', () => {
-    expect(render()).toMatchSnapshot();
-  });
-
-  describe('when the display box content should be expandable', () => {
-    const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
-
-    beforeAll(() => {
-      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 250 });
+  describe('when the children are HTML elements', () => {
+    it('should exist', () => {
+      expect(render().exists()).toBe(true);
     });
 
-    afterAll(() => {
-      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', originalOffsetHeight);
-    });
-
-    it('should render an expandable button', () => {
+    it('should render correctly', () => {
       expect(render()).toMatchSnapshot();
     });
+  });
 
-    describe('and the section is expanded', () => {
-      it('should render correctly', () => {
-        const wrapper = render();
-        wrapper.find('button').simulate('click');
-        expect(wrapper).toMatchSnapshot();
-      });
+  describe('when the children are react components', () => {
+    const SomeComponent = () => <p>some component</p>;
+    it('should exist', () => {
+      expect(render({
+        overrideProps: {
+          children: [<SomeComponent />, <SomeComponent />]
+        }
+      }).exists()).toBe(true);
+    });
+
+    it('should render correctly', () => {
+      expect(render({
+        overrideProps: {
+          children: [<SomeComponent />, <SomeComponent />]
+        }
+      })).toMatchSnapshot();
+    });
+  });
+
+  describe('when the children are both components and HTML elements', () => {
+    const htmlElement = <p key="test-key">some component</p>;
+    const SomeComponent = () => htmlElement;
+
+    it('should exist', () => {
+      expect(render({
+        overrideProps: {
+          children: [<SomeComponent />, htmlElement]
+        }
+      }).exists()).toBe(true);
+    });
+
+    it('should render correctly', () => {
+      expect(render({
+        overrideProps: {
+          children: [<SomeComponent />, htmlElement]
+        }
+      })).toMatchSnapshot();
     });
   });
 });

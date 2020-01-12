@@ -20,7 +20,7 @@ const Workplace = ({
     {content.map((paragraph, index) => (index === 0
       ? (
         <p key={paragraph}>
-          <span className={styles.paragraphEmoji} role="img" aria-label="laptop emoji">{emoji}</span>
+          <span className={styles.paragraphEmoji} role="img" aria-label={`an ${emoji} emoji`}>{emoji}</span>
           {paragraph}
         </p>
       )

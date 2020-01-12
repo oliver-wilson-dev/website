@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectImages when there are multiple project images should render correctly 1`] = `
+<div
+  className="projectImages"
+>
+  <div
+    className="projectImage"
+    key="test-link-to-project"
+  >
+    <a
+      href="test-link-to-project"
+    >
+      <img
+        alt="test-alt"
+        src="test-src"
+      />
+    </a>
+  </div>
+  <div
+    className="projectImage"
+    key="test-link-to-project"
+  >
+    <a
+      href="test-link-to-project"
+    >
+      <img
+        alt="test-alt"
+        src="test-src"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`ProjectImages when there is one project image should render correctly 1`] = `
+<div
+  className="projectImages"
+>
+  <div
+    className="projectImage"
+    key="test-link-to-project"
+  >
+    <a
+      href="test-link-to-project"
+    >
+      <img
+        alt="test-alt"
+        src="test-src"
+      />
+    </a>
+  </div>
+</div>
+`;
