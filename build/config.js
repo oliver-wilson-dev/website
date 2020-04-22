@@ -57,6 +57,7 @@ module.exports = (env, { mode }) => ({
       }
     ]
   },
+  devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin(envKeys),
     new HtmlWebpackPlugin({
