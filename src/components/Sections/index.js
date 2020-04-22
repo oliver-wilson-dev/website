@@ -22,7 +22,6 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
           <Contact {...sections.contact} />
         </React.Fragment>
       )}
-
     </React.Fragment>
   );
 };

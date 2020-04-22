@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Section/> should render correctly 1`] = `
+exports[`<Section/> when the children are HTML elements should render correctly 1`] = `
 <Section
   title="test-title"
 >
@@ -12,23 +12,12 @@ exports[`<Section/> should render correctly 1`] = `
     >
       test-title
     </h2>
-    <div
-      className="landingBlurb displayBox"
-    >
-      <div
-        aria-hidden={false}
-        tabIndex={-1}
-      >
-        <p>
-          this is some content
-        </p>
-      </div>
-    </div>
+    <SectionTile />
   </div>
 </Section>
 `;
 
-exports[`<Section/> when the display box content should be expandable and the section is expanded should render correctly 1`] = `
+exports[`<Section/> when the children are both components and HTML elements should render correctly 1`] = `
 <Section
   title="test-title"
 >
@@ -41,33 +30,18 @@ exports[`<Section/> when the display box content should be expandable and the se
       test-title
     </h2>
     <div
-      className="landingBlurb displayBox displayBoxExpanded"
+      className="tileContainer"
     >
-      <button
-        aria-expanded={true}
-        aria-label="click to minimise this section"
-        className="collapseExpand"
-        onClick={[Function]}
-        type="button"
-      >
-        <span>
-          −
-        </span>
-      </button>
-      <div
-        aria-hidden={false}
-        tabIndex={-1}
-      >
-        <p>
-          this is some content
-        </p>
-      </div>
+      <SectionTile
+        key="0"
+      />
     </div>
+    <SectionTile />
   </div>
 </Section>
 `;
 
-exports[`<Section/> when the display box content should be expandable should render an expandable button 1`] = `
+exports[`<Section/> when the children are react components should render correctly 1`] = `
 <Section
   title="test-title"
 >
@@ -80,27 +54,14 @@ exports[`<Section/> when the display box content should be expandable should ren
       test-title
     </h2>
     <div
-      className="landingBlurb displayBox blurBottom"
+      className="tileContainer"
     >
-      <button
-        aria-expanded={false}
-        aria-label="click to expand this section to reveal more content"
-        className="collapseExpand"
-        onClick={[Function]}
-        type="button"
-      >
-        <span>
-          +
-        </span>
-      </button>
-      <div
-        aria-hidden={true}
-        tabIndex={-1}
-      >
-        <p>
-          this is some content
-        </p>
-      </div>
+      <SectionTile
+        key="0"
+      />
+      <SectionTile
+        key="1"
+      />
     </div>
   </div>
 </Section>
