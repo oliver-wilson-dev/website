@@ -11,7 +11,7 @@ const DownloadButton = () => (
       rel="noopener noreferrer"
       href="public/documents/CV.pdf"
     >
-        download my cv
+      download my cv
     </a>
   </div>
 );

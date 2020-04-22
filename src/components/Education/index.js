@@ -19,7 +19,7 @@ const Education = ({
     <span>{courseName}</span>
     <h4 className={styles.degreeClassification}>
       {degreePrefix}
-:
+      :
       <span>{degreeClassification}</span>
     </h4>
     {content.map((paragraph, index) => (index === 0
