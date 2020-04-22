@@ -25,7 +25,7 @@ const Workplace = ({
         </p>
       )
       : <p key={paragraph}>{paragraph}</p>))}
-    {!!projectImages.length && <ProjectImages projectImages={projectImages} />}
+    {projectImages && !!projectImages.length && <ProjectImages projectImages={projectImages} />}
   </React.Fragment>
 );
 
