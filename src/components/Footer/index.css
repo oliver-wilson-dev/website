@@ -2,4 +2,9 @@
   font-size: .6em;
   color: var(--primaryTextColor);
   padding-top: 10px;
+  text-align: center;
+}
+
+.githubLink {
+  color: var(--unvisitedLink);
 }

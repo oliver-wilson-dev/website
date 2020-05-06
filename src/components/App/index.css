@@ -60,7 +60,7 @@ p {
 a {
   text-decoration: none;
   font-family: 'futura-pt', sans-serif;
-  color: rgb(21, 64, 204);
+  color: var(--unvisitedLink);
 }
 
 .sectionTitle {
