@@ -1,0 +1,13 @@
+@import "../../styles/transitions.css";
+
+.hiddenFadeIn {
+    transition: visibility var(--sectionVisibilityTransitionDuration), opacity var(--sectionOpacityTransitionDuration);
+    transition-delay: var(--spinnerOpacityTransitionDuration);
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
