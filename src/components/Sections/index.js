@@ -6,6 +6,11 @@ import Experience from '../Experience';
 import LoadingSpinner from '../LoadingSpinner';
 import Contact from '../Contact';
 
+import ProfilePicture from '../ProfilePicture';
+import DownloadButton from '../DownloadButton';
+import Footer from '../Footer';
+import SocialMedia from '../SocialMedia';
+
 const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
   useEffect(() => {
     fetchContent();
@@ -16,10 +21,14 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
       <LoadingSpinner loading={!sectionsContentFetched} />
       {sectionsContentFetched && (
         <React.Fragment>
+          <ProfilePicture />
           <Greeting {...sections.greeting} />
           <Education {...sections.education} />
           <Experience {...sections.experience} />
           <Contact {...sections.contact} />
+          <DownloadButton />
+          <SocialMedia />
+          <Footer />
         </React.Fragment>
       )}
     </React.Fragment>

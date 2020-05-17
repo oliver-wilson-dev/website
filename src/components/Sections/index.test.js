@@ -2,6 +2,30 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Sections from '.';
 
+jest.mock('../DownloadButton', () => {
+  const DownloadButton = () => null;
+
+  return DownloadButton;
+});
+
+jest.mock('../Footer', () => {
+  const Footer = () => null;
+
+  return Footer;
+});
+
+jest.mock('../SocialMedia', () => {
+  const SocialMedia = () => null;
+
+  return SocialMedia;
+});
+
+jest.mock('../ProfilePicture', () => {
+  const ProfilePicture = () => null;
+
+  return ProfilePicture;
+});
+
 jest.mock('../Greeting', () => {
   const Greeting = () => null;
 

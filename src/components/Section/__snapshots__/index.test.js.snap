@@ -5,7 +5,7 @@ exports[`<Section/> when the children are HTML elements should render correctly 
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter section show"
+    className="flexColumn flexCenter test-fade-in-classes"
   >
     <h2
       className="sectionTitle"
@@ -22,7 +22,7 @@ exports[`<Section/> when the children are both components and HTML elements shou
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter section show"
+    className="flexColumn flexCenter test-fade-in-classes"
   >
     <h2
       className="sectionTitle"
@@ -46,7 +46,7 @@ exports[`<Section/> when the children are react components should render correct
   title="test-title"
 >
   <div
-    className="flexColumn flexCenter section show"
+    className="flexColumn flexCenter test-fade-in-classes"
   >
     <h2
       className="sectionTitle"

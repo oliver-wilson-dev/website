@@ -3,29 +3,14 @@ import { shallow } from 'enzyme';
 import App from './index';
 
 import styles from './index.css';
-import DownloadButton from '../DownloadButton';
-import Footer from '../Footer';
 import Landing from '../Landing';
 import Sections from '../../containers/Sections';
-import SocialMedia from '../SocialMedia';
 import ToggleSwitch from '../../containers/ToggleSwitch';
 
 jest.mock('../../containers/ToggleSwitch', () => {
   const ToggleSwitch = () => null;
 
   return ToggleSwitch;
-});
-
-jest.mock('../DownloadButton', () => {
-  const DownloadButton = () => null;
-
-  return DownloadButton;
-});
-
-jest.mock('../Footer', () => {
-  const Footer = () => null;
-
-  return Footer;
 });
 
 jest.mock('../Landing', () => {
@@ -38,12 +23,6 @@ jest.mock('../../containers/Sections', () => {
   const Sections = () => null;
 
   return Sections;
-});
-
-jest.mock('../SocialMedia', () => {
-  const SocialMedia = () => null;
-
-  return SocialMedia;
 });
 
 const defaultProps = { theme: 'test-theme' };
@@ -72,24 +51,12 @@ describe('<App/> component', () => {
     expect(render().find('div > div').prop('className')).toBe(styles.appContent);
   });
 
-  it('should render a <DownloadButton/> component', () => {
-    expect(render().find(DownloadButton).exists()).toBe(true);
-  });
-
-  it('should render a <Footer/> component', () => {
-    expect(render().find(Footer).exists()).toBe(true);
-  });
-
   it('should render a <Landing/> component', () => {
     expect(render().find(Landing).exists()).toBe(true);
   });
 
   it('should render a <Sections/> component', () => {
     expect(render().find(Sections).exists()).toBe(true);
-  });
-
-  it('should render a <SocialMedia/> component', () => {
-    expect(render().find(SocialMedia).exists()).toBe(true);
   });
 
   it('should render a <ToggleSwitch/> component', () => {

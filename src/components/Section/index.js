@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
 import sharedStyles from '../App/index.css';
 import SectionTile from '../SectionTile';
+import useFadeInClasses from '../../hooks/useFadeInClasses';
 
 const Section = ({ title, children }) => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    setVisible(true);
-  }, []);
+  const { fadeInClasses } = useFadeInClasses();
 
   const childrenThatAreComponents = children.filter(child => (child.type instanceof Object));
   const childrenThatAreNotComponents = children.filter(child => !(child.type instanceof Object));
@@ -19,9 +16,7 @@ const Section = ({ title, children }) => {
     <div className={cn(
       sharedStyles.flexColumn,
       sharedStyles.flexCenter,
-      styles.section, {
-        [styles.show]: visible
-      }
+      fadeInClasses
     )}
     >
       <h2 className={sharedStyles.sectionTitle}>{title}</h2>

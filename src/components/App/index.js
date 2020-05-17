@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.css';
-import DownloadButton from '../DownloadButton';
-import Footer from '../Footer';
 import Landing from '../Landing';
 import Sections from '../../containers/Sections';
-import SocialMedia from '../SocialMedia';
 import ToggleSwitch from '../../containers/ToggleSwitch';
 
 const App = ({ theme }) => (
@@ -14,9 +11,6 @@ const App = ({ theme }) => (
       <ToggleSwitch />
       <Landing />
       <Sections />
-      <DownloadButton />
-      <SocialMedia />
-      <Footer />
     </div>
   </div>
 );
