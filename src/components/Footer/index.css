@@ -2,7 +2,6 @@
   font-size: .6em;
   color: var(--primaryTextColor);
   text-align: center;
-  display: inline-block;
 }
 
 .githubLink {
