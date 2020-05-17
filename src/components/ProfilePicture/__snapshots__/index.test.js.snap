@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfilePicture should render correctly 1`] = `
+<img
+  alt="A shot of me"
+  className="profilePicture test-fade-in-classes"
+  src="public/img/profile-pic.jpg"
+/>
+`;

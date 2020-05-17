@@ -1,0 +1,10 @@
+.profilePicture {
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px #0b0a0a;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    filter: grayscale(100%);
+    margin: 20px auto 0px auto
+}
