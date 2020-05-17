@@ -2,7 +2,7 @@
 
 exports[`<Footer/> should render correctly 1`] = `
 <div
-  className="flexColumn flexCenter"
+  className="flexColumn flexCenter container"
 >
   <span
     className="footerDisclaimer"
@@ -16,7 +16,12 @@ exports[`<Footer/> should render correctly 1`] = `
     >
       github
     </a>
-    . ©2020, Oliver Wilson
+    .
+  </span>
+  <span
+    className="footerDisclaimer"
+  >
+    ©2020, Oliver Wilson
   </span>
 </div>
 `;

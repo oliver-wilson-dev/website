@@ -1,10 +1,14 @@
 .footerDisclaimer {
   font-size: .6em;
   color: var(--primaryTextColor);
-  padding-top: 10px;
   text-align: center;
+  display: inline-block;
 }
 
 .githubLink {
   color: var(--unvisitedLink);
+}
+
+.container {
+  padding-top: 10px;
 }
