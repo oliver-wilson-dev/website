@@ -5,13 +5,14 @@ import styles from './index.css';
 
 
 const Footer = () => (
-  <div className={cn(additionalStyles.flexColumn, additionalStyles.flexCenter)}>
+  <div className={cn(additionalStyles.flexColumn, additionalStyles.flexCenter, styles.container)}>
     <span className={styles.footerDisclaimer}>
       The code for this website can be found on
       {' '}
       <a href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io" target="_blank" rel="noopener noreferrer">github</a>
-      . ©2020, Oliver Wilson
+      .
     </span>
+    <span className={styles.footerDisclaimer}>©2020, Oliver Wilson</span>
   </div>
 );
 
