@@ -5,10 +5,14 @@ exports[`<Sections/> should render correctly 1`] = `
   <LoadingSpinner
     loading={false}
   />
+  <ProfilePicture />
   <Greeting />
   <Education />
   <Experience />
   <Contact />
+  <DownloadButton />
+  <SocialMedia />
+  <Footer />
 </Fragment>
 `;
 

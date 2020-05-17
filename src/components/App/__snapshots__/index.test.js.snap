@@ -11,9 +11,6 @@ exports[`<App/> component should render correctly 1`] = `
     <ToggleSwitch />
     <Landing />
     <Sections />
-    <DownloadButton />
-    <SocialMedia />
-    <Footer />
   </div>
 </div>
 `;

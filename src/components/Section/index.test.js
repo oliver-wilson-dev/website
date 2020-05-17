@@ -1,12 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Section from '.';
+import useFadeInClasses from '../../hooks/useFadeInClasses';
 
 jest.mock('../SectionTile', () => {
   const SectionTile = () => null;
 
   return SectionTile;
 });
+
+jest.mock('../../hooks/useFadeInClasses');
 
 const defaultProps = {
   title: 'test-title',
@@ -21,6 +24,11 @@ const render = ({ overrideProps } = { overrideProps: {} }) => mount(
 );
 
 describe('<Section/>', () => {
+  beforeEach(() => {
+    useFadeInClasses.mockReturnValue({ fadeInClasses: 'test-fade-in-classes' });
+  });
+
+
   describe('when the children are HTML elements', () => {
     it('should exist', () => {
       expect(render().exists()).toBe(true);

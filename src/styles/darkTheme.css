@@ -8,5 +8,6 @@
     --spinnerTrailColour: rgba(248,248,248, 0.2);
     --sectionFadeColourFrom: rgba(51, 51, 51, 0);
     --sectionFadeColourTo: rgba(51, 51, 51, 1);
-    --unvisitedLink: var(--projectGreen)
+    --unvisitedLink: var(--projectGreen);
+    --profilePictureBorder: var(--projectGreen);
 }

@@ -8,4 +8,5 @@
     --sectionFadeColourFrom: rgba(248, 248, 248, 0);
     --sectionFadeColourTo: rgba(248, 248, 248, 1);
     --unvisitedLink: rgb(21, 64, 204);
+    --profilePictureBorder: var(--primaryBorderColour);
 }
