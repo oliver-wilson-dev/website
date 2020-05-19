@@ -20,7 +20,7 @@ describe('Cookie Disclaimer component', () => {
     describe('and the initial animation happens', () => {
       it('should not close', () => {
         const component = render(mount);
-        const container = component.find(`.${styles.container}`)
+        const container = component.find(`.${styles.container}`);
         container.props().onTransitionEnd();
 
         expect(container.hasClass(styles.loaded)).toBe(true);
