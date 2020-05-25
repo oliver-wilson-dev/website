@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.css';
 import Landing from '../Landing';
-import CookieDisclaimer from '../CookieDisclaimer';
+import CookieDisclaimer from '../../containers/CookieDisclaimer';
 import Sections from '../../containers/Sections';
 import ToggleSwitch from '../../containers/ToggleSwitch';
 
