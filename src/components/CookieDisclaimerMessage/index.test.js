@@ -9,7 +9,12 @@ const defaultProps = {
   learnMoreClicked: jest.fn()
 };
 
-const render = (renderMethod = shallow, props = {}) => renderMethod(<CookieDisclaimer {...defaultProps} {...props} />);
+const render = (renderMethod = shallow, props = {}) => renderMethod(
+  <CookieDisclaimer
+    {...defaultProps}
+    {...props}
+  />
+);
 
 describe('Cookie Disclaimer component', () => {
   describe('when first loaded', () => {
