@@ -1,10 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import styles from './index.css';
-
-import CookieDisclaimerMessage from '../../containers/CookieDisclaimerMessage';
-import LearnMoreOverlay from '../LearnMoreOverlay';
+import { shallow } from 'enzyme';
 
 import CookieDisclaimer from '.';
 
