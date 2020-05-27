@@ -13,6 +13,12 @@ jest.mock('../../containers/ToggleSwitch', () => {
   return ToggleSwitch;
 });
 
+jest.mock('../../containers/CookieDisclaimer', () => {
+  const CookieDisclaimer = () => null;
+
+  return CookieDisclaimer;
+});
+
 jest.mock('../Landing', () => {
   const Landing = () => null;
 

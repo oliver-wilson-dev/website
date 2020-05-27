@@ -1,5 +1,5 @@
 import {
-  getTheme, getSections, getSectionsContentFetched, getCheckboxCheckedStatus
+  getTheme, getSections, getSectionsContentFetched, getCheckboxCheckedStatus, getShowLearnMore
 } from '.';
 
 describe('getTheme', () => {
@@ -42,6 +42,19 @@ describe('getCheckboxCheckedStatus', () => {
       }
     )).toEqual(
       mockGetCheckboxCheckedStatus
+    );
+  });
+});
+
+describe('getShowLearnMore', () => {
+  it('returns the checkBoxChecked property in state', () => {
+    const mockShowLearnMore = Symbol('test-show-learn-more');
+    expect(getShowLearnMore(
+      {
+        cookieDisclaimer: { showLearnMore: mockShowLearnMore }
+      }
+    )).toEqual(
+      mockShowLearnMore
     );
   });
 });
