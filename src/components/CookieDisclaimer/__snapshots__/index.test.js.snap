@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie Disclaimer component when learnShowMore is false should render correctly 1`] = `
+<Fragment>
+  <CookieDisclaimerMessage />
+</Fragment>
+`;
+
+exports[`Cookie Disclaimer component when learnShowMore is true should render correctly 1`] = `
+<Fragment>
+  <LearnMoreOverlay />
+  <CookieDisclaimerMessage />
+</Fragment>
+`;
