@@ -49,31 +49,5 @@ describe('<Landing/>', () => {
 
       expect(component).toMatchSnapshot();
     });
-
-    describe('when the close animation ends', () => {
-      it('should work', () => {
-        const component = render(mount);
-
-        act(() => {
-          component.find(`.${styles.container}`).props().onTransitionEnd();
-        });
-
-        component.update();
-
-        act(() => {
-          component.find(`.${styles.container}`).props().onTransitionEnd();
-        });
-
-        component.update();
-
-        act(() => {
-          component.find(`.${styles.container}`).props().onTransitionEnd();
-        });
-
-        component.update();
-
-
-      });
-    });
   });
 });
