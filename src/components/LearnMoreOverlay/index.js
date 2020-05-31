@@ -7,14 +7,24 @@ import styles from './index.css';
 const LearnMoreOverlay = () => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [loadedTransitionComplete, setLoadedTransitionComplete] = useState(false);
   const [closed, setClosed] = useState(false);
 
   useEffect(() => {
     setLoaded(true);
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const onTransitionEnd = () => {
-    if (acknowledged) setClosed(true);
+    if (acknowledged) {
+      document.body.style.overflow = 'unset';
+      setClosed(true);
+      setLoaded(false);
+    }
+
+    if (loaded) {
+      setLoadedTransitionComplete(true);
+    }
   };
 
   const acknowledgeBanner = () => {
@@ -44,7 +54,7 @@ const LearnMoreOverlay = () => {
         </div>
         <button
           className={cn(styles.cross, {
-            [styles.cross__loaded]: loaded && !closed,
+            [styles.cross__loaded]: loadedTransitionComplete && !closed && !acknowledged,
             [styles.cross__closed]: acknowledged,
           })}
           type="button"

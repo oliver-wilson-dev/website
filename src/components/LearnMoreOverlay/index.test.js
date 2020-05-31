@@ -23,12 +23,14 @@ describe('<Landing/>', () => {
         component.find(`.${styles.container}`).props().onTransitionEnd();
       });
 
+      component.update();
+
       expect(component).toMatchSnapshot();
     });
   });
 
   describe('when clicking the close button', () => {
-    it('should render null', () => {
+    it('should render correctly', () => {
       const component = render(mount);
 
       component.find(`.${styles.cross}`).simulate('click');
@@ -36,6 +38,14 @@ describe('<Landing/>', () => {
       act(() => {
         component.find(`.${styles.container}`).props().onTransitionEnd();
       });
+
+      component.update();
+
+      act(() => {
+        component.find(`.${styles.container}`).props().onTransitionEnd();
+      });
+
+      component.update();
 
       expect(component).toMatchSnapshot();
     });
