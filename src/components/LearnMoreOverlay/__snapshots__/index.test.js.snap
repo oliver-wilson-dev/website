@@ -99,7 +99,7 @@ exports[`<Landing/> should render correctly 1`] = `
         </ul>
       </div>
       <button
-        className="cross cross__loaded"
+        className="cross"
         onClick={[Function]}
         type="button"
       />
@@ -153,7 +153,7 @@ exports[`<Landing/> when clicking the close button should render null 1`] = `
         </ul>
       </div>
       <button
-        className="cross cross__loaded cross__closed"
+        className="cross cross__closed"
         onClick={[Function]}
         type="button"
       />
