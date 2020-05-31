@@ -12,12 +12,17 @@ const LearnMoreOverlay = () => {
 
   useEffect(() => {
     setLoaded(true);
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const onTransitionEnd = () => {
-    if (acknowledged) setClosed(true);
+    if (acknowledged) {
+      document.body.style.overflow = 'unset';
+      setClosed(true);
+      setLoaded(false);
+    }
 
-    else if (loaded) {
+    if (loaded) {
       setLoadedTransitionComplete(true);
     }
   };

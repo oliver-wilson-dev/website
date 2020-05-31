@@ -108,10 +108,10 @@ exports[`<Landing/> should render correctly 1`] = `
 </LearnMoreOverlay>
 `;
 
-exports[`<Landing/> when clicking the close button should render null 1`] = `
+exports[`<Landing/> when clicking the close button should render correctly 1`] = `
 <LearnMoreOverlay>
   <div
-    className="container container__loaded container__closed"
+    className="container container__closed"
     onTransitionEnd={[Function]}
   >
     <div
