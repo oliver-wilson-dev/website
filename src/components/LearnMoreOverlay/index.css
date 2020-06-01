@@ -35,9 +35,7 @@
     top: 0;
     margin: 20px;
 
-    &__loaded {
-        position: fixed;
-    }
+    &__loaded {}
 
     &__closed {
         position: absolute;
@@ -79,3 +77,13 @@
     color: var(--cookie-disclaimer-text-colour);
     font-size: var(--cookie-disclaimer-text-font-size);
 }
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .cross {
+        &__loaded {
+            position: fixed;
+
+            margin: 20px;
+        }
+    }
+  }
