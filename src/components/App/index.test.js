@@ -6,6 +6,7 @@ import styles from './index.css';
 import Landing from '../Landing';
 import Sections from '../../containers/Sections';
 import ToggleSwitch from '../../containers/ToggleSwitch';
+import { DARK_THEME } from '../../state/actions/constants';
 
 jest.mock('../../containers/ToggleSwitch', () => {
   const ToggleSwitch = () => null;
@@ -67,5 +68,11 @@ describe('<App/> component', () => {
 
   it('should render a <ToggleSwitch/> component', () => {
     expect(render().find(ToggleSwitch).exists()).toBe(true);
+  });
+
+  describe('when the theme is dark', () => {
+    it('should render correctly', () => {
+      expect(render({ theme: DARK_THEME })).toMatchSnapshot();
+    });
   });
 });
