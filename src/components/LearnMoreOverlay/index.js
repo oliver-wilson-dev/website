@@ -24,7 +24,7 @@ const LearnMoreOverlay = () => {
     setAcknowledged(true);
   };
 
-  return (
+  return acknowledged && !loaded ? null : (
     <div
       className={cn(styles.background, {
         [styles.background__loaded]: loaded,
@@ -43,16 +43,21 @@ const LearnMoreOverlay = () => {
           />
         </div>
         <div className={cn(styles.information, styles.text)}>
-          <p>This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.</p>
           <h3>What are cookies?</h3>
-          <p>Cookies are data files that can hold small amounts of info and are stored on your device (computer, smartphone etc) when you visit a website.</p>
+          <p className={styles.paragraph}>A “cookie” is a string of information which assigns you a unique identifier that we store on your computer. Your browser then provides that unique identifier to use each time you submit a query to the Site. We use cookies on the Site to, among other things, keep track of services you have used, record registration information, record your user preferences, keep you logged into the Site, facilitate purchase procedures, and track the pages you visit. Cookies help us understand how the Site is being used and improve your user experience.</p>
           <h3>What cookies does this site use?</h3>
           <ul className={styles.listOfCookies}>
             <li className={styles.cookieDescription}>This site stores cookie data based on the theme selector if you choose to use it. A cookie is written detailing the theme choice which enables the site to remember your theme selection and preserve that selection when you refresh the page.</li>
             <li className={styles.cookieDescription}>This site uses cookies to record that you&apos;ve acknowledged this cookie policy so that we don&apos;t have to show it to you more than we need to.</li>
           </ul>
-        </div>
+          <h3>Your control of cookies</h3>
+          <p className={styles.paragraph}>This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.</p>
+          <p className={styles.paragraph}>Most browsers are set to accept cookies by default. However, you can remove or reject cookies in your browser’s settings. Please be aware that such action could affect the availability and functionality of the Site.</p>
 
+          <h3>Amendments to this cookie policy</h3>
+          <p className={styles.paragraph}>We reserve the right to make changes to this Cookie Policy at any time and for any reason. We will alert you about any changes by updating the “Last Updated” date of this Cookie Policy. Any changes or modifications will be effective immediately upon posting the updated Cookie Policy on the Site, and you waive the right to receive specific notice of each such change or modification.</p>
+          <p className={styles.paragraph}>You are encouraged to periodically review this Cookie Policy to stay informed of updates. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised Cookie Policy by your continued use of the Site after the date such revised Cookie Policy is posted.</p>
+        </div>
       </div>
     </div>
   );

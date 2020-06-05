@@ -41,12 +41,6 @@ describe('<Landing/>', () => {
 
       component.update();
 
-      act(() => {
-        component.find(`.${styles.background}`).props().onTransitionEnd();
-      });
-
-      component.update();
-
       expect(component).toMatchSnapshot();
     });
   });
