@@ -1,15 +1,15 @@
 @import "../CookieDisclaimer/index.css";
 
-.container {
+.background {
     left: 0;
     right: 0;
     bottom: 0;
     height: 0;
-    z-index: 2;
+    z-index: 6;
     display: flex;
     position: fixed;
     overflow: hidden;
-    background: #F4D03F;
+    background: rgba(0,0,0,.288);
     box-sizing: border-box;
     justify-content: center;
     transition: height .5s cubic-bezier(.35,.42,.15,1.15) .7s;
@@ -27,23 +27,22 @@
     background: url('./cross.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 20px;
+    margin-left: 10px;
+}
 
-    &__loaded {}
-
-    &__closed {
-        position: absolute;
-    }
+.overlayHeader {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .information {
     flex-basis: 80%;
+    overflow: scroll;
 }
 
 .information::-webkit-scrollbar {
@@ -51,7 +50,7 @@
 }
 
 .title {
-    margin-top: 0;
+    margin: 0;
 }
 
 .cookieDescription {
@@ -66,11 +65,13 @@
 
 .layout {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     max-width: 800px;
     padding: 20px;
     overflow: hidden;
     position: relative;
+    background: #F4D03F;
+    margin: 20px;
 }
 
 .text {
@@ -79,14 +80,6 @@
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-    .cross {
-        &__loaded {
-            position: fixed;
-
-            margin: 20px;
-        }
-    }
-
     .layout {
         overflow: scroll;
     }

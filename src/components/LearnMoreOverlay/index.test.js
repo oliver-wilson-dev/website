@@ -20,7 +20,7 @@ describe('<Landing/>', () => {
       const component = render(mount);
 
       act(() => {
-        component.find(`.${styles.container}`).props().onTransitionEnd();
+        component.find(`.${styles.background}`).props().onTransitionEnd();
       });
 
       component.update();
@@ -36,13 +36,13 @@ describe('<Landing/>', () => {
       component.find(`.${styles.cross}`).simulate('click');
 
       act(() => {
-        component.find(`.${styles.container}`).props().onTransitionEnd();
+        component.find(`.${styles.background}`).props().onTransitionEnd();
       });
 
       component.update();
 
       act(() => {
-        component.find(`.${styles.container}`).props().onTransitionEnd();
+        component.find(`.${styles.background}`).props().onTransitionEnd();
       });
 
       component.update();

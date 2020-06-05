@@ -3,20 +3,29 @@
 exports[`<Landing/> after the first animation should render correctly 1`] = `
 <LearnMoreOverlay>
   <div
-    className="container container__loaded"
+    className="background background__loaded"
     onTransitionEnd={[Function]}
   >
     <div
       className="layout"
     >
       <div
-        className="information text"
+        className="overlayHeader"
       >
         <h2
           className="title"
         >
           Cookie Policy
         </h2>
+        <button
+          className="cross"
+          onClick={[Function]}
+          type="button"
+        />
+      </div>
+      <div
+        className="information text"
+      >
         <p>
           This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.
         </p>
@@ -44,11 +53,6 @@ exports[`<Landing/> after the first animation should render correctly 1`] = `
           </li>
         </ul>
       </div>
-      <button
-        className="cross cross__loaded"
-        onClick={[Function]}
-        type="button"
-      />
     </div>
   </div>
 </LearnMoreOverlay>
@@ -57,20 +61,29 @@ exports[`<Landing/> after the first animation should render correctly 1`] = `
 exports[`<Landing/> should render correctly 1`] = `
 <LearnMoreOverlay>
   <div
-    className="container container__loaded"
+    className="background background__loaded"
     onTransitionEnd={[Function]}
   >
     <div
       className="layout"
     >
       <div
-        className="information text"
+        className="overlayHeader"
       >
         <h2
           className="title"
         >
           Cookie Policy
         </h2>
+        <button
+          className="cross"
+          onClick={[Function]}
+          type="button"
+        />
+      </div>
+      <div
+        className="information text"
+      >
         <p>
           This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.
         </p>
@@ -98,11 +111,6 @@ exports[`<Landing/> should render correctly 1`] = `
           </li>
         </ul>
       </div>
-      <button
-        className="cross"
-        onClick={[Function]}
-        type="button"
-      />
     </div>
   </div>
 </LearnMoreOverlay>
@@ -111,20 +119,29 @@ exports[`<Landing/> should render correctly 1`] = `
 exports[`<Landing/> when clicking the close button should render correctly 1`] = `
 <LearnMoreOverlay>
   <div
-    className="container container__closed"
+    className="background background__closed"
     onTransitionEnd={[Function]}
   >
     <div
       className="layout"
     >
       <div
-        className="information text"
+        className="overlayHeader"
       >
         <h2
           className="title"
         >
           Cookie Policy
         </h2>
+        <button
+          className="cross"
+          onClick={[Function]}
+          type="button"
+        />
+      </div>
+      <div
+        className="information text"
+      >
         <p>
           This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.
         </p>
@@ -152,11 +169,6 @@ exports[`<Landing/> when clicking the close button should render correctly 1`] =
           </li>
         </ul>
       </div>
-      <button
-        className="cross cross__closed"
-        onClick={[Function]}
-        type="button"
-      />
     </div>
   </div>
 </LearnMoreOverlay>

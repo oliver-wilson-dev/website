@@ -7,8 +7,6 @@ import styles from './index.css';
 const LearnMoreOverlay = () => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const [loadedTransitionComplete, setLoadedTransitionComplete] = useState(false);
-  const [closed, setClosed] = useState(false);
 
   useEffect(() => {
     setLoaded(true);
@@ -18,12 +16,7 @@ const LearnMoreOverlay = () => {
   const onTransitionEnd = () => {
     if (acknowledged) {
       document.body.style.overflow = 'unset';
-      setClosed(true);
       setLoaded(false);
-    }
-
-    if (loaded) {
-      setLoadedTransitionComplete(true);
     }
   };
 
@@ -33,16 +26,23 @@ const LearnMoreOverlay = () => {
 
   return (
     <div
-      className={cn(styles.container, {
-        [styles.container__loaded]: loaded,
-        [styles.container__closed]: acknowledged,
+      className={cn(styles.background, {
+        [styles.background__loaded]: loaded,
+        [styles.background__closed]: acknowledged,
       })}
 
       onTransitionEnd={onTransitionEnd}
     >
       <div className={styles.layout}>
-        <div className={cn(styles.information, styles.text)}>
+        <div className={styles.overlayHeader}>
           <h2 className={styles.title}>Cookie Policy</h2>
+          <button
+            className={styles.cross}
+            type="button"
+            onClick={acknowledgeBanner}
+          />
+        </div>
+        <div className={cn(styles.information, styles.text)}>
           <p>This site uses cookies, but you can control these through your browser settings. Most browsers allow you to manage cookies saved on your device – just head to the help section of your browser.</p>
           <h3>What are cookies?</h3>
           <p>Cookies are data files that can hold small amounts of info and are stored on your device (computer, smartphone etc) when you visit a website.</p>
@@ -52,14 +52,7 @@ const LearnMoreOverlay = () => {
             <li className={styles.cookieDescription}>This site uses cookies to record that you&apos;ve acknowledged this cookie policy so that we don&apos;t have to show it to you more than we need to.</li>
           </ul>
         </div>
-        <button
-          className={cn(styles.cross, {
-            [styles.cross__loaded]: loadedTransitionComplete && !closed && !acknowledged,
-            [styles.cross__closed]: acknowledged,
-          })}
-          type="button"
-          onClick={acknowledgeBanner}
-        />
+
       </div>
     </div>
   );
