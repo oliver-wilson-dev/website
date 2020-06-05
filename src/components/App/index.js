@@ -5,7 +5,7 @@ import styles from './index.css';
 import Landing from '../Landing';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';
 import Sections from '../../containers/Sections';
-import ToggleSwitch from '../../containers/ToggleSwitch';
+import Header from '../Header';
 import { DARK_THEME } from '../../state/actions/constants';
 
 const App = ({ theme }) => (
@@ -19,7 +19,7 @@ const App = ({ theme }) => (
       [styles.appContent__dark]: theme === DARK_THEME
     })}
     >
-      <ToggleSwitch />
+      <Header />
       <Landing />
       <CookieDisclaimer />
       <Sections />

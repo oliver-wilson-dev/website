@@ -8,7 +8,7 @@ exports[`<App/> component should render correctly 1`] = `
   <div
     className="appContent"
   >
-    <ToggleSwitch />
+    <Header />
     <Landing />
     <CookieDisclaimer />
     <Sections />
@@ -24,7 +24,7 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
   <div
     className="appContent appContent__dark"
   >
-    <ToggleSwitch />
+    <Header />
     <Landing />
     <CookieDisclaimer />
     <Sections />

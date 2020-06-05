@@ -13,6 +13,7 @@ body {
 }
 
 .app {
+  padding-top: var(--headerHeight);
   color: var(--primaryTextColor);
   display: flex;
   flex-direction: column;
@@ -23,14 +24,12 @@ body {
 
   background-attachment: fixed;
   background-color: var(--primaryBackgroundLight);
-  /* background-color: var(--primaryBackground); */
   background-image: var(--primaryBackgroundImage);
   transition-timing-function: ease-in;
   transition-duration: 0.4s;
   transition-property: background-color,  background-image;
 
   &__dark {
-    /* color: var(--primaryTextColorDark); */
     background-image: unset;
     background-color: var(--primaryBackgroundDark);
   }

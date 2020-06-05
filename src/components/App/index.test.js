@@ -5,13 +5,13 @@ import App from './index';
 import styles from './index.css';
 import Landing from '../Landing';
 import Sections from '../../containers/Sections';
-import ToggleSwitch from '../../containers/ToggleSwitch';
+import Header from '../Header';
 import { DARK_THEME } from '../../state/actions/constants';
 
-jest.mock('../../containers/ToggleSwitch', () => {
-  const ToggleSwitch = () => null;
+jest.mock('../Header', () => {
+  const Header = () => null;
 
-  return ToggleSwitch;
+  return Header;
 });
 
 jest.mock('../../containers/CookieDisclaimer', () => {
@@ -66,8 +66,8 @@ describe('<App/> component', () => {
     expect(render().find(Sections).exists()).toBe(true);
   });
 
-  it('should render a <ToggleSwitch/> component', () => {
-    expect(render().find(ToggleSwitch).exists()).toBe(true);
+  it('should render a <Header/> component', () => {
+    expect(render().find(Header).exists()).toBe(true);
   });
 
   describe('when the theme is dark', () => {
