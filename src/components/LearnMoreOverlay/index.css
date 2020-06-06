@@ -45,7 +45,8 @@
 }
 
 .information {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 10px 20px;
 }
 
@@ -86,12 +87,6 @@
 
 .paragraph {
     text-align: justify;
-}
-
-@media (min-width: 0px) and (max-width: 767px) {
-    .layout {
-        overflow: scroll;
-    }
 }
 
 @media (min-width: 767px) {
