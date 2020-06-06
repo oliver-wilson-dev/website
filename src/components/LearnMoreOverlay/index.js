@@ -10,12 +10,17 @@ const LearnMoreOverlay = () => {
 
   useEffect(() => {
     setLoaded(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.classList.add(styles.bodyFixed);
   }, []);
 
   const onTransitionEnd = () => {
     if (acknowledged) {
-      document.body.style.overflow = 'unset';
+      const scrollY = document.body.style.top;
+      document.body.classList.remove(styles.bodyFixed);
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+
       setLoaded(false);
     }
   };

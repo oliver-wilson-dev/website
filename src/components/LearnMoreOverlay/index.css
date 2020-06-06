@@ -89,6 +89,13 @@
     text-align: justify;
 }
 
+.bodyFixed {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+}
+
 @media (min-width: 767px) {
     .information {
         padding: 10px 40px;
