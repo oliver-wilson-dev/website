@@ -26,6 +26,9 @@ exports[`<Landing/> after the first animation should render correctly 1`] = `
       <div
         className="information text"
       >
+        <span>
+          Last updated: 6th June 2020
+        </span>
         <h3>
           What are cookies?
         </h3>
@@ -109,6 +112,9 @@ exports[`<Landing/> should render correctly 1`] = `
       <div
         className="information text"
       >
+        <span>
+          Last updated: 6th June 2020
+        </span>
         <h3>
           What are cookies?
         </h3>
