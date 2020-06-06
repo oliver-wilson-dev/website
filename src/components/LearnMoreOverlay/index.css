@@ -1,5 +1,9 @@
 @import "../CookieDisclaimer/index.css";
 
+:root {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 .background {
     left: 0;
     right: 0;
@@ -22,6 +26,10 @@
 
     &__closed {
         opacity: 0;
+    }
+
+    & h2, h3 {
+        font-family: 'Source Sans Pro', sans-serif;
     }
 }
 
