@@ -17,7 +17,7 @@ body {
   color: var(--primaryTextColor);
   display: flex;
   flex-direction: column;
-  font-family: 'futura-pt', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2em;
   max-width: 100vw;
   min-height: 100vh;
@@ -57,12 +57,13 @@ body {
 }
 
 h1 {
-  font-family: 'futura-pt', sans-serif;
+  font-family: 'Merriweather', serif;
+  font-style: italic;
 }
 
 h2, h3 {
-  font-family: 'futura-pt', sans-serif;
-  font-weight: 900;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -73,13 +74,14 @@ p {
 
 a {
   text-decoration: none;
-  font-family: 'futura-pt', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: var(--unvisitedLink);
 }
 
 .sectionTitle {
-  font-family: 'futura-pt', sans-serif;
-  font-weight: 900;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-style: italic;
   font-size: 3em;
   padding: .5em 0 .5em 0;
   margin: 0;
