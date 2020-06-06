@@ -29,13 +29,6 @@ exports[`<Education/> component should match snapshot 1`] = `
   <p
     key="test-paragraph"
   >
-    <span
-      aria-hidden={true}
-      className="paragraphEmoji"
-      role="img"
-    >
-      test-emoji
-    </span>
     test-paragraph
   </p>
   <p

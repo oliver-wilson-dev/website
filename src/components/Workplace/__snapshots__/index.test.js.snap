@@ -18,13 +18,6 @@ exports[`Workplace when there is content should just render a standard paragraph
   <p
     key="test-content"
   >
-    <span
-      aria-label="an test-emoji emoji"
-      className="paragraphEmoji"
-      role="img"
-    >
-      test-emoji
-    </span>
     test-content
   </p>
   <p
@@ -53,13 +46,6 @@ exports[`Workplace when there is content when there are no projectImages should 
   <p
     key="test-content"
   >
-    <span
-      aria-label="an test-emoji emoji"
-      className="paragraphEmoji"
-      role="img"
-    >
-      test-emoji
-    </span>
     test-content
   </p>
 </Fragment>
@@ -83,13 +69,6 @@ exports[`Workplace when there is content when there are projectImages should ren
   <p
     key="test-content"
   >
-    <span
-      aria-label="an test-emoji emoji"
-      className="paragraphEmoji"
-      role="img"
-    >
-      test-emoji
-    </span>
     test-content
   </p>
   <ProjectImages

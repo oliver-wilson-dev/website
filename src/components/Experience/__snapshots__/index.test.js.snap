@@ -6,12 +6,10 @@ exports[`<Experience/> component should match snapshot 1`] = `
 >
   <Workplace
     companyName="test-company-name"
-    emoji="test-emoji"
     key="test-company-name"
   />
   <Workplace
     companyName="test-another-company-name"
-    emoji="test-emoji"
     key="test-another-company-name"
   />
 </Section>

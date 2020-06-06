@@ -5,13 +5,6 @@ exports[`<Greeting/> component should match snapshot 1`] = `
   title="test-title"
 >
   <p>
-    <span
-      aria-hidden={true}
-      className="paragraphEmoji"
-      role="img"
-    >
-      👋
-    </span>
     test-start
      
     <span
