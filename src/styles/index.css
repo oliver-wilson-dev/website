@@ -13,4 +13,5 @@
     --profilePictureBorder: var(--primaryBorderColour);
     --headerHeight: 65px;
     --headerPadding: 15px;
+    --primaryTextColorLight: #333;
 }

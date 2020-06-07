@@ -1,6 +1,6 @@
 const showLearnMore = ({ state }) => () => ({
   ...state,
-  showLearnMore: true
+  showLearnMore: !state.showLearnMore
 });
 
 
