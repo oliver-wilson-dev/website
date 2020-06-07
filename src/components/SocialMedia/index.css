@@ -11,3 +11,9 @@
 .socialLink {
     margin: auto 5px;
 }
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .socialContainer {
+        flex-direction: column;
+    }
+  }

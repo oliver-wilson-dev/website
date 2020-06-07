@@ -44,3 +44,5 @@ exports[`<Footer/> should render correctly 1`] = `
   <SocialMedia />
 </div>
 `;
+
+exports[`<Footer/> when sectionsContentFetched is false should render null 1`] = `""`;
