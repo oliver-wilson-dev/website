@@ -4,7 +4,11 @@ import { act } from 'react-dom/test-utils';
 import LearnMoreOverlay from '.';
 import styles from './index.css';
 
-const render = (renderMethod = shallow) => renderMethod(<LearnMoreOverlay />);
+const defaultProps = {
+  learnMoreClicked: jest.fn()
+};
+
+const render = (renderMethod = shallow) => renderMethod(<LearnMoreOverlay {...defaultProps} />);
 
 describe('<Landing/>', () => {
   beforeEach(() => {
@@ -35,18 +39,20 @@ describe('<Landing/>', () => {
   });
 
   describe('when clicking the close button', () => {
-    it('should render correctly', () => {
+    it('should call the learnMoreClicked prop', () => {
       const component = render(mount);
 
       component.find(`.${styles.cross}`).simulate('click');
 
+      let onTransitionEnd;
       act(() => {
-        component.find(`.${styles.background}`).props().onTransitionEnd();
+        ({ onTransitionEnd } = component.find(`.${styles.background}`).props());
+        onTransitionEnd();
       });
 
       component.update();
 
-      expect(component).toMatchSnapshot();
+      expect(defaultProps.learnMoreClicked).toHaveBeenCalled();
     });
 
     describe('when the user had not scrolled before opening the modal', () => {

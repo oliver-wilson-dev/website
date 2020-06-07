@@ -1,13 +1,20 @@
-.footerDisclaimer {
-  font-size: .6em;
+.footerDisclaimerText {
   color: var(--primaryTextColor);
   text-align: center;
 }
 
-.githubLink {
-  color: var(--unvisitedLink);
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  font-size: 14px;
 }
 
-.container {
-  padding-top: 10px;
+.link {
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

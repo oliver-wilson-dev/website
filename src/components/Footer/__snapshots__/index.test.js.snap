@@ -2,10 +2,25 @@
 
 exports[`<Footer/> should render correctly 1`] = `
 <div
-  className="flexColumn flexCenter container"
+  className="flexCenter container"
 >
+  <SocialMedia />
   <span
-    className="footerDisclaimer"
+    className="footerDisclaimerText"
+  >
+    By using this site you agree to our cookie policy. You can read the cookie policy
+     
+    <button
+      className="link"
+      onClick={[MockFunction]}
+      type="button"
+    >
+       here
+    </button>
+    .
+  </span>
+  <span
+    className="footerDisclaimerText"
   >
     The code for this website can be found on
      
@@ -19,7 +34,7 @@ exports[`<Footer/> should render correctly 1`] = `
     .
   </span>
   <span
-    className="footerDisclaimer"
+    className="footerDisclaimerText"
   >
     ©2020, Oliver Wilson
   </span>

@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
 
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
 
-const LearnMoreOverlay = () => {
+const LearnMoreOverlay = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -22,6 +23,8 @@ const LearnMoreOverlay = () => {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
 
       setLoaded(false);
+
+      learnMoreClicked();
     }
   };
 
@@ -29,7 +32,7 @@ const LearnMoreOverlay = () => {
     setAcknowledged(true);
   };
 
-  return acknowledged && !loaded ? null : (
+  return (
     <div
       className={cn(styles.background, {
         [styles.background__loaded]: loaded,
@@ -67,6 +70,10 @@ const LearnMoreOverlay = () => {
       </div>
     </div>
   );
+};
+
+LearnMoreOverlay.propTypes = {
+  learnMoreClicked: PropTypes.func.isRequired
 };
 
 export default LearnMoreOverlay;
