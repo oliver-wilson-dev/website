@@ -8,7 +8,6 @@ import Contact from '../Contact';
 
 import ProfilePicture from '../ProfilePicture';
 import DownloadButton from '../DownloadButton';
-import Footer from '../../containers/Footer';
 
 const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
   useEffect(() => {
@@ -26,7 +25,7 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
           <Experience {...sections.experience} />
           <Contact {...sections.contact} />
           <DownloadButton />
-          <Footer />
+
         </React.Fragment>
       )}
     </React.Fragment>

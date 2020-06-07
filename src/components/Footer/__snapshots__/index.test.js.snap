@@ -4,39 +4,43 @@ exports[`<Footer/> should render correctly 1`] = `
 <div
   className="flexCenter container"
 >
+  <div
+    className="textContainer"
+  >
+    <span
+      className="footerDisclaimerText"
+    >
+      By using this site you agree to our cookie policy.
+       
+      <button
+        className="buttonLink"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Read the cookie policy here
+      </button>
+      .
+    </span>
+    <span
+      className="footerDisclaimerText"
+    >
+      The code for this website can be found on
+       
+      <a
+        href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        github
+      </a>
+      .
+    </span>
+    <span
+      className="footerDisclaimerText"
+    >
+      ©2020, Oliver Wilson
+    </span>
+  </div>
   <SocialMedia />
-  <span
-    className="footerDisclaimerText"
-  >
-    By using this site you agree to our cookie policy. You can read the cookie policy
-     
-    <button
-      className="link"
-      onClick={[MockFunction]}
-      type="button"
-    >
-       here
-    </button>
-    .
-  </span>
-  <span
-    className="footerDisclaimerText"
-  >
-    The code for this website can be found on
-     
-    <a
-      href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      github
-    </a>
-    .
-  </span>
-  <span
-    className="footerDisclaimerText"
-  >
-    ©2020, Oliver Wilson
-  </span>
 </div>
 `;

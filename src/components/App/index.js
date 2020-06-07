@@ -6,6 +6,7 @@ import Landing from '../Landing';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';
 import Sections from '../../containers/Sections';
 import Header from '../Header';
+import Footer from '../../containers/Footer';
 import { DARK_THEME } from '../../state/actions/constants';
 
 const App = ({ theme }) => (
@@ -15,15 +16,16 @@ const App = ({ theme }) => (
     })}
     data-theme={theme}
   >
+    <Header />
     <div className={cn(styles.appContent, {
       [styles.appContent__dark]: theme === DARK_THEME
     })}
     >
-      <Header />
       <Landing />
       <CookieDisclaimer />
       <Sections />
     </div>
+    <Footer />
   </div>
 );
 

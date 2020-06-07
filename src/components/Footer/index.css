@@ -26,13 +26,14 @@
   }
 }
 
-.link {
+.buttonLink {
   font-weight: 700;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
   color: var(--primaryTextColorInverse);
+  text-decoration: underline;
 }
 
 .textContainer {

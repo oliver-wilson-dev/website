@@ -8,20 +8,22 @@ import SocialMedia from '../SocialMedia';
 
 const Footer = ({ learnMoreClicked }) => (
   <div className={cn(additionalStyles.flexCenter, styles.container)}>
+    <div className={styles.textContainer}>
+      <span className={styles.footerDisclaimerText}>
+        By using this site you agree to our cookie policy.
+        {' '}
+        <button className={cn(styles.buttonLink)} type="button" onClick={learnMoreClicked}>Read the cookie policy here</button>
+        .
+      </span>
+      <span className={styles.footerDisclaimerText}>
+        The code for this website can be found on
+        {' '}
+        <a href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io" target="_blank" rel="noopener noreferrer">github</a>
+        .
+      </span>
+      <span className={styles.footerDisclaimerText}>©2020, Oliver Wilson</span>
+    </div>
     <SocialMedia />
-    <span className={styles.footerDisclaimerText}>
-      By using this site you agree to our cookie policy. You can read the cookie policy
-      {' '}
-      <button className={cn(styles.link)} type="button" onClick={learnMoreClicked}> here</button>
-      .
-    </span>
-    <span className={styles.footerDisclaimerText}>
-      The code for this website can be found on
-      {' '}
-      <a href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io" target="_blank" rel="noopener noreferrer">github</a>
-      .
-    </span>
-    <span className={styles.footerDisclaimerText}>©2020, Oliver Wilson</span>
   </div>
 );
 

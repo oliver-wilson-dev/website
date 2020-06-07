@@ -8,12 +8,6 @@ jest.mock('../DownloadButton', () => {
   return DownloadButton;
 });
 
-jest.mock('../../containers/Footer', () => {
-  const Footer = () => null;
-
-  return Footer;
-});
-
 jest.mock('../ProfilePicture', () => {
   const ProfilePicture = () => null;
 
