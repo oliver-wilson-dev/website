@@ -14,6 +14,12 @@ jest.mock('../Header', () => {
   return Header;
 });
 
+jest.mock('../../containers/Footer', () => {
+  const Footer = () => null;
+
+  return Footer;
+});
+
 jest.mock('../../containers/CookieDisclaimer', () => {
   const CookieDisclaimer = () => null;
 

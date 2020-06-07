@@ -9,7 +9,7 @@ jest.mock('../../containers/CookieDisclaimerMessage', () => {
   return CookieDisclaimerMessage;
 });
 
-jest.mock('../LearnMoreOverlay', () => {
+jest.mock('../../containers/LearnMoreOverlay', () => {
   const LearnMoreOverlay = () => null;
 
   return LearnMoreOverlay;

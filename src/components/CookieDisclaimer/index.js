@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CookieDisclaimerMessage from '../../containers/CookieDisclaimerMessage';
-import LearnMoreOverlay from '../LearnMoreOverlay';
+import LearnMoreOverlay from '../../containers/LearnMoreOverlay';
 
 const CookieDisclaimer = ({ showLearnMore }) => (
   <>

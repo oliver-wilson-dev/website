@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Landing/> after the first animation should render correctly 1`] = `
-<LearnMoreOverlay>
+<LearnMoreOverlay
+  learnMoreClicked={[MockFunction]}
+>
   <div
     className="background background__loaded"
     onTransitionEnd={[Function]}
@@ -87,7 +89,9 @@ exports[`<Landing/> after the first animation should render correctly 1`] = `
 `;
 
 exports[`<Landing/> should render correctly 1`] = `
-<LearnMoreOverlay>
+<LearnMoreOverlay
+  learnMoreClicked={[MockFunction]}
+>
   <div
     className="background background__loaded"
     onTransitionEnd={[Function]}
@@ -171,5 +175,3 @@ exports[`<Landing/> should render correctly 1`] = `
   </div>
 </LearnMoreOverlay>
 `;
-
-exports[`<Landing/> when clicking the close button should render correctly 1`] = `<LearnMoreOverlay />`;
