@@ -1,8 +1,8 @@
 /**************************************************************
 PROJECT LEVEL STYLING 
 **************************************************************/
-@import "../../styles/darkTheme.css";
 @import "../../styles/lightTheme.css";
+@import "../../styles/darkTheme.css";
 
 /*******************************
 General
@@ -24,7 +24,7 @@ body {
 
   background-attachment: fixed;
   background-color: var(--primaryBackgroundLight);
-  background-image: var(--primaryBackgroundImage);
+  /* background-image: var(--primaryBackgroundImage); */
   transition-timing-function: ease-in;
   transition-duration: 0.4s;
   transition-property: background-color,  background-image;
@@ -121,8 +121,8 @@ flex
 
 @media (min-width: 1024px) {
   .appContent {
-		box-shadow: 8px 8px 0px #0b0a0a;
-		border: 3px solid #0b0a0a;
+		/* box-shadow: 8px 8px 0px #0b0a0a;
+		border: 3px solid #0b0a0a; */
 		margin: 20px auto;
   }
 }
