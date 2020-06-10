@@ -3,6 +3,12 @@ import { mount } from 'enzyme';
 import Section from '.';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
 
+jest.mock('../SectionSlider', () => {
+  const SectionTile = ({ children }) => <div>{children}</div>;
+
+  return SectionTile;
+});
+
 jest.mock('../SectionTile', () => {
   const SectionTile = () => null;
 
@@ -44,7 +50,7 @@ describe('<Section/>', () => {
     it('should exist', () => {
       expect(render({
         overrideProps: {
-          children: [<SomeComponent />, <SomeComponent />]
+          children: [<SomeComponent key="1" />, <SomeComponent key="2" />]
         }
       }).exists()).toBe(true);
     });
@@ -52,7 +58,7 @@ describe('<Section/>', () => {
     it('should render correctly', () => {
       expect(render({
         overrideProps: {
-          children: [<SomeComponent />, <SomeComponent />]
+          children: [<SomeComponent key="1" />, <SomeComponent key="2" />]
         }
       })).toMatchSnapshot();
     });
@@ -73,7 +79,7 @@ describe('<Section/>', () => {
     it('should render correctly', () => {
       expect(render({
         overrideProps: {
-          children: [<SomeComponent />, htmlElement]
+          children: [<SomeComponent key="1" />, htmlElement]
         }
       })).toMatchSnapshot();
     });

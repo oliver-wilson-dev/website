@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './index.css';
 import sharedStyles from '../App/index.css';
 import SectionTile from '../SectionTile';
+import SectionSlider from '../SectionSlider';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
 
 const Section = ({ title, children }) => {
@@ -22,15 +22,7 @@ const Section = ({ title, children }) => {
       <h2 className={sharedStyles.sectionTitle}>{title}</h2>
       {childrenThatAreComponents.length
         ? (
-          <div className={styles.tileContainer}>
-            { childrenThatAreComponents
-              .map((child, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <SectionTile key={index}>
-                  {child}
-                </SectionTile>
-              ))}
-          </div>
+          <SectionSlider>{childrenThatAreComponents}</SectionSlider>
         ) : null
       }
       {childrenThatAreNotComponents.length ? (
