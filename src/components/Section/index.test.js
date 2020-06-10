@@ -71,7 +71,7 @@ describe('<Section/>', () => {
     it('should exist', () => {
       expect(render({
         overrideProps: {
-          children: [<SomeComponent />, htmlElement]
+          children: [<SomeComponent key="1" />, htmlElement]
         }
       }).exists()).toBe(true);
     });
