@@ -29,13 +29,19 @@ exports[`<Section/> when the children are both components and HTML elements shou
     >
       test-title
     </h2>
-    <div
-      className="tileContainer"
-    >
-      <SectionTile
-        key="0"
-      />
-    </div>
+    <SectionTile>
+      <div>
+        <SomeComponent
+          key="1"
+        >
+          <p
+            key="test-key"
+          >
+            some component
+          </p>
+        </SomeComponent>
+      </div>
+    </SectionTile>
     <SectionTile />
   </div>
 </Section>
@@ -53,16 +59,24 @@ exports[`<Section/> when the children are react components should render correct
     >
       test-title
     </h2>
-    <div
-      className="tileContainer"
-    >
-      <SectionTile
-        key="0"
-      />
-      <SectionTile
-        key="1"
-      />
-    </div>
+    <SectionTile>
+      <div>
+        <SomeComponent
+          key="1"
+        >
+          <p>
+            some component
+          </p>
+        </SomeComponent>
+        <SomeComponent
+          key="2"
+        >
+          <p>
+            some component
+          </p>
+        </SomeComponent>
+      </div>
+    </SectionTile>
   </div>
 </Section>
 `;

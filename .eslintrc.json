@@ -1,21 +1,25 @@
 {
-    "env": {
-        "browser": true,
-        "node": true,
-        "jest": true
-    },
-    "extends": "airbnb",
-    "parser": "babel-eslint",
-    "rules": {
-        "comma-dangle": "off",
-        "global-require": "off",
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-        "no-shadow": "off",
-        "react/jsx-filename-extension": "off",
-        "react/forbid-prop-types": "off",
-        "react/require-default-props": "off"
-    },
-    "settings": {
-        "import/core-modules": ["global"]
-      }
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": "off",
+    "global-require": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-shadow": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off"
+  },
+  "settings": {
+    "import/core-modules": ["global"]
+  },
+  "overrides": [{
+      "files": ["**/*.test*"],
+      "rules": {"react/prop-types": "off"}
+  }]
 }

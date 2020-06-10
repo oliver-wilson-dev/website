@@ -9,10 +9,6 @@
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-
-    &+ .displayBox{
-        margin-left: 20px;
-    }
 }
 
 .blurBottom {

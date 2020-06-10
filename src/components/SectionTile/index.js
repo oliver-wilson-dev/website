@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './index.css';
 
 
-const SectionTile = ({ children }) => {
+const SectionTile = ({ children, additionalStyles }) => {
   const displayBoxRef = useRef(null);
   const childrenRef = useRef(null);
 
@@ -33,7 +33,8 @@ const SectionTile = ({ children }) => {
         {
           [styles.displayBoxExpanded]: expanded,
           [styles.blurBottom]: expandable && !expanded
-        }
+        },
+        additionalStyles
       ))
       }
     >
@@ -63,7 +64,8 @@ const SectionTile = ({ children }) => {
 };
 
 SectionTile.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  additionalStyles: PropTypes.shape()
 };
 
 export default SectionTile;

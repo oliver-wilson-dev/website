@@ -1,0 +1,81 @@
+.tileContainer {
+    max-width: 826px;
+    max-height: none;
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+
+.tileOnScreen {
+    transform: translateX(0%);
+    transition: all 0.2s ease;
+}
+
+.removeBorder {
+    box-shadow: none;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.offScreenTileRight {
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(110%);
+    transition: all 0.2s ease;
+}
+
+.offScreenTileLeft {
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(-110%);
+    transition: all 0.2s ease;
+}
+
+.arrowBtn {
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 50px;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    fill: var(--primaryBorderColour);
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+
+    &:not(.btnDisabled){
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+
+    & svg {
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    & .leftArrow {
+        background: url('./left-arrow.svg');
+        @extend .arrowBtn;
+    }
+
+    & .rightArrow {
+        background: url('./right-arrow.svg');
+        @extend .arrowBtn;
+    }
+
+    & .btnDisabled {
+        opacity: 0.5;
+    }
+}
