@@ -54,7 +54,11 @@ module.exports = (env, { mode }) => ({
           },
           { loader: 'postcss-loader' }
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
     ]
   },
   devtool: 'source-map',
