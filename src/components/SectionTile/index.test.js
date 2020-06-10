@@ -7,7 +7,7 @@ const defaultProps = {
   children: <p>this is some content</p>
 };
 
-const render = () => mount(<Section {...defaultProps} />);
+const render = (props = {}) => mount(<Section {...defaultProps} {...props} />);
 
 describe('<SectionTile/>', () => {
   it('should exist', () => {
@@ -16,6 +16,19 @@ describe('<SectionTile/>', () => {
 
   it('should render correctly', () => {
     expect(render()).toMatchSnapshot();
+  });
+
+  describe('when passing additional styles', () => {
+    it('should apply those styles', () => {
+      const testClass = 'test-additional-style';
+      const component = render({
+        additionalStyles: {
+          'test-additional-style': true
+        }
+      });
+
+      expect(component.find(`.${testClass}`).exists()).toBe(true);
+    });
   });
 
   describe('when the display box content should be expandable', () => {
