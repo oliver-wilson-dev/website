@@ -44,6 +44,11 @@
     transition-property: transform;
     transition-timing-function: ease;
     transition-duration: 0.5s;
+    margin-right: 25px;
+
+    &:last-child {
+        margin-right: 0px;
+    }
 
     &:not(.btnDisabled){
         &:hover {
@@ -56,24 +61,6 @@
     display: flex;
     justify-content: center;
     margin: 20px 0 30px 0;
-
-    & svg {
-        margin-right: 25px;
-
-        &:last-child {
-            margin-right: 0px;
-        }
-    }
-
-    & .leftArrow {
-        background: url('./left-arrow.svg');
-        @extend .arrowBtn;
-    }
-
-    & .rightArrow {
-        background: url('./right-arrow.svg');
-        @extend .arrowBtn;
-    }
 
     & .btnDisabled {
         opacity: 0.5;

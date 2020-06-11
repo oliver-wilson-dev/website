@@ -30,15 +30,17 @@ const SectionSlider = ({ children }) => {
   return (
     <React.Fragment>
       <div className={styles.buttonWrapper}>
+
         <LeftArrow
-          className={cn(styles.leftArrow, {
+          className={cn(styles.arrowBtn, {
             [styles.btnDisabled]: firstElementSelected
           })}
           onClick={decrement}
         />
 
+
         <RightArrow
-          className={cn(styles.rightArrow, {
+          className={cn(styles.arrowBtn, {
             [styles.btnDisabled]: lastElementSelected
           })}
           onClick={increment}
