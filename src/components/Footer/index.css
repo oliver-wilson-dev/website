@@ -11,10 +11,9 @@
 .container {
   margin-top: 30px;
   display: flex;
-  padding: 10px 20px;
+  padding: 20px 30px;
   font-size: 14px;
   justify-content: space-between;
-  /* background-color: var(--primaryBackgroundLight); */
   background-color: var(--primaryBackgroundInverse);
 
   & a {
@@ -41,4 +40,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-basis: 50%;
+}
+
+@media(min-width: 768px) {
+  .container {
+    padding: 20px 50px;
+  }
 }

@@ -12,8 +12,10 @@ const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContent
       <span className={styles.footerDisclaimerText}>
         By using this site you agree to our cookie policy.
         {' '}
-        <button className={cn(styles.buttonLink)} type="button" onClick={learnMoreClicked}>Read the cookie policy here</button>
-        .
+        <button className={cn(styles.buttonLink)} type="button" onClick={learnMoreClicked}>
+          Read the cookie policy here
+          <span>.</span>
+        </button>
       </span>
       <span className={styles.footerDisclaimerText}>
         The code for this website can be found on
