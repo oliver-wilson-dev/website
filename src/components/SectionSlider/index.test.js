@@ -35,22 +35,22 @@ describe('SectionSlider', () => {
     it('should apply the btnDisabled class to the right arrow', () => {
       const component = render();
 
-      component.find(`.${styles.rightArrow}`).simulate('click');
+      component.find(`.${styles.arrowBtn}`).at(1).simulate('click');
 
       component.update();
 
-      expect(component.find(`.${styles.rightArrow}`).hasClass(styles.btnDisabled)).toBe(true);
+      expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(true);
     });
 
     describe('and then clicking it again', () => {
       it('should render correctly', () => {
         const component = render();
 
-        component.find(`.${styles.rightArrow}`).simulate('click');
+        component.find(`.${styles.arrowBtn}`).at(1).simulate('click');
 
         component.update();
 
-        component.find(`.${styles.rightArrow}`).simulate('click');
+        component.find(`.${styles.arrowBtn}`).at(1).simulate('click');
 
         component.update();
 
@@ -62,30 +62,30 @@ describe('SectionSlider', () => {
       it('should apply the btnDisabled class to the left arrow', () => {
         const component = render();
 
-        component.find(`.${styles.rightArrow}`).simulate('click');
+        component.find(`.${styles.arrowBtn}`).at(1).simulate('click');
 
         component.update();
 
-        component.find(`.${styles.leftArrow}`).simulate('click');
+        component.find(`.${styles.arrowBtn}`).at(0).simulate('click');
 
         component.update();
 
-        expect(component.find(`.${styles.leftArrow}`).hasClass(styles.btnDisabled)).toBe(true);
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
       });
 
       describe('and then clicking it again', () => {
         it('should render correctly', () => {
           const component = render();
 
-          component.find(`.${styles.rightArrow}`).simulate('click');
+          component.find(`.${styles.arrowBtn}`).at(1).simulate('click');
 
           component.update();
 
-          component.find(`.${styles.leftArrow}`).simulate('click');
+          component.find(`.${styles.arrowBtn}`).at(0).simulate('click');
 
           component.update();
 
-          component.find(`.${styles.leftArrow}`).simulate('click');
+          component.find(`.${styles.arrowBtn}`).at(0).simulate('click');
 
           component.update();
 
