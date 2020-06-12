@@ -19,11 +19,7 @@ const SectionTile = ({ children, additionalStyles }) => {
   }, []);
 
   useEffect(() => {
-    if (expanded) {
-      setTimeout(() => {
-        childrenRef.current.focus();
-      }, 500);
-    }
+    if (expanded) childrenRef.current.focus();
   }, [expanded]);
 
   const onButtonClick = (e) => {

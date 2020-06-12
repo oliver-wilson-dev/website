@@ -17,14 +17,14 @@ const App = ({ theme }) => (
     data-theme={theme}
   >
     <Header />
-    <div className={cn(styles.appContent, {
+    <main className={cn(styles.appContent, {
       [styles.appContent__dark]: theme === DARK_THEME
     })}
     >
       <Landing />
       <CookieDisclaimer />
       <Sections />
-    </div>
+    </main>
     <Footer />
   </div>
 );

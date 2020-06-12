@@ -14,6 +14,18 @@ jest.mock('./github.svg', () => {
   return Github;
 });
 
+jest.mock('./phone.svg', () => {
+  const Phone = () => null;
+
+  return Phone;
+});
+
+jest.mock('./email.svg', () => {
+  const Email = () => null;
+
+  return Email;
+});
+
 const render = () => shallow(<SocialMedia />);
 
 describe('<SocialMedia/>', () => {

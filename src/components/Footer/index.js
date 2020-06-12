@@ -7,7 +7,7 @@ import SocialMedia from '../SocialMedia';
 
 
 const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContentFetched && (
-  <div className={cn(additionalStyles.flexCenter, styles.container)}>
+  <footer className={cn(additionalStyles.flexCenter, styles.container)}>
     <div className={styles.textContainer}>
       <span className={styles.footerDisclaimerText}>
         By using this site you agree to our cookie policy.
@@ -35,7 +35,7 @@ const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContent
       <span className={styles.footerDisclaimerText}>©2020, Oliver Wilson</span>
     </div>
     <SocialMedia />
-  </div>
+  </footer>
 );
 
 Footer.propTypes = {

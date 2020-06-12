@@ -61,7 +61,7 @@ describe('<App/> component', () => {
   });
 
   it(`should render a div with the className ${styles.appContent}`, () => {
-    expect(render().find('div > div').prop('className')).toBe(styles.appContent);
+    expect(render().find('div > main').prop('className')).toBe(styles.appContent);
   });
 
   it('should render a <Landing/> component', () => {
