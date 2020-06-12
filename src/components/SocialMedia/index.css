@@ -1,5 +1,6 @@
 .socialLogo {
     height: 35px;
+    width: 35px;
     fill: var(--primaryTextColorInverse);
     transition-property: transform;
     transition-timing-function: ease;
@@ -28,6 +29,8 @@
 @media (min-width: 0px) and (max-width: 767px) {
     .socialContainer {
         flex-direction: column;
+        flex-basis: 50%;
+        align-items: flex-end;
     }
 
     .socialLink {

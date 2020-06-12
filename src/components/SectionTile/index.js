@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
+import PlusIcon from './plus.svg';
+import MinusIcon from './minus.svg';
 
 
 const SectionTile = ({ children, additionalStyles }) => {
@@ -17,7 +19,11 @@ const SectionTile = ({ children, additionalStyles }) => {
   }, []);
 
   useEffect(() => {
-    if (expanded) childrenRef.current.focus();
+    if (expanded) {
+      setTimeout(() => {
+        childrenRef.current.focus();
+      }, 500);
+    }
   }, [expanded]);
 
   const onButtonClick = (e) => {
@@ -49,13 +55,18 @@ const SectionTile = ({ children, additionalStyles }) => {
           : 'expand this section to reveal more content'}`
         }
       >
-        <span>{expanded ? '−' : '+'}</span>
+        <span>
+          {expanded
+            ? <MinusIcon className={styles.icon} />
+            : <PlusIcon className={styles.icon} />}
+        </span>
       </button>
       )}
       <div
         ref={childrenRef}
         tabIndex={canBeFocusedProgrammatically}
         aria-hidden={expandable && !expanded}
+        className={styles.textContainer}
       >
         {children}
       </div>

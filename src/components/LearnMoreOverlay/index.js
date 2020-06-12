@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
+import CrossIcon from './cross.svg';
 
 const LearnMoreOverlay = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
@@ -45,10 +46,12 @@ const LearnMoreOverlay = ({ learnMoreClicked }) => {
         <div className={styles.overlayHeader}>
           <h2 className={styles.title}>Cookie Policy</h2>
           <button
-            className={styles.cross}
+            className={styles.crossBtn}
             type="button"
             onClick={acknowledgeBanner}
-          />
+          >
+            <CrossIcon className={styles.crossIcon} />
+          </button>
         </div>
         <div className={cn(styles.information, styles.text)}>
           <span>Last updated: 6th June 2020</span>

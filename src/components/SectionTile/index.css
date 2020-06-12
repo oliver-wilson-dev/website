@@ -1,3 +1,7 @@
+:root {
+    --iconSize: 25px;
+}
+
 .displayBox {
     background: var(--primaryBackground);
     -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);
@@ -43,6 +47,28 @@
     font-family: inherit;
     font-weight: 900;
     color: inherit;
+}
+
+.icon {
+    fill: var(--primaryTextColor);
+    width: var(--iconSize);
+    height: var(--iconSize);
+
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+    
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.textContainer {
+    & > * {
+        &:first-child {
+            margin-right: var(--iconSize);
+        }
+    }
 }
 
 @media all and (min-width: 786px) {

@@ -9,6 +9,7 @@ exports[`<SectionTile/> should render correctly 1`] = `
   >
     <div
       aria-hidden={false}
+      className="textContainer"
       tabIndex={-1}
     >
       <p>
@@ -34,11 +35,14 @@ exports[`<SectionTile/> when the display box content should be expandable and th
       type="button"
     >
       <span>
-        −
+        <MinusIcon
+          className="icon"
+        />
       </span>
     </button>
     <div
       aria-hidden={false}
+      className="textContainer"
       tabIndex={-1}
     >
       <p>
@@ -64,11 +68,14 @@ exports[`<SectionTile/> when the display box content should be expandable should
       type="button"
     >
       <span>
-        +
+        <PlusIcon
+          className="icon"
+        />
       </span>
     </button>
     <div
       aria-hidden={true}
+      className="textContainer"
       tabIndex={-1}
     >
       <p>

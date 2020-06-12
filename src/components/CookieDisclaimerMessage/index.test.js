@@ -11,10 +11,10 @@ jest.mock('./tick.svg', () => {
   return Tick;
 });
 
-jest.mock('./notificationBell.svg', () => {
-  const NotificationBell = () => null;
+jest.mock('./notification.svg', () => {
+  const Notification = () => null;
 
-  return NotificationBell;
+  return Notification;
 });
 
 const defaultProps = {

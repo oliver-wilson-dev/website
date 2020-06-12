@@ -17,6 +17,15 @@ const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContent
           <span>.</span>
         </button>
       </span>
+      <div className={styles.footerDisclaimerText}>
+        Icons made by
+        {' '}
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+        {' '}
+        from
+        {' '}
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
       <span className={styles.footerDisclaimerText}>
         The code for this website can be found on
         {' '}

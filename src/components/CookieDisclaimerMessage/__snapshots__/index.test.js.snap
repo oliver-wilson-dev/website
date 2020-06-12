@@ -8,8 +8,8 @@ exports[`Cookie Disclaimer component when first loaded should render correctly 1
   <div
     className="positionWrapper"
   >
-    <NotificationBell
-      className="notificationBellEmoji notificationElement"
+    <Notification
+      className="notificationEmoji notificationElement"
     />
     <span
       className="message text notificationElement"
@@ -43,8 +43,8 @@ exports[`Cookie Disclaimer component when first loaded should then apply the loa
     <div
       className="positionWrapper"
     >
-      <NotificationBell
-        className="notificationBellEmoji notificationElement"
+      <Notification
+        className="notificationEmoji notificationElement"
       />
       <span
         className="message text notificationElement"
@@ -78,8 +78,8 @@ exports[`Cookie Disclaimer component when first loaded when the user accepts the
   <div
     className="positionWrapper"
   >
-    <NotificationBell
-      className="notificationBellEmoji notificationElement"
+    <Notification
+      className="notificationEmoji notificationElement"
     />
     <span
       className="message text notificationElement"
@@ -127,8 +127,8 @@ exports[`Cookie Disclaimer component when first loaded when the user clicks lear
     <div
       className="positionWrapper"
     >
-      <NotificationBell
-        className="notificationBellEmoji notificationElement"
+      <Notification
+        className="notificationEmoji notificationElement"
       />
       <span
         className="message text notificationElement"

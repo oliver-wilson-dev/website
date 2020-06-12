@@ -3,6 +3,12 @@ import { shallow } from 'enzyme';
 import SectionSlider from '.';
 import styles from './index.css';
 
+jest.mock('../SectionTile', () => {
+  const SectionTile = props => <div {...props} />;
+
+  return SectionTile;
+});
+
 jest.mock('./left-arrow.svg', () => {
   const LeftArrow = () => null;
 

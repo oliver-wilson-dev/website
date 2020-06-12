@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
-import NotificationBellEmoji from './notificationBell.svg';
+import NotificationEmoji from './notification.svg';
 import TickEmoji from './tick.svg';
 
 const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
@@ -36,8 +36,8 @@ const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
       onTransitionEnd={onTransitionEnd}
     >
       <div className={styles.positionWrapper}>
-        <NotificationBellEmoji className={cn(
-          styles.notificationBellEmoji,
+        <NotificationEmoji className={cn(
+          styles.notificationEmoji,
           styles.notificationElement
         )}
         />

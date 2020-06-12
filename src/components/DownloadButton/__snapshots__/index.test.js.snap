@@ -12,6 +12,9 @@ exports[`<DeleteButton/> should render correctly 1`] = `
     target="_blank"
   >
     download my cv
+    <DownloadButtonIcon
+      className="downloadButtonIcon"
+    />
   </a>
 </div>
 `;

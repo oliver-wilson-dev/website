@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './index.css';
+import DownloadButtonIcon from './download.svg';
 
 const DownloadButton = () => (
   <div className={classnames(styles.downloadButtonContainer, styles.flexCenter)}>
@@ -12,6 +13,7 @@ const DownloadButton = () => (
       href="public/documents/CV.pdf"
     >
       download my cv
+      <DownloadButtonIcon className={styles.downloadButtonIcon} />
     </a>
   </div>
 );
