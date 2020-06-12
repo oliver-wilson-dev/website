@@ -8,10 +8,8 @@ exports[`Cookie Disclaimer component when first loaded should render correctly 1
   <div
     className="positionWrapper"
   >
-    <div
-      aria-label="cookie emoji"
-      className="cookieEmoji notificationElement"
-      role="img"
+    <Notification
+      className="notificationEmoji notificationElement"
     />
     <span
       className="message text notificationElement"
@@ -26,10 +24,9 @@ exports[`Cookie Disclaimer component when first loaded should render correctly 1
         Learn More
       </button>
     </span>
-    <button
+    <Tick
       className="tick notificationElement"
       onClick={[Function]}
-      type="button"
     />
   </div>
 </div>
@@ -46,10 +43,8 @@ exports[`Cookie Disclaimer component when first loaded should then apply the loa
     <div
       className="positionWrapper"
     >
-      <div
-        aria-label="cookie emoji"
-        className="cookieEmoji notificationElement"
-        role="img"
+      <Notification
+        className="notificationEmoji notificationElement"
       />
       <span
         className="message text notificationElement"
@@ -64,10 +59,9 @@ exports[`Cookie Disclaimer component when first loaded should then apply the loa
           Learn More
         </button>
       </span>
-      <button
+      <Tick
         className="tick notificationElement"
         onClick={[Function]}
-        type="button"
       />
     </div>
   </div>
@@ -77,42 +71,35 @@ exports[`Cookie Disclaimer component when first loaded should then apply the loa
 exports[`Cookie Disclaimer component when first loaded when the user accepts the policy after the transition ends should render null 1`] = `""`;
 
 exports[`Cookie Disclaimer component when first loaded when the user accepts the policy should render correctly 1`] = `
-<CookieDisclaimerMessage
-  learnMoreClicked={[MockFunction]}
+<div
+  className="container closed"
+  onTransitionEnd={[Function]}
 >
   <div
-    className="container closed"
-    onTransitionEnd={[Function]}
+    className="positionWrapper"
   >
-    <div
-      className="positionWrapper"
+    <Notification
+      className="notificationEmoji notificationElement"
+    />
+    <span
+      className="message text notificationElement"
     >
-      <div
-        aria-label="cookie emoji"
-        className="cookieEmoji notificationElement"
-        role="img"
-      />
-      <span
-        className="message text notificationElement"
-      >
-        Attention! This site uses cookies.
-         
-        <button
-          className="learnMoreBtn text"
-          onClick={[Function]}
-          type="button"
-        >
-          Learn More
-        </button>
-      </span>
+      Attention! This site uses cookies.
+       
       <button
-        className="tick notificationElement"
+        className="learnMoreBtn text"
         onClick={[Function]}
         type="button"
-      />
-    </div>
+      >
+        Learn More
+      </button>
+    </span>
+    <Tick
+      className="tick notificationElement"
+      onClick={[Function]}
+    />
   </div>
-</CookieDisclaimerMessage>
+</div>
 `;
 
 exports[`Cookie Disclaimer component when first loaded when the user clicks learn more after the transition ends should render null 1`] = `""`;
@@ -140,10 +127,8 @@ exports[`Cookie Disclaimer component when first loaded when the user clicks lear
     <div
       className="positionWrapper"
     >
-      <div
-        aria-label="cookie emoji"
-        className="cookieEmoji notificationElement"
-        role="img"
+      <Notification
+        className="notificationEmoji notificationElement"
       />
       <span
         className="message text notificationElement"
@@ -158,10 +143,9 @@ exports[`Cookie Disclaimer component when first loaded when the user clicks lear
           Learn More
         </button>
       </span>
-      <button
+      <Tick
         className="tick notificationElement"
         onClick={[Function]}
-        type="button"
       />
     </div>
   </div>

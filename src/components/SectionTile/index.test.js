@@ -2,6 +2,18 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Section from '.';
 
+jest.mock('./plus.svg', () => {
+  const PlusIcon = () => null;
+
+  return PlusIcon;
+});
+
+jest.mock('./minus.svg', () => {
+  const MinusIcon = () => null;
+
+  return MinusIcon;
+});
+
 const defaultProps = {
   title: 'test-title',
   children: <p>this is some content</p>

@@ -20,10 +20,14 @@ exports[`<Landing/> after the first animation should render correctly 1`] = `
           Cookie Policy
         </h2>
         <button
-          className="cross"
+          className="crossBtn"
           onClick={[Function]}
           type="button"
-        />
+        >
+          <CrossIcon
+            className="crossIcon"
+          />
+        </button>
       </div>
       <div
         className="information text"
@@ -108,10 +112,14 @@ exports[`<Landing/> should render correctly 1`] = `
           Cookie Policy
         </h2>
         <button
-          className="cross"
+          className="crossBtn"
           onClick={[Function]}
           type="button"
-        />
+        >
+          <CrossIcon
+            className="crossIcon"
+          />
+        </button>
       </div>
       <div
         className="information text"

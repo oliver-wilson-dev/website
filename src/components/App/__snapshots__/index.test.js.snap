@@ -6,13 +6,13 @@ exports[`<App/> component should render correctly 1`] = `
   data-theme="test-theme"
 >
   <Header />
-  <div
+  <main
     className="appContent"
   >
     <Landing />
     <CookieDisclaimer />
     <Sections />
-  </div>
+  </main>
   <Footer />
 </div>
 `;
@@ -23,13 +23,13 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
   data-theme="DARK_THEME"
 >
   <Header />
-  <div
+  <main
     className="appContent appContent__dark"
   >
     <Landing />
     <CookieDisclaimer />
     <Sections />
-  </div>
+  </main>
   <Footer />
 </div>
 `;

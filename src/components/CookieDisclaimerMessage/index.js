@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
+import NotificationEmoji from './notification.svg';
+import TickEmoji from './tick.svg';
 
 const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
@@ -34,7 +36,11 @@ const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
       onTransitionEnd={onTransitionEnd}
     >
       <div className={styles.positionWrapper}>
-        <div className={cn(styles.cookieEmoji, styles.notificationElement)} role="img" aria-label="cookie emoji" />
+        <NotificationEmoji className={cn(
+          styles.notificationEmoji,
+          styles.notificationElement
+        )}
+        />
         <span className={cn(
           styles.message,
           styles.text,
@@ -45,7 +51,10 @@ const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
           {' '}
           <button className={cn(styles.learnMoreBtn, styles.text)} type="button" onClick={learnMore}>Learn More</button>
         </span>
-        <button className={cn(styles.tick, styles.notificationElement)} type="button" onClick={acknowledgeBanner} />
+        <TickEmoji
+          className={cn(styles.tick, styles.notificationElement)}
+          onClick={acknowledgeBanner}
+        />
       </div>
     </div>
   );

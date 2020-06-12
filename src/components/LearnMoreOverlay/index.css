@@ -33,14 +33,16 @@
     }
 }
 
-.cross {
-    background: url('./cross.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 25px;
-    height: 25px;
+.crossBtn {
     border: none;
     margin-left: 10px;
+    background: transparent;
+}
+
+.crossIcon {
+    width: 25px;
+    height: 25px;
+    fill: var(--primaryTextColorLight);
 }
 
 .overlayHeader {

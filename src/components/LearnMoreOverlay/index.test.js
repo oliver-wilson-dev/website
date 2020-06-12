@@ -4,6 +4,12 @@ import { act } from 'react-dom/test-utils';
 import LearnMoreOverlay from '.';
 import styles from './index.css';
 
+jest.mock('./cross.svg', () => {
+  const CrossIcon = () => null;
+
+  return CrossIcon;
+});
+
 const defaultProps = {
   learnMoreClicked: jest.fn()
 };
@@ -42,7 +48,7 @@ describe('<Landing/>', () => {
     it('should call the learnMoreClicked prop', () => {
       const component = render(mount);
 
-      component.find(`.${styles.cross}`).simulate('click');
+      component.find(`.${styles.crossBtn}`).simulate('click');
 
       let onTransitionEnd;
       act(() => {
@@ -63,7 +69,7 @@ describe('<Landing/>', () => {
 
         Object.defineProperty(document.body.style, 'top', { value: mockScrollY, writable: true });
 
-        component.find(`.${styles.cross}`).simulate('click');
+        component.find(`.${styles.crossBtn}`).simulate('click');
 
         act(() => {
           component.find(`.${styles.background}`).props().onTransitionEnd();
@@ -81,7 +87,7 @@ describe('<Landing/>', () => {
         window.scrollY = mockScrollY;
         const component = render(mount);
 
-        component.find(`.${styles.cross}`).simulate('click');
+        component.find(`.${styles.crossBtn}`).simulate('click');
 
         act(() => {
           component.find(`.${styles.background}`).props().onTransitionEnd();

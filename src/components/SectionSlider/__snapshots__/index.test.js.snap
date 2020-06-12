@@ -6,11 +6,11 @@ exports[`SectionSlider should render correctly 1`] = `
     className="buttonWrapper"
   >
     <LeftArrow
-      className="leftArrow btnDisabled"
+      className="arrowBtn btnDisabled"
       onClick={[Function]}
     />
     <RightArrow
-      className="rightArrow"
+      className="arrowBtn"
       onClick={[Function]}
     />
   </div>
@@ -61,11 +61,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking it again 
     className="buttonWrapper"
   >
     <LeftArrow
-      className="leftArrow"
+      className="arrowBtn"
       onClick={[Function]}
     />
     <RightArrow
-      className="rightArrow btnDisabled"
+      className="arrowBtn btnDisabled"
       onClick={[Function]}
     />
   </div>
@@ -116,11 +116,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking the left 
     className="buttonWrapper"
   >
     <LeftArrow
-      className="leftArrow btnDisabled"
+      className="arrowBtn btnDisabled"
       onClick={[Function]}
     />
     <RightArrow
-      className="rightArrow"
+      className="arrowBtn"
       onClick={[Function]}
     />
   </div>

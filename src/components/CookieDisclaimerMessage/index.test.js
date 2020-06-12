@@ -5,6 +5,18 @@ import styles from './index.css';
 
 import CookieDisclaimer from '.';
 
+jest.mock('./tick.svg', () => {
+  const Tick = () => null;
+
+  return Tick;
+});
+
+jest.mock('./notification.svg', () => {
+  const Notification = () => null;
+
+  return Notification;
+});
+
 const defaultProps = {
   learnMoreClicked: jest.fn()
 };
@@ -39,7 +51,7 @@ describe('Cookie Disclaimer component', () => {
 
     describe('when the user accepts the policy', () => {
       it('should render correctly', () => {
-        const component = render(mount);
+        const component = render();
 
         component.find(`.${styles.tick}`).simulate('click');
 

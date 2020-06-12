@@ -7,21 +7,37 @@ exports[`<SocialMedia/> should render correctly 1`] = `
   <a
     className="socialLink"
     href="https://www.linkedin.com/in/oliver-wilson-profile/"
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <img
-      alt="my linkedIn profile"
+    <LinkedIn
       className="socialLogo"
-      src="public/img/linkedin.svg"
     />
   </a>
   <a
     className="socialLink"
     href="https://github.com/oliver-wilson-dev/"
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <img
-      alt="my GitHub profile"
+    <Github
       className="socialLogo"
-      src="public/img/github.svg"
+    />
+  </a>
+  <a
+    className="socialLink"
+    href="tel:07580081310"
+  >
+    <Phone
+      className="socialLogo"
+    />
+  </a>
+  <a
+    className="socialLink"
+    href="mailto:contact@oliverwilson.dev"
+  >
+    <Email
+      className="socialLogo"
     />
   </a>
 </div>

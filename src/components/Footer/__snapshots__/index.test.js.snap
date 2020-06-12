@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer/> should render correctly 1`] = `
-<div
+<footer
   className="flexCenter container"
 >
   <div
@@ -18,9 +18,32 @@ exports[`<Footer/> should render correctly 1`] = `
         type="button"
       >
         Read the cookie policy here
+        <span>
+          .
+        </span>
       </button>
-      .
     </span>
+    <div
+      className="footerDisclaimerText"
+    >
+      Icons made by
+       
+      <a
+        href="https://www.flaticon.com/authors/freepik"
+        title="Freepik"
+      >
+        Freepik
+      </a>
+       
+      from
+       
+      <a
+        href="https://www.flaticon.com/"
+        title="Flaticon"
+      >
+        www.flaticon.com
+      </a>
+    </div>
     <span
       className="footerDisclaimerText"
     >
@@ -42,7 +65,7 @@ exports[`<Footer/> should render correctly 1`] = `
     </span>
   </div>
   <SocialMedia />
-</div>
+</footer>
 `;
 
 exports[`<Footer/> when sectionsContentFetched is false should render null 1`] = `""`;
