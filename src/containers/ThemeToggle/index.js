@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ToggleSwitch from '../../components/ToggleSwitch';
+import ThemeToggle from '../../components/ThemeToggle';
 import { getTheme } from '../../state/selectors';
 import toggleTheme from '../../state/actions/toggleTheme';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   toggleTheme: () => dispatch(toggleTheme())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToggleSwitch);
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeToggle);

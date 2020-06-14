@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Header from './index';
 
-jest.mock('../../containers/ToggleSwitch', () => {
-  const ToggleSwitch = () => null;
+jest.mock('../../containers/ThemeToggle', () => {
+  const ThemeToggle = () => null;
 
-  return ToggleSwitch;
+  return ThemeToggle;
 });
 
 const defaultProps = { theme: 'test-theme' };

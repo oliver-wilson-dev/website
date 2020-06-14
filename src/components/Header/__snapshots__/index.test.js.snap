@@ -7,7 +7,7 @@ exports[`<Header/> component should render correctly 1`] = `
   <div
     className="wrapper"
   >
-    <ToggleSwitch />
+    <ThemeToggle />
   </div>
 </div>
 `;

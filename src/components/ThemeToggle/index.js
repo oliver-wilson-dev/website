@@ -6,7 +6,7 @@ import { LIGHT_THEME } from '../../state/actions/constants';
 
 const inputId = 'input-id';
 
-const ToggleSwitch = ({ toggleTheme, theme }) => (
+const ThemeToggle = ({ toggleTheme, theme }) => (
   <label className={styles.switch} htmlFor={inputId}>
     <input
       type="checkbox"
@@ -19,9 +19,9 @@ const ToggleSwitch = ({ toggleTheme, theme }) => (
   </label>
 );
 
-ToggleSwitch.propTypes = {
+ThemeToggle.propTypes = {
   theme: PropTypes.string.isRequired,
   toggleTheme: PropTypes.func.isRequired
 };
 
-export default ToggleSwitch;
+export default ThemeToggle;

@@ -1,16 +1,16 @@
 import testReduxComponent from '../../../test/helpers/testConnectedComponent';
 import ConnectedToggleSwitch from '.';
-import ToggleSwitch from '../../components/ToggleSwitch';
+import ThemeToggle from '../../components/ThemeToggle';
 import toggleTheme from '../../state/actions/toggleTheme';
 import { getTheme } from '../../state/selectors';
 
 jest.mock('../../state/actions/toggleTheme');
-jest.mock('../../components/ToggleSwitch', () => () => null);
+jest.mock('../../components/ThemeToggle', () => () => null);
 jest.mock('../../state/selectors');
 
 const { testRender, testAction, testProp } = testReduxComponent(
   ConnectedToggleSwitch,
-  ToggleSwitch
+  ThemeToggle
 );
 
 describe('connected DeleteButton', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ToggleSwitch from './index';
+import ThemeToggle from './index';
 import { LIGHT_THEME, DARK_THEME } from '../../state/actions/constants';
 
 
@@ -8,9 +8,9 @@ const defaultProps = {
   toggleTheme: jest.fn(),
   theme: LIGHT_THEME
 };
-const render = overrideProps => shallow(<ToggleSwitch {...defaultProps} {...overrideProps} />);
+const render = overrideProps => shallow(<ThemeToggle {...defaultProps} {...overrideProps} />);
 
-describe('ToggleSwitch', () => {
+describe('ThemeToggle', () => {
   it('should exist', () => {
     expect(render().exists()).toBe(true);
   });
