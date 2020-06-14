@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils';
 import LearnMoreOverlay from '.';
 import styles from './index.css';
 
-jest.mock('./cross.svg', () => {
+jest.mock('../Icons/cross.svg', () => {
   const CrossIcon = () => null;
 
   return CrossIcon;

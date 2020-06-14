@@ -13,7 +13,7 @@
     display: flex;
     position: fixed;
     overflow: hidden;
-    background: rgba(0,0,0,.288);
+    background: var(--overlayBackground);
     box-sizing: border-box;
     justify-content: center;
     opacity: 0;
@@ -97,13 +97,6 @@
 
 .paragraph {
     text-align: justify;
-}
-
-.bodyFixed {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    overflow-y: scroll;
 }
 
 @media (min-width: 767px) {

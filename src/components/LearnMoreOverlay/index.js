@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
-import CrossIcon from './cross.svg';
+import CrossIcon from '../Icons/cross.svg';
+import sharedStyles from '../../styles/shared.css';
 
 const LearnMoreOverlay = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
@@ -13,13 +14,13 @@ const LearnMoreOverlay = ({ learnMoreClicked }) => {
   useEffect(() => {
     setLoaded(true);
     document.body.style.top = `-${window.scrollY}px`;
-    document.body.classList.add(styles.bodyFixed);
+    document.body.classList.add(sharedStyles.bodyFixed);
   }, []);
 
   const onTransitionEnd = () => {
     if (acknowledged) {
       const scrollY = document.body.style.top;
-      document.body.classList.remove(styles.bodyFixed);
+      document.body.classList.remove(sharedStyles.bodyFixed);
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
 
