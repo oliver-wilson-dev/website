@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './index.css';
 import CrossIcon from '../Icons/cross.svg';
-import sharedStyles from '../../styles/shared.css';
+import { preventScroll, allowScroll } from '../../utils';
 
 const LearnMoreOverlay = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
@@ -13,16 +13,12 @@ const LearnMoreOverlay = ({ learnMoreClicked }) => {
 
   useEffect(() => {
     setLoaded(true);
-    document.body.style.top = `-${window.scrollY}px`;
-    document.body.classList.add(sharedStyles.bodyFixed);
+    preventScroll();
   }, []);
 
   const onTransitionEnd = () => {
     if (acknowledged) {
-      const scrollY = document.body.style.top;
-      document.body.classList.remove(sharedStyles.bodyFixed);
-      document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      allowScroll();
 
       setLoaded(false);
 
