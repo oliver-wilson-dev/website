@@ -1,13 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header/> component should render correctly 1`] = `
-<div
+<nav
   className="header"
 >
   <div
     className="wrapper"
   >
     <ThemeToggle />
+    <BurgerMenu
+      className="burgerMenu"
+      onClick={[Function]}
+    />
   </div>
-</div>
+  <div
+    className="menuContainer menuHideFirstRender"
+  >
+    <div
+      className="menuContent"
+    >
+      <CrossIcon
+        className="crossIcon"
+        onClick={[Function]}
+      />
+      <ul
+        className="menuList"
+      >
+        <li
+          className="menuItem"
+        >
+          Home
+        </li>
+        <li
+          className="menuItem"
+        >
+          About
+        </li>
+        <li
+          className="menuItem"
+        >
+          Education
+        </li>
+        <li
+          className="menuItem"
+        >
+          Experience
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`<Header/> component when clicking the burgerMenu icon should open the sub navigation 1`] = `
+<nav
+  className="header"
+>
+  <div
+    className="wrapper"
+  >
+    <ThemeToggle />
+    <BurgerMenu
+      className="burgerMenu"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="menuContainer menuOpen menuHideFirstRender"
+  >
+    <div
+      className="menuContent"
+    >
+      <CrossIcon
+        className="crossIcon crossIconShow"
+        onClick={[Function]}
+      />
+      <ul
+        className="menuList"
+      >
+        <li
+          className="menuItem"
+        >
+          Home
+        </li>
+        <li
+          className="menuItem"
+        >
+          About
+        </li>
+        <li
+          className="menuItem"
+        >
+          Education
+        </li>
+        <li
+          className="menuItem"
+        >
+          Experience
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 `;
