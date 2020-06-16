@@ -101,14 +101,14 @@
 
 .menuOpen {
     animation-name: open;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-direction: normal;
 }
 
 .menuClose {
     animation-name: close;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-direction: normal
 }
@@ -147,6 +147,10 @@
         background-color: var(--primaryBackgroundInverse);
         color: var(--primaryTextColorInverse);
     }
+}
+
+.link {
+    color: var(--primaryTextColor);
 }
 
 @media (min-width: 786px) {
