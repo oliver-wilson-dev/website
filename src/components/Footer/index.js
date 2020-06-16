@@ -6,7 +6,7 @@ import styles from './index.css';
 import SocialMedia from '../SocialMedia';
 
 
-const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContentFetched && (
+const Footer = ({ learnMoreClicked }) => (
   <footer className={cn(additionalStyles.flexCenter, styles.container)}>
     <div className={styles.textContainer}>
       <span className={styles.footerDisclaimerText}>
@@ -40,7 +40,6 @@ const Footer = ({ learnMoreClicked, sectionsContentFetched }) => sectionsContent
 
 Footer.propTypes = {
   learnMoreClicked: PropTypes.func.isRequired,
-  sectionsContentFetched: PropTypes.bool.isRequired
 };
 
 export default Footer;
