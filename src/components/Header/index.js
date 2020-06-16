@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 import styles from './index.css';
 import ThemeToggle from '../../containers/ThemeToggle';
 import BurgerMenu from './burgerMenu.svg';
@@ -56,18 +57,16 @@ const Header = () => {
             onClick={toggleMenu}
           />
           <ul className={styles.menuList}>
-            <li className={styles.menuItem}>
-              Home
-            </li>
-            <li className={styles.menuItem}>
-              About
-            </li>
-            <li className={styles.menuItem}>
-              Education
-            </li>
-            <li className={styles.menuItem}>
-              Experience
-            </li>
+            <Link to="/" className={styles.link} onClick={toggleMenu}>
+              <li className={styles.menuItem}>
+                Home
+              </li>
+            </Link>
+            <Link to="/about" className={styles.link} onClick={toggleMenu}>
+              <li className={styles.menuItem}>
+                About
+              </li>
+            </Link>
           </ul>
         </div>
 

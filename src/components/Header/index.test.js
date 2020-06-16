@@ -5,6 +5,8 @@ import Header from './index';
 import styles from './index.css';
 import { preventScroll, allowScroll } from '../../utils';
 
+jest.mock('react-router-dom', () => ({ Link: ({ children }) => <button type="button">{children}</button> }));
+
 jest.mock('../../utils', () => ({
   preventScroll: jest.fn(),
   allowScroll: jest.fn()
@@ -66,6 +68,22 @@ describe('<Header/> component', () => {
       });
 
       expect(preventScroll).toHaveBeenCalledTimes(1);
+    });
+
+    describe('and then clicking a menu item', () => {
+      it('should then close the menu', () => {
+        const component = render({});
+
+        act(() => {
+          component.find(`.${styles.burgerMenu}`).props().onClick();
+        });
+
+        act(() => {
+          component.find(`.${styles.link}`).first().props().onClick();
+        });
+
+        expect(component).toMatchSnapshot();
+      });
     });
 
     describe('and then clicking the close icon', () => {
