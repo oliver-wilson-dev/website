@@ -5,17 +5,6 @@
   margin: 10px 30px;
 }
 
-.landingHeader {
-  font-size: 5em;
-  margin: 0;
-  margin-top: 10px;
-  background-clip: text;
-  -webkit-background-clip: text;
-  letter-spacing: 2px;
-  text-align: center;
-  width: 100%;
-}
-
 .landingSubHeader {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
@@ -28,13 +17,7 @@
 
 @media all and (min-width: 786px) {
   .landing {
-    padding-top: 85px;
-  }
-}
-
-@media (min-width: 786px) {
-  .landing--header {
-  max-width: 800px;
+    margin-top: 115px;
   }
 }
 
