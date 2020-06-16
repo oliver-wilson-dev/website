@@ -1,3 +1,7 @@
+:root {
+    --pageContentMaxWidth: 850px
+}
+
 .bodyFixed {
     position: fixed;
     left: 0;
