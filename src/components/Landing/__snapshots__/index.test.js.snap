@@ -5,7 +5,7 @@ exports[`<Landing/> should render correctly 1`] = `
   className="container landing"
 >
   <h1
-    className="landingHeader"
+    className="pageHeader"
   >
     Oliver Wilson
   </h1>
