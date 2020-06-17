@@ -15,9 +15,11 @@ exports[`<Header/> component should render correctly 1`] = `
   </div>
   <div
     className="menuContainer menuHideFirstRender"
+    onClick={[Function]}
   >
     <div
       className="menuContent"
+      onClick={[Function]}
     >
       <CrossIcon
         className="crossIcon"
@@ -69,9 +71,123 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
   </div>
   <div
     className="menuContainer menuClose menuHideFirstRender"
+    onClick={[Function]}
   >
     <div
       className="menuContent"
+      onClick={[Function]}
+    >
+      <CrossIcon
+        className="crossIcon"
+        onClick={[Function]}
+      />
+      <ul
+        className="menuList"
+      >
+        <Link
+          className="link"
+          onClick={[Function]}
+          to="/"
+        >
+          <li
+            className="menuItem"
+          >
+            Home
+          </li>
+        </Link>
+        <Link
+          className="link"
+          onClick={[Function]}
+          to="/about"
+        >
+          <li
+            className="menuItem"
+          >
+            About
+          </li>
+        </Link>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`<Header/> component when clicking the burgerMenu icon and then clicking on the whitespace on the menu should not close the menu 1`] = `
+<nav
+  className="header"
+>
+  <div
+    className="wrapper"
+  >
+    <ThemeToggle />
+    <BurgerMenu
+      className="burgerMenu"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="menuContainer menuOpen menuHideFirstRender"
+    onClick={[Function]}
+  >
+    <div
+      className="menuContent"
+      onClick={[Function]}
+    >
+      <CrossIcon
+        className="crossIcon crossIconShow"
+        onClick={[Function]}
+      />
+      <ul
+        className="menuList"
+      >
+        <Link
+          className="link"
+          onClick={[Function]}
+          to="/"
+        >
+          <li
+            className="menuItem"
+          >
+            Home
+          </li>
+        </Link>
+        <Link
+          className="link"
+          onClick={[Function]}
+          to="/about"
+        >
+          <li
+            className="menuItem"
+          >
+            About
+          </li>
+        </Link>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`<Header/> component when clicking the burgerMenu icon and then clicking the overlay should close the menu 1`] = `
+<nav
+  className="header"
+>
+  <div
+    className="wrapper"
+  >
+    <ThemeToggle />
+    <BurgerMenu
+      className="burgerMenu"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="menuContainer menuClose menuHideFirstRender"
+    onClick={[Function]}
+  >
+    <div
+      className="menuContent"
+      onClick={[Function]}
     >
       <CrossIcon
         className="crossIcon"
@@ -123,9 +239,11 @@ exports[`<Header/> component when clicking the burgerMenu icon should open the s
   </div>
   <div
     className="menuContainer menuOpen menuHideFirstRender"
+    onClick={[Function]}
   >
     <div
       className="menuContent"
+      onClick={[Function]}
     >
       <CrossIcon
         className="crossIcon crossIconShow"

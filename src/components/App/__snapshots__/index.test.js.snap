@@ -5,15 +5,26 @@ exports[`<App/> component should render correctly 1`] = `
   className="app"
   data-theme="test-theme"
 >
-  <Header />
-  <main
-    className="appContent"
+  <HashRouter
+    basename="/"
   >
-    <Landing />
+    <Header />
+    <main
+      className="appContent"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/about"
+      />
+    </main>
+    <Footer />
     <CookieDisclaimer />
-    <Sections />
-  </main>
-  <Footer />
+  </HashRouter>
 </div>
 `;
 
@@ -22,14 +33,25 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
   className="app app__dark"
   data-theme="DARK_THEME"
 >
-  <Header />
-  <main
-    className="appContent appContent__dark"
+  <HashRouter
+    basename="/"
   >
-    <Landing />
+    <Header />
+    <main
+      className="appContent appContent__dark"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/about"
+      />
+    </main>
+    <Footer />
     <CookieDisclaimer />
-    <Sections />
-  </main>
-  <Footer />
+  </HashRouter>
 </div>
 `;

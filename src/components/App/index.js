@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import styles from './index.css';
-import Landing from '../Landing';
-import CookieDisclaimer from '../../containers/CookieDisclaimer';
-import Sections from '../../containers/Sections';
+import Home from '../Home';
+import About from '../About';
 import Header from '../Header';
 import Footer from '../../containers/Footer';
 import { DARK_THEME } from '../../state/actions/constants';
+import CookieDisclaimer from '../../containers/CookieDisclaimer';
 
 const App = ({ theme }) => (
   <div
@@ -16,16 +17,18 @@ const App = ({ theme }) => (
     })}
     data-theme={theme}
   >
-    <Header />
-    <main className={cn(styles.appContent, {
-      [styles.appContent__dark]: theme === DARK_THEME
-    })}
-    >
-      <Landing />
+    <Router basename="/">
+      <Header />
+      <main className={cn(styles.appContent, {
+        [styles.appContent__dark]: theme === DARK_THEME
+      })}
+      >
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </main>
+      <Footer />
       <CookieDisclaimer />
-      <Sections />
-    </main>
-    <Footer />
+    </Router>
   </div>
 );
 

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import React, { useState, useRef, useEffect } from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
@@ -32,6 +33,14 @@ const Header = () => {
     } else { allowScroll(); }
   }, [open]);
 
+  const onOverlayClick = () => {
+    toggleMenu();
+  };
+
+  const ignoreClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <nav
       className={cn(styles.header)}
@@ -46,8 +55,11 @@ const Header = () => {
           [styles.menuClose]: close && !open,
           [styles.menuHideFirstRender]: isFirstRender.current
         })}
+
+        onClick={onOverlayClick}
       >
         <div
+          onClick={ignoreClick}
           className={styles.menuContent}
         >
           <CrossIcon
@@ -69,8 +81,6 @@ const Header = () => {
             </Link>
           </ul>
         </div>
-
-
       </div>
     </nav>
   );

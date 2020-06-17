@@ -70,6 +70,42 @@ describe('<Header/> component', () => {
       expect(preventScroll).toHaveBeenCalledTimes(1);
     });
 
+    describe('and then clicking the overlay', () => {
+      it('should close the menu', () => {
+        const component = render();
+
+        act(() => {
+          component.find(`.${styles.burgerMenu}`).props().onClick();
+        });
+
+        act(() => {
+          component.find(`.${styles.menuContainer}`).props().onClick();
+        });
+
+        expect(component).toMatchSnapshot();
+      });
+    });
+
+    describe('and then clicking on the whitespace on the menu', () => {
+      it('should not close the menu', () => {
+        const mockEvent = {
+          stopPropagation: jest.fn()
+        };
+        const component = render();
+
+        act(() => {
+          component.find(`.${styles.burgerMenu}`).props().onClick();
+        });
+
+        act(() => {
+          component.find(`.${styles.menuContent}`).simulate('click', mockEvent);
+        });
+
+        expect(component).toMatchSnapshot();
+        expect(mockEvent.stopPropagation).toHaveBeenCalledTimes(1);
+      });
+    });
+
     describe('and then clicking a menu item', () => {
       it('should then close the menu', () => {
         const component = render({});

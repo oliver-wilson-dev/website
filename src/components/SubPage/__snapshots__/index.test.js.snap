@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubPage should render correctly 1`] = `
+<div
+  className="subPage"
+>
+  <h1>
+    hello world
+  </h1>
+</div>
+`;

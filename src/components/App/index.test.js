@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import App from './index';
 
 import styles from './index.css';
@@ -7,6 +8,12 @@ import Landing from '../Landing';
 import Sections from '../../containers/Sections';
 import Header from '../Header';
 import { DARK_THEME } from '../../state/actions/constants';
+
+jest.mock('react-router-dom', () => ({
+  __esModule: true,
+  HashRouter: () => null,
+  Route: () => null
+}));
 
 jest.mock('../Header', () => {
   const Header = () => null;
@@ -54,22 +61,6 @@ describe('<App/> component', () => {
   it('should render a div with the data-theme attribute equal to the value of the theme prop', () => {
     const mockTheme = 'test-theme';
     expect(render({ theme: mockTheme }).find('div').first().prop('data-theme')).toBe(mockTheme);
-  });
-
-  it(`should render a div with the className ${styles.app}`, () => {
-    expect(render().find('div').first().prop('className')).toBe(styles.app);
-  });
-
-  it(`should render a div with the className ${styles.appContent}`, () => {
-    expect(render().find('div > main').prop('className')).toBe(styles.appContent);
-  });
-
-  it('should render a <Landing/> component', () => {
-    expect(render().find(Landing).exists()).toBe(true);
-  });
-
-  it('should render a <Sections/> component', () => {
-    expect(render().find(Sections).exists()).toBe(true);
   });
 
   it('should render a <Header/> component', () => {
