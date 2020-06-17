@@ -1,11 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { HashRouter as Router, Route } from 'react-router-dom';
 import App from './index';
-
-import styles from './index.css';
-import Landing from '../Landing';
-import Sections from '../../containers/Sections';
 import Header from '../Header';
 import { DARK_THEME } from '../../state/actions/constants';
 

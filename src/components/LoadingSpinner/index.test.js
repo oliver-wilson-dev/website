@@ -7,7 +7,10 @@ const defaultProps = {
   loading: true
 };
 
-const render = (overrideProps = {}, renderMethod = shallow) => renderMethod(<LoadingSpinner {...defaultProps} {...overrideProps} />);
+const render = (
+  overrideProps = {},
+  renderMethod = shallow
+) => renderMethod(<LoadingSpinner {...defaultProps} {...overrideProps} />);
 
 describe('<LoadingSpinner />', () => {
   it('should render correctly', () => {
