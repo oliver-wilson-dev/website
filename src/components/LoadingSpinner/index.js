@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './index.css';
 
 const LoadingSpinner = ({ loading }) => {
   const [transitionDone, setTransitionDone] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!loading) {
+      setIsLoading(false);
+    }
+  }, [loading]);
 
   const onTransitionEnd = () => setTransitionDone(true);
 
@@ -13,7 +20,7 @@ const LoadingSpinner = ({ loading }) => {
       <div className={styles.wrapper}>
         <div
           className={classnames(styles.loadingSpinner, {
-            [styles.hide]: !loading
+            [styles.hide]: !isLoading
           })}
           onTransitionEnd={onTransitionEnd}
         />

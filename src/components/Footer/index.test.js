@@ -9,8 +9,7 @@ jest.mock('../SocialMedia', () => {
 });
 
 const defaultProps = {
-  learnMoreClicked: jest.fn(),
-  sectionsContentFetched: true
+  learnMoreClicked: jest.fn()
 };
 
 const render = (props = {}) => shallow(<Footer {...defaultProps} {...props} />);
@@ -31,12 +30,6 @@ describe('<Footer/>', () => {
       component.find('button').simulate('click');
 
       expect(defaultProps.learnMoreClicked).toHaveBeenCalled();
-    });
-  });
-
-  describe('when sectionsContentFetched is false', () => {
-    it('should render null', () => {
-      expect(render({ sectionsContentFetched: false })).toMatchSnapshot();
     });
   });
 });

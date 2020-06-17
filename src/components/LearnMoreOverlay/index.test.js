@@ -3,8 +3,14 @@ import { shallow, mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import LearnMoreOverlay from '.';
 import styles from './index.css';
+import { preventScroll, allowScroll } from '../../utils';
 
-jest.mock('./cross.svg', () => {
+jest.mock('../../utils', () => ({
+  preventScroll: jest.fn(),
+  allowScroll: jest.fn()
+}));
+
+jest.mock('../Icons/cross.svg', () => {
   const CrossIcon = () => null;
 
   return CrossIcon;
@@ -42,6 +48,18 @@ describe('<Landing/>', () => {
 
       expect(component).toMatchSnapshot();
     });
+
+    it('should call preventScroll', () => {
+      const component = render(mount);
+
+      act(() => {
+        component.find(`.${styles.background}`).props().onTransitionEnd();
+      });
+
+      component.update();
+
+      expect(preventScroll).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('when clicking the close button', () => {
@@ -61,42 +79,20 @@ describe('<Landing/>', () => {
       expect(defaultProps.learnMoreClicked).toHaveBeenCalled();
     });
 
-    describe('when the user had not scrolled before opening the modal', () => {
-      it('should scroll the user to the scrollY position', () => {
-        const component = render(mount);
-        const mockScrollY = undefined;
-        document.body.style.top = mockScrollY;
+    it('should call allowScroll', () => {
+      const component = render(mount);
 
-        Object.defineProperty(document.body.style, 'top', { value: mockScrollY, writable: true });
+      component.find(`.${styles.crossBtn}`).simulate('click');
 
-        component.find(`.${styles.crossBtn}`).simulate('click');
-
-        act(() => {
-          component.find(`.${styles.background}`).props().onTransitionEnd();
-        });
-
-        component.update();
-
-        expect(window.scrollTo.mock.calls[0][1]).toBe(-0);
+      let onTransitionEnd;
+      act(() => {
+        ({ onTransitionEnd } = component.find(`.${styles.background}`).props());
+        onTransitionEnd();
       });
-    });
 
-    describe('when the user had scrolled before opening the modal', () => {
-      it('should scroll the user to the scrollY position', () => {
-        const mockScrollY = 500;
-        window.scrollY = mockScrollY;
-        const component = render(mount);
+      component.update();
 
-        component.find(`.${styles.crossBtn}`).simulate('click');
-
-        act(() => {
-          component.find(`.${styles.background}`).props().onTransitionEnd();
-        });
-
-        component.update();
-
-        expect(window.scrollTo.mock.calls[0][1]).toBe(mockScrollY);
-      });
+      expect(allowScroll).toHaveBeenCalledTimes(1);
     });
   });
 });

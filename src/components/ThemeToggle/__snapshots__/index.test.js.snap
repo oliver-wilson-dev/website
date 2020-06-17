@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToggleSwitch should render correctly 1`] = `
+exports[`ThemeToggle should render correctly 1`] = `
 <label
   className="switch"
   htmlFor="input-id"
@@ -18,7 +18,7 @@ exports[`ToggleSwitch should render correctly 1`] = `
 </label>
 `;
 
-exports[`ToggleSwitch when the theme had been toggled from a previous browse to the website should set the default click value to the value of the prop 'theme' prop 1`] = `
+exports[`ThemeToggle when the theme had been toggled from a previous browse to the website should set the default click value to the value of the prop 'theme' prop 1`] = `
 <label
   className="switch"
   htmlFor="input-id"

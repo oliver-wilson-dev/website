@@ -26,4 +26,6 @@
 
     --headerHeight: 65px;
     --headerPadding: 15px;
+
+    --overlayBackground: rgba(0,0,0,.288);
 }
