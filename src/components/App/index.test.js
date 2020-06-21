@@ -6,9 +6,14 @@ import { DARK_THEME } from '../../state/actions/constants';
 
 jest.mock('react-router-dom', () => ({
   __esModule: true,
-  HashRouter: () => null,
   Route: () => null
 }));
+
+jest.mock('../Router', () => {
+  const Router = () => null;
+
+  return Router;
+});
 
 jest.mock('../Header', () => {
   const Header = () => null;

@@ -5,9 +5,7 @@ exports[`<App/> component should render correctly 1`] = `
   className="app"
   data-theme="test-theme"
 >
-  <HashRouter
-    basename="/"
-  >
+  <Router>
     <Header />
     <main
       className="appContent"
@@ -24,7 +22,7 @@ exports[`<App/> component should render correctly 1`] = `
     </main>
     <Footer />
     <CookieDisclaimer />
-  </HashRouter>
+  </Router>
 </div>
 `;
 
@@ -33,9 +31,7 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
   className="app app__dark"
   data-theme="DARK_THEME"
 >
-  <HashRouter
-    basename="/"
-  >
+  <Router>
     <Header />
     <main
       className="appContent appContent__dark"
@@ -52,6 +48,6 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
     </main>
     <Footer />
     <CookieDisclaimer />
-  </HashRouter>
+  </Router>
 </div>
 `;
