@@ -1,6 +1,6 @@
 .socialLogo {
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     fill: var(--primaryTextColorInverse);
     transition-property: transform;
     transition-timing-function: ease;
