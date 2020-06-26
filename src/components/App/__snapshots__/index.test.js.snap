@@ -10,15 +10,20 @@ exports[`<App/> component should render correctly 1`] = `
     <main
       className="appContent"
     >
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        path="/about"
-      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/about"
+        />
+        <Route
+          component={[Function]}
+        />
+      </Switch>
     </main>
     <Footer />
     <CookieDisclaimer />
@@ -36,15 +41,20 @@ exports[`<App/> component when the theme is dark should render correctly 1`] = `
     <main
       className="appContent appContent__dark"
     >
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        path="/about"
-      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/about"
+        />
+        <Route
+          component={[Function]}
+        />
+      </Switch>
     </main>
     <Footer />
     <CookieDisclaimer />

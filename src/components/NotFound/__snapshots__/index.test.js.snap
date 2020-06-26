@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About should render correctly 1`] = `
+<SubPage
+  additionalStyles="notFound"
+>
+  <h1
+    className="pageHeader"
+  >
+    Page not found
+  </h1>
+  <SearchIcon
+    className="searchIcon"
+  />
+  <p>
+    Well, this is embarrassing. Looks like the url you're on doesn't exist.
+  </p>
+</SubPage>
+`;

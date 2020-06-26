@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import styles from './index.css';
 import Home from '../Home';
 import About from '../About';
@@ -10,6 +10,7 @@ import Footer from '../../containers/Footer';
 import { DARK_THEME } from '../../state/actions/constants';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';
 import Router from '../Router';
+import NotFound from '../NotFound';
 
 const App = ({ theme }) => (
   <div
@@ -24,8 +25,11 @@ const App = ({ theme }) => (
         [styles.appContent__dark]: theme === DARK_THEME
       })}
       >
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route component={NotFound} />
+        </Switch>
       </main>
       <Footer />
       <CookieDisclaimer />
