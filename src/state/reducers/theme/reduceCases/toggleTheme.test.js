@@ -1,9 +1,9 @@
 import toggleTheme from './toggleTheme';
 import { LIGHT_THEME, DARK_THEME } from '../../../actions/constants';
 import THEME_COOKIE from '../constants';
-import { eraseCookie, setCookie } from '../cookieUtilities';
+import { eraseCookie, setCookie } from '../../../../utils/cookieUtilities';
 
-jest.mock('../cookieUtilities');
+jest.mock('../../../../utils/cookieUtilities');
 
 const mockState = {
   theme: LIGHT_THEME,

@@ -1,5 +1,10 @@
 import {
-  getTheme, getSections, getSectionsContentFetched, getCheckboxCheckedStatus, getShowLearnMore
+  getTheme,
+  getSections,
+  getSectionsContentFetched,
+  getCheckboxCheckedStatus,
+  getShowLearnMore,
+  getShowCookiePopup
 } from '.';
 
 describe('getTheme', () => {
@@ -55,6 +60,19 @@ describe('getShowLearnMore', () => {
       }
     )).toEqual(
       mockShowLearnMore
+    );
+  });
+});
+
+describe('getShowCookiePopup', () => {
+  it('returns the showCookiePopup property in state', () => {
+    const mockShowCookiePopup = Symbol('test-show-cookie-popup');
+    expect(getShowCookiePopup(
+      {
+        cookieDisclaimer: { showCookiePopup: mockShowCookiePopup }
+      }
+    )).toEqual(
+      mockShowCookiePopup
     );
   });
 });

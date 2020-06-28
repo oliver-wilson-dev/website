@@ -5,7 +5,7 @@ import styles from './index.css';
 import NotificationEmoji from './notification.svg';
 import TickEmoji from './tick.svg';
 
-const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
+const CookieDisclaimerMessage = ({ learnMoreClicked, cookiePolicyAccepted }) => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [closed, setClosed] = useState(false);
@@ -15,7 +15,10 @@ const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
   }, []);
 
   const onTransitionEnd = () => {
-    if (acknowledged) setClosed(true);
+    if (acknowledged) {
+      cookiePolicyAccepted();
+      setClosed(true);
+    }
   };
 
   const acknowledgeBanner = () => {
@@ -61,7 +64,8 @@ const CookieDisclaimerMessage = ({ learnMoreClicked }) => {
 };
 
 CookieDisclaimerMessage.propTypes = {
-  learnMoreClicked: PropTypes.func.isRequired
+  learnMoreClicked: PropTypes.func.isRequired,
+  cookiePolicyAccepted: PropTypes.func.isRequired
 };
 
 export default CookieDisclaimerMessage;

@@ -18,7 +18,8 @@ jest.mock('./notification.svg', () => {
 });
 
 const defaultProps = {
-  learnMoreClicked: jest.fn()
+  learnMoreClicked: jest.fn(),
+  cookiePolicyAccepted: jest.fn()
 };
 
 const render = (renderMethod = shallow, props = {}) => renderMethod(
@@ -65,7 +66,6 @@ describe('Cookie Disclaimer component', () => {
           component.find(`.${styles.tick}`).simulate('click');
 
           act(() => {
-            /* fire events that update state */
             component.find(`.${styles.closed}`).props().onTransitionEnd();
           });
 
@@ -104,13 +104,26 @@ describe('Cookie Disclaimer component', () => {
           component.find(`.${styles.learnMoreBtn}`).simulate('click');
 
           act(() => {
-            /* fire events that update state */
             component.find(`.${styles.closed}`).props().onTransitionEnd();
           });
 
           component.update();
 
           expect(component).toMatchSnapshot();
+        });
+
+        it('should call cookiePolicyAccepted', () => {
+          const component = render();
+
+          component.find(`.${styles.learnMoreBtn}`).simulate('click');
+
+          act(() => {
+            component.find(`.${styles.closed}`).props().onTransitionEnd();
+          });
+
+          component.update();
+
+          expect(defaultProps.cookiePolicyAccepted).toHaveBeenCalled();
         });
       });
     });

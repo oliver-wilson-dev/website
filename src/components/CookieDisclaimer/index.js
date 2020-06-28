@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import CookieDisclaimerMessage from '../../containers/CookieDisclaimerMessage';
 import LearnMoreOverlay from '../../containers/LearnMoreOverlay';
 
-const CookieDisclaimer = ({ showLearnMore }) => (
-  <>
-    {showLearnMore && <LearnMoreOverlay />}
-    <CookieDisclaimerMessage />
-  </>
+const CookieDisclaimer = ({ showLearnMore, showCookiePopup }) => (
+  showCookiePopup && (
+    <>
+      {showLearnMore && <LearnMoreOverlay />}
+      <CookieDisclaimerMessage />
+    </>
+  )
 );
 
 CookieDisclaimer.propTypes = {
-  showLearnMore: PropTypes.bool.isRequired
+  showCookiePopup: PropTypes.bool.isRequired,
+  showLearnMore: PropTypes.bool.isRequired,
 };
 
 export default CookieDisclaimer;

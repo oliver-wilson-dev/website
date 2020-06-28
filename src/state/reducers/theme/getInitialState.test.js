@@ -1,9 +1,9 @@
 import getInitialState from './getInitialState';
 import { LIGHT_THEME } from '../../actions/constants';
 import THEME_COOKIE from './constants';
-import { getCookie } from './cookieUtilities';
+import { getCookie } from '../../../utils/cookieUtilities';
 
-jest.mock('./cookieUtilities');
+jest.mock('../../../utils/cookieUtilities');
 
 
 describe('getInitialState', () => {

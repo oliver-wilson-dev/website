@@ -1,5 +1,5 @@
 import { LIGHT_THEME } from '../../actions/constants';
-import { getCookie } from './cookieUtilities';
+import { getCookie } from '../../../utils/cookieUtilities';
 import THEME_COOKIE from './constants';
 
 const getInitialState = () => {

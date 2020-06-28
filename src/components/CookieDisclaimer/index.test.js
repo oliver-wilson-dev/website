@@ -16,7 +16,8 @@ jest.mock('../../containers/LearnMoreOverlay', () => {
 });
 
 const defaultProps = {
-  showLearnMore: true
+  showLearnMore: true,
+  showCookiePopup: true
 };
 
 const render = (renderMethod = shallow, props = {}) => renderMethod(
@@ -31,11 +32,23 @@ describe('Cookie Disclaimer component', () => {
     it('should render correctly', () => {
       expect(render()).toMatchSnapshot();
     });
+
+    describe('and showCookiePopup is false', () => {
+      it('should return null', () => {
+        expect(render(shallow, { showCookiePopup: false }).type()).toBeNull();
+      });
+    });
   });
 
   describe('when learnShowMore is false', () => {
     it('should render correctly', () => {
       expect(render(shallow, { showLearnMore: false })).toMatchSnapshot();
+    });
+
+    describe('and showCookiePopup is false', () => {
+      it('should return null', () => {
+        expect(render(shallow, { showCookiePopup: false }).type()).toBeNull();
+      });
     });
   });
 });

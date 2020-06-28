@@ -1,5 +1,5 @@
 import { LIGHT_THEME, DARK_THEME } from '../../../actions/constants';
-import { eraseCookie, setCookie } from '../cookieUtilities';
+import { eraseCookie, setCookie } from '../../../../utils/cookieUtilities';
 import THEME_COOKIE from '../constants';
 
 const toggleTheme = ({ state }) => () => {

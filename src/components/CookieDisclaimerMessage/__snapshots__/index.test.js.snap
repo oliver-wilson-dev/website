@@ -34,6 +34,7 @@ exports[`Cookie Disclaimer component when first loaded should render correctly 1
 
 exports[`Cookie Disclaimer component when first loaded should then apply the loaded class 1`] = `
 <CookieDisclaimerMessage
+  cookiePolicyAccepted={[MockFunction]}
   learnMoreClicked={[MockFunction]}
 >
   <div
@@ -106,6 +107,19 @@ exports[`Cookie Disclaimer component when first loaded when the user clicks lear
 
 exports[`Cookie Disclaimer component when first loaded when the user clicks learn more should render correctly 1`] = `
 <CookieDisclaimerMessage
+  cookiePolicyAccepted={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   learnMoreClicked={
     [MockFunction] {
       "calls": Array [
