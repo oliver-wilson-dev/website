@@ -24,6 +24,12 @@ jest.mock('./burgerMenu.svg', () => {
   return BurgerMenu;
 });
 
+jest.mock('../DownloadButton', () => {
+  const DownloadButton = () => null;
+
+  return DownloadButton;
+});
+
 jest.mock('../../containers/ThemeToggle', () => {
   const ThemeToggle = () => null;
 

@@ -7,38 +7,47 @@
 }
 
 .downloadButton {
-    color: #0B0A16;
-    border: 2px solid #0B0A16;
-    background: #f8f8f8;
-    padding: 12px;
+    color: var(--primaryTextColorLight);
+    background: var(--projectGreen);
     max-width: 400px;
+
+    border-radius: 30px;
+    padding: 12px 30px;
+    
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: 4px;
-    text-transform: lowercase;
-    box-shadow: 8px 8px 0px rgba(255, 23, 68, 0.7);
+    text-transform: uppercase;
+    
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    transition-property: transform;
+
+    transition-property: transform, box-shadow;
     transition-timing-function: ease;
     transition-duration: 0.5s;
     
-    &:hover {
-        transform: scale(1.2);
-        box-shadow: 8px 8px 0px var(--projectGreen);    
+    &:hover, &:focus {
+        box-shadow: 0px 3px 4px -1px var(--primaryBorderColourLight);
+        transform: translateY(-0.25em);
     }
 }
 
 .downloadButtonIcon {
-    display: block;
-    padding-top: 15px;
-    width: 30px;
-    height: 30px;
-    fill: var(--primaryTextColorLight)
+    display: none;
 }
 
 .flexCenter {
     align-items: center;
     justify-content: center;
-  }
+}
+
+@media (min-width: 426px) {
+    .downloadButtonIcon {
+        padding-left: 15px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        fill: var(--primaryTextColorLight);
+    }
+}

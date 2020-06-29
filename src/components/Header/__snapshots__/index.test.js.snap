@@ -18,7 +18,7 @@ exports[`<Header/> component should render correctly 1`] = `
     onClick={[Function]}
   >
     <div
-      className="menuContent"
+      className="menuContent menuContentHide"
       onClick={[Function]}
     >
       <CrossIcon
@@ -51,6 +51,7 @@ exports[`<Header/> component should render correctly 1`] = `
           </li>
         </Link>
       </ul>
+      <DownloadButton />
     </div>
   </div>
 </nav>
@@ -74,7 +75,7 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
     onClick={[Function]}
   >
     <div
-      className="menuContent"
+      className="menuContent menuContentHide"
       onClick={[Function]}
     >
       <CrossIcon
@@ -107,6 +108,7 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
           </li>
         </Link>
       </ul>
+      <DownloadButton />
     </div>
   </div>
 </nav>
@@ -163,6 +165,7 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
           </li>
         </Link>
       </ul>
+      <DownloadButton />
     </div>
   </div>
 </nav>
@@ -186,7 +189,7 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
     onClick={[Function]}
   >
     <div
-      className="menuContent"
+      className="menuContent menuContentHide"
       onClick={[Function]}
     >
       <CrossIcon
@@ -219,6 +222,7 @@ exports[`<Header/> component when clicking the burgerMenu icon and then clicking
           </li>
         </Link>
       </ul>
+      <DownloadButton />
     </div>
   </div>
 </nav>
@@ -275,6 +279,7 @@ exports[`<Header/> component when clicking the burgerMenu icon should open the s
           </li>
         </Link>
       </ul>
+      <DownloadButton />
     </div>
   </div>
 </nav>

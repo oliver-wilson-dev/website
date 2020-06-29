@@ -18,7 +18,7 @@
     --sectionFadeColourFrom: rgba(248, 248, 248, 0);
     --sectionFadeColourTo: rgba(248, 248, 248, 1);
 
-    --projectGreen: rgba(0, 200, 83, 0.7);
+    --projectGreen: #06d6a0;
     --linkBlue: rgb(21, 64, 204);
     --unvisitedLink: var(--linkBlue);
 

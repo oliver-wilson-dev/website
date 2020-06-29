@@ -7,6 +7,7 @@ import ThemeToggle from '../../containers/ThemeToggle';
 import BurgerMenu from './burgerMenu.svg';
 import CrossIcon from '../Icons/cross.svg';
 import { preventScroll, allowScroll } from '../../utils';
+import DownloadButton from '../DownloadButton';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -60,7 +61,9 @@ const Header = () => {
       >
         <div
           onClick={ignoreClick}
-          className={styles.menuContent}
+          className={cn(styles.menuContent, {
+            [styles.menuContentHide]: !open
+          })}
         >
           <CrossIcon
             className={cn(styles.crossIcon, {
@@ -80,6 +83,7 @@ const Header = () => {
               </li>
             </Link>
           </ul>
+          <DownloadButton />
         </div>
       </div>
     </nav>

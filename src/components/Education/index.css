@@ -12,7 +12,7 @@
 }
 
 .degreeClassification span {
-    background-color: rgba(0, 200, 83, 0.7);
+    background-color: var(--projectGreen);
     border-radius: 20px;
     font-size: 16px;
     font-weight: 400;
