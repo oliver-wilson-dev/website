@@ -2,6 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import About from '.';
 
+jest.mock('react-router-dom', () => ({
+  Link: () => null
+}));
+
 jest.mock('./search.svg', () => {
   const SearchIcon = () => null;
 

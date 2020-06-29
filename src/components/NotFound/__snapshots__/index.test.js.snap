@@ -12,8 +12,11 @@ exports[`About should render correctly 1`] = `
   <SearchIcon
     className="searchIcon"
   />
-  <p>
-    Well, this is embarrassing. Looks like the url you're on doesn't exist.
-  </p>
+  <Link
+    className="homeLink"
+    to="/"
+  >
+    Return to Home Page
+  </Link>
 </SubPage>
 `;

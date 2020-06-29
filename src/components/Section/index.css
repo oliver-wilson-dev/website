@@ -1,0 +1,16 @@
+@import "../App/index.css";
+@import "../SectionTile/index.css";
+
+.sectionTitle {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3em;
+    margin: .5em 0 .5em 0;
+    padding: 0;
+    text-align: center;
+}
+
+.flexColumn {
+    @extend .flex-column;
+}

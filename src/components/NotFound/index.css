@@ -13,3 +13,10 @@
     margin: 40px 20px;
     fill: var(--primaryTextColor);
 }
+
+.homeLink {
+    color: var(--primaryTextColor);
+    font-weight: 700;
+    font-size: 28px;
+    text-decoration: underline;
+}

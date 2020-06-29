@@ -25,7 +25,6 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
           <Experience {...sections.experience} />
           <Contact {...sections.contact} />
           <DownloadButton />
-
         </React.Fragment>
       )}
     </React.Fragment>

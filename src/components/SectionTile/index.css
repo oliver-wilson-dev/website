@@ -64,6 +64,8 @@
 }
 
 .textContainer {
+    padding: 5px;
+    
     & > * {
         &:first-child {
             margin-right: var(--iconSize);

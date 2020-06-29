@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import sharedStyles from '../../styles/shared.css';
 import SearchIcon from './search.svg';
 import styles from './index.css';
@@ -10,7 +11,7 @@ const NotFound = () => (
   <SubPage additionalStyles={styles.notFound}>
     <h1 className={sharedStyles.pageHeader}>Page not found</h1>
     <SearchIcon className={styles.searchIcon} />
-    <p>Well, this is embarrassing. Looks like the url you&apos;re on doesn&apos;t exist.</p>
+    <Link to="/" className={styles.homeLink}>Return to Home Page</Link>
   </SubPage>
 );
 

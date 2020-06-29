@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 10px 30px;
+  margin: 30px;
 }
 
 .landingSubHeader {
@@ -14,13 +14,6 @@
   letter-spacing: 4px;
   text-transform: lowercase;
 }
-
-@media all and (min-width: 786px) {
-  .landing {
-    margin-top: 115px;
-  }
-}
-
 
 @media (min-width: 0px) and (max-width: 767px) {
   .landingHeader {

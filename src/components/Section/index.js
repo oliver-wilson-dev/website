@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import sharedStyles from '../App/index.css';
+import styles from './index.css';
 import SectionTile from '../SectionTile';
 import SectionSlider from '../SectionSlider';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
@@ -14,12 +15,12 @@ const Section = ({ title, children }) => {
 
   return (
     <div className={cn(
-      sharedStyles.flexColumn,
+      styles.flexColumn,
       sharedStyles.flexCenter,
       fadeInClasses
     )}
     >
-      <h2 className={sharedStyles.sectionTitle}>{title}</h2>
+      <h2 className={styles.sectionTitle}>{title}</h2>
       {childrenThatAreComponents.length
         ? (
           <SectionSlider>{childrenThatAreComponents}</SectionSlider>
