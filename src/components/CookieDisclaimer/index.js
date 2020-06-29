@@ -4,12 +4,10 @@ import CookieDisclaimerMessage from '../../containers/CookieDisclaimerMessage';
 import LearnMoreOverlay from '../../containers/LearnMoreOverlay';
 
 const CookieDisclaimer = ({ showLearnMore, showCookiePopup }) => (
-  showCookiePopup && (
-    <>
-      {showLearnMore && <LearnMoreOverlay />}
-      <CookieDisclaimerMessage />
-    </>
-  )
+  <>
+    {showLearnMore && <LearnMoreOverlay />}
+    {showCookiePopup && <CookieDisclaimerMessage />}
+  </>
 );
 
 CookieDisclaimer.propTypes = {

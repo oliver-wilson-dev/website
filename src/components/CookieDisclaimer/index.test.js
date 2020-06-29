@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import CookieDisclaimerMessage from '../../containers/CookieDisclaimerMessage';
 import CookieDisclaimer from '.';
 
 jest.mock('../../containers/CookieDisclaimerMessage', () => {
@@ -35,7 +35,8 @@ describe('Cookie Disclaimer component', () => {
 
     describe('and showCookiePopup is false', () => {
       it('should return null', () => {
-        expect(render(shallow, { showCookiePopup: false }).type()).toBeNull();
+        expect(render(shallow, { showCookiePopup: false })
+          .contains(<CookieDisclaimerMessage />)).toBe(false);
       });
     });
   });
@@ -47,7 +48,8 @@ describe('Cookie Disclaimer component', () => {
 
     describe('and showCookiePopup is false', () => {
       it('should return null', () => {
-        expect(render(shallow, { showCookiePopup: false }).type()).toBeNull();
+        expect(render(shallow, { showCookiePopup: false })
+          .contains(<CookieDisclaimerMessage />)).toBe(false);
       });
     });
   });
