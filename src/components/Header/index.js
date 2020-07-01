@@ -61,9 +61,7 @@ const Header = () => {
       >
         <div
           onClick={ignoreClick}
-          className={cn(styles.menuContent, {
-            [styles.menuContentHide]: !open
-          })}
+          className={styles.menuContent}
         >
           <CrossIcon
             className={cn(styles.crossIcon, {
@@ -72,18 +70,20 @@ const Header = () => {
             onClick={toggleMenu}
           />
           <ul className={styles.menuList}>
-            <Link to="/" className={styles.link} onClick={toggleMenu}>
-              <li className={styles.menuItem}>
+            <li className={styles.menuItem}>
+              <Link to="/" className={cn(styles.link, styles.menuItemMargin)} onClick={toggleMenu}>
                 Home
-              </li>
-            </Link>
-            <Link to="/about" className={styles.link} onClick={toggleMenu}>
-              <li className={styles.menuItem}>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link to="/about" className={cn(styles.link, styles.menuItemMargin)} onClick={toggleMenu}>
                 About
-              </li>
-            </Link>
+              </Link>
+            </li>
+            <li className={cn(styles.menuItem, styles.menuItemMargin, styles.menuItemNoHover)}>
+              <DownloadButton />
+            </li>
           </ul>
-          <DownloadButton />
         </div>
       </div>
     </nav>

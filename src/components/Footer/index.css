@@ -1,3 +1,7 @@
+:root {
+  --fontSize: 14px;
+}
+
 .footerDisclaimerText {
   color: var(--primaryTextColorInverse);
   text-align: center;
@@ -15,9 +19,9 @@
   margin-top: 30px;
   display: flex;
   padding: 20px 30px;
-  font-size: 14px;
   justify-content: space-between;
   background-color: var(--primaryBackgroundInverse);
+  font-size: var(--fontSize);
 
   & a {
     color: var(--unvisitedLinkInverse);
@@ -29,13 +33,16 @@
 }
 
 .buttonLink {
+  font-size: var(--fontSize);
   font-weight: 700;
   background: none;
   border: none;
   padding: 0;
+  margin: 0px;
   cursor: pointer;
   color: var(--primaryTextColorInverse);
   text-decoration: underline;
+  font-family: inherit;
 }
 
 .textContainer {

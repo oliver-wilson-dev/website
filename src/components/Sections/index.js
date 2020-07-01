@@ -9,6 +9,8 @@ import Contact from '../Contact';
 import ProfilePicture from '../ProfilePicture';
 import DownloadButton from '../DownloadButton';
 
+import styles from './index.css';
+
 const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
   useEffect(() => {
     fetchContent();
@@ -24,7 +26,9 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
           <Education {...sections.education} />
           <Experience {...sections.experience} />
           <Contact {...sections.contact} />
-          <DownloadButton />
+          <div className={styles.downloadButtonContainer}>
+            <DownloadButton />
+          </div>
         </React.Fragment>
       )}
     </React.Fragment>
