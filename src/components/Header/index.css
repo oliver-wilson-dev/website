@@ -65,38 +65,39 @@
 
     display: flex;
     justify-content: flex-end;
+    width: 100vw;
 }
 
 @keyframes open {
     0% {
-        width: 0px;
+        transform: translate(100vw);
         background-color: transparent;
     }
 
     50% {
-        width: 100vw;
+        transform: translate(0);
         background-color: transparent;
     }
 
     100% {
-        width: 100vw;
+        transform: translate(0);
         background-color: var(--overlayBackground);
     }
 }
 
 @keyframes close {
     0% {
-        width: 100vw;
+        transform: translate(0);
         background-color: var(--overlayBackground);
     }
 
     50% {
-        width: 100vw;
+        transform: translate(0);
         background-color: transparent;
     }
 
     100% {
-        width: 0px;
+        transform: translate(100vw);
         background-color: transparent;
     }
 }
