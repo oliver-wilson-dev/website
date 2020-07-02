@@ -4,15 +4,20 @@
 
 .displayBox {
     background: var(--primaryBackground);
-    -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    -moz-box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    box-shadow: 8px 8px 0px var(--primaryBorderColour);
-    border: 3px solid var(--primaryBorderColour);
     padding: 10px;
     max-height: 250px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    box-shadow: 0px 3px 6px var(--primaryBorderColour);
+    border-radius: 5px;
+}
+
+.borderAndBoxShadowCube {
+    border: 3px solid var(--primaryBorderColour);
+    box-shadow: 8px 8px 0px var(--primaryBorderColour);
+    -webkit-box-shadow: 8px 8px 0px var(--primaryBorderColour);
+    -moz-box-shadow: 8px 8px 0px var(--primaryBorderColour);
 }
 
 .blurBottom {

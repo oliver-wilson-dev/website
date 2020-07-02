@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import styles from './index.css';
 import Home from '../Home';
 import About from '../About';
-import Header from '../Header';
+import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 import { DARK_THEME } from '../../state/actions/constants';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import theme from './theme';
 import sections from './sections';
 import cookieDisclaimer from './cookieDisclaimer';
+import navigation from './navigation';
 
 jest.mock('redux', () => ({
   combineReducers: jest.fn()
@@ -9,6 +10,7 @@ jest.mock('redux', () => ({
 jest.mock('./sections');
 jest.mock('./theme');
 jest.mock('./cookieDisclaimer');
+jest.mock('./navigation');
 
 const mockCombineReducers = Symbol('test-combine-reducers');
 
@@ -24,6 +26,8 @@ describe('reducer', () => {
 
   it('should call combineReducers with the imported reducers', () => {
     require('./');
-    expect(combineReducers).toHaveBeenCalledWith({ sections, theme, cookieDisclaimer });
+    expect(combineReducers).toHaveBeenCalledWith({
+      sections, theme, cookieDisclaimer, navigation
+    });
   });
 });

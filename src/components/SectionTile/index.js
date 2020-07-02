@@ -10,7 +10,7 @@ const SectionTile = ({ children, additionalStyles }) => {
   const displayBoxRef = useRef(null);
   const childrenRef = useRef(null);
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const [expandable, setExpandable] = useState(false);
 
   const canBeFocusedProgrammatically = -1;

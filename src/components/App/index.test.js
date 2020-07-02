@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './index';
-import Header from '../Header';
+import Header from '../../containers/Header';
 import { DARK_THEME } from '../../state/actions/constants';
 
 jest.mock('react-router-dom', () => ({
@@ -22,7 +22,7 @@ jest.mock('../NotFound', () => {
   return NotFound;
 });
 
-jest.mock('../Header', () => {
+jest.mock('../../containers/Header', () => {
   const Header = () => null;
 
   return Header;

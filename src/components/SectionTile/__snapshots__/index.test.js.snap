@@ -5,7 +5,7 @@ exports[`<SectionTile/> should render correctly 1`] = `
   title="test-title"
 >
   <div
-    className="landingBlurb displayBox"
+    className="landingBlurb displayBox displayBoxExpanded"
   >
     <div
       aria-hidden={false}
@@ -21,39 +21,6 @@ exports[`<SectionTile/> should render correctly 1`] = `
 `;
 
 exports[`<SectionTile/> when the display box content should be expandable and the section is expanded should render correctly 1`] = `
-<SectionTile
-  title="test-title"
->
-  <div
-    className="landingBlurb displayBox displayBoxExpanded"
-  >
-    <button
-      aria-expanded={true}
-      aria-label="click to minimise this section"
-      className="collapseExpand"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <MinusIcon
-          className="icon"
-        />
-      </span>
-    </button>
-    <div
-      aria-hidden={false}
-      className="textContainer"
-      tabIndex={-1}
-    >
-      <p>
-        this is some content
-      </p>
-    </div>
-  </div>
-</SectionTile>
-`;
-
-exports[`<SectionTile/> when the display box content should be expandable should render an expandable button 1`] = `
 <SectionTile
   title="test-title"
 >
@@ -75,6 +42,39 @@ exports[`<SectionTile/> when the display box content should be expandable should
     </button>
     <div
       aria-hidden={true}
+      className="textContainer"
+      tabIndex={-1}
+    >
+      <p>
+        this is some content
+      </p>
+    </div>
+  </div>
+</SectionTile>
+`;
+
+exports[`<SectionTile/> when the display box content should be expandable should render an expandable button 1`] = `
+<SectionTile
+  title="test-title"
+>
+  <div
+    className="landingBlurb displayBox displayBoxExpanded"
+  >
+    <button
+      aria-expanded={true}
+      aria-label="click to minimise this section"
+      className="collapseExpand"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        <MinusIcon
+          className="icon"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={false}
       className="textContainer"
       tabIndex={-1}
     >
