@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideNav/> component should render correctly 1`] = `
+<div
+  className="menuContainer menuClose menuHideFirstRender"
+  onClick={[Function]}
+>
+  <div
+    className="menuContent"
+    onClick={[Function]}
+  >
+    <CrossIcon
+      className="crossIcon icon"
+      onClick={[MockFunction]}
+    />
+    <ul
+      className="menuList"
+    >
+      <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/"
+        >
+          Home
+        </Link>
+      </li>
+      <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/about"
+        >
+          About
+        </Link>
+      </li>
+      <li
+        className="menuItem menuItemMargin menuItemNoHover"
+      >
+        <DownloadButton />
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<SideNav/> component when the showSideNav prop is true and then clicking a menu item should then close the menu 1`] = `
+<SideNav
+  showSideNav={true}
+  toggleShowSideNav={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <div
+    className="menuContainer menuOpen"
+    onClick={[Function]}
+  >
+    <div
+      className="menuContent"
+      onClick={[Function]}
+    >
+      <CrossIcon
+        className="crossIcon icon crossIconShow"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      />
+      <ul
+        className="menuList"
+      >
+        <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/"
+          >
+            <button
+              type="button"
+            >
+              Home
+            </button>
+          </Link>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/about"
+          >
+            <button
+              type="button"
+            >
+              About
+            </button>
+          </Link>
+        </li>
+        <li
+          className="menuItem menuItemMargin menuItemNoHover"
+        >
+          <DownloadButton />
+        </li>
+      </ul>
+    </div>
+  </div>
+</SideNav>
+`;
+
+exports[`<SideNav/> component when the showSideNav prop is true and then clicking on the whitespace on the menu should not close the menu 1`] = `
+<SideNav
+  showSideNav={true}
+  toggleShowSideNav={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <div
+    className="menuContainer menuOpen"
+    onClick={[Function]}
+  >
+    <div
+      className="menuContent"
+      onClick={[Function]}
+    >
+      <CrossIcon
+        className="crossIcon icon crossIconShow"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      />
+      <ul
+        className="menuList"
+      >
+        <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/"
+          >
+            <button
+              type="button"
+            >
+              Home
+            </button>
+          </Link>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/about"
+          >
+            <button
+              type="button"
+            >
+              About
+            </button>
+          </Link>
+        </li>
+        <li
+          className="menuItem menuItemMargin menuItemNoHover"
+        >
+          <DownloadButton />
+        </li>
+      </ul>
+    </div>
+  </div>
+</SideNav>
+`;
+
+exports[`<SideNav/> component when the showSideNav prop is true should open the sub navigation 1`] = `
+<div
+  className="menuContainer menuOpen menuHideFirstRender"
+  onClick={[Function]}
+>
+  <div
+    className="menuContent"
+    onClick={[Function]}
+  >
+    <CrossIcon
+      className="crossIcon icon crossIconShow"
+      onClick={[MockFunction]}
+    />
+    <ul
+      className="menuList"
+    >
+      <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/"
+        >
+          Home
+        </Link>
+      </li>
+      <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/about"
+        >
+          About
+        </Link>
+      </li>
+      <li
+        className="menuItem menuItemMargin menuItemNoHover"
+      >
+        <DownloadButton />
+      </li>
+    </ul>
+  </div>
+</div>
+`;
