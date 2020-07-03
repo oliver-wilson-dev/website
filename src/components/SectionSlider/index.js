@@ -49,8 +49,9 @@ const SectionSlider = ({ children }) => {
       <div className={cn(styles.tileContainer, sectionStyles.displayBox)}>
         { children.map((child, index) => {
           const props = {
+            border: true,
             additionalStyles: {
-              [styles.removeBorder]: true,
+              [styles.setWidth]: true,
               [styles.tileOnScreen]: index === currentSelectedIndex,
               [styles.offScreenTileRight]: index > currentSelectedIndex,
               [styles.offScreenTileLeft]: index < currentSelectedIndex

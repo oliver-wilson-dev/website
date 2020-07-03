@@ -11,9 +11,7 @@
     transition: all 0.2s ease;
 }
 
-.removeBorder {
-    box-shadow: none;
-    border: none;
+.setWidth {
     box-sizing: border-box;
     width: 100%;
 }

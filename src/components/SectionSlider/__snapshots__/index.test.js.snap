@@ -22,10 +22,11 @@ exports[`SectionSlider should render correctly 1`] = `
         Object {
           "offScreenTileLeft": false,
           "offScreenTileRight": false,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": true,
         }
       }
+      border={true}
       key="0"
     >
       <p
@@ -39,10 +40,11 @@ exports[`SectionSlider should render correctly 1`] = `
         Object {
           "offScreenTileLeft": false,
           "offScreenTileRight": true,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": false,
         }
       }
+      border={true}
       key="1"
     >
       <p
@@ -77,10 +79,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking it again 
         Object {
           "offScreenTileLeft": true,
           "offScreenTileRight": false,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": false,
         }
       }
+      border={true}
       key="0"
     >
       <p
@@ -94,10 +97,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking it again 
         Object {
           "offScreenTileLeft": false,
           "offScreenTileRight": false,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": true,
         }
       }
+      border={true}
       key="1"
     >
       <p
@@ -132,10 +136,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking the left 
         Object {
           "offScreenTileLeft": false,
           "offScreenTileRight": false,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": true,
         }
       }
+      border={true}
       key="0"
     >
       <p
@@ -149,10 +154,11 @@ exports[`SectionSlider when clicking the right arrow and then clicking the left 
         Object {
           "offScreenTileLeft": false,
           "offScreenTileRight": true,
-          "removeBorder": true,
+          "setWidth": true,
           "tileOnScreen": false,
         }
       }
+      border={true}
       key="1"
     >
       <p

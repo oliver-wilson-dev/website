@@ -12,7 +12,13 @@ exports[`<Section/> when the children are HTML elements should render correctly 
     >
       test-title
     </h2>
-    <SectionTile />
+    <div>
+      <p
+        key="test-key"
+      >
+        this is some content
+      </p>
+    </div>
   </div>
 </Section>
 `;
@@ -42,7 +48,13 @@ exports[`<Section/> when the children are both components and HTML elements shou
         </SomeComponent>
       </div>
     </SectionTile>
-    <SectionTile />
+    <div>
+      <p
+        key="test-key"
+      >
+        some component
+      </p>
+    </div>
   </div>
 </Section>
 `;

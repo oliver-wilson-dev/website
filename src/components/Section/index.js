@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import sharedStyles from '../App/index.css';
 import styles from './index.css';
-import SectionTile from '../SectionTile';
 import SectionSlider from '../SectionSlider';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
 
@@ -27,9 +26,9 @@ const Section = ({ title, children }) => {
         ) : null
       }
       {childrenThatAreNotComponents.length ? (
-        <SectionTile>
+        <div>
           {childrenThatAreNotComponents}
-        </SectionTile>
+        </div>
       ) : null}
     </div>
   );

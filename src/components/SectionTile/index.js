@@ -6,11 +6,11 @@ import PlusIcon from './plus.svg';
 import MinusIcon from './minus.svg';
 
 
-const SectionTile = ({ children, additionalStyles }) => {
+const SectionTile = ({ children, additionalStyles, border = false }) => {
   const displayBoxRef = useRef(null);
   const childrenRef = useRef(null);
 
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [expandable, setExpandable] = useState(false);
 
   const canBeFocusedProgrammatically = -1;
@@ -26,6 +26,7 @@ const SectionTile = ({ children, additionalStyles }) => {
     e.preventDefault();
     setExpanded(!expanded);
   };
+
   return (
     <div
       ref={displayBoxRef}
@@ -33,6 +34,7 @@ const SectionTile = ({ children, additionalStyles }) => {
         styles.landingBlurb,
         styles.displayBox,
         {
+          [styles.displayBoxBorder]: !!border,
           [styles.displayBoxExpanded]: expanded,
           [styles.blurBottom]: expandable && !expanded
         },
@@ -72,7 +74,8 @@ const SectionTile = ({ children, additionalStyles }) => {
 
 SectionTile.propTypes = {
   children: PropTypes.node.isRequired,
-  additionalStyles: PropTypes.shape()
+  additionalStyles: PropTypes.shape(),
+  border: PropTypes.bool
 };
 
 export default SectionTile;
