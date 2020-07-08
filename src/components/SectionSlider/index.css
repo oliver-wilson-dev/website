@@ -1,5 +1,4 @@
 .tileContainer {
-    max-width: 826px;
     max-height: none;
     display: flex;
     overflow: hidden;
