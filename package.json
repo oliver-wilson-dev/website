@@ -6,7 +6,7 @@
   "repository": "https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io",
   "main": "index.js",
   "engines": { 
-    "node" : "12.14.0" 
+    "node" : ">=12.14.0" 
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --hot --config build/config.js",
