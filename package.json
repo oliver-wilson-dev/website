@@ -5,8 +5,8 @@
   "homepage": "http://oliver-wilson-dev.github.io/",
   "repository": "https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io",
   "main": "index.js",
-  "engines": { 
-    "node" : "12.14.0" 
+  "engines": {
+    "node": ">=12.14.0"
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --hot --config build/config.js",
@@ -15,13 +15,15 @@
     "coverage": "jest --coverage && open ./coverage/lcov-report/index.html",
     "lint": "eslint ./src",
     "ci": "npm run lint && jest",
-    "serve": "npm run build && serve"
+    "serve": "npm run build && serve",
+    "start": "node ./src/server/index.js"
   },
   "author": "oliver wilson",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
