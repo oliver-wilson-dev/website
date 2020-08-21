@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
-const projectRootDir = path.join(__dirname, '../index.html');
-const outputAssetsDir = path.join(__dirname, '../');
+const outputAssetsDir = path.join(__dirname, '../dist');
+const projectRootFileDir = path.join(outputAssetsDir, '/index.html');
 const entryDir = path.join(__dirname, '../src');
 
 const env = dotenv.config().parsed;
@@ -66,7 +66,7 @@ module.exports = (env, { mode }) => ({
     new webpack.DefinePlugin(envKeys),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
-      filename: projectRootDir,
+      filename: projectRootFileDir,
       templateParameters: { BUILD_NUMBER: mode === 'production' ? process.env.BUILD_NUMBER : envKeys.process.env.BUILD_NUMBER }
     })
   ]
