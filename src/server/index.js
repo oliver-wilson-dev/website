@@ -6,8 +6,6 @@ const app = express();
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '../../dist')));
 
-app.use('/public', express.static(path.join(__dirname, '../../public')));
-
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
   res.sendFile(path.join(`${__dirname}`, '../../dist/index.html'));
@@ -16,4 +14,4 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log(`App is listening on port ${port}`);
+console.log(`App is listening on port ${port} - http://localhost:${port}/`);
