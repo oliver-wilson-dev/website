@@ -5,7 +5,7 @@ import Router from './index';
 
 jest.mock('react-router-dom', () => ({
   useLocation: jest.fn(),
-  HashRouter: ({ children }) => <div>{children}</div>
+  BrowserRouter: ({ children }) => <div>{children}</div>
 }));
 
 const render = () => mount(<Router><h1>Hello world</h1></Router>);
