@@ -18,6 +18,6 @@ jobs:
       with:
         node-version: '12.x'
     - name: clean install all dependencies
-    - run: npm ci
+      run: npm ci
     - name: run unit tests and lint project
-    - run: npm test
+      run: npm test
