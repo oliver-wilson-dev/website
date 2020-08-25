@@ -23,8 +23,6 @@ jobs:
         node-version: '12.x'
     - name: clean install all dependencies
       run: npm install
-    - name: run unit tests and lint project
-      run: npm run ci
     - name: build the application
       run: npm run build
     - name: setup google cloud platform cli
