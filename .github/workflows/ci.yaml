@@ -9,7 +9,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  build:
+  install_and_test:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repository
@@ -21,4 +21,4 @@ jobs:
     - name: clean install all dependencies
       run: npm install
     - name: run unit tests and lint project
-      run: npm test
+      run: npm run ci
