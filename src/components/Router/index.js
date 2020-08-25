@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 
 const ScrollToTop = ({ children }) => {
@@ -14,11 +14,11 @@ const ScrollToTop = ({ children }) => {
 };
 
 const Router = ({ children }) => (
-  <HashRouter basename="/">
+  <BrowserRouter basename="/">
     <ScrollToTop>
       {children}
     </ScrollToTop>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 const sharedPropTypes = {
