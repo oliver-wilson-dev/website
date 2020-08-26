@@ -12,7 +12,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  build_and_release:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repository
@@ -25,11 +25,20 @@ jobs:
       run: npm install
     - name: build the application
       run: npm run build
+  
+  setup_gcloud_cli:
+    runs-on: ubuntu-latest
+    steps:
     - name: setup google cloud platform cli
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, setup_gcloud_cli]
+    steps:
     - name: deploy app to google cloud
-      run: gcloud app deploy
+      run: gcloud app deploy --stop-previous-version
