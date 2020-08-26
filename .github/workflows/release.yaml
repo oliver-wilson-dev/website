@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: '12.x'
     - name: clean install all dependencies
-      run: npm install --production
+      run: npm install
     - name: build the application
       run: npm run build
     - name: setup google cloud platform cli
