@@ -14,7 +14,7 @@
     "test": "jest --watch",
     "coverage": "jest --coverage && open ./coverage/lcov-report/index.html",
     "lint": "eslint ./src",
-    "ci": "npm run lint && jest",
+    "ci": "npm run lint && jest --coverage",
     "serve": "npm run build && serve",
     "start": "node ./src/server/index.js"
   },
