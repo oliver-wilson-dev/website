@@ -4,7 +4,8 @@ import {
   getSectionsContentFetched,
   getCheckboxCheckedStatus,
   getShowLearnMore,
-  getShowCookiePopup
+  getShowCookiePopup,
+  getShowSideNav
 } from '.';
 
 describe('getTheme', () => {
@@ -73,6 +74,19 @@ describe('getShowCookiePopup', () => {
       }
     )).toEqual(
       mockShowCookiePopup
+    );
+  });
+});
+
+describe('getShowSideNav', () => {
+  it('returns the showCookiePopup property in state', () => {
+    const mockShowSideNav = Symbol('test-show-side-nav');
+    expect(getShowSideNav(
+      {
+        navigation: { showSideNav: mockShowSideNav }
+      }
+    )).toEqual(
+      mockShowSideNav
     );
   });
 });
