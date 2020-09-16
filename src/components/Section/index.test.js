@@ -84,4 +84,10 @@ describe('<Section/>', () => {
       })).toMatchSnapshot();
     });
   });
+
+  describe('when there is no title', () => {
+    it('should render correctly', () => {
+      expect(render({ title: undefined }).exists()).toBe(true);
+    });
+  });
 });
