@@ -6,6 +6,7 @@ exports[`<Sections/> should render correctly 1`] = `
     loading={false}
   />
   <ProfilePicture />
+  <PlacesWorked />
   <Greeting />
   <Education />
   <Experience />
