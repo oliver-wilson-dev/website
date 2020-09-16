@@ -2,6 +2,12 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Sections from '.';
 
+jest.mock('../PlacesWorked', () => {
+  const PlacesWorked = () => null;
+
+  return PlacesWorked;
+});
+
 jest.mock('../DownloadButton', () => {
   const DownloadButton = () => null;
 

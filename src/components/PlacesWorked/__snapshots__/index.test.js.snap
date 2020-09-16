@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacesWorked should render correctly 1`] = `
+<section
+  className="sectionWrapper"
+>
+  <Section>
+    <h3
+      className="statement"
+    >
+      Proudly contributing towards projects in the fashion and television industries for over three years.
+    </h3>
+    <div
+      className="companyLogoWrapper"
+    >
+      <AsosLogo
+        className="companyLogo"
+      />
+      <ItvLogo
+        className="itvLogo"
+      />
+    </div>
+  </Section>
+</section>
+`;

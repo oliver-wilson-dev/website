@@ -6,6 +6,7 @@ import Experience from '../Experience';
 import LoadingSpinner from '../LoadingSpinner';
 import Contact from '../Contact';
 
+import PlacesWorked from '../PlacesWorked';
 import ProfilePicture from '../ProfilePicture';
 import DownloadButton from '../DownloadButton';
 
@@ -22,6 +23,7 @@ const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
       {sectionsContentFetched && (
         <React.Fragment>
           <ProfilePicture />
+          <PlacesWorked />
           <Greeting {...sections.greeting} />
           <Education {...sections.education} />
           <Experience {...sections.experience} />

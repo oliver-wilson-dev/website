@@ -19,7 +19,7 @@ const Section = ({ title, children }) => {
       fadeInClasses
     )}
     >
-      <h2 className={styles.sectionTitle}>{title}</h2>
+      {title && <h2 className={styles.sectionTitle}>{title}</h2>}
       {childrenThatAreComponents.length
         ? (
           <SectionSlider>{childrenThatAreComponents}</SectionSlider>
@@ -35,7 +35,7 @@ const Section = ({ title, children }) => {
 };
 
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.node.isRequired
 };
 
