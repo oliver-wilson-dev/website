@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import PlacesWorked from '.';
+import Section from '../Section';
+import styles from './index.css';
 
 jest.mock('../Section', () => {
   const Section = () => null;
@@ -25,5 +27,14 @@ describe('PlacesWorked', () => {
 
   it('should render correctly', () => {
     expect(render()).toMatchSnapshot();
+  });
+
+  it('should pass the additionalStyles to the section component', () => {
+    const wrapper = render();
+
+    expect(wrapper.find(Section).prop('additionalStyles')).toEqual({
+      section: styles.sectionWrapper,
+      container: styles.sectionContainer
+    });
   });
 });

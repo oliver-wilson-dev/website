@@ -90,4 +90,36 @@ describe('<Section/>', () => {
       expect(render({ title: undefined }).exists()).toBe(true);
     });
   });
+
+  describe('when additionalStyles are provided', () => {
+    describe('when a section class is provided', () => {
+      it('should add the class to the section element', () => {
+        const sectionClass = 'test-section-class';
+        const wrapper = render({
+          overrideProps: {
+            additionalStyles: {
+              section: sectionClass
+            }
+          }
+        });
+
+        expect(wrapper.find('section').hasClass(sectionClass)).toBe(true);
+      });
+    });
+
+    describe('when a container class is provided', () => {
+      it('should add the class to the section element', () => {
+        const containerClass = 'test-container-class';
+        const wrapper = render({
+          overrideProps: {
+            additionalStyles: {
+              container: containerClass
+            }
+          }
+        });
+
+        expect(wrapper.find(`.${containerClass}`).exists()).toBe(true);
+      });
+    });
+  });
 });

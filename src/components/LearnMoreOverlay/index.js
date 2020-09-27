@@ -36,7 +36,6 @@ const LearnMoreOverlay = ({ learnMoreClicked }) => {
         [styles.background__loaded]: loaded,
         [styles.background__closed]: acknowledged,
       })}
-
       onTransitionEnd={onTransitionEnd}
     >
       <div className={styles.layout}>

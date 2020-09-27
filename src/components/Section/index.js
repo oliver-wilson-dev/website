@@ -6,17 +6,18 @@ import styles from './index.css';
 import SectionSlider from '../SectionSlider';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
 
-const Section = ({ title, children }) => {
+const Section = ({ title, children, additionalStyles = {} }) => {
   const { fadeInClasses } = useFadeInClasses();
 
   const childrenThatAreComponents = children.filter(child => (child.type instanceof Object));
   const childrenThatAreNotComponents = children.filter(child => !(child.type instanceof Object));
 
   return (
-    <div className={cn(
+    <section className={cn(
       styles.flexColumn,
       sharedStyles.flexCenter,
-      fadeInClasses
+      fadeInClasses,
+      { [additionalStyles.section]: !!additionalStyles.section, }
     )}
     >
       {title && <h2 className={styles.sectionTitle}>{title}</h2>}
@@ -26,17 +27,20 @@ const Section = ({ title, children }) => {
         ) : null
       }
       {childrenThatAreNotComponents.length ? (
-        <div>
+        <div className={additionalStyles.container}>
           {childrenThatAreNotComponents}
         </div>
       ) : null}
-    </div>
+    </section>
   );
 };
 
 Section.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  additionalStyles: PropTypes.oneOfType([
+    PropTypes.shape()
+  ])
 };
 
 export default Section;
