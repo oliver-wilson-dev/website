@@ -15,7 +15,7 @@
     "coverage": "jest --coverage && open ./coverage/lcov-report/index.html",
     "lint": "eslint ./src",
     "ci": "npm run lint && jest --coverage",
-    "serve": "npm run build && serve",
+    "serve": "npm run build && serve ./dist",
     "start": "node ./src/server/index.js"
   },
   "author": "oliver wilson",

@@ -1,11 +1,18 @@
-.sectionWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    margin-top: 30px;
-    background: var(--projectGreen);
+.section {
+
+    &Wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        margin-top: 30px;
+        background: var(--projectGreen);
+    }
+
+    &Container {
+        padding: 30px 20px;
+    }
 }
 
 .statement {
