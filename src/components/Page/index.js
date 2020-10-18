@@ -15,7 +15,7 @@ const Page = ({ additionalStyles, children, theme }) => {
 
 Page.propTypes = {
   additionalStyles: PropTypes.string,
-  theme: PropTypes.string,
+  theme: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node

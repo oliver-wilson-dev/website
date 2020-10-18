@@ -5,14 +5,25 @@ import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 
 jest.mock('../../hooks/useBackgroundClasses');
 
-const render = (props = {}) => shallow(<Page {...props}><h1>hello world</h1></Page>);
+const defaultProps = {
+  theme: Symbol('test-theme')
+};
+
+const render = (props = {}) => shallow(
+  <Page
+    {...defaultProps}
+    {...props}
+  >
+    <h1>hello world</h1>
+  </Page>
+);
 
 describe('Page', () => {
   const mockBackgroundClasses = 'test-background-classes';
+
   beforeEach(() => {
     useBackgroundClasses.mockReturnValue(mockBackgroundClasses);
   });
-
 
   it('should render correctly', () => {
     expect(render()).toMatchSnapshot();
