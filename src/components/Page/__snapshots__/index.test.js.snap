@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubPage should render correctly 1`] = `
+exports[`Page should render correctly 1`] = `
 <div
-  className="subPage"
+  className="page test-background-classes"
 >
   <h1>
     hello world

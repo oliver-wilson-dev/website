@@ -1,10 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SubPage from '.';
+import Page from '.';
+import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 
-const render = (props = {}) => shallow(<SubPage {...props}><h1>hello world</h1></SubPage>);
+jest.mock('../../hooks/useBackgroundClasses');
 
-describe('SubPage', () => {
+const render = (props = {}) => shallow(<Page {...props}><h1>hello world</h1></Page>);
+
+describe('Page', () => {
+  const mockBackgroundClasses = 'test-background-classes';
+  beforeEach(() => {
+    useBackgroundClasses.mockReturnValue(mockBackgroundClasses);
+  });
+
+
   it('should render correctly', () => {
     expect(render()).toMatchSnapshot();
   });

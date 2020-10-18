@@ -14,6 +14,12 @@ jest.mock('../../containers/Sections', () => {
   return Sections;
 });
 
+jest.mock('../../containers/Page', () => {
+  const Page = () => null;
+
+  return Page;
+});
+
 const render = () => shallow(<Home />);
 
 describe('Home', () => {
