@@ -6,7 +6,7 @@ import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 jest.mock('../../hooks/useBackgroundClasses');
 
 const defaultProps = {
-  theme: Symbol('test-theme')
+  theme: 'test-theme'
 };
 
 const render = (props = {}) => shallow(

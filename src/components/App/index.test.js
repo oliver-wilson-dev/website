@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './index';
 import Header from '../../containers/Header';
-import { DARK_THEME } from '../../state/actions/constants';
 import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 
 jest.mock('react-router-dom', () => ({
