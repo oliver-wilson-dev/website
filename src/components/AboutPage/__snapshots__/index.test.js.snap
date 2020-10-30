@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About should render correctly 1`] = `
+<SubPage>
+  <section>
+    <h1
+      className="pageHeader"
+    >
+      About Page
+    </h1>
+    <p
+      className="aboutParagraph"
+    >
+      I haven't taken the time to write much about myself yet, but when I do, this will be where to find it.
+    </p>
+  </section>
+</SubPage>
+`;

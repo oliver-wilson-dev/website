@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Landing from '../Landing';
+import Page from '../../containers/Page';
 import Sections from '../../containers/Sections';
 
 const Home = () => (
-  <React.Fragment>
+  <Page>
     <Landing />
     <Sections />
-  </React.Fragment>
+  </Page>
 );
 
 export default Home;

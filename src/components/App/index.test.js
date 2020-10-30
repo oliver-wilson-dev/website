@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './index';
 import Header from '../../containers/Header';
-import { DARK_THEME } from '../../state/actions/constants';
+import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 
 jest.mock('react-router-dom', () => ({
   __esModule: true,
@@ -16,10 +16,10 @@ jest.mock('../Router', () => {
   return Router;
 });
 
-jest.mock('../NotFound', () => {
-  const NotFound = () => null;
+jest.mock('../NotFoundPage', () => {
+  const NotFoundPage = () => null;
 
-  return NotFound;
+  return NotFoundPage;
 });
 
 jest.mock('../../containers/Header', () => {
@@ -52,11 +52,19 @@ jest.mock('../../containers/Sections', () => {
   return Sections;
 });
 
+jest.mock('../../hooks/useBackgroundClasses');
+
 const defaultProps = { theme: 'test-theme' };
 
 const render = overrideProps => shallow(<App {...defaultProps} {...overrideProps} />);
 
 describe('<App/> component', () => {
+  const backgroundClass = 'test-background-class';
+  beforeEach(() => {
+    useBackgroundClasses.mockReturnValue(backgroundClass);
+  });
+
+
   it('should exist', () => {
     expect(render().exists()).toBe(true);
   });
@@ -74,9 +82,10 @@ describe('<App/> component', () => {
     expect(render().find(Header).exists()).toBe(true);
   });
 
-  describe('when the theme is dark', () => {
-    it('should render correctly', () => {
-      expect(render({ theme: DARK_THEME })).toMatchSnapshot();
-    });
+  it('should call the useBackgroundClasses hook with the theme prop', () => {
+    const mockTheme = 'test-theme';
+    render({ theme: mockTheme });
+
+    expect(useBackgroundClasses).toHaveBeenCalledWith({ theme: mockTheme });
   });
 });

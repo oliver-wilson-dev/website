@@ -2,7 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import About from '.';
 
-jest.mock('../SubPage', () => {
+jest.mock('react-router-dom', () => ({
+  Link: () => null
+}));
+
+jest.mock('./search.svg', () => {
+  const SearchIcon = () => null;
+
+  return SearchIcon;
+});
+
+jest.mock('../../containers/Page', () => {
   const SubPage = ({ children }) => <div>{children}</div>;
 
   return SubPage;
