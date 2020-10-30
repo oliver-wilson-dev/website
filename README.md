@@ -22,3 +22,18 @@ Please read more on the topic [here](https://ouyi.github.io/post/2018/01/14/gith
 ## Colour scheme
 
 The colour scheme followed for this website is largely utilised from [this pallet](https://coolors.co/ef476f-ffd166-06d6a0-118ab2-073b4c).
+
+## Workflow
+
+1. Branch off of develop
+
+2. Do whatever work needs to be done in feature branch
+
+3. Create a PR against develop
+
+   - the [PR github action](./.github/workflows/PR.yaml) will be ran against the feature branch
+   - if the action passes, then the PR can be merged
+
+4. Repeat steps 1 - 3 as many times as desired, ideally we release in small deltas often, but sometimes we might want to merge in a few PRs before we create a release candidate.
+
+5. When develop contains the changes you want to release, create a PR from develop against master, once this is merged (you could have also done the merge locally and pushed, but ideally we'd never push to master from a development machine). Once merged, the [release github action](./.github/workflows/release.yaml) will run, which builds the application and deploys it to the Google Cloud Platform.
