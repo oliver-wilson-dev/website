@@ -1,4 +1,4 @@
-# Oliver Wilson Portfolio
+# Oliver Wilson's Portfolio
 
 This is a project that I've created for two reasons:
 
