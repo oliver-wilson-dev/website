@@ -1,33 +1,33 @@
 :root {
-    --pageContentMaxWidth: 850px
+  --pageContentMaxWidth: 850px
 }
 
 .bodyFixed {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
 }
 
 .pageHeader {
-    font-size: 5em;
-    margin: 0;
-    margin-top: 10px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    letter-spacing: 2px;
-    text-align: center;
-    width: 100%;
-  }
+  font-size: 5em;
+  margin: 0;
+  margin-top: 10px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+}
 
-  @media (min-width: 786px) {
-    .landing--header {
-    max-width: 800px;
-    }
+@media (min-width: 786px) {
+  .landing--header {
+  max-width: 800px;
   }
+}
 
-  @media (min-width: 0px) and (max-width: 767px) {
-    .pageHeader {
-      font-size: 3em;
-    }
+@media (min-width: 0px) and (max-width: 767px) {
+  .pageHeader {
+    font-size: 3em;
   }
+}

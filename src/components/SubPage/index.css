@@ -1,6 +1,0 @@
-@import "../../styles/shared.css";
-
-.subPage {
-    max-width: var(--pageContentMaxWidth);
-    padding: 30px;
-}

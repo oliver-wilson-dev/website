@@ -28,39 +28,11 @@ body {
   min-height: calc(100vh - var(--headerHeight));
   overflow-x: hidden;
   align-items: center;
-
-  background-attachment: fixed;
-  background-color: var(--primaryBackgroundLight);
-  /* background-image: var(--primaryBackgroundImage); */
-  transition-timing-function: ease-in;
-  transition-duration: 0.4s;
-  transition-property: background-color,  background-image;
-
-  &__dark {
-    background-image: unset;
-    background-color: var(--primaryBackgroundDark);
-  }
 }
 
-.appContent {
-	max-width: 100%;
-	margin: 0;
-  background-color: var(--primaryBackgroundLight);
+.main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   flex-grow: 1;
-  transition: background-color 0.4s ease-in;
-
-  &__dark {
-    background-color: var(--primaryBackgroundDark);
-  }
-}
-
-.cover-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 h1 {
@@ -115,12 +87,4 @@ flex
   .sectionTitle {
 		font-size: 28px;
 	}
-}
-
-@media (min-width: 1024px) {
-  .appContent {
-		/* box-shadow: 8px 8px 0px #0b0a0a;
-		border: 3px solid #0b0a0a; */
-		margin: 20px auto;
-  }
 }
