@@ -15,10 +15,6 @@ The application is an express server, hosted in the cloud that responds to route
 
 This website is hosted as an [app engine](https://cloud.google.com/appengine) on the Google Cloud Platform.
 
-### Github pages CNAME file
-
-Please read more on the topic [here](https://ouyi.github.io/post/2018/01/14/github-pages-cname-file.html)
-
 ## Colour scheme
 
 The colour scheme followed for this website is largely utilised from [this pallet](https://coolors.co/ef476f-ffd166-06d6a0-118ab2-073b4c).
