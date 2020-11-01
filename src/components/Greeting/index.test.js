@@ -11,6 +11,13 @@ const defaultProps = {
     end: 'test-end'
   },
   title: 'test-title',
+  reasonForCreation: {
+    start: 'test-reason-for-creation-start',
+    reasons: [
+      'test-first-reason',
+      'test-second-reason'
+    ]
+  }
 };
 
 const render = overrideProps => shallow(<Greeting {...defaultProps} {...overrideProps} />);
