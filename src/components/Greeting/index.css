@@ -7,3 +7,13 @@
     margin-right: 10px;
     font-size: 30px;
 }
+
+.reasonsList {
+    list-style-type: none;
+    padding-left: unset;
+}
+
+.listOrderIndicator {
+    margin-right: 10px;
+    font-weight: 600;
+}

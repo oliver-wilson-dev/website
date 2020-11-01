@@ -15,6 +15,37 @@ exports[`<Greeting/> component should match snapshot 1`] = `
      
     test-end
   </p>
+  <div>
+    <span>
+      test-reason-for-creation-start
+    </span>
+    <ul
+      className="reasonsList"
+    >
+      <li
+        key="0"
+      >
+        <span
+          className="listOrderIndicator"
+        >
+          0
+          .
+        </span>
+        test-first-reason
+      </li>
+      <li
+        key="1"
+      >
+        <span
+          className="listOrderIndicator"
+        >
+          1
+          .
+        </span>
+        test-second-reason
+      </li>
+    </ul>
+  </div>
   <p
     key="test-paragraph"
   >
