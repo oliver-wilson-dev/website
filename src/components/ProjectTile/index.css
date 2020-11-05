@@ -19,7 +19,6 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
-    position: absolute;
     margin-right: auto;
     align-items: center;
     justify-content: space-around;
