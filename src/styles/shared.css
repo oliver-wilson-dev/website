@@ -20,6 +20,48 @@
   width: 100%;
 }
 
+.buttonLink {
+  color: var(--primaryTextColorLight);
+  background: var(--projectGreen);
+  max-width: 400px;
+
+  border-radius: 30px;
+  padding: 12px 30px;
+  
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  
+  &:hover, &:focus {
+      box-shadow: 0px 3px 4px -1px var(--primaryBorderColourLight);
+      transform: translateY(-0.25em);
+  }
+}
+
+@media (min-width: 426px) {
+  .buttonLink {
+      font-size: 20px;
+  }
+  
+  .downloadButtonIcon {
+      padding-left: 15px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      fill: var(--primaryTextColorLight);
+  }
+}
+
 @media (min-width: 786px) {
   .landing--header {
   max-width: 800px;

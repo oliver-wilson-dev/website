@@ -1,0 +1,73 @@
+:root {
+    --marginRight: 20px;
+    --boxShadowHOffset: 5px;
+}
+
+.projectTile {
+    max-width: calc((var(--pageContentMaxWidth)) - 40px - (var(--marginRight) * 2));
+
+    margin: 20px var(--marginRight) 0px var(--marginRight);
+    box-shadow: var(--boxShadowHOffset) 5px 12px -2px var(--primaryBorderColour);
+    padding: 20px;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.techHeader {
+    margin: 20px 0px 0px 0px;
+}
+
+.techList {
+    font-weight: 600;
+}
+
+.buttonLink {
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --numberOfTiles: 2;
+        --numberOfTilesMinusOne: 1;
+    }
+
+    .projectTile {
+        max-width: calc((100% / var(--numberOfTiles)) - (var(--marginRight) * var(--numberOfTilesMinusOne)) - (var(--boxShadowHOffset) * var(--numberOfTiles)) - 20px);
+
+        margin: 20px var(--marginRight) 0px 0px;
+
+        &:nth-of-type(2n) {
+            margin-right: 0px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --numberOfTiles: 3;
+        --numberOfTilesMinusOne: 2;
+    }
+
+    .projectTile {
+        max-width: calc((100% / var(--numberOfTiles)) - (var(--marginRight) * var(--numberOfTilesMinusOne)) - (var(--boxShadowHOffset) * var(--numberOfTiles)));
+
+        &:nth-of-type(2n) {
+            margin-right: var(--marginRight);
+        }
+
+        &:nth-of-type(3n) {
+            margin-right: 0px;
+        }
+    }
+}

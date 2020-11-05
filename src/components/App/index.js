@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import styles from './index.css';
 import HomePage from '../HomePage';
 import AboutPage from '../AboutPage';
+import ProjectsPage from '../ProjectsPage';
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';
@@ -26,6 +27,7 @@ const App = ({ theme }) => {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/about" component={AboutPage} />
+            <Route path="/projects" component={ProjectsPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
