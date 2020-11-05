@@ -9,15 +9,15 @@
     margin: 20px var(--marginRight) 0px var(--marginRight);
     box-shadow: var(--boxShadowHOffset) 5px 12px -2px var(--primaryBorderColour);
     padding: 20px;
-    position: relative;
-    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .footer {
-    left: 0;
     width: 100%;
-    bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     margin-left: auto;
     position: absolute;
     margin-right: auto;
@@ -36,6 +36,7 @@
 .buttonLink {
     font-size: 14px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {

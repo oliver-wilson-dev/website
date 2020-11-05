@@ -4,24 +4,26 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
 <article
   className="projectTile"
 >
-  <header>
-    <h3>
-      test-project-name
-    </h3>
-    <h4
-      className="techHeader"
-    >
-      Technologies
-    </h4>
-    <p
-      className="techList"
-    >
-      react, redux, node
+  <div>
+    <header>
+      <h3>
+        test-project-name
+      </h3>
+      <h4
+        className="techHeader"
+      >
+        Technologies
+      </h4>
+      <p
+        className="techList"
+      >
+        react, redux, node
+      </p>
+    </header>
+    <p>
+      test-description
     </p>
-  </header>
-  <p>
-    test-description
-  </p>
+  </div>
   <footer
     className="footer"
   >
@@ -49,24 +51,26 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
 <article
   className="projectTile"
 >
-  <header>
-    <h3>
-      test-project-name
-    </h3>
-    <h4
-      className="techHeader"
-    >
-      Technologies
-    </h4>
-    <p
-      className="techList"
-    >
-      react, redux, node
+  <div>
+    <header>
+      <h3>
+        test-project-name
+      </h3>
+      <h4
+        className="techHeader"
+      >
+        Technologies
+      </h4>
+      <p
+        className="techList"
+      >
+        react, redux, node
+      </p>
+    </header>
+    <p>
+      test-description
     </p>
-  </header>
-  <p>
-    test-description
-  </p>
+  </div>
   <footer
     className="footer"
   >
@@ -86,24 +90,26 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
 <article
   className="projectTile"
 >
-  <header>
-    <h3>
-      test-project-name
-    </h3>
-    <h4
-      className="techHeader"
-    >
-      Technologies
-    </h4>
-    <p
-      className="techList"
-    >
-      react, redux, node
+  <div>
+    <header>
+      <h3>
+        test-project-name
+      </h3>
+      <h4
+        className="techHeader"
+      >
+        Technologies
+      </h4>
+      <p
+        className="techList"
+      >
+        react, redux, node
+      </p>
+    </header>
+    <p>
+      test-description
     </p>
-  </header>
-  <p>
-    test-description
-  </p>
+  </div>
   <footer
     className="footer"
   >
@@ -123,23 +129,25 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
 <article
   className="projectTile"
 >
-  <header>
-    <h3>
-      test-project-name
-    </h3>
-    <h4
-      className="techHeader"
-    >
-      Technologies
-    </h4>
-    <p
-      className="techList"
-    >
-      react, redux, node
+  <div>
+    <header>
+      <h3>
+        test-project-name
+      </h3>
+      <h4
+        className="techHeader"
+      >
+        Technologies
+      </h4>
+      <p
+        className="techList"
+      >
+        react, redux, node
+      </p>
+    </header>
+    <p>
+      test-description
     </p>
-  </header>
-  <p>
-    test-description
-  </p>
+  </div>
 </article>
 `;

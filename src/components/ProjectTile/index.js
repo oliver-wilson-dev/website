@@ -12,18 +12,20 @@ const ProjectTile = ({
   technologies
 }) => (
   <article className={styles.projectTile}>
-    <header>
-      <h3>{name}</h3>
-      {technologies && (
-      <React.Fragment>
-        <h4 className={styles.techHeader}>Technologies</h4>
-        <p className={styles.techList}>
-          {technologies.join(', ')}
-        </p>
-      </React.Fragment>
-      )}
-    </header>
-    <p>{description}</p>
+    <div>
+      <header>
+        <h3>{name}</h3>
+        {technologies && (
+        <React.Fragment>
+          <h4 className={styles.techHeader}>Technologies</h4>
+          <p className={styles.techList}>
+            {technologies.join(', ')}
+          </p>
+        </React.Fragment>
+        )}
+      </header>
+      <p>{description}</p>
+    </div>
     {(codeHref || demoHref) && (
       <footer className={styles.footer}>
         {demoHref && <a href={demoHref} className={cn(sharedStyles.buttonLink, styles.buttonLink)} rel="noopener noreferrer" target="_blank">View demo</a>}
