@@ -1,5 +1,5 @@
 :root {
-    --marginRight: 20px;
+    --marginRight: 35px;
     --borderWidth: 10px;
     --borderWidthDouble: var(--borderWidth) * 2;
 }
@@ -26,6 +26,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: var(--primaryTextColorDark);
+    box-shadow: 1px 1px 10px var(--primaryBorderColourLight);
 }
 
 .footer {
@@ -59,7 +60,7 @@
     }
 
     .projectTile {
-        max-width: calc((100% / var(--numberOfTiles)) - (var(--marginRight) * var(--numberOfTilesMinusOne)) - (var(--borderWidthDouble) * var(--numberOfTiles)) - 20px);
+        max-width: calc((100% / 2) - (var(--borderWidthDouble) * var(--numberOfTilesMinusOne)) - var(--marginRight) - var(--borderWidth) - 15px);
 
         margin: 20px var(--marginRight) 0px 0px;
 
@@ -76,7 +77,7 @@
     }
 
     .projectTile {
-        max-width: calc((100% / var(--numberOfTiles)) - (var(--marginRight) * var(--numberOfTilesMinusOne)) - (var(--borderWidthDouble) * var(--numberOfTiles)));
+        max-width: calc((100% / 3) - (var(--borderWidthDouble) * var(--numberOfTilesMinusOne)) - var(--marginRight) - var(--borderWidth));
 
         &:nth-of-type(2n) {
             margin-right: var(--marginRight);
