@@ -26,8 +26,8 @@ const ProjectTile = ({
     <p>{description}</p>
     {(codeHref || demoHref) && (
       <footer className={styles.footer}>
-        {demoHref && <a href={demoHref} className={cn(sharedStyles.buttonLink, styles.buttonLink)} target="_blank">View demo</a>}
-        {codeHref && <a href={codeHref} className={cn(sharedStyles.buttonLink, styles.buttonLink)} target="_blank">View code</a>}
+        {demoHref && <a href={demoHref} className={cn(sharedStyles.buttonLink, styles.buttonLink)} rel="noopener noreferrer" target="_blank">View demo</a>}
+        {codeHref && <a href={codeHref} className={cn(sharedStyles.buttonLink, styles.buttonLink)} rel="noopener noreferrer" target="_blank">View code</a>}
       </footer>
     )}
   </article>
