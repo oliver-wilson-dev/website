@@ -32,7 +32,8 @@ module.exports = (env, { mode }) => ({
   },
   devServer: {
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true,
   },
   externals: {
     global: 'window'
