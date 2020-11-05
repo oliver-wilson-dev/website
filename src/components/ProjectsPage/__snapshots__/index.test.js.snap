@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectsPage should render correctly 1`] = `
+<Page>
+  <h1
+    className="pageHeader pageHeader"
+  >
+    Projects
+  </h1>
+  <div
+    className="projectGrid"
+  >
+    <ProjectTile
+      codeHref="https://github.com/oliver-wilson-dev/to-do-list"
+      description="A to do list that records list items in local storage. List items can be amended, marked as complete, removed and users can add new list items too."
+      name="To do list"
+      technologies={
+        Array [
+          "react",
+          "redux",
+          "node",
+        ]
+      }
+    />
+    <ProjectTile
+      codeHref="https://github.com/oliver-wilson-dev/label-prs"
+      description="Adding labels to pull requests makes it easier to view the status of a pull requests when looking at the pull request summaries page for a repository.
+        When a pull request is opened the bot assigns the user that opened the pull request to the pull request.
+        When a pull request is approved the bot adds a label to represent the number of approvals the PR has."
+      name="Label PR Probot app"
+      technologies={
+        Array [
+          "Github's probot framework",
+          "node",
+          "javascript",
+        ]
+      }
+    />
+    <ProjectTile
+      codeHref="https://github.com/oliver-wilson-dev/settings"
+      description="One of the main chores a developer faces is setting up a development machine. 
+        Sure, it's easy to install visual studio code, git and your favorite browser, but it's the little things that really allow for productivity."
+      name="Automate Mac settings"
+      technologies={
+        Array [
+          "Bash",
+        ]
+      }
+    />
+  </div>
+</Page>
+`;

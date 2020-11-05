@@ -39,6 +39,17 @@ exports[`<SideNav/> component should render correctly 1`] = `
         </Link>
       </li>
       <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/projects"
+        >
+          Projects
+        </Link>
+      </li>
+      <li
         className="menuItem menuItemMargin menuItemNoHover"
       >
         <DownloadButton />
@@ -143,6 +154,33 @@ exports[`<SideNav/> component when the showSideNav prop is true and then clickin
               type="button"
             >
               About
+            </button>
+          </Link>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/projects"
+          >
+            <button
+              type="button"
+            >
+              Projects
             </button>
           </Link>
         </li>
@@ -256,6 +294,33 @@ exports[`<SideNav/> component when the showSideNav prop is true and then clickin
           </Link>
         </li>
         <li
+          className="menuItem"
+        >
+          <Link
+            className="link menuItemMargin"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            to="/projects"
+          >
+            <button
+              type="button"
+            >
+              Projects
+            </button>
+          </Link>
+        </li>
+        <li
           className="menuItem menuItemMargin menuItemNoHover"
         >
           <DownloadButton />
@@ -302,6 +367,17 @@ exports[`<SideNav/> component when the showSideNav prop is true should open the 
           to="/about"
         >
           About
+        </Link>
+      </li>
+      <li
+        className="menuItem"
+      >
+        <Link
+          className="link menuItemMargin"
+          onClick={[MockFunction]}
+          to="/projects"
+        >
+          Projects
         </Link>
       </li>
       <li
