@@ -13,6 +13,7 @@ const ProjectsPage = () => (
         name="To do list"
         description="A to do list that records list items in local storage. List items can be amended, marked as complete, removed and users can add new list items too."
         codeHref="https://github.com/oliver-wilson-dev/to-do-list"
+        demoHref="https://oliver-wilson-dev.github.io/to-do-list"
         technologies={['react', 'redux', 'node']}
       />
       <ProjectTile
