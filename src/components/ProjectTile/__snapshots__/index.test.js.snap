@@ -28,6 +28,7 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
     <a
       className="buttonLink buttonLink"
       href="https://test-href"
+      rel="noopener noreferrer"
       target="_blank"
     >
       View demo
@@ -35,6 +36,7 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
     <a
       className="buttonLink buttonLink"
       href="https://test-href"
+      rel="noopener noreferrer"
       target="_blank"
     >
       View code
@@ -71,6 +73,7 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
     <a
       className="buttonLink buttonLink"
       href="https://test-href"
+      rel="noopener noreferrer"
       target="_blank"
     >
       View code
@@ -107,6 +110,7 @@ exports[`ProjectTile when provided with a name, technologies list and descriptio
     <a
       className="buttonLink buttonLink"
       href="https://test-href"
+      rel="noopener noreferrer"
       target="_blank"
     >
       View demo
