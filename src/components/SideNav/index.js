@@ -64,6 +64,11 @@ const SideNav = ({ showSideNav, toggleShowSideNav }) => {
               About
             </Link>
           </li>
+          <li className={styles.menuItem}>
+            <Link to="/projects" className={cn(styles.link, styles.menuItemMargin)} onClick={toggleShowSideNav}>
+              Projects
+            </Link>
+          </li>
           <li className={cn(styles.menuItem, styles.menuItemMargin, styles.menuItemNoHover)}>
             <DownloadButton />
           </li>

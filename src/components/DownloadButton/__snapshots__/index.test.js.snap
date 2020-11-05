@@ -2,7 +2,7 @@
 
 exports[`<DeleteButton/> should render correctly 1`] = `
 <a
-  className="downloadButton"
+  className="buttonLink"
   download="Oliver Wilson Curriculum Vitae.pdf"
   href="public/documents/CV.pdf"
   rel="noopener noreferrer"

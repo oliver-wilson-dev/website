@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './index.css';
+import sharedStyles from '../../styles/shared.css';
 import DownloadButtonIcon from './download.svg';
 
 const DownloadButton = () => (
   <a
-    className={styles.downloadButton}
+    className={sharedStyles.buttonLink}
     download="Oliver Wilson Curriculum Vitae.pdf"
     target="_blank"
     rel="noopener noreferrer"

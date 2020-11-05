@@ -22,6 +22,10 @@ exports[`<App/> component should render correctly 1`] = `
         />
         <Route
           component={[Function]}
+          path="/projects"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </main>

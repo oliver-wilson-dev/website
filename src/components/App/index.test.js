@@ -22,6 +22,12 @@ jest.mock('../NotFoundPage', () => {
   return NotFoundPage;
 });
 
+jest.mock('../ProjectsPage', () => {
+  const ProjectsPage = () => null;
+
+  return ProjectsPage;
+});
+
 jest.mock('../../containers/Header', () => {
   const Header = () => null;
 
