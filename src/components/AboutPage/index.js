@@ -3,7 +3,6 @@ import React from 'react';
 import cn from 'classnames';
 import sharedStyles from '../../styles/shared.css';
 import styles from './index.css';
-
 import Page from '../../containers/Page';
 
 const theGym = `During my free time I quite like to go to the gym; 
@@ -26,9 +25,9 @@ wing chun taught me more practical self defence techniques.`;
 
 const AboutPage = () => (
   <Page>
-    <article>
+    <article className={styles.article}>
       <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>About Me</h1>
-      <section className={styles.aboutSection}>
+      <section>
         <h2 id="about--page-career">Career</h2>
         <section>
           <h3>Asos</h3>
@@ -45,7 +44,7 @@ const AboutPage = () => (
             Users can save items to a list on either the product listing page or the individual product page in order to re-visit and potentially move them items to the bag at a time that is convenient.
             Some of the requirements for the page are that:
           </p>
-          <ul>
+          <ul className={styles.unorderedList}>
             <li>a user can see their list of items that they have saved on other devices while logged into their account e.g. save an item via the app on their phone and view the list in their web browser</li>
             <li>a user can update the size or colour of an item that they have saved on their list and when this is done, the change persists upon refresh/visit on another device</li>
             <li>a user can add an item to their bag from their saved items list</li>
@@ -81,11 +80,11 @@ const AboutPage = () => (
           </p>
         </section>
       </section>
-      <section id="about--page-hobbies" className={styles.aboutSection}>
+      <section id="about--page-hobbies">
         <h2>Hobbies</h2>
         <p>{theGym}</p>
       </section>
-      <section id="about--page-interests" className={styles.aboutSection}>
+      <section id="about--page-interests">
         <h2>Interests</h2>
         <p>{boxing}</p>
       </section>

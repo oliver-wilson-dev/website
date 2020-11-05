@@ -1,7 +1,12 @@
-.aboutSection {
-    padding: 20px 30px;
-}
-
 .pageHeader {
     margin-top: 30px;
+}
+
+.article {
+    max-width: var(--pageContentMaxWidth);
+    padding: 15px;
+}
+
+.unorderedList {
+    padding-left: 25px;
 }

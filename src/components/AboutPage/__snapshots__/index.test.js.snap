@@ -2,15 +2,15 @@
 
 exports[`About should render correctly 1`] = `
 <SubPage>
-  <article>
+  <article
+    className="article"
+  >
     <h1
       className="pageHeader pageHeader"
     >
       About Me
     </h1>
-    <section
-      className="aboutSection"
-    >
+    <section>
       <h2
         id="about--page-career"
       >
@@ -26,7 +26,9 @@ exports[`About should render correctly 1`] = `
         <p>
           During my time at the company I worked on the re-platforming of the saved items page onto a tech stack of react, redux, express and node.js. Users can save items to a list on either the product listing page or the individual product page in order to re-visit and potentially move them items to the bag at a time that is convenient. Some of the requirements for the page are that:
         </p>
-        <ul>
+        <ul
+          className="unorderedList"
+        >
           <li>
             a user can see their list of items that they have saved on other devices while logged into their account e.g. save an item via the app on their phone and view the list in their web browser
           </li>
@@ -63,7 +65,6 @@ exports[`About should render correctly 1`] = `
       </section>
     </section>
     <section
-      className="aboutSection"
       id="about--page-hobbies"
     >
       <h2>
@@ -84,7 +85,6 @@ or not adhered to with a high level of discipline, the result is often suboptima
       </p>
     </section>
     <section
-      className="aboutSection"
       id="about--page-interests"
     >
       <h2>
