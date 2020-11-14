@@ -3,7 +3,6 @@
 [data-theme="DARK_THEME"] {
     --primaryBackground: var(--primaryBackgroundDark);
     --primaryBackgroundInverse: var(--primaryBackgroundLight);
-    --primaryBackgroundImage: linear-gradient(#333, #333);
     --primaryBorderColour: #f8f8f8;
 
     --primaryTextColor: var(--primaryTextColorDark);
