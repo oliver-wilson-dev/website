@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Sections from '.';
 
 jest.mock('../PlacesWorked', () => {
   const PlacesWorked = () => null;
@@ -44,6 +43,7 @@ jest.mock('../Contact', () => {
   return Contact;
 });
 
+
 const defaultProps = {
   fetchContent: jest.fn(),
   sections: {
@@ -55,12 +55,22 @@ const defaultProps = {
   sectionsContentFetched: true
 };
 
-const render = overrideProps => shallow(<Sections {...defaultProps} {...overrideProps} />);
-const renderMount = overrideProps => mount(<Sections {...defaultProps} {...overrideProps} />);
+const render = (overrideProps) => {
+  const Sections = require('./index').default;
+  return shallow(<Sections {...defaultProps} {...overrideProps} />);
+};
+const renderMount = (overrideProps) => {
+  const Sections = require('./index').default;
+  mount(<Sections {...defaultProps} {...overrideProps} />);
+};
 
 describe('<Sections/>', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+
+    jest.doMock('../../utils/clientOrServer', () => ({
+      IS_CLIENT: true
+    }));
   });
 
 
@@ -72,12 +82,17 @@ describe('<Sections/>', () => {
     expect(render()).toMatchSnapshot();
   });
 
-  it('should call fetchContent() once', () => {
+  it('should not all fetchContent()', () => {
     renderMount();
-    expect(defaultProps.fetchContent).toHaveBeenCalledWith();
+    expect(defaultProps.fetchContent).not.toHaveBeenCalled();
   });
 
   describe('when the sections content is not fetched', () => {
+    it('should call fetchContent()', () => {
+      renderMount({ sectionsContentFetched: false });
+      expect(defaultProps.fetchContent).toHaveBeenCalledWith();
+    });
+
     it('should render correctly', () => {
       expect(render({ sectionsContentFetched: false })).toMatchSnapshot();
     });
