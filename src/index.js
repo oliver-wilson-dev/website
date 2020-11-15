@@ -1,12 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import global from 'global';
+import window from 'global';
 import createStore from './state/createStore';
 import App from './containers/App';
+import Router from './components/Router';
 
-render(
+hydrate(
   <Provider store={createStore()}>
-    <App />
-  </Provider>, global.document.getElementById('app')
+    <Router>
+      <App />
+    </Router>
+  </Provider>, window.document.getElementById('app')
 );
