@@ -4,6 +4,7 @@ module.exports = {
   setupFiles: ['<rootDir>/test/setup.js'],
   moduleNameMapper: {
     '\\.css$': '<rootDir>/test/cssProxy.js',
+    '^.+\\.svg$': '<rootDir>/test/svgProxy.js',
     global: '<rootDir>/test/cssProxy.js' // has to point to an existing file
   },
   collectCoverageFrom: [
