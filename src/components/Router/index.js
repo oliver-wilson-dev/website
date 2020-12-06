@@ -1,7 +1,8 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, useLocation } from 'react-router-dom';
-
+import window from 'global';
+import { BrowserRouter, StaticRouter, useLocation } from 'react-router-dom';
+import { IS_SERVER } from '../../utils';
 
 const ScrollToTop = ({ children }) => {
   const { pathname } = useLocation();
@@ -13,13 +14,17 @@ const ScrollToTop = ({ children }) => {
   return <Fragment>{children}</Fragment>;
 };
 
-const Router = ({ children }) => (
-  <BrowserRouter basename="/">
-    <ScrollToTop>
-      {children}
-    </ScrollToTop>
-  </BrowserRouter>
-);
+const Router = ({ children }) => {
+  const Router = IS_SERVER ? StaticRouter : BrowserRouter;
+
+  return (
+    <Router basename="/">
+      <ScrollToTop>
+        {children}
+      </ScrollToTop>
+    </Router>
+  );
+};
 
 const sharedPropTypes = {
   children: PropTypes.oneOfType([

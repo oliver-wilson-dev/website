@@ -1,4 +1,4 @@
-import global from 'global';
+import window from 'global';
 import { COOKIE_PATH } from './constants';
 
 const setCookie = ({ name, value }) => {
@@ -8,7 +8,7 @@ const setCookie = ({ name, value }) => {
   const nameAndValue = `${name}=${value || ''};`;
   const expires = `expires=${date.toUTCString()};`;
 
-  global.document.cookie = `${nameAndValue} ${expires} ${COOKIE_PATH}`;
+  window.document.cookie = `${nameAndValue} ${expires} ${COOKIE_PATH}`;
 };
 
 export default setCookie;

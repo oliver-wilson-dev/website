@@ -5,9 +5,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
+const sharedConfig = require('./shared.config');
+
+const { jsRule, cssRule, svgRule } = sharedConfig.module.rules;
+
 const publicFolderDir = path.join(__dirname, '../public');
-const outputAssetsDir = path.join(__dirname, '../dist');
-const projectRootFileDir = path.join(outputAssetsDir, '/index.html');
+const { outputAssetsDir } = sharedConfig;
+const projectRootFileDir = path.join(outputAssetsDir, '/template.html');
 const entryDir = path.join(__dirname, '../src');
 
 const env = dotenv.config().parsed;
@@ -40,34 +44,22 @@ module.exports = (env, { mode }) => ({
   },
   module: {
     rules: [
+      jsRule,
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: { loader: 'babel-loader' }
+        ...cssRule,
+        use: [{ loader: 'style-loader' }, ...cssRule.use]
       },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]_[hash:base64:5]'
-            },
-          },
-          { loader: 'postcss-loader' }
-        ]
-      },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
+      svgRule
     ]
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.DefinePlugin(envKeys),
+    ...sharedConfig.plugins,
+    new webpack.DefinePlugin({
+      ...envKeys,
+      'process.env.IS_SERVER': JSON.stringify(false),
+      'process.env.IS_CLIENT': JSON.stringify(true)
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
       filename: projectRootFileDir,
