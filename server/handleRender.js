@@ -8,10 +8,12 @@ import path from 'path';
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider as ReduxStoreProvider } from 'react-redux';
-import reducer from '../src/state/reducers/index';
+import reducer from '../src/state/reducers';
 import App from '../src/containers/App';
 
-import { LIGHT_THEME, DARK_THEME, COOKIE_POLICY_ACCEPTED } from '../src/state/actions/constants';
+import {
+  LIGHT_THEME, DARK_THEME, COOKIE_POLICY_ACCEPTED, COOKIE_POLICY
+} from '../src/state/actions/constants';
 import fetchContent from '../src/state/actions/fetchContent';
 
 const renderFullPage = ({ html, preloadedState, res }) => {
@@ -20,19 +22,21 @@ const renderFullPage = ({ html, preloadedState, res }) => {
       console.log(err);
       return res.status(500).send('Some error happened');
     }
-    return res.send(
-      data.replace(
-        '<div id="app"></div>',
-        `<div id="app">${html}</div>
-          <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-    /</g,
-    '\\u003c'
-  )}
-        </script>
-        `
-      )
+
+    const state = JSON.stringify(preloadedState).replace(
+      /</g,
+      '\\u003c'
     );
+
+    const templateSubstitution = data.replace(
+      '<div id="app"></div>',
+      `<div id="app">${html}</div>
+      <script>
+        window.__PRELOADED_STATE__ = ${state}
+      </script>`
+    );
+
+    return res.send(templateSubstitution);
   });
 };
 
@@ -70,7 +74,7 @@ const handleRender = async ({ cookies }, res) => {
       checkBoxChecked: cookies.theme === DARK_THEME
     },
     cookieDisclaimer: {
-      showCookiePopup: cookies.COOKIE_POLICY !== COOKIE_POLICY_ACCEPTED,
+      showCookiePopup: cookies[COOKIE_POLICY] !== COOKIE_POLICY_ACCEPTED,
       showLearnMore: false
     },
     navigation: {
