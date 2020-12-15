@@ -10,8 +10,7 @@ const entry = path.join(__dirname, '../server/index.js');
 const { jsRule, cssRule, svgRule } = sharedConfig.module.rules;
 
 module.exports = {
-  // mode: 'remove this key eventually',
-  // mode: 'development',
+  mode: 'production',
   target: 'node',
   node: {
     __dirname: true,
@@ -23,7 +22,8 @@ module.exports = {
   output: {
     path: outputAssetsDir,
     filename: 'server.js',
-    globalObject: 'this'
+    globalObject: 'this',
+    publicPath: '/',
   },
   module: {
     rules: [

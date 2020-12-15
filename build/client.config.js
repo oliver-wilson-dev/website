@@ -12,7 +12,7 @@ const { jsRule, cssRule, svgRule } = sharedConfig.module.rules;
 const publicFolderDir = path.join(__dirname, '../public');
 const { outputAssetsDir } = sharedConfig;
 const projectRootFileDir = path.join(outputAssetsDir, '/template.html');
-const entryDir = path.join(__dirname, '../src');
+const entryDir = path.resolve(__dirname, '../src');
 
 const env = dotenv.config().parsed;
 
@@ -28,11 +28,13 @@ const envKeys = Object.keys(env)
       }
   }), {});
 
-module.exports = (env, { mode }) => ({
+module.exports = (env, { mode = 'production' }) => ({
+  mode,
   entry: entryDir,
   output: {
     path: outputAssetsDir,
-    filename: 'index.bundle.js'
+    filename: 'index.bundle.js',
+    publicPath: '/',
   },
   devServer: {
     compress: true,
@@ -61,7 +63,7 @@ module.exports = (env, { mode }) => ({
       'process.env.IS_CLIENT': JSON.stringify(true)
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../src/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
       filename: projectRootFileDir,
       templateParameters: { BUILD_NUMBER: mode === 'production' ? process.env.BUILD_NUMBER : envKeys.process.env.BUILD_NUMBER }
     }),

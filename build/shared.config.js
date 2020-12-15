@@ -1,6 +1,6 @@
 const path = require('path');
 
-const outputAssetsDir = path.join(__dirname, '../dist');
+const outputAssetsDir = path.resolve(__dirname, '../dist');
 
 const jsRule = {
   test: /\.js$/,

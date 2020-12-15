@@ -11,19 +11,21 @@
     "node": "12.*.*"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --hot --config build/config.js",
-    "build:client": "webpack --mode production --config build/client.config.js",
-    "build:server": "webpack --mode production --config build/server.config.js",
-    "build": "npm run build:client && npm run build:server",
+    "build:client:dev": "webpack --mode development --config build/client.config.js",
+    "build:server:dev": "webpack --mode development --config build/server.config.js",
+    "build:client:prod": "webpack --mode production --config build/client.config.js",
+    "build:server:prod": "webpack --mode production --config build/server.config.js",
+    "build:dev": "npm run build:client:dev && npm run build:server:dev",
+    "build:prod": "npm run build:client:prod && npm run build:server:prod",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:coverage:open": "jest --coverage && open ./coverage/lcov-report/index.html",
     "lint": "eslint ./src",
     "ci": "npm run lint && jest --coverage",
-    "serve": "npm run build && serve ./dist",
-    "start:build": "npm run build && npm run start",
-    "start": "NODE_ENV=production node ./dist/server.js"
+    "serve": "npm run build:prod && serve ./dist",
+    "dev": "npm run build:dev && NODE_ENV=development node ./dist/server.js",
+    "prod": "npm run build:prod && NODE_ENV=production node ./dist/server.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -79,6 +81,8 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-middleware": "^4.0.2",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
