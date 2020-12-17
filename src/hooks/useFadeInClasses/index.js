@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { IS_SERVER } from '../../utils';
 import sectionStyles from './index.css';
 
 const useFadeInClasses = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(IS_SERVER);
 
   useEffect(() => {
     setVisible(true);

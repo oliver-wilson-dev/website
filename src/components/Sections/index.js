@@ -11,15 +11,16 @@ import ProfilePicture from '../ProfilePicture';
 import DownloadButton from '../DownloadButton';
 
 import styles from './index.css';
+import { IS_CLIENT } from '../../utils/clientOrServer';
 
 const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
   useEffect(() => {
-    fetchContent();
+    if (!sectionsContentFetched) fetchContent();
   }, []);
 
   return (
     <React.Fragment>
-      <LoadingSpinner loading={!sectionsContentFetched} />
+      {IS_CLIENT && <LoadingSpinner loading={!sectionsContentFetched} />}
       {sectionsContentFetched && (
         <React.Fragment>
           <ProfilePicture />
