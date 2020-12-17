@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const compression = require('compression');
 
 const webpackDevMiddleware = require('webpack-dev-middleware');
-// const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpack = require('webpack');
 const handleRender = require('./handleRender').default;
 
@@ -16,15 +16,16 @@ const app = express();
 if (process.env.NODE_ENV === 'production') {
   // Serve the static files from the dist folder
   app.use(express.static(path.resolve(__dirname, '../dist')));
-  // throw new Error('fuck');
 } else {
   const initialisedClientConfig = clientConfig(undefined, { mode: 'development' });
   const compiler = webpack(initialisedClientConfig);
-
+  console.log(initialisedClientConfig);
   app.use(webpackDevMiddleware(compiler, {
     publicPath: initialisedClientConfig.output.publicPath,
     writeToDisk: true
   }));
+
+  app.use(webpackHotMiddleware(compiler));
 }
 
 app.use(compression());

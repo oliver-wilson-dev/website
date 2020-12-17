@@ -7,10 +7,18 @@ const dotenv = require('dotenv');
 
 const sharedConfig = require('./shared.config');
 
-const { jsRule, cssRule, svgRule } = sharedConfig.module.rules;
+const {
+  module: {
+    rules: {
+      jsRule,
+      cssRule,
+      svgRule
+    }
+  },
+  outputAssetsDir,
+} = sharedConfig;
 
 const publicFolderDir = path.join(__dirname, '../public');
-const { outputAssetsDir } = sharedConfig;
 const projectRootFileDir = path.join(outputAssetsDir, '/template.html');
 const entryDir = path.resolve(__dirname, '../src');
 
@@ -30,7 +38,7 @@ const envKeys = Object.keys(env)
 
 module.exports = (env, { mode = 'production' }) => ({
   mode,
-  entry: entryDir,
+  entry: [entryDir, ...mode === 'production' ? [] : ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true']],
   output: {
     path: outputAssetsDir,
     filename: 'index.bundle.js',
@@ -70,5 +78,6 @@ module.exports = (env, { mode = 'production' }) => ({
       ],
     }),
     new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 });

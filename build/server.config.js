@@ -3,13 +3,21 @@ const webpackNodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const sharedConfig = require('./shared.config');
 
-const { outputAssetsDir } = sharedConfig;
 const entry = path.join(__dirname, '../server/index.js');
 
-const { jsRule, cssRule, svgRule } = sharedConfig.module.rules;
+const {
+  module: {
+    rules: {
+      jsRule,
+      cssRule,
+      svgRule
+    }
+  },
+  outputAssetsDir,
+} = sharedConfig;
 
-module.exports = {
-  mode: 'production',
+module.exports = (env, { mode = 'production' }) => ({
+  mode,
   target: 'node',
   node: {
     __dirname: true,
@@ -38,4 +46,4 @@ module.exports = {
       'process.env.IS_CLIENT': JSON.stringify(false)
     }),
   ]
-};
+});
