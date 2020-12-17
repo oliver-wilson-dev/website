@@ -2,6 +2,7 @@ import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
+import clientConfig from '../build/client.config';
 
 const mockUse = jest.fn();
 const mockGet = jest.fn();
@@ -18,17 +19,28 @@ jest.mock('path', () => ({
   resolve: jest.fn()
 }));
 
-jest.mock('./handleRender', () => 'handle-render');
+jest.mock('./handleRender', () => ({
+  __esModule: true,
+  default: 'handle-render'
+}));
 jest.mock('cookie-parser');
 jest.mock('compression');
+jest.mock('webpack-dev-middleware');
+jest.mock('webpack');
+jest.mock('../build/client.config.js', () => jest.fn());
 
 describe('server', () => {
   const mockCompressionMiddleware = Symbol('test-compression-middleware');
   const mockCookieParserMiddleware = Symbol('test-cookie-parser-middleware');
   const consoleLog = console.log;
+  const mockClientConfig = {
+    output: {
+      publicPath: Symbol('test-client-public-path')
+    }
+  };
 
   beforeAll(() => {
-    // handleRender.mockReturnValue('handle-render');
+    clientConfig.mockReturnValue(mockClientConfig);
     cookieParser.mockReturnValue(mockCookieParserMiddleware);
     compression.mockReturnValue(mockCompressionMiddleware);
     path.join.mockImplementation((_, path) => path);
@@ -42,21 +54,42 @@ describe('server', () => {
     console.log = consoleLog;
   });
 
-  describe('app.use', () => {
-    it('should call app.use with the compression middleware', () => {
-      expect(mockUse).toHaveBeenCalledWith(mockCompressionMiddleware);
-    });
+  describe('when in production mode', () => {
+    describe('app.use', () => {
+      beforeEach(() => {
+        jest.resetModules();
+        jest.clearAllMocks();
 
-    it('should call app.use with the path to the dist folder', () => {
-      expect(mockUse).toHaveBeenCalledWith('../dist',);
-    });
+        const express = require('express');
+        const path = require('path');
+        const compression = require('compression');
+        const cookieParser = require('cookie-parser');
 
-    it('should call app.use with the cookieParser middleware', () => {
-      expect(mockUse).toHaveBeenCalledWith(mockCookieParserMiddleware);
-    });
+        clientConfig.mockReturnValue(mockClientConfig);
+        cookieParser.mockReturnValue(mockCookieParserMiddleware);
+        compression.mockReturnValue(mockCompressionMiddleware);
+        path.join.mockImplementation((_, path) => path);
+        path.resolve.mockImplementation((_, path) => path);
+        express.static = jest.fn(path => path);
+        console.log = jest.fn();
 
-    it('should call express.static with the path to the dist folder', () => {
-      expect(express.static).toHaveBeenCalledWith('../dist');
+        process.env.NODE_ENV = 'production';
+      });
+
+      it('should call app.use with the compression middleware', () => {
+        require('./index');
+        expect(mockUse).toHaveBeenCalledWith(mockCompressionMiddleware);
+      });
+
+      it('should call app.use with the path to the dist folder', () => {
+        require('./index');
+        expect(mockUse).toHaveBeenCalledWith('../dist',);
+      });
+
+      it('should call app.use with the cookieParser middleware', () => {
+        require('./index');
+        expect(mockUse).toHaveBeenCalledWith(mockCookieParserMiddleware);
+      });
     });
   });
 

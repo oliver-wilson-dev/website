@@ -1,16 +1,33 @@
 /* eslint-disable no-console */
-import path from 'path';
-import express from 'express';
-import cookieParser from 'cookie-parser';
-import compression from 'compression';
-import handleRender from './handleRender';
+const path = require('path');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
+
+const webpackDevMiddleware = require('webpack-dev-middleware');
+// const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpack = require('webpack');
+const handleRender = require('./handleRender').default;
+
+const clientConfig = require('../build/client.config.js');
+
 
 const app = express();
+if (process.env.NODE_ENV === 'production') {
+  // Serve the static files from the dist folder
+  app.use(express.static(path.resolve(__dirname, '../dist')));
+  // throw new Error('fuck');
+} else {
+  const initialisedClientConfig = clientConfig(undefined, { mode: 'development' });
+  const compiler = webpack(initialisedClientConfig);
+
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: initialisedClientConfig.output.publicPath,
+    writeToDisk: true
+  }));
+}
 
 app.use(compression());
-
-// Serve the static files from the dist folder
-app.use(express.static(path.resolve(__dirname, '../dist')));
 
 // Allows cookies to be available on req.cookies in subsequent handlers
 app.use(cookieParser());

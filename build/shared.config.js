@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const outputAssetsDir = path.resolve(__dirname, '../dist');
 
@@ -11,6 +12,7 @@ const jsRule = {
 const cssRule = {
   test: /\.css$/,
   use: [
+    MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
       options: {
@@ -32,5 +34,10 @@ module.exports = {
   module: {
     rules: { jsRule, cssRule, svgRule }
   },
-  plugins: []
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/bundle.css',
+      chunkFilename: 'css/bundle.css'
+    }),
+  ]
 };

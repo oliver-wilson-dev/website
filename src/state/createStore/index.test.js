@@ -1,6 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-
-const mockComposeRes = Symbol('test-compose');
 const mockMiddlewares = [Symbol('test-middleware'), Symbol('test-middleware')];
 
 let createStoreCustom; let
@@ -44,7 +42,6 @@ describe('createStore', () => {
 
   const makeCommonAssertions = () => {
     it('should call apply middleware with the result of getMiddlewares', () => {
-
       createStoreCustom();
       expect(mockApplyMiddleware)
         .toHaveBeenCalledWith(...mockMiddlewares);
@@ -56,7 +53,11 @@ describe('createStore', () => {
     it('should be called with the rootReducer and the redux devtools extension method on the window', () => {
       createStoreCustom();
       expect(mockCreateStore)
-        .toHaveBeenCalledWith(mockRootReducer, mockPreloadedState, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__());
+        .toHaveBeenCalledWith(
+          mockRootReducer,
+          mockPreloadedState,
+          window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
+        );
     });
   });
 

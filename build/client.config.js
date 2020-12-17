@@ -47,10 +47,7 @@ module.exports = (env, { mode = 'production' }) => ({
   module: {
     rules: [
       jsRule,
-      {
-        ...cssRule,
-        use: [{ loader: 'style-loader' }, ...cssRule.use]
-      },
+      cssRule,
       svgRule
     ]
   },

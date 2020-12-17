@@ -1,7 +1,6 @@
 const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sharedConfig = require('./shared.config');
 
 const { outputAssetsDir } = sharedConfig;
@@ -28,10 +27,7 @@ module.exports = {
   module: {
     rules: [
       jsRule,
-      {
-        ...cssRule,
-        use: [MiniCssExtractPlugin.loader, ...cssRule.use]
-      },
+      cssRule,
       svgRule
     ]
   },
@@ -40,10 +36,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.IS_SERVER': JSON.stringify(true),
       'process.env.IS_CLIENT': JSON.stringify(false)
-    }),
-    new MiniCssExtractPlugin({
-      filename: '/css/bundle.css',
-      chunkFilename: '/css/bundle.css'
     }),
   ]
 };
