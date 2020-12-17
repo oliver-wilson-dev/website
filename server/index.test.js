@@ -26,6 +26,7 @@ jest.mock('./handleRender', () => ({
 jest.mock('cookie-parser');
 jest.mock('compression');
 jest.mock('webpack-dev-middleware');
+jest.mock('webpack-hot-middleware');
 jest.mock('webpack');
 jest.mock('../build/client.config.js', () => jest.fn());
 
