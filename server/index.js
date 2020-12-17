@@ -3,13 +3,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
-
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpack = require('webpack');
 const handleRender = require('./handleRender').default;
-
-const clientConfig = require('../build/client.config.js');
 
 
 const app = express();
@@ -17,6 +11,11 @@ if (process.env.NODE_ENV === 'production') {
   // Serve the static files from the dist folder
   app.use(express.static(path.resolve(__dirname, '../dist')));
 } else {
+  const clientConfig = require('../build/client.config.js');
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+
   const initialisedClientConfig = clientConfig(undefined, { mode: 'development' });
   const compiler = webpack(initialisedClientConfig);
   console.log(initialisedClientConfig);
