@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 
   const initialisedClientConfig = clientConfig(undefined, { mode: 'development' });
   const compiler = webpack(initialisedClientConfig);
-  console.log(initialisedClientConfig);
+
   app.use(webpackDevMiddleware(compiler, {
     publicPath: initialisedClientConfig.output.publicPath,
     writeToDisk: true
