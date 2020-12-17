@@ -25,7 +25,8 @@
     "ci": "npm run lint && jest --coverage",
     "serve": "npm run build:prod && serve ./dist",
     "dev": "npm run build:dev && NODE_ENV=development node ./dist/server.js",
-    "prod": "npm run build:prod && NODE_ENV=production node ./dist/server.js"
+    "prod": "npm run build:prod && NODE_ENV=production node ./dist/server.js",
+    "start": "npm run prod"
   },
   "dependencies": {
     "axios": "^0.19.0",

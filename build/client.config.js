@@ -19,7 +19,7 @@ const {
 } = sharedConfig;
 
 const publicFolderDir = path.join(__dirname, '../public');
-const projectRootFileDir = path.join(outputAssetsDir, '/template.html');
+const projectRootFileDir = path.join(outputAssetsDir, '/index.html');
 const entryDir = path.resolve(__dirname, '../src');
 
 const env = dotenv.config().parsed;

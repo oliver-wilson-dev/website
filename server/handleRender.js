@@ -17,7 +17,7 @@ import {
 import fetchContent from '../src/state/actions/fetchContent';
 
 const renderFullPage = ({ html, preloadedState, res }) => {
-  fs.readFile(path.resolve(__dirname, '../dist/template.html'), 'utf-8', (err, data) => {
+  fs.readFile(path.resolve(__dirname, '../dist/index.html'), 'utf-8', (err, data) => {
     if (err) {
       console.log(err);
       return res.status(500).send('Some error happened');

@@ -22,7 +22,7 @@ jobs:
     - name: clean install all dependencies
       run: npm install
     - name: build the application
-      run: npm run build
+      run: npm run build:prod
     - name: setup google cloud platform cli
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
