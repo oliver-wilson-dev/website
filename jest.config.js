@@ -8,6 +8,7 @@ module.exports = {
   },
   collectCoverageFrom: [
     'src/**/*.js',
+    'server/**/*.js',
     '!build/*',
     '!test/*'
   ],

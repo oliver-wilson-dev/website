@@ -5,10 +5,22 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
+const sharedConfig = require('./shared.config');
+
+const {
+  module: {
+    rules: {
+      jsRule,
+      cssRule,
+      svgRule
+    }
+  },
+  outputAssetsDir,
+} = sharedConfig;
+
 const publicFolderDir = path.join(__dirname, '../public');
-const outputAssetsDir = path.join(__dirname, '../dist');
 const projectRootFileDir = path.join(outputAssetsDir, '/index.html');
-const entryDir = path.join(__dirname, '../src');
+const entryDir = path.resolve(__dirname, '../src');
 
 const env = dotenv.config().parsed;
 
@@ -24,11 +36,13 @@ const envKeys = Object.keys(env)
       }
   }), {});
 
-module.exports = (env, { mode }) => ({
-  entry: entryDir,
+module.exports = (env, { mode = 'production' }) => ({
+  mode,
+  entry: [entryDir, ...mode === 'production' ? [] : ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true']],
   output: {
     path: outputAssetsDir,
-    filename: 'index.bundle.js'
+    filename: 'index.bundle.js',
+    publicPath: '/',
   },
   devServer: {
     compress: true,
@@ -40,36 +54,21 @@ module.exports = (env, { mode }) => ({
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: { loader: 'babel-loader' }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]_[hash:base64:5]'
-            },
-          },
-          { loader: 'postcss-loader' }
-        ]
-      },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
+      jsRule,
+      cssRule,
+      svgRule
     ]
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.DefinePlugin(envKeys),
+    ...sharedConfig.plugins,
+    new webpack.DefinePlugin({
+      ...envKeys,
+      'process.env.IS_SERVER': JSON.stringify(false),
+      'process.env.IS_CLIENT': JSON.stringify(true)
+    }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../src/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
       filename: projectRootFileDir,
       templateParameters: { BUILD_NUMBER: mode === 'production' ? process.env.BUILD_NUMBER : envKeys.process.env.BUILD_NUMBER }
     }),
@@ -79,5 +78,6 @@ module.exports = (env, { mode }) => ({
       ],
     }),
     new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 });

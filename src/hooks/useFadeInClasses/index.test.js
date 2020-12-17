@@ -4,6 +4,10 @@ import { shallow, mount } from 'enzyme';
 import useFadeInClasses from '.';
 import sectionStyles from './index.css';
 
+jest.mock('../../utils', () => ({
+  IS_SERVER: false
+}));
+
 describe('useFadeInClasses hook', () => {
   const DummyComponent = () => {
     const { fadeInClasses } = useFadeInClasses();

@@ -1,12 +1,17 @@
-import global from 'global';
+import window from 'global';
+import { IS_CLIENT } from '../clientOrServer';
 
 const getCookie = ({ name }) => {
-  const cookies = global.document.cookie.split(';').map(cookie => cookie.trim());
+  if (IS_CLIENT) {
+    const cookies = window.document.cookie.split(';').map(cookie => cookie.trim());
 
-  const foundCookie = cookies
-    .find(cookie => cookie.split('=')[0] === name);
+    const foundCookie = cookies
+      .find(cookie => cookie.split('=')[0] === name);
 
-  return foundCookie ? foundCookie.split('=')[1] : undefined;
+    return foundCookie ? foundCookie.split('=')[1] : undefined;
+  }
+
+  return undefined;
 };
 
 export default getCookie;

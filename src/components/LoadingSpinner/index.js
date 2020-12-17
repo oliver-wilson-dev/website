@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import styles from './index.css';
 
 const LoadingSpinner = ({ loading }) => {
-  const [transitionDone, setTransitionDone] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [transitionDone, setTransitionDone] = useState(!loading);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!loading) {
-      setIsLoading(false);
-    }
+    setIsLoading(loading);
   }, [loading]);
 
   const onTransitionEnd = () => setTransitionDone(true);

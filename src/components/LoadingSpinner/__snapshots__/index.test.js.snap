@@ -5,7 +5,7 @@ exports[`<LoadingSpinner /> should render correctly 1`] = `
   className="wrapper"
 >
   <div
-    className="loadingSpinner"
+    className="loadingSpinner hide"
     onTransitionEnd={[Function]}
   />
 </div>
