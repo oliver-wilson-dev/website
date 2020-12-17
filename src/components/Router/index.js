@@ -18,7 +18,7 @@ const Router = ({ children }) => {
   const Router = IS_SERVER ? StaticRouter : BrowserRouter;
 
   return (
-    <Router basename="/">
+    <Router>
       <ScrollToTop>
         {children}
       </ScrollToTop>
