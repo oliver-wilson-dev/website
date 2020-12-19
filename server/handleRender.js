@@ -16,7 +16,12 @@ import {
 } from '../src/state/actions/constants';
 import fetchContent from '../src/state/actions/fetchContent';
 
-const renderFullPage = ({ html, preloadedState, res }) => {
+const renderFullPage = ({
+  res,
+  html,
+  context,
+  preloadedState,
+}) => {
   fs.readFile(path.resolve(__dirname, '../dist/template.html'), 'utf-8', (err, data) => {
     if (err) {
       console.log(err);
@@ -36,7 +41,7 @@ const renderFullPage = ({ html, preloadedState, res }) => {
       </script>`
     );
 
-    return res.send(templateSubstitution);
+    return res.status(context.statusCode).send(templateSubstitution);
   });
 };
 
@@ -64,6 +69,9 @@ const handleRender = async ({ cookies, url }, res) => {
 
     The navigation is closed by default.
   */
+
+  const context = { statusCode: 200 };
+
   const initialState = {
     sections: {
       sectionsContentFetched: false,
@@ -81,7 +89,8 @@ const handleRender = async ({ cookies, url }, res) => {
       showSideNav: false
     },
     serverOnly: {
-      location: url
+      location: url,
+      context
     }
   };
 
@@ -99,7 +108,9 @@ const handleRender = async ({ cookies, url }, res) => {
   // Grab the initial state from our Redux store
   const preloadedState = store.getState();
 
-  renderFullPage({ html, preloadedState, res });
+  renderFullPage({
+    html, preloadedState, res, context
+  });
 };
 
 export default handleRender;

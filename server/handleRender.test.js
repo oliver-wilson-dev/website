@@ -60,11 +60,13 @@ describe('handleRender', () => {
 
   const mockApplyMiddleware = Symbol('middleware');
 
+  const mockResStatusSend = jest.fn();
   const mockResStatus = jest.fn(() => ({
-    send: jest.fn()
+    send: mockResStatusSend
   }));
 
   const url = Symbol('test-url');
+  const context = { statusCode: 200 };
 
   beforeEach(() => {
     createStore.mockReturnValue(mockStore);
@@ -104,8 +106,9 @@ describe('handleRender', () => {
             theme: LIGHT_THEME
           },
           serverOnly: {
-            location: url
-          }
+            location: url,
+            context
+          },
         },
         mockApplyMiddleware);
     });
@@ -143,8 +146,9 @@ describe('handleRender', () => {
             theme: cookies.theme
           },
           serverOnly: {
-            location: url
-          }
+            location: url,
+            context
+          },
         },
         mockApplyMiddleware);
     });
@@ -181,8 +185,9 @@ describe('handleRender', () => {
               theme: DARK_THEME
             },
             serverOnly: {
-              location: url
-            }
+              location: url,
+              context
+            },
           },
           mockApplyMiddleware);
       });
@@ -221,8 +226,9 @@ describe('handleRender', () => {
             theme: DARK_THEME
           },
           serverOnly: {
-            location: url
-          }
+            location: url,
+            context
+          },
         },
         mockApplyMiddleware);
     });
@@ -313,6 +319,7 @@ describe('handleRender', () => {
 
     await handleRender({ cookies, url }, res);
 
-    expect(res.send).toHaveBeenCalled();
+    expect(mockResStatus).toHaveBeenCalledWith(context.statusCode);
+    expect(mockResStatusSend).toHaveBeenCalled();
   });
 });
