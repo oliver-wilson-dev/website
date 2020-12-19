@@ -64,6 +64,8 @@ describe('handleRender', () => {
     send: jest.fn()
   }));
 
+  const url = Symbol('test-url');
+
   beforeEach(() => {
     createStore.mockReturnValue(mockStore);
     applyMiddleware.mockReturnValue(mockApplyMiddleware);
@@ -82,7 +84,7 @@ describe('handleRender', () => {
         send: jest.fn()
       };
 
-      await handleRender({ cookies }, res);
+      await handleRender({ cookies, url }, res);
 
       expect(createStore).toHaveBeenCalledWith(reducer,
         {
@@ -100,6 +102,9 @@ describe('handleRender', () => {
           theme: {
             checkBoxChecked: false,
             theme: LIGHT_THEME
+          },
+          serverOnly: {
+            location: url
           }
         },
         mockApplyMiddleware);
@@ -118,7 +123,7 @@ describe('handleRender', () => {
         send: jest.fn()
       };
 
-      await handleRender({ cookies }, res);
+      await handleRender({ cookies, url }, res);
 
       expect(createStore).toHaveBeenCalledWith(reducer,
         {
@@ -136,6 +141,9 @@ describe('handleRender', () => {
           theme: {
             checkBoxChecked: false,
             theme: cookies.theme
+          },
+          serverOnly: {
+            location: url
           }
         },
         mockApplyMiddleware);
@@ -153,7 +161,7 @@ describe('handleRender', () => {
           send: jest.fn()
         };
 
-        await handleRender({ cookies }, res);
+        await handleRender({ cookies, url }, res);
 
         expect(createStore).toHaveBeenCalledWith(reducer,
           {
@@ -171,6 +179,9 @@ describe('handleRender', () => {
             theme: {
               checkBoxChecked: true,
               theme: DARK_THEME
+            },
+            serverOnly: {
+              location: url
             }
           },
           mockApplyMiddleware);
@@ -190,7 +201,7 @@ describe('handleRender', () => {
         send: jest.fn()
       };
 
-      await handleRender({ cookies }, res);
+      await handleRender({ cookies, url }, res);
 
       expect(createStore).toHaveBeenCalledWith(reducer,
         {
@@ -208,6 +219,9 @@ describe('handleRender', () => {
           theme: {
             checkBoxChecked: true,
             theme: DARK_THEME
+          },
+          serverOnly: {
+            location: url
           }
         },
         mockApplyMiddleware);
@@ -225,7 +239,7 @@ describe('handleRender', () => {
       send: jest.fn()
     };
 
-    await handleRender({ cookies }, res);
+    await handleRender({ cookies, url }, res);
 
     expect(applyMiddleware).toHaveBeenCalledWith(thunk);
   });
@@ -241,7 +255,7 @@ describe('handleRender', () => {
       send: jest.fn()
     };
 
-    await handleRender({ cookies }, res);
+    await handleRender({ cookies, url }, res);
 
     expect(mockFetchContentRes).toHaveBeenCalledWith(mockStore.dispatch);
   });
@@ -257,7 +271,7 @@ describe('handleRender', () => {
       send: jest.fn()
     };
 
-    await handleRender({ cookies }, res);
+    await handleRender({ cookies, url }, res);
 
     expect(renderToString).toHaveBeenCalled();
   });
@@ -274,10 +288,10 @@ describe('handleRender', () => {
     };
 
     fs.readFile.mockImplementation((_, __, fn) => {
-      fn(true, 'data');
+      fn('test-error', 'data');
     });
 
-    await handleRender({ cookies }, res);
+    await handleRender({ cookies, url }, res);
 
     expect(res.status).toHaveBeenCalledWith(500);
   });
@@ -297,7 +311,7 @@ describe('handleRender', () => {
       fn(false, '<div id="app"></div>');
     });
 
-    await handleRender({ cookies }, res);
+    await handleRender({ cookies, url }, res);
 
     expect(res.send).toHaveBeenCalled();
   });
