@@ -8,7 +8,6 @@ const StaticRouter = ({ children, location, context }) => (
   </ReactDomStaticRouter>
 );
 
-
 StaticRouter.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
