@@ -6,7 +6,8 @@ import {
   getShowLearnMore,
   getShowCookiePopup,
   getShowSideNav,
-  getLocation
+  getLocation,
+  getContext
 } from '.';
 
 describe('getTheme', () => {
@@ -101,6 +102,19 @@ describe('getLocation', () => {
       }
     )).toEqual(
       mockLocation
+    );
+  });
+});
+
+describe('getContext', () => {
+  it('returns the context property in state', () => {
+    const mockContext = Symbol('test-context');
+    expect(getContext(
+      {
+        serverOnly: { context: mockContext }
+      }
+    )).toEqual(
+      mockContext
     );
   });
 });

@@ -7,7 +7,8 @@ jest.mock('react-router-dom', () => ({
 }));
 
 const defaultProps = {
-  location: 'test-location'
+  location: 'test-location',
+  context: {}
 };
 
 const render = () => shallow(
