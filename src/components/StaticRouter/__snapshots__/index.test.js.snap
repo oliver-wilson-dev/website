@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticRouter should render correctly 1`] = `
+<StaticRouter
+  context={Object {}}
+  location="test-location"
+>
+  <h1>
+    hello world
+  </h1>
+</StaticRouter>
+`;

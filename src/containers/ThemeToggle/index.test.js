@@ -13,7 +13,7 @@ const { testRender, testAction, testProp } = testReduxComponent(
   ThemeToggle
 );
 
-describe('connected DeleteButton', () => {
+describe('connected ThemeToggle', () => {
   testRender();
   testAction('toggleTheme', toggleTheme);
   testProp('theme', getTheme);
