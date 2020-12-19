@@ -5,6 +5,7 @@ exports[`<SocialMedia/> should render correctly 1`] = `
   className="socialContainer flexCenter"
 >
   <a
+    aria-label="A link to my LinkedIn page"
     className="socialLink"
     href="https://www.linkedin.com/in/oliver-wilson-profile/"
     rel="noopener noreferrer"
@@ -15,6 +16,7 @@ exports[`<SocialMedia/> should render correctly 1`] = `
     />
   </a>
   <a
+    aria-label="A link to my Github page"
     className="socialLink"
     href="https://github.com/oliver-wilson-dev/"
     rel="noopener noreferrer"
@@ -25,6 +27,7 @@ exports[`<SocialMedia/> should render correctly 1`] = `
     />
   </a>
   <a
+    aria-label="My contact telephone number"
     className="socialLink"
     href="tel:07580081310"
   >
@@ -33,6 +36,7 @@ exports[`<SocialMedia/> should render correctly 1`] = `
     />
   </a>
   <a
+    aria-label="My email address"
     className="socialLink"
     href="mailto:contact@oliverwilson.dev"
   >
