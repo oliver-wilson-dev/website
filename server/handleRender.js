@@ -40,7 +40,7 @@ const renderFullPage = ({ html, preloadedState, res }) => {
   });
 };
 
-const handleRender = async ({ cookies }, res) => {
+const handleRender = async ({ cookies, url }, res) => {
   /*
     Create a new Redux store instance.
 
@@ -79,6 +79,9 @@ const handleRender = async ({ cookies }, res) => {
     },
     navigation: {
       showSideNav: false
+    },
+    serverOnly: {
+      location: url
     }
   };
 

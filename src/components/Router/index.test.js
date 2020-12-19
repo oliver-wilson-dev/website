@@ -3,14 +3,19 @@ import { mount } from 'enzyme';
 import { useLocation } from 'react-router-dom';
 import window from 'global';
 
-let Router; let
-  render;
+let Router;
+let render;
 
 jest.mock('react-router-dom', () => ({
   useLocation: jest.fn(),
   BrowserRouter: ({ children }) => <div>{children}</div>,
-  StaticRouter: ({ children }) => <div>{children}</div>
 }));
+
+jest.mock('../../containers/StaticRouter', () => {
+  const StaticRouter = ({ children }) => <div>{children}</div>;
+
+  return StaticRouter;
+});
 
 jest.mock('global', () => ({}));
 
