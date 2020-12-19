@@ -1,13 +1,12 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import sharedStyles from '../../styles/shared.css';
 import SearchIcon from './search.svg';
-import styles from './index.css';
-
 import Page from '../../containers/Page';
 
-const NotFound = () => (
+import styles from './index.css';
+
+const NotFoundPage = () => (
   <Page additionalStyles={styles.notFound}>
     <h1 className={sharedStyles.pageHeader}>Page not found</h1>
     <SearchIcon className={styles.searchIcon} />
@@ -15,4 +14,4 @@ const NotFound = () => (
   </Page>
 );
 
-export default NotFound;
+export default NotFoundPage;
