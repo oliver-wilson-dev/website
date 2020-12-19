@@ -1,8 +1,9 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import window from 'global';
-import { BrowserRouter, StaticRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { IS_SERVER } from '../../utils';
+import StaticRouter from '../../containers/StaticRouter';
 
 const ScrollToTop = ({ children }) => {
   const { pathname } = useLocation();

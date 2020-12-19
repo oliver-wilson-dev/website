@@ -5,7 +5,8 @@ import {
   getCheckboxCheckedStatus,
   getShowLearnMore,
   getShowCookiePopup,
-  getShowSideNav
+  getShowSideNav,
+  getLocation
 } from '.';
 
 describe('getTheme', () => {
@@ -87,6 +88,19 @@ describe('getShowSideNav', () => {
       }
     )).toEqual(
       mockShowSideNav
+    );
+  });
+});
+
+describe('getLocation', () => {
+  it('returns the location property in state', () => {
+    const mockLocation = Symbol('test-location');
+    expect(getLocation(
+      {
+        serverOnly: { location: mockLocation }
+      }
+    )).toEqual(
+      mockLocation
     );
   });
 });

@@ -5,3 +5,4 @@ export const getSectionsContentFetched = state => state.sections.sectionsContent
 export const getShowLearnMore = state => state.cookieDisclaimer.showLearnMore;
 export const getShowCookiePopup = state => state.cookieDisclaimer.showCookiePopup;
 export const getShowSideNav = state => state.navigation.showSideNav;
+export const getLocation = state => state.serverOnly.location;
