@@ -7,7 +7,7 @@ const ProjectImages = ({ projectImages }) => (
     {projectImages.map(({ linkToProject, image: { alt, src } }) => (
       <div key={linkToProject} className={styles.projectImage}>
         <a href={linkToProject}>
-          <img alt={alt} src={src} />
+          <img alt={alt} src={src} loading="lazy" />
         </a>
       </div>
     ))}
