@@ -13,6 +13,7 @@ exports[`ProjectImages when there are multiple project images should render corr
     >
       <img
         alt="test-alt"
+        loading="lazy"
         src="test-src"
       />
     </a>
@@ -26,6 +27,7 @@ exports[`ProjectImages when there are multiple project images should render corr
     >
       <img
         alt="test-alt"
+        loading="lazy"
         src="test-src"
       />
     </a>
@@ -46,6 +48,7 @@ exports[`ProjectImages when there is one project image should render correctly 1
     >
       <img
         alt="test-alt"
+        loading="lazy"
         src="test-src"
       />
     </a>
