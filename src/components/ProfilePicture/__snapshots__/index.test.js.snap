@@ -4,6 +4,8 @@ exports[`ProfilePicture should render correctly 1`] = `
 <img
   alt="A shot of me"
   className="profilePicture test-fade-in-classes"
+  height="200"
   src="public/img/profile-pic.jpg"
+  width="200"
 />
 `;
