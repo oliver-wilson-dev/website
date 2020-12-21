@@ -12,20 +12,20 @@ exports[`<App/> component should render correctly 1`] = `
     >
       <Switch>
         <Route
-          component={[Function]}
+          component="test-home-component"
           exact={true}
-          path="/"
+          path="test-home-path"
         />
         <Route
-          component={[Function]}
-          path="/about"
+          component="test-about-component"
+          path="test-about-path"
         />
         <Route
-          component={[Function]}
-          path="/projects"
+          component="test-projects-component"
+          path="test-projects-path"
         />
         <Route
-          component={[Function]}
+          component="test-notFound-component"
         />
       </Switch>
     </main>

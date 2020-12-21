@@ -4,6 +4,24 @@ import App from './index';
 import Header from '../../containers/Header';
 import useBackgroundClasses from '../../hooks/useBackgroundClasses';
 
+jest.mock('../../routes', () => ({
+  home: {
+    path: 'test-home-path',
+    component: 'test-home-component'
+  },
+  about: {
+    path: 'test-about-path',
+    component: 'test-about-component'
+  },
+  projects: {
+    path: 'test-projects-path',
+    component: 'test-projects-component'
+  },
+  notFound: {
+    component: 'test-notFound-component'
+  },
+}));
+
 jest.mock('react-router-dom', () => ({
   __esModule: true,
   Route: () => null,
@@ -14,18 +32,6 @@ jest.mock('../Router', () => {
   const Router = () => null;
 
   return Router;
-});
-
-jest.mock('../NotFoundPage', () => {
-  const NotFoundPage = () => null;
-
-  return NotFoundPage;
-});
-
-jest.mock('../ProjectsPage', () => {
-  const ProjectsPage = () => null;
-
-  return ProjectsPage;
 });
 
 jest.mock('../../containers/Header', () => {

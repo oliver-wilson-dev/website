@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Route, Switch } from 'react-router-dom';
 import styles from './index.css';
-import HomePage from '../HomePage';
-import AboutPage from '../AboutPage';
-import ProjectsPage from '../ProjectsPage';
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 import CookieDisclaimer from '../../containers/CookieDisclaimer';
 import Router from '../Router';
-import NotFoundPage from '../NotFoundPage';
 import useBackgroundClasses from '../../hooks/useBackgroundClasses';
+import routes from '../../routes';
+
+const {
+  home,
+  about,
+  projects,
+  notFound
+} = routes;
 
 const App = ({ theme }) => {
   const backgroundClasses = useBackgroundClasses({ theme });
@@ -25,10 +29,10 @@ const App = ({ theme }) => {
         <Header />
         <main className={cn(styles.main, backgroundClasses)}>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/projects" component={ProjectsPage} />
-            <Route component={NotFoundPage} />
+            <Route exact path={home.path} component={home.component} />
+            <Route path={about.path} component={about.component} />
+            <Route path={projects.path} component={projects.component} />
+            <Route component={notFound.component} />
           </Switch>
         </main>
         <Footer />
