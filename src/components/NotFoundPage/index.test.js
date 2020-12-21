@@ -1,6 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import About from '.';
+import NotFoundPage from '.';
+
+jest.mock('../../routes', () => ({
+  home: {
+    path: 'test-home-path'
+  }
+}));
 
 jest.mock('react-router-dom', () => ({
   Link: () => null
@@ -18,9 +24,9 @@ jest.mock('../../containers/Page', () => {
   return SubPage;
 });
 
-const render = (props = {}) => shallow(<About {...props} />);
+const render = (props = {}) => shallow(<NotFoundPage {...props} />);
 
-describe('About', () => {
+describe('NotFoundPage', () => {
   it('should render correctly', () => {
     expect(render()).toMatchSnapshot();
   });

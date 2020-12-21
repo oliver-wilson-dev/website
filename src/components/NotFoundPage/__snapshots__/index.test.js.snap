@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About should render correctly 1`] = `
+exports[`NotFoundPage should render correctly 1`] = `
 <SubPage
   additionalStyles="notFound"
 >
@@ -14,7 +14,7 @@ exports[`About should render correctly 1`] = `
   />
   <Link
     className="homeLink"
-    to="/"
+    to="test-home-path"
   >
     Return to Home Page
   </Link>
