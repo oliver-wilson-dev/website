@@ -1,12 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 import sharedStyles from '../../styles/shared.css';
-import styles from './index.css';
 import Page from '../../containers/Page';
 import ProjectTile from '../ProjectTile';
 
+import styles from './index.css';
+
 const ProjectsPage = () => (
-  <Page>
+  <Page additionalStyles={styles.projectsPage}>
     <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>Projects</h1>
     <div className={styles.projectGrid}>
       <ProjectTile
