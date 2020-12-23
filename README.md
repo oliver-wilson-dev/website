@@ -9,11 +9,13 @@ I reference my experiences that I have gained through working on some interestin
 
 You can visit the site here: **https://www.oliverwilson.dev/**.
 
-The application is an express server, hosted in the cloud that responds to routes and then handles them routes via react router. The choice for using an express server to respond to requests and serve a client-side rendered application is to afford flexibility to move towards server-side rendering in the future.
+The application is an express server, hosted in the cloud that responds to routes and then handles them routes via react router. The choice for the application being an express server vs a static site served by a CDN is so that the application can be isomorphic and render on the server, as well as on the client. There are major performance benefits as a result of server side rendering, plus implementing the concept allows for a deeper exposure to webpack architecture.
 
 ## Hosting
 
 This website is hosted as an [app engine](https://cloud.google.com/appengine) on the Google Cloud Platform.
+
+The app is built via some github actions and then when deployed to the Google Cloud Platform app engine the script `npm run start` will be ran.
 
 ## Colour scheme
 
