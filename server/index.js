@@ -5,8 +5,14 @@ const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const handleRender = require('./handleRender').default;
 
-
 const app = express();
+
+/*
+  Compression middleware,
+  must be used before any middleware that will send a response in order to compress data sent
+*/
+app.use(compression());
+
 if (process.env.NODE_ENV === 'production') {
   // Serve the static files from the dist folder
   app.use(express.static(path.resolve(__dirname, '../dist')));
@@ -26,8 +32,6 @@ if (process.env.NODE_ENV === 'production') {
 
   app.use(webpackHotMiddleware(compiler));
 }
-
-app.use(compression());
 
 // Allows cookies to be available on req.cookies in subsequent handlers
 app.use(cookieParser());
