@@ -17,6 +17,11 @@ This website is hosted as an [app engine](https://cloud.google.com/appengine) on
 
 The app is built via some github actions and then when deployed to the Google Cloud Platform app engine the script `npm run start` will be ran.
 
+### Further Reading
+
+- [Application Startup](https://cloud.google.com/appengine/docs/flexible/nodejs/runtime#application_startup)
+- [Google App Engine Node.js Standard Environment Documentation](https://cloud.google.com/appengine/docs/standard/nodejs)
+
 ## Colour scheme
 
 The colour scheme followed for this website is largely utilised from [this pallet](https://coolors.co/ef476f-ffd166-06d6a0-118ab2-073b4c).

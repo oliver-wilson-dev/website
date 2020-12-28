@@ -2,6 +2,7 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import global from 'global';
+import { loadableReady } from '@loadable/component';
 import createStore from './state/createStore';
 import App from './containers/App';
 import Router from './components/Router';
@@ -11,6 +12,7 @@ const mockStore = {
 };
 const mockElement = Symbol('test-app-div');
 
+jest.mock('@loadable/component');
 jest.mock('react-dom');
 jest.mock('react-redux');
 jest.mock('./state/createStore');
@@ -27,6 +29,7 @@ jest.mock('global', () => ({
 describe('application root', () => {
   beforeEach(() => {
     createStore.mockReturnValueOnce(mockStore);
+    loadableReady.mockImplementation(fn => fn());
   });
 
   it('returns the App container, wrapped with the redux state provider set up with the store', () => {
