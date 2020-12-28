@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const outputAssetsDir = path.resolve(__dirname, '../dist');
 
@@ -32,12 +33,17 @@ const svgRule = {
 module.exports = {
   outputAssetsDir,
   module: {
-    rules: { jsRule, cssRule, svgRule }
+    rules: {
+      jsRule,
+      cssRule,
+      svgRule
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/bundle.css',
-      chunkFilename: 'css/bundle.css'
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[name].css'
     }),
+    new CleanWebpackPlugin(),
   ]
 };
