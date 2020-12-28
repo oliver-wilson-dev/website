@@ -1,25 +1,22 @@
 /* eslint-disable import/no-cycle */
-import HomePage from '../components/HomePage';
-import AboutPage from '../components/AboutPage';
-import ProjectsPage from '../components/ProjectsPage';
-import NotFoundPage from '../components/NotFoundPage';
+import loadable from '@loadable/component';
 
 const routes = {
   home: {
     path: '/',
-    component: HomePage
+    component: loadable(() => import(/* webpackChunkName: "HomePage" */ '../components/HomePage'))
   },
   about: {
     path: '/about',
-    component: AboutPage
+    component: loadable(() => import(/* webpackChunkName: "AboutPage" */ '../components/AboutPage'))
   },
   projects: {
     path: '/projects',
-    component: ProjectsPage
+    component: loadable(() => import(/* webpackChunkName: "ProjectsPage" */ '../components/ProjectsPage'))
   },
   notFound: {
     path: undefined,
-    component: NotFoundPage
+    component: loadable(() => import(/* webpackChunkName: "NotFoundPage" */ '../components/NotFoundPage'))
   }
 };
 

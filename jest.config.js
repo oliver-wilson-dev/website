@@ -10,7 +10,8 @@ module.exports = {
     'src/**/*.js',
     'server/**/*.js',
     '!build/*',
-    '!test/*'
+    '!test/*',
+    '!src/routes/index.js',
   ],
   coverageThreshold: {
     global: {

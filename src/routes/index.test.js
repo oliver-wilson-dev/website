@@ -1,4 +1,5 @@
-import routes from '.';
+/* eslint-disable import/order */
+import loadable from '@loadable/component';
 import HomePage from '../components/HomePage';
 import AboutPage from '../components/AboutPage';
 import ProjectsPage from '../components/ProjectsPage';
@@ -28,8 +29,20 @@ jest.mock('../components/ProjectsPage', () => {
   return ProjectsPage;
 });
 
+jest.mock('@loadable/component');
+
 describe('routes', () => {
+  beforeEach(() => {
+    loadable.mockReturnValueOnce(HomePage);
+    loadable.mockReturnValueOnce(AboutPage);
+    loadable.mockReturnValueOnce(ProjectsPage);
+    loadable.mockReturnValueOnce(NotFoundPage);
+  });
+
+
   it('should export the correct routes', () => {
+    const routes = require('./index.js').default;
+
     expect(routes).toEqual({
       home: {
         path: '/',

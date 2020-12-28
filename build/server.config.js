@@ -13,37 +13,47 @@ const {
       svgRule
     }
   },
-  outputAssetsDir,
+  outputAssetsDir: outputAssetsDirRoot,
 } = sharedConfig;
 
-module.exports = (env, { mode = 'production' }) => ({
-  mode,
-  target: 'node',
-  node: {
-    __dirname: true,
-  },
-  entry,
-  externals: [webpackNodeExternals(), {
-    global: {}
-  }],
-  output: {
-    path: outputAssetsDir,
-    filename: 'server.js',
-    globalObject: 'this',
-    publicPath: '/',
-  },
-  module: {
-    rules: [
-      jsRule,
-      cssRule,
-      svgRule
+const outputAssetsDir = path.join(outputAssetsDirRoot, '/server');
+
+module.exports = (env, { mode = 'production' }) => {
+  const isProd = mode === 'production';
+
+  return {
+    mode,
+    target: 'node',
+    node: {
+      __dirname: true,
+    },
+    entry,
+    externals: [
+      webpackNodeExternals(),
+      {
+        global: {}
+      }
+    ],
+    output: {
+      path: outputAssetsDir,
+      filename: 'server.js',
+      chunkFilename: isProd ? '[name]-[hash:8].js' : '[name].js',
+      globalObject: 'this',
+      publicPath: '/server',
+    },
+    module: {
+      rules: [
+        jsRule,
+        cssRule,
+        svgRule
+      ]
+    },
+    plugins: [
+      ...sharedConfig.plugins,
+      new webpack.DefinePlugin({
+        'process.env.IS_SERVER': JSON.stringify(true),
+        'process.env.IS_CLIENT': JSON.stringify(false)
+      }),
     ]
-  },
-  plugins: [
-    ...sharedConfig.plugins,
-    new webpack.DefinePlugin({
-      'process.env.IS_SERVER': JSON.stringify(true),
-      'process.env.IS_CLIENT': JSON.stringify(false)
-    }),
-  ]
-});
+  };
+};

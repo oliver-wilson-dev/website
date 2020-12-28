@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { renderToString } from 'react-dom/server';
 import fs from 'fs';
+import { ChunkExtractor } from '@loadable/server';
 import handleRender from './handleRender';
 import {
   LIGHT_THEME,
@@ -50,6 +51,10 @@ jest.mock('../src/state/actions/fetchContent', () => ({
   default: () => mockFetchContentRes
 }));
 
+jest.mock('@loadable/server', () => ({
+  ChunkExtractor: jest.fn()
+}));
+
 describe('handleRender', () => {
   const mockGetStateRes = { something: 'mock get state res' };
   const mockStore = {
@@ -61,9 +66,18 @@ describe('handleRender', () => {
   const mockApplyMiddleware = Symbol('middleware');
 
   const mockResStatusSend = jest.fn();
+  const mockResStatusSet = jest.fn();
   const mockResStatus = jest.fn(() => ({
-    send: mockResStatusSend
+    send: mockResStatusSend,
+    set: mockResStatusSet
   }));
+
+  const mockExtractor = {
+    getLinkTags: jest.fn(() => 'test-link-tags'),
+    getScriptTags: jest.fn(() => 'test-script-tags'),
+    getStyleTags: jest.fn(() => 'test-style-tags'),
+    collectChunks: jest.fn(data => data)
+  };
 
   const url = Symbol('test-url');
   const context = { statusCode: 200 };
@@ -72,6 +86,7 @@ describe('handleRender', () => {
     createStore.mockReturnValue(mockStore);
     applyMiddleware.mockReturnValue(mockApplyMiddleware);
     renderToString.mockReturnValue(mockHtml);
+    ChunkExtractor.mockReturnValue(mockExtractor);
   });
 
   describe('when a cookie theme has not been set', () => {
@@ -83,7 +98,8 @@ describe('handleRender', () => {
 
       const res = {
         status: mockResStatus,
-        send: jest.fn()
+        send: jest.fn(),
+        set: jest.fn()
       };
 
       await handleRender({ cookies, url }, res);
@@ -123,7 +139,8 @@ describe('handleRender', () => {
 
       const res = {
         status: mockResStatus,
-        send: jest.fn()
+        send: jest.fn(),
+        set: jest.fn()
       };
 
       await handleRender({ cookies, url }, res);
@@ -162,7 +179,8 @@ describe('handleRender', () => {
 
         const res = {
           status: mockResStatus,
-          send: jest.fn()
+          send: jest.fn(),
+          set: jest.fn()
         };
 
         await handleRender({ cookies, url }, res);
@@ -203,7 +221,8 @@ describe('handleRender', () => {
 
       const res = {
         status: mockResStatus,
-        send: jest.fn()
+        send: jest.fn(),
+        set: jest.fn()
       };
 
       await handleRender({ cookies, url }, res);
@@ -242,7 +261,8 @@ describe('handleRender', () => {
 
     const res = {
       status: mockResStatus,
-      send: jest.fn()
+      send: jest.fn(),
+      set: jest.fn()
     };
 
     await handleRender({ cookies, url }, res);
@@ -258,7 +278,8 @@ describe('handleRender', () => {
 
     const res = {
       status: mockResStatus,
-      send: jest.fn()
+      send: jest.fn(),
+      set: jest.fn()
     };
 
     await handleRender({ cookies, url }, res);
@@ -274,7 +295,8 @@ describe('handleRender', () => {
 
     const res = {
       status: mockResStatus,
-      send: jest.fn()
+      send: jest.fn(),
+      set: jest.fn()
     };
 
     await handleRender({ cookies, url }, res);
@@ -290,7 +312,8 @@ describe('handleRender', () => {
 
     const res = {
       status: mockResStatus,
-      send: jest.fn()
+      send: jest.fn(),
+      set: jest.fn()
     };
 
     fs.readFile.mockImplementation((_, __, fn) => {
@@ -310,7 +333,8 @@ describe('handleRender', () => {
 
     const res = {
       status: mockResStatus,
-      send: jest.fn()
+      send: jest.fn(),
+      set: jest.fn()
     };
 
     fs.readFile.mockImplementation((_, __, fn) => {
@@ -320,6 +344,7 @@ describe('handleRender', () => {
     await handleRender({ cookies, url }, res);
 
     expect(mockResStatus).toHaveBeenCalledWith(context.statusCode);
+    expect(res.set).toHaveBeenCalledWith('content-type', 'text/html');
     expect(mockResStatusSend).toHaveBeenCalled();
   });
 });

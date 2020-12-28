@@ -17,6 +17,8 @@ if (process.env.NODE_ENV === 'production') {
   // Serve the static files from the dist folder
   app.use(express.static(path.resolve(__dirname, '../dist')));
 } else {
+  app.use('/public', express.static(path.resolve(__dirname, '../dist/public')));
+
   const clientConfig = require('../build/client.config.js');
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
