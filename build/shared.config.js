@@ -10,7 +10,7 @@ const jsRule = {
   exclude: /node_modules/
 };
 
-const cssRule = {
+const getCssRule = ({ isProd }) => ({
   test: /\.css$/,
   use: [
     MiniCssExtractPlugin.loader,
@@ -18,24 +18,24 @@ const cssRule = {
       loader: 'css-loader',
       options: {
         modules: true,
-        localIdentName: '[local]_[hash:base64:5]'
+        localIdentName: isProd ? '[hash:base64]' : '[local]_[hash:base64:5]'
       },
     },
     { loader: 'postcss-loader' }
   ]
-};
+});
 
 const svgRule = {
   test: /\.svg$/,
   use: ['@svgr/webpack'],
 };
 
-module.exports = {
+module.exports = ({ isProd }) => ({
   outputAssetsDir,
   module: {
     rules: {
       jsRule,
-      cssRule,
+      cssRule: getCssRule({ isProd }),
       svgRule
     }
   },
@@ -46,4 +46,4 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ]
-};
+});
