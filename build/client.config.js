@@ -3,19 +3,11 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const LoadablePlugin = require('@loadable/webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const sharedConfig = require('./shared.config');
+const packageVersion = process.env.npm_package_version;
 
-const {
-  module: {
-    rules: {
-      jsRule,
-      cssRule,
-      svgRule
-    }
-  },
-  outputAssetsDir: outputAssetsDirRoot,
-} = sharedConfig;
+const getSharedConfig = require('./shared.config');
 
 const outputAssetsDir = path.join(outputAssetsDirRoot, '/client');
 const publicFolderDir = path.join(__dirname, '../public');
@@ -37,6 +29,20 @@ const envKeys = Object.keys(env)
 
 module.exports = (env, { mode = 'production' }) => {
   const isProd = mode === 'production';
+
+  const {
+    module: {
+      rules: {
+        jsRule,
+        cssRule,
+        svgRule
+      }
+    },
+    plugins: sharedPlugins,
+    outputAssetsDir: outputAssetsDirRoot,
+  } = getSharedConfig({ isProd });
+
+  const outputAssetsDir = path.join(outputAssetsDirRoot, '/client');
 
   return {
     mode,
@@ -69,21 +75,26 @@ module.exports = (env, { mode = 'production' }) => {
     devtool: isProd ? undefined : 'source-map',
     plugins: [
       new LoadablePlugin(),
-      ...sharedConfig.plugins,
+      ...sharedPlugins,
       new webpack.DefinePlugin({
         ...envKeys,
         'process.env.IS_SERVER': JSON.stringify(false),
         'process.env.IS_CLIENT': JSON.stringify(true)
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '../src/template.html'),
+        filename: path.join(outputAssetsDir, '/template.html'),
+        templateParameters: {
+          NODE_ENV: `NODE_ENV: ${isProd ? 'production' : 'development'}`,
+          APP_VERSION: `APP_VERSION: ${packageVersion || 'app version unknown'}`
+        },
+        inject: false
       }),
       new CopyPlugin({
         patterns: [
           {
             from: publicFolderDir,
             to: path.join(outputAssetsDirRoot, '/public')
-          },
-          {
-            from: path.resolve(__dirname, '../src/template.html'),
-            to: path.join(outputAssetsDir)
           },
         ],
       }),
