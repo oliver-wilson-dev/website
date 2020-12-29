@@ -1,25 +1,26 @@
 const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
-const sharedConfig = require('./shared.config');
+const getSharedConfig = require('./shared.config');
 
 const entry = path.join(__dirname, '../server/index.js');
 
-const {
-  module: {
-    rules: {
-      jsRule,
-      cssRule,
-      svgRule
-    }
-  },
-  outputAssetsDir: outputAssetsDirRoot,
-} = sharedConfig;
-
-const outputAssetsDir = path.join(outputAssetsDirRoot, '/server');
-
 module.exports = (env, { mode = 'production' }) => {
   const isProd = mode === 'production';
+
+  const {
+    module: {
+      rules: {
+        jsRule,
+        cssRule,
+        svgRule
+      }
+    },
+    plugins: sharedPlugins,
+    outputAssetsDir: outputAssetsDirRoot,
+  } = getSharedConfig({ isProd });
+
+  const outputAssetsDir = path.join(outputAssetsDirRoot, '/server');
 
   return {
     mode,
@@ -49,7 +50,7 @@ module.exports = (env, { mode = 'production' }) => {
       ]
     },
     plugins: [
-      ...sharedConfig.plugins,
+      ...sharedPlugins,
       new webpack.DefinePlugin({
         'process.env.IS_SERVER': JSON.stringify(true),
         'process.env.IS_CLIENT': JSON.stringify(false)
