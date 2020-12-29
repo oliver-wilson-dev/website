@@ -9,7 +9,6 @@ const packageVersion = process.env.npm_package_version;
 
 const getSharedConfig = require('./shared.config');
 
-const outputAssetsDir = path.join(outputAssetsDirRoot, '/client');
 const publicFolderDir = path.join(__dirname, '../public');
 const hydrateDir = path.resolve(__dirname, '../src');
 
