@@ -18,7 +18,7 @@ const getCssRule = ({ isProd }) => ({
       loader: 'css-loader',
       options: {
         modules: true,
-        localIdentName: isProd ? '[hash:base64]' : '[local]_[hash:base64:5]'
+        localIdentName: isProd ? '[hash:base64:5]' : '[local]_[hash:base64:5]'
       },
     },
     { loader: 'postcss-loader' }
