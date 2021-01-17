@@ -30,13 +30,19 @@ const svgRule = {
   use: ['@svgr/webpack'],
 };
 
+const markdownRule = {
+  test: /\.md$/i,
+  use: 'raw-loader'
+};
+
 module.exports = ({ isProd }) => ({
   outputAssetsDir,
   module: {
     rules: {
       jsRule,
       cssRule: getCssRule({ isProd }),
-      svgRule
+      svgRule,
+      markdownRule
     }
   },
   plugins: [

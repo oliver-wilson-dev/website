@@ -1,93 +1,28 @@
 /* eslint-disable max-len */
 import React from 'react';
 import cn from 'classnames';
+import ReactMarkdown from 'react-markdown';
+import markdown from './index.md';
 import sharedStyles from '../../styles/shared.css';
 import styles from './index.css';
 import Page from '../../containers/Page';
 
-const theGym = `During my free time I quite like to go to the gym; 
-I particularly enjoy weight training and the feeling it affords me. 
-I like that going to the gym can be both a single participant activity or something that can be done with friends. 
-This fluidity works quite well when allocating time for exercise as there are no set times that have to be abided by, 
-it's flexible and quite nice to change from time to time e.g. training in the mornings or evenings.
-There are disciplines of weight training that translate to skills that I implement in both my personal and professional life.
-For example, I choose to practice perfect form and don't try to lift excessively heavy weights as I believe that as soon as good
-form is sacrificed in the name of lifting a heavier weight then the exercise being performed is less effective, risk of injury is
-increased and muscular hypertrophy is more unlikely. I implement this outlook on my work that I produce also, with the analogy 
-being that perfect form represents best practice software engineering principles, and as soon as these principles are violated 
-or not adhered to with a high level of discipline, the result is often suboptimal and the rate of delivery is less efficient.`;
+const renderers = {
+  heading: (props) => {
+    if (props.level !== 1) {
+      return React.createElement(`h${props.level}`, {}, props.children);
+    }
 
-const boxing = `I follow the sports of boxing and mixed martial arts (MMA).
-If there is a big fight on at the weekend, you can bet I'll be watching it.
-I have previously trained in both boxing and wing chun, both of which I enjoyed for different reasons;
-boxing allowed me to develop my strength and mix with a nice group of people in my community, 
-wing chun taught me more practical self defence techniques.`;
+    return <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>{props.children}</h1>;
+  },
+  list: ({ children }) => <ul className={styles.unorderedList}>{children}</ul>
+
+};
 
 const AboutPage = () => (
   <Page>
     <article className={styles.article}>
-      <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>About Me</h1>
-      <section>
-        <h2 id="about--page-career">Career</h2>
-        <section>
-          <h3>Asos</h3>
-          <p>
-            After graduating from the University of Kent in 2017 with a first class honours degree in computer science I started a position as a graduate web developer at asos&apos;s first official graduate programme.
-            During my time at asos I progressed in my career and was subsequently promoted twice while always receiving positive performance reviews.
-            The graduate programme gave me exposure to the way that a large scale website is developed across multiple teams via a micro-frontend architecture.
-            The company utilised a culture that promoted TDD, pair programming, agile practices, kanban methodologies and business driven development.
-            Akamai was used as the CDN for the projects that I worked on, which I worked with regularly. Security implications, particularly XSS attacks were a consideration for all projects.
-            A &quot;you build it, you ship it&quot; approach was taken for the teams that I worked in, meaning I gained experience in the deployment process of many applications to Azure services.
-          </p>
-          <p>
-            During my time at the company I worked on the re-platforming of the saved items page onto a tech stack of react, redux, express and node.js.
-            Users can save items to a list on either the product listing page or the individual product page in order to re-visit and potentially move them items to the bag at a time that is convenient.
-            Some of the requirements for the page are that:
-          </p>
-          <ul className={styles.unorderedList}>
-            <li>a user can see their list of items that they have saved on other devices while logged into their account e.g. save an item via the app on their phone and view the list in their web browser</li>
-            <li>a user can update the size or colour of an item that they have saved on their list and when this is done, the change persists upon refresh/visit on another device</li>
-            <li>a user can add an item to their bag from their saved items list</li>
-            <li>an infinite scrolling mechanism should be implemented as users can add up to 500 items</li>
-            <li>implement failure cases for the above requirements, show error messages, exponential back-off when retrying requests etc</li>
-          </ul>
-          <p>
-            I also maintained the product listing page, which is an isomorphic react application, supported by an express and node.js backend.
-            The application needed to compete well in SEO rankings in order to compete with competitors, e.g. when someone searches &quot;Denim Jackets&quot; in Google, we wanted to be the first result.
-            The page can render results from both user searches as well as pre-defined categories that can be navigated to. This involved some logic to handle various routes in the application, which had
-            implications on bundle splitting and sharing code. The page received around 40 million visits per week, so performance was a huge consideration as users needed to have a fast experience.
-          </p>
-        </section>
-        <section>
-          <h3>ITV</h3>
-          <p>
-            After two an a half years I decided to move on to my next challenge and I started a position as a web developer at ITV. During my time at ITV I worked on two main projects,
-            the incremental re-platforming of the ITV Hub website, and the complete rebuild of the ITV television application.
-          </p>
-          <p>
-            The re-platforming of the ITV Hub website utilised the Next.js framework, which was new for me when starting the project. I can comfortably say that I like Next.js, but I do not love it.
-            The out-of-the-box functionality that Next.js provides is phenomenal - bundle splitting, css modules with sass support, page routing, server side rendering is pretty great.
-            The problem lies with maybe the framework is doing too much, I noticed many developers that had not worked on an isomorphic react application previously did not grasp the concepts that Next.js
-            was implementing. I would recommend for anyone that is using Next.js for the first time to build an isomorphic react application with node and express beforehand in order to really understand the
-            benefits of Next.js and appreciate the things it is doing under the hood.
-          </p>
-          <p>
-            Building the ITV television application was a new experience to me as the process differs slightly from developing a website.
-            The TV app is a react application, ejected from create-react-app. The application has no requirement to be rendered on the server, so it is client side rendered only.
-            Many concerns with focus is required to be considered, which was nicely implemented via a react context and reducer which responds to actions dispatched via button presses.
-            Conceptually there are a few button press events that we need to respond to which correspond to button presses on a TV remote - OK, UP, DOWN, LEFT, RIGHT, PLAY, PAUSE and BACK.
-            Each focusable item is registered in a focus tree and has an item that is linked to it for various directions as well as also having the possibility to utilise callback functions assigned for other actions.
-          </p>
-        </section>
-      </section>
-      <section id="about--page-hobbies">
-        <h2>Hobbies</h2>
-        <p>{theGym}</p>
-      </section>
-      <section id="about--page-interests">
-        <h2>Interests</h2>
-        <p>{boxing}</p>
-      </section>
+      <ReactMarkdown source={markdown} renderers={renderers} />
     </article>
   </Page>
 );

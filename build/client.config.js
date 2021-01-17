@@ -34,7 +34,8 @@ module.exports = (env, { mode = 'production' }) => {
       rules: {
         jsRule,
         cssRule,
-        svgRule
+        svgRule,
+        markdownRule
       }
     },
     plugins: sharedPlugins,
@@ -68,7 +69,8 @@ module.exports = (env, { mode = 'production' }) => {
       rules: [
         jsRule,
         cssRule,
-        svgRule
+        svgRule,
+        markdownRule
       ]
     },
     devtool: isProd ? undefined : 'source-map',
