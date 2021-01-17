@@ -32,7 +32,7 @@ const Footer = ({ learnMoreClicked }) => (
         <a href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io" target="_blank" rel="noopener noreferrer">github</a>
         .
       </span>
-      <span className={styles.footerDisclaimerText}>©2020, Oliver Wilson</span>
+      <span className={styles.footerDisclaimerText}>©2021, Oliver Wilson</span>
     </div>
     <SocialMedia />
   </footer>

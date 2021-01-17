@@ -61,7 +61,7 @@ exports[`<Footer/> should render correctly 1`] = `
     <span
       className="footerDisclaimerText"
     >
-      ©2020, Oliver Wilson
+      ©2021, Oliver Wilson
     </span>
   </div>
   <SocialMedia />
