@@ -20,10 +20,6 @@ const Greeting = ({
       <ul className={styles.reasonsList}>
         {reasonForCreation.reasons.map((reason, index) => (
           <li key={index}>
-            <span className={styles.listOrderIndicator}>
-              {index}
-              .
-            </span>
             {reason}
           </li>
         ))}
