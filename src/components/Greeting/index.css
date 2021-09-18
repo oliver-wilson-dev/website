@@ -9,8 +9,8 @@
 }
 
 .reasonsList {
-    list-style-type: none;
-    padding-left: unset;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .listOrderIndicator {
