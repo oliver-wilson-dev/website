@@ -11,6 +11,12 @@ const ProjectsPage = () => (
     <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>Projects</h1>
     <div className={styles.projectGrid}>
       <ProjectTile
+        name="Sip or Skip"
+        description="A fun drinking game that utilises websockets (via socket.io) to provide a real time synchronised experience for users. Answer questions and complete dares in a given time or else you have to take a sip from your drink... or you can choose to skip."
+        codeHref="https://github.com/oliver-wilson-dev/sip-or-skip"
+        technologies={['react', 'redux', 'node', 'websockets']}
+      />
+      <ProjectTile
         name="To do list"
         description="A to do list that records list items in local storage. List items can be amended, marked as complete, removed and users can add new list items too."
         codeHref="https://github.com/oliver-wilson-dev/to-do-list"
