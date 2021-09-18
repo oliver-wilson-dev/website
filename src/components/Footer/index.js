@@ -5,15 +5,14 @@ import additionalStyles from '../App/index.css';
 import styles from './index.css';
 import SocialMedia from '../SocialMedia';
 
-
 const Footer = ({ learnMoreClicked }) => (
   <footer className={cn(additionalStyles.flexCenter, styles.container)}>
     <div className={styles.textContainer}>
       <span className={styles.footerDisclaimerText}>
         By using this site you agree to our cookie policy.
         {' '}
-        <button className={cn(styles.buttonLink)} type="button" onClick={learnMoreClicked}>
-          Read the cookie policy here
+        <button className={styles.buttonLink} type="button" onClick={learnMoreClicked}>
+          <span className={styles.buttonLinkText}>Read the cookie policy here</span>
           <span>.</span>
         </button>
       </span>

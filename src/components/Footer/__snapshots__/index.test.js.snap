@@ -17,7 +17,11 @@ exports[`<Footer/> should render correctly 1`] = `
         onClick={[MockFunction]}
         type="button"
       >
-        Read the cookie policy here
+        <span
+          className="buttonLinkText"
+        >
+          Read the cookie policy here
+        </span>
         <span>
           .
         </span>

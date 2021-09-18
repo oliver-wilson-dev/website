@@ -42,8 +42,12 @@
   background: none;
   font-family: inherit;
   font-size: var(--fontSize);
-  text-decoration: underline;
   color: var(--primaryTextColorInverse);
+
+  &Text {
+    font-size: var(--fontSize);
+    text-decoration: underline;
+  }
 }
 
 .textContainer {
