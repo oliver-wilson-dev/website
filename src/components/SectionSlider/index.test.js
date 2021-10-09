@@ -104,53 +104,90 @@ describe('SectionSlider', () => {
       it('should show correct tiles', () => {
         const component = render(defaultChildren, mount);
 
-        const touchStart = (x = '0', y = '0') => {
+        const touchStart = (x = 0, y = 0) => {
           component.find(`.${styles.tileContainer}`).simulate('touchStart', { targetTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
           component.update();
         };
 
-        const touchEnd = (x = '0', y = '0') => {
+        const touchEnd = (x = 0, y = 0) => {
           component.find(`.${styles.tileContainer}`).simulate('touchEnd', { changedTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
           component.update();
         };
 
-        touchStart('0');
-        touchEnd('200');
-
-
-        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
-        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
-
-        touchStart('200');
-        touchEnd('0');
+        touchStart(200);
+        touchEnd(0);
 
         expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(false);
         expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(true);
+
+        touchStart(0);
+        touchEnd(200);
+
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
+        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
+      });
+
+      describe('and the user has also swiped up during the left and right swipe (users do this when scrolling up and down)', () => {
+        it('should not update the tiles', () => {
+          const component = render(defaultChildren, mount);
+
+          const touchStart = (x = 0, y = 0) => {
+            component.find(`.${styles.tileContainer}`).simulate('touchStart', { targetTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+            component.update();
+          };
+
+          const touchEnd = (x = 0, y = 0) => {
+            component.find(`.${styles.tileContainer}`).simulate('touchEnd', { changedTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+            component.update();
+          };
+
+          // failed to swipe to the left
+          touchStart(200, 100);
+          touchEnd(0, 200);
+
+          expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
+          expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
+
+          // successful swipe to the left
+          touchStart(200, 100);
+          touchEnd(0, 120);
+
+          expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(false);
+          expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(true);
+
+          // failed swipe to the right
+          touchStart(0, 180);
+          touchEnd(200, 100);
+
+          expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(false);
+          expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(true);
+        });
       });
     });
+
     describe('when swiping and the swipe is less than 75px', () => {
       it('should show correct tiles', () => {
         const component = render(defaultChildren, mount);
 
-        const touchStart = (x = '0', y = '0') => {
+        const touchStart = (x = 0, y = 0) => {
           component.find(`.${styles.tileContainer}`).simulate('touchStart', { targetTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
           component.update();
         };
 
-        const touchEnd = (x = '0', y = '0') => {
+        const touchEnd = (x = 0, y = 0) => {
           component.find(`.${styles.tileContainer}`).simulate('touchEnd', { changedTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
           component.update();
         };
 
-        touchStart('0');
-        touchEnd('50');
+        touchStart(0);
+        touchEnd(50);
 
 
         expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
         expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
 
-        touchStart('50');
-        touchEnd('-10');
+        touchStart(50);
+        touchEnd(-10);
 
         expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
         expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
