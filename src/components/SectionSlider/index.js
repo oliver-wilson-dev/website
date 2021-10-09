@@ -50,17 +50,16 @@ const SectionSlider = ({ children }) => {
       const { clientX: clientXStart, clientY: clientYStart } = touchStart;
       const { clientX: clientXEnd, clientY: clientYEnd } = touchEnd;
 
-      const userSwipedUp = clientYStart - clientYEnd > PX_SWIPED_THRESHOLD.Y_AXIS;
-      const userSwipedDown = clientYStart - clientYEnd < -PX_SWIPED_THRESHOLD.Y_AXIS;
+      const swipeUp = clientYStart - clientYEnd > PX_SWIPED_THRESHOLD.Y_AXIS;
+      const swipeDown = clientYStart - clientYEnd < -PX_SWIPED_THRESHOLD.Y_AXIS;
 
-      if (!(userSwipedUp || userSwipedDown)) {
-        if (clientXStart - clientXEnd > PX_SWIPED_THRESHOLD.X_AXIS) {
-          increment();
-        }
+      const swipeLeft = clientXStart - clientXEnd > PX_SWIPED_THRESHOLD.X_AXIS;
+      const swipeRight = clientXStart - clientXEnd < -PX_SWIPED_THRESHOLD.X_AXIS;
 
-        if (clientXStart - clientXEnd < -PX_SWIPED_THRESHOLD.X_AXIS) {
-          decrement();
-        }
+      if (!(swipeUp || swipeDown)) {
+        if (swipeLeft) increment();
+
+        if (swipeRight) decrement();
       }
     }
   }, [touchStart, touchEnd, increment, decrement]);
