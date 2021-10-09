@@ -23,6 +23,7 @@
 }
 
 .companyLogo {
+    min-width: 100px;
     max-width: 140px;
     fill: var(--primaryTextColorLight);
 }
@@ -51,6 +52,7 @@
     }
 
     .companyLogo {
+        min-width: 80px;
         max-width: 100px;
         
         &:last-child {
