@@ -1,5 +1,4 @@
 .section {
-
     &Wrapper {
         display: flex;
         flex-direction: column;
@@ -24,7 +23,6 @@
 }
 
 .companyLogo {
-    flex-basis: 30%;
     max-width: 140px;
     fill: var(--primaryTextColorLight);
 }

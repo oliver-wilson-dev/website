@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import SectionSlider from '.';
 import styles from './index.css';
 
 jest.mock('../SectionTile', () => {
-  const SectionTile = props => <div {...props} />;
+  const SectionTile = () => <div />;
 
   return SectionTile;
 });
@@ -26,7 +26,7 @@ const defaultChildren = [
   <p key="2">goodbye world</p>
 ];
 
-const render = (children = defaultChildren) => shallow(
+const render = (children = defaultChildren, renderMethod = shallow) => renderMethod(
   <SectionSlider>
     {children}
   </SectionSlider>
@@ -97,6 +97,63 @@ describe('SectionSlider', () => {
 
           expect(component).toMatchSnapshot();
         });
+      });
+    });
+
+    describe('when swiping left and then right', () => {
+      it('should show correct tiles', () => {
+        const component = render(defaultChildren, mount);
+
+        const touchStart = (x = '0', y = '0') => {
+          component.find(`.${styles.tileContainer}`).simulate('touchStart', { targetTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+          component.update();
+        };
+
+        const touchEnd = (x = '0', y = '0') => {
+          component.find(`.${styles.tileContainer}`).simulate('touchEnd', { changedTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+          component.update();
+        };
+
+        touchStart('0');
+        touchEnd('200');
+
+
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
+        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
+
+        touchStart('200');
+        touchEnd('0');
+
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(false);
+        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(true);
+      });
+    });
+    describe('when swiping and the swipe is less than 75px', () => {
+      it('should show correct tiles', () => {
+        const component = render(defaultChildren, mount);
+
+        const touchStart = (x = '0', y = '0') => {
+          component.find(`.${styles.tileContainer}`).simulate('touchStart', { targetTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+          component.update();
+        };
+
+        const touchEnd = (x = '0', y = '0') => {
+          component.find(`.${styles.tileContainer}`).simulate('touchEnd', { changedTouches: [{ clientX: x, clientY: y }], stopPropagation: jest.fn() });
+          component.update();
+        };
+
+        touchStart('0');
+        touchEnd('50');
+
+
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
+        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
+
+        touchStart('50');
+        touchEnd('-10');
+
+        expect(component.find(`.${styles.arrowBtn}`).at(0).hasClass(styles.btnDisabled)).toBe(true);
+        expect(component.find(`.${styles.arrowBtn}`).at(1).hasClass(styles.btnDisabled)).toBe(false);
       });
     });
   });

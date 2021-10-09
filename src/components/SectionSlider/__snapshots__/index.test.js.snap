@@ -16,6 +16,8 @@ exports[`SectionSlider should render correctly 1`] = `
   </div>
   <div
     className="tileContainer displayBox"
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
   >
     <SectionTile
       additionalStyles={
@@ -73,6 +75,8 @@ exports[`SectionSlider when clicking the right arrow and then clicking it again 
   </div>
   <div
     className="tileContainer displayBox"
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
   >
     <SectionTile
       additionalStyles={
@@ -130,6 +134,8 @@ exports[`SectionSlider when clicking the right arrow and then clicking the left 
   </div>
   <div
     className="tileContainer displayBox"
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
   >
     <SectionTile
       additionalStyles={
