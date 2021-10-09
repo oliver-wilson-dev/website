@@ -7,6 +7,7 @@ import styles from './index.css';
 import sectionStyles from '../SectionTile/index.css';
 import LeftArrow from './left-arrow.svg';
 import RightArrow from './right-arrow.svg';
+import { PX_SWIPED_THRESHOLD } from './constants';
 
 
 const SectionSlider = ({ children }) => {
@@ -36,22 +37,29 @@ const SectionSlider = ({ children }) => {
 
   const onTouchStart = useCallback((e) => {
     e.stopPropagation();
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStart(e.targetTouches[0]);
   }, []);
 
   const onTouchEnd = useCallback((e) => {
     e.stopPropagation();
-    setTouchEnd(e.changedTouches[0].clientX);
+    setTouchEnd(e.changedTouches[0]);
   }, []);
 
   useEffect(() => {
     if (touchStart !== null && touchEnd !== null) {
-      if (touchStart - touchEnd > 75) {
-        increment();
-      }
+      const { clientX: clientXStart, clientY: clientYStart } = touchStart;
+      const { clientX: clientXEnd, clientY: clientYEnd } = touchEnd;
 
-      if (touchStart - touchEnd < -75) {
-        decrement();
+      const swipeUp = clientYStart - clientYEnd > PX_SWIPED_THRESHOLD.Y_AXIS;
+      const swipeDown = clientYStart - clientYEnd < -PX_SWIPED_THRESHOLD.Y_AXIS;
+
+      const swipeLeft = clientXStart - clientXEnd > PX_SWIPED_THRESHOLD.X_AXIS;
+      const swipeRight = clientXStart - clientXEnd < -PX_SWIPED_THRESHOLD.X_AXIS;
+
+      if (!(swipeUp || swipeDown)) {
+        if (swipeLeft) increment();
+
+        if (swipeRight) decrement();
       }
     }
   }, [touchStart, touchEnd, increment, decrement]);
