@@ -4,34 +4,18 @@ exports[`ProjectImages when there are multiple project images should render corr
 <div
   className="projectImages"
 >
-  <div
-    className="projectImage"
+  <ProjectImage
+    alt="test-alt"
     key="test-link-to-project"
-  >
-    <a
-      href="test-link-to-project"
-    >
-      <img
-        alt="test-alt"
-        loading="lazy"
-        src="test-src"
-      />
-    </a>
-  </div>
-  <div
-    className="projectImage"
+    linkToProject="test-link-to-project"
+    src="test-src"
+  />
+  <ProjectImage
+    alt="test-alt"
     key="test-link-to-project"
-  >
-    <a
-      href="test-link-to-project"
-    >
-      <img
-        alt="test-alt"
-        loading="lazy"
-        src="test-src"
-      />
-    </a>
-  </div>
+    linkToProject="test-link-to-project"
+    src="test-src"
+  />
 </div>
 `;
 
@@ -39,19 +23,11 @@ exports[`ProjectImages when there is one project image should render correctly 1
 <div
   className="projectImages"
 >
-  <div
-    className="projectImage"
+  <ProjectImage
+    alt="test-alt"
     key="test-link-to-project"
-  >
-    <a
-      href="test-link-to-project"
-    >
-      <img
-        alt="test-alt"
-        loading="lazy"
-        src="test-src"
-      />
-    </a>
-  </div>
+    linkToProject="test-link-to-project"
+    src="test-src"
+  />
 </div>
 `;

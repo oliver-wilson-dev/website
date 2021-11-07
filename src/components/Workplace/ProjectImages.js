@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProjectImage from './ProjectImage';
 import styles from './index.css';
 
 const ProjectImages = ({ projectImages }) => (
   <div className={styles.projectImages}>
     {projectImages.map(({ linkToProject, image: { alt, src } }) => (
-      <div key={linkToProject} className={styles.projectImage}>
-        <a href={linkToProject}>
-          <img alt={alt} src={src} loading="lazy" />
-        </a>
-      </div>
+      <ProjectImage key={linkToProject} alt={alt} src={src} linkToProject={linkToProject} />
     ))}
   </div>
 );

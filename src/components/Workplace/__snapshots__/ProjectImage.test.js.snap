@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectImage should render correctly 1`] = `
+<div
+  className="projectImageWrapper"
+>
+  <a
+    href="test-linkToProject"
+  >
+    <img
+      alt="test-alt"
+      className="image"
+      loading="lazy"
+      onError={[Function]}
+    />
+  </a>
+</div>
+`;
+
+exports[`ProjectImage when mounted on the client should render correctly 1`] = `
+<ProjectImage
+  alt="test-alt"
+  linkToProject="test-linkToProject"
+  src="test-src"
+>
+  <div
+    className="projectImageWrapper"
+  >
+    <a
+      href="test-linkToProject"
+    >
+      <img
+        alt="test-alt"
+        className="image"
+        loading="lazy"
+        onError={[Function]}
+        src="test-src"
+      />
+    </a>
+  </div>
+</ProjectImage>
+`;
+
+exports[`ProjectImage when mounted on the client when the onError callback is triggered should render correctly 1`] = `
+<ProjectImage
+  alt="test-alt"
+  linkToProject="test-linkToProject"
+  src="test-src"
+>
+  <div
+    className="projectImageWrapper"
+  >
+    <a
+      href="test-linkToProject"
+    >
+      <img
+        alt="test-alt"
+        className="imgLoadFailed"
+        loading="lazy"
+        onError={[Function]}
+        src="test-src"
+      />
+    </a>
+  </div>
+</ProjectImage>
+`;
