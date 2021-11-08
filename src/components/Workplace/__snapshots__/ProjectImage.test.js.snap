@@ -46,21 +46,5 @@ exports[`ProjectImage when mounted on the client when the onError callback is tr
   alt="test-alt"
   linkToProject="test-linkToProject"
   src="test-src"
->
-  <div
-    className="projectImageWrapper"
-  >
-    <a
-      href="test-linkToProject"
-    >
-      <img
-        alt="test-alt"
-        className="imgLoadFailed"
-        loading="lazy"
-        onError={[Function]}
-        src="test-src"
-      />
-    </a>
-  </div>
-</ProjectImage>
+/>
 `;
