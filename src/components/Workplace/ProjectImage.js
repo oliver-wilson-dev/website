@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import styles from './index.css';
 
 /*
@@ -18,6 +17,8 @@ const ProjectImage = ({ alt, src: srcProp, linkToProject }) => {
 
   const onError = useCallback(() => setImgLoadFailed(true), [setImgLoadFailed]);
 
+  if (imgLoadFailed) return null;
+
   return (
     <div
       className={styles.projectImageWrapper}
@@ -28,10 +29,7 @@ const ProjectImage = ({ alt, src: srcProp, linkToProject }) => {
           src={src}
           loading="lazy"
           onError={onError}
-          className={cn({
-            [styles.image]: !imgLoadFailed,
-            [styles.imgLoadFailed]: imgLoadFailed
-          })}
+          className={styles.image}
         />
       </a>
     </div>

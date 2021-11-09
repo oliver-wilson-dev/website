@@ -37,6 +37,11 @@
     &:hover {
         text-decoration: underline;
     }
+
+    &:only-child {
+        flex-basis: 100%;
+        margin: 0px;
+    }
 }
 
 .image {
