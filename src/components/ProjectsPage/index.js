@@ -3,7 +3,6 @@ import cn from 'classnames';
 import sharedStyles from '../../styles/shared.css';
 import Page from '../../containers/Page';
 import ProjectTile from '../ProjectTile';
-
 import styles from './index.css';
 
 const ProjectsPage = () => (
@@ -11,10 +10,23 @@ const ProjectsPage = () => (
     <h1 className={cn(sharedStyles.pageHeader, styles.pageHeader)}>Projects</h1>
     <div className={styles.projectGrid}>
       <ProjectTile
+        name="oliverwilson.dev"
+        description="I made the website that you're on right now! Definitely check out the code to see how it is built."
+        codeHref="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
+        technologies={['react', 'redux', 'node', 'express', 'SSR', 'jest', 'enzyme']}
+      />
+      <ProjectTile
         name="Sip or Skip"
         description="A fun drinking game that utilises websockets (via socket.io) to provide a real time synchronised experience for users. Answer questions and complete dares in a given time or else you have to take a sip from your drink... or you can choose to skip."
         codeHref="https://github.com/oliver-wilson-dev/sip-or-skip"
         technologies={['react', 'redux', 'node', 'websockets']}
+      />
+      <ProjectTile
+        name="World Explorer"
+        description="A country selector that displays information retrieved from a GraphQL enabled API. I made this project to experiment with and learn how to make GraphQL queries."
+        codeHref="https://github.com/oliver-wilson-dev/world-explorer"
+        demoHref="https://oliver-wilson-dev.github.io/world-explorer/"
+        technologies={['react', 'GraphQL']}
       />
       <ProjectTile
         name="To do list"
