@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './index.css';
 import AsosLogo from './asos-logo.svg';
 import ItvLogo from './itv-logo.svg';
+import SainsburysLogo from './sainsburys-logo.svg';
 import Section from '../Section';
 
 const PlacesWorked = () => (
@@ -12,10 +13,11 @@ const PlacesWorked = () => (
   }}
   >
     <h3 className={styles.statement}>
-      Proudly contributing to projects in the fashion and television industries for over four years.
+      Proudly contributing to projects in the fashion, television and food industries for over four years.
     </h3>
     <div className={styles.companyLogoWrapper}>
-      <AsosLogo className={styles.companyLogo} />
+      <AsosLogo className={styles.asosLogo} />
+      <SainsburysLogo className={styles.sainsburysLogo} />
       <ItvLogo className={styles.itvLogo} />
     </div>
   </Section>
