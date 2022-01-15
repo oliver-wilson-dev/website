@@ -22,6 +22,12 @@ jest.mock('./itv-logo.svg', () => {
   return ItvLogo;
 });
 
+jest.mock('./sainsburys-logo.svg', () => {
+  const SainsburysLogo = () => null;
+
+  return SainsburysLogo;
+});
+
 describe('PlacesWorked', () => {
   const render = () => shallow(<PlacesWorked />);
 
