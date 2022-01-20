@@ -12,7 +12,7 @@ const ProjectsPage = () => (
       <ProjectTile
         name="oliverwilson.dev"
         description="I made the website that you're on right now! Definitely check out the code to see how it is built."
-        codeHref="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
+        codeHref="https://github.com/oliver-wilson-dev/personal-website"
         technologies={['react', 'redux', 'node', 'express', 'SSR', 'jest', 'enzyme']}
       />
       <ProjectTile
