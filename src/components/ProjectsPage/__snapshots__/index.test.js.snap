@@ -13,7 +13,7 @@ exports[`ProjectsPage should render correctly 1`] = `
     className="projectGrid"
   >
     <ProjectTile
-      codeHref="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
+      codeHref="https://github.com/oliver-wilson-dev/personal-website"
       description="I made the website that you're on right now! Definitely check out the code to see how it is built."
       name="oliverwilson.dev"
       technologies={
