@@ -1,4 +1,4 @@
-export const SECTIONS_API_ENDPOINT = 'https://express.oliver-wilson-dev.now.sh/sections';
+export const SECTIONS_API_ENDPOINT = 'https://express-oliver-wilson-dev.vercel.app/sections';
 export const LIGHT_THEME = 'LIGHT_THEME';
 export const DARK_THEME = 'DARK_THEME';
 export const COOKIE_POLICY = 'COOKIE_POLICY';
