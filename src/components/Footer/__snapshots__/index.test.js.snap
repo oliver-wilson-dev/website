@@ -54,7 +54,7 @@ exports[`<Footer/> should render correctly 1`] = `
       The code for this website can be found on
        
       <a
-        href="https://github.com/oliver-wilson-dev/oliver-wilson-dev.github.io"
+        href="https://github.com/oliver-wilson-dev/personal-website"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -65,7 +65,11 @@ exports[`<Footer/> should render correctly 1`] = `
     <span
       className="footerDisclaimerText"
     >
-      ©2021, Oliver Wilson
+      ©
+       
+      1996
+       
+      Oliver Wilson
     </span>
   </div>
   <SocialMedia />
