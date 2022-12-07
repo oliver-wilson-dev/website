@@ -5,6 +5,8 @@ import additionalStyles from '../App/index.css';
 import styles from './index.css';
 import SocialMedia from '../SocialMedia';
 
+const year = new Date().getFullYear();
+
 const Footer = ({ learnMoreClicked }) => (
   <footer className={cn(additionalStyles.flexCenter, styles.container)}>
     <div className={styles.textContainer}>
@@ -31,7 +33,13 @@ const Footer = ({ learnMoreClicked }) => (
         <a href="https://github.com/oliver-wilson-dev/personal-website" target="_blank" rel="noopener noreferrer">github</a>
         .
       </span>
-      <span className={styles.footerDisclaimerText}>©2021, Oliver Wilson</span>
+      <span className={styles.footerDisclaimerText}>
+        ©
+        {' '}
+        {year}
+        {' '}
+        Oliver Wilson
+      </span>
     </div>
     <SocialMedia />
   </footer>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from '.';
+
+jest
+  .useFakeTimers('modern')
+  .setSystemTime(new Date('1996-05-07'));
 
 jest.mock('../SocialMedia', () => {
   const SocialMedia = () => null;
@@ -12,7 +15,14 @@ const defaultProps = {
   learnMoreClicked: jest.fn()
 };
 
-const render = (props = {}) => shallow(<Footer {...defaultProps} {...props} />);
+const render = (props = {}) => {
+  let Footer;
+  jest.isolateModules(() => {
+    Footer = require('.').default;
+  });
+
+  return shallow(<Footer {...defaultProps} {...props} />);
+};
 
 describe('<Footer/>', () => {
   it('should exist', () => {

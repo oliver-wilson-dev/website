@@ -13,7 +13,7 @@ const PlacesWorked = () => (
   }}
   >
     <h3 className={styles.statement}>
-      Proudly contributing to projects in the fashion, television and food industries for over four years.
+      Proudly contributing to projects in the fashion, television and food industries for over five years.
     </h3>
     <div className={styles.companyLogoWrapper}>
       <AsosLogo className={styles.asosLogo} />
