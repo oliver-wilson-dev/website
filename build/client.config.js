@@ -53,7 +53,7 @@ module.exports = (env, { mode = 'production' }) => {
     output: {
       path: outputAssetsDir,
       filename: 'client.js',
-      chunkFilename: isProd ? '[name]-[hash:8].js' : '[name].js',
+      chunkFilename: isProd ? '[name]-[contenthash:8].js' : '[name].js',
       publicPath: '/client/',
     },
     devServer: {
