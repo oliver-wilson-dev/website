@@ -15,19 +15,25 @@ jobs:
     steps:
     - name: checkout repository
       uses: actions/checkout@v2
+    
     - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+    
     - name: clean install all dependencies
       run: npm install
+    
     - name: build the application
       run: npm run build:prod
-    - name: setup google cloud platform cli
-      uses: google-github-actions/setup-gcloud@main
+    
+    - name: google cloud platform auth
+      uses: google-github-actions/auth@v1.0.0
       with:
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        export_default_credentials: true
+        credentials_json: '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}'
+    
+    - name: setup google cloud platform cli
+      uses: google-github-actions/setup-gcloud@v1.0.0
+
     - name: deploy app to google cloud
       run: gcloud app deploy --stop-previous-version
