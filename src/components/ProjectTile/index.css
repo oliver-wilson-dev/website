@@ -8,7 +8,7 @@
     background-color: var(--primaryBackgroundDark);
     max-width: calc((var(--pageContentMaxWidth)) - 40px - (var(--marginRight) * 2));
 
-    margin: 20px var(--marginRight) 15px var(--marginRight);
+    margin: 0px var(--marginRight) 40px var(--marginRight);
 
     border-style: inset;
     border-width: var(--borderWidth);
@@ -62,28 +62,9 @@
     .projectTile {
         max-width: calc((100% / 2) - (var(--borderWidthDouble) * var(--numberOfTilesMinusOne)) - var(--marginRight) - var(--marginRight) - var(--borderWidth) - 30px);
 
-        margin: 20px 40px 0px 0px;
+        margin: 0px 40px 60px 0px;
 
         &:nth-of-type(2n) {
-            margin-right: 0px;
-        }
-    }
-}
-
-@media (min-width: 1024px) {
-    :root {
-        --numberOfTiles: 3;
-        --numberOfTilesMinusOne: 2;
-    }
-
-    .projectTile {
-        max-width: calc((100% / 3) - (var(--borderWidthDouble) * var(--numberOfTilesMinusOne)) - var(--marginRight) - var(--marginRight) - var(--borderWidth) - 20px);
-
-        &:nth-of-type(2n) {
-            margin-right: 40px;
-        }
-
-        &:nth-of-type(3n) {
             margin-right: 0px;
         }
     }

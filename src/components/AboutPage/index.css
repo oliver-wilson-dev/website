@@ -4,7 +4,6 @@
 
 .article {
     max-width: var(--pageContentMaxWidth);
-    padding: 15px;
 }
 
 .unorderedList {

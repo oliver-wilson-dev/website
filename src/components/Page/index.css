@@ -1,8 +1,6 @@
-@import "../../styles/shared.css";
-
 .page {
     max-width: 100%;
-    margin: 0;
+    margin: 0 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,6 +9,6 @@
 
 @media (min-width: 1024px) {
     .page {
-        margin: 20px auto;
+        margin: 20px 0px;
     }
 }
