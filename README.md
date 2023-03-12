@@ -2,8 +2,8 @@
 
 This is a project that I've created for two reasons:
 
-- **0.** To showcase my skills as a software engineer.
-- **1.** To have some fun experimenting with different technologies.
+1. To showcase my skills as a software engineer.
+1. To have some fun experimenting with different technologies.
 
 I reference my experiences that I have gained through working on some interesting projects during my career and I also detail some of my interests outside of web development.
 

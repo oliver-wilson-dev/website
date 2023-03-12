@@ -2,22 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 20px;
+    margin: 40px 0px;
     max-width: 1600px;
 }
 
 .projectsPage {
     justify-content: flex-start;
-}
-
-@media (min-width: 768px) {
-    .projectGrid {
-        padding: 20px 30px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .projectGrid {
-        padding: 20px 50px;
-    }
 }
