@@ -17,13 +17,20 @@ jest.mock('../Workplace', () => {
   return Workplace;
 });
 
-const render = overrideProps => shallow(<Experience {...defaultProps} {...overrideProps} />);
 
 jest.mock('../Section', () => {
   const Section = () => null;
 
   return Section;
 });
+
+jest.mock('../SectionTile', () => {
+  const SectionTile = () => null;
+
+  return SectionTile;
+});
+
+const render = overrideProps => shallow(<Experience {...defaultProps} {...overrideProps} />);
 
 describe('<Experience/> component', () => {
   it('should exist', () => {
