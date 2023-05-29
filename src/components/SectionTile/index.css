@@ -91,6 +91,10 @@
             margin-right: var(--iconSize);
         }
     }
+
+    & p {
+        text-align: left;
+    }
 }
 
 .landingBlurb {

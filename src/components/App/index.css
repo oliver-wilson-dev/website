@@ -90,4 +90,8 @@ flex
   .sectionTitle {
 		font-size: 28px;
 	}
+
+  p, span, li {
+    line-height: 1.5rem;
+  }
 }
