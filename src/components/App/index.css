@@ -13,6 +13,7 @@ General
 }
 
 $max-width: 850px;
+$line-height: 1.5rem;
 
 body {
   margin: 0;
@@ -51,7 +52,7 @@ h2, h3 {
 
 p, span, li {
   text-align: justify;
-  line-height: 2em;
+  line-height: $line-height;
   font-size: 16px;
 }
 
@@ -90,4 +91,11 @@ flex
   .sectionTitle {
 		font-size: 28px;
 	}
+}
+
+@media (min-width: 768px) {
+  $line-height: 2rem;
+  p, span, li {
+    line-height: $line-height;
+  }
 }

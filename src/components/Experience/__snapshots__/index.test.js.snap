@@ -2,15 +2,28 @@
 
 exports[`<Experience/> component should match snapshot 1`] = `
 <Section
+  additionalStyles={
+    Object {
+      "section": "tilesFlowOffScreen",
+    }
+  }
   title="test-title"
 >
-  <Workplace
-    companyName="test-company-name"
-    key="test-company-name"
-  />
-  <Workplace
-    companyName="test-another-company-name"
-    key="test-another-company-name"
-  />
+  <Slider>
+    <SectionTile
+      key="test-company-name"
+    >
+      <Workplace
+        companyName="test-company-name"
+      />
+    </SectionTile>
+    <SectionTile
+      key="test-another-company-name"
+    >
+      <Workplace
+        companyName="test-another-company-name"
+      />
+    </SectionTile>
+  </Slider>
 </Section>
 `;

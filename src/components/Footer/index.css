@@ -1,3 +1,5 @@
+@import "../../components/App//index.css";
+
 :root {
   --fontSize: 14px;
 }
@@ -43,6 +45,7 @@
   font-family: inherit;
   font-size: var(--fontSize);
   color: var(--primaryTextColorInverse);
+  line-height: $line-height;
 
   &Text {
     font-size: var(--fontSize);

@@ -6,20 +6,21 @@ import PlusIcon from './plus.svg';
 import MinusIcon from './minus.svg';
 
 
-const SectionTile = ({ children, additionalStyles, border = false }) => {
+const canBeFocusedProgrammatically = -1;
+
+const SectionTile = ({ children, additionalStyles, border = true }) => {
   const displayBoxRef = useRef(null);
   const childrenRef = useRef(null);
 
   const [expanded, setExpanded] = useState(false);
   const [expandable, setExpandable] = useState(false);
 
-  const canBeFocusedProgrammatically = -1;
   useEffect(() => {
     setExpandable(displayBoxRef.current.offsetHeight >= 250);
   }, []);
 
   useEffect(() => {
-    if (expanded) childrenRef.current.focus();
+    if (expanded) displayBoxRef.current.focus();
   }, [expanded]);
 
   const onButtonClick = (e) => {

@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Section/> when children are provided should render correctly 1`] = `
+<Section
+  title="test-title"
+>
+  <section
+    className="flexColumn flexCenter test-fade-in-classes"
+  >
+    <h2
+      className="sectionTitle"
+    >
+      test-title
+    </h2>
+    <div>
+      <SomeComponent
+        key="1"
+      >
+        <p
+          key="test-key"
+        >
+          some component
+        </p>
+      </SomeComponent>
+      <p
+        key="test-key"
+      >
+        some component
+      </p>
+    </div>
+  </section>
+</Section>
+`;
+
 exports[`<Section/> when the children are HTML elements should render correctly 1`] = `
 <Section
   title="test-title"
@@ -19,76 +51,6 @@ exports[`<Section/> when the children are HTML elements should render correctly 
         this is some content
       </p>
     </div>
-  </section>
-</Section>
-`;
-
-exports[`<Section/> when the children are both components and HTML elements should render correctly 1`] = `
-<Section
-  title="test-title"
->
-  <section
-    className="flexColumn flexCenter test-fade-in-classes"
-  >
-    <h2
-      className="sectionTitle"
-    >
-      test-title
-    </h2>
-    <SectionTile>
-      <div>
-        <SomeComponent
-          key="1"
-        >
-          <p
-            key="test-key"
-          >
-            some component
-          </p>
-        </SomeComponent>
-      </div>
-    </SectionTile>
-    <div>
-      <p
-        key="test-key"
-      >
-        some component
-      </p>
-    </div>
-  </section>
-</Section>
-`;
-
-exports[`<Section/> when the children are react components should render correctly 1`] = `
-<Section
-  title="test-title"
->
-  <section
-    className="flexColumn flexCenter test-fade-in-classes"
-  >
-    <h2
-      className="sectionTitle"
-    >
-      test-title
-    </h2>
-    <SectionTile>
-      <div>
-        <SomeComponent
-          key="1"
-        >
-          <p>
-            some component
-          </p>
-        </SomeComponent>
-        <SomeComponent
-          key="2"
-        >
-          <p>
-            some component
-          </p>
-        </SomeComponent>
-      </div>
-    </SectionTile>
   </section>
 </Section>
 `;

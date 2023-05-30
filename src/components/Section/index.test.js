@@ -3,12 +3,6 @@ import { mount } from 'enzyme';
 import Section from '.';
 import useFadeInClasses from '../../hooks/useFadeInClasses';
 
-jest.mock('../SectionSlider', () => {
-  const SectionTile = ({ children }) => <div>{children}</div>;
-
-  return SectionTile;
-});
-
 jest.mock('../SectionTile', () => {
   const SectionTile = () => null;
 
@@ -45,26 +39,7 @@ describe('<Section/>', () => {
     });
   });
 
-  describe('when the children are react components', () => {
-    const SomeComponent = () => <p>some component</p>;
-    it('should exist', () => {
-      expect(render({
-        overrideProps: {
-          children: [<SomeComponent key="1" />, <SomeComponent key="2" />]
-        }
-      }).exists()).toBe(true);
-    });
-
-    it('should render correctly', () => {
-      expect(render({
-        overrideProps: {
-          children: [<SomeComponent key="1" />, <SomeComponent key="2" />]
-        }
-      })).toMatchSnapshot();
-    });
-  });
-
-  describe('when the children are both components and HTML elements', () => {
+  describe('when children are provided', () => {
     const htmlElement = <p key="test-key">some component</p>;
     const SomeComponent = () => htmlElement;
 

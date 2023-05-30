@@ -5,7 +5,7 @@ exports[`<SectionTile/> should render correctly 1`] = `
   title="test-title"
 >
   <div
-    className="landingBlurb displayBox"
+    className="landingBlurb displayBox displayBoxBorder"
   >
     <div
       aria-hidden={false}
@@ -25,7 +25,7 @@ exports[`<SectionTile/> when the display box content should be expandable and th
   title="test-title"
 >
   <div
-    className="landingBlurb displayBox displayBoxExpanded"
+    className="landingBlurb displayBox displayBoxBorder displayBoxExpanded"
   >
     <button
       aria-expanded={true}
@@ -58,7 +58,7 @@ exports[`<SectionTile/> when the display box content should be expandable should
   title="test-title"
 >
   <div
-    className="landingBlurb displayBox blurBottom"
+    className="landingBlurb displayBox displayBoxBorder blurBottom"
   >
     <button
       aria-expanded={false}
