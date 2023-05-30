@@ -18,7 +18,7 @@ const Footer = ({ learnMoreClicked }) => (
           <span>.</span>
         </button>
       </span>
-      <div className={styles.footerDisclaimerText}>
+      <span className={styles.footerDisclaimerText}>
         Icons made by
         {' '}
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
@@ -26,7 +26,7 @@ const Footer = ({ learnMoreClicked }) => (
         from
         {' '}
         <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-      </div>
+      </span>
       <span className={styles.footerDisclaimerText}>
         The code for this website can be found on
         {' '}
