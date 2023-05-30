@@ -12,13 +12,15 @@
     width: $displayBoxWidth;
     margin: 10px 30px;
     scroll-snap-align: center;
+    
+    $displayBoxEndTileEdgeMargin: calc(50% - calc($displayBoxWidth / 2));
 
     &:first-of-type {
-        margin-left: calc(50% - calc($displayBoxWidth / 2));
+        margin-left: $displayBoxEndTileEdgeMargin;
     }
     
     &:last-of-type {
-        margin-right: calc(50% - calc($displayBoxWidth / 2));
+        margin-right: $displayBoxEndTileEdgeMargin;
     }
 
     &Border {
@@ -114,13 +116,14 @@
 
     .displayBox {
         $displayBoxWidth: 200px;
+        $displayBoxEndTileEdgeMargin: calc(50% - calc($displayBoxWidth / 2));
     
         &:first-of-type {
-            margin-left: calc(50% - calc($displayBoxWidth / 2));
+            margin-left: $displayBoxEndTileEdgeMargin;
         }
         
         &:last-of-type {
-            margin-right: calc(50% - calc($displayBoxWidth / 2));
+            margin-right: $displayBoxEndTileEdgeMargin;
         }
     }
 
@@ -146,13 +149,14 @@
         width: $displayBoxWidth;
         margin: 10px 20px 10px 0px;
         max-height: 400px;
+        $displayBoxEndTileEdgeMargin: calc(50% - calc($displayBoxWidth / 2));
     
         &:first-of-type {
-            margin-left: calc(50% - calc($displayBoxWidth / 2));
+            margin-left: $displayBoxEndTileEdgeMargin;
         }
         
         &:last-of-type {
-            margin-right: calc(50% - calc($displayBoxWidth / 2));
+            margin-right: $displayBoxEndTileEdgeMargin;
         }
     }
 
@@ -165,13 +169,14 @@
     .displayBox {
         $displayBoxWidth: 230px;
         width: $displayBoxWidth;
+        $displayBoxEndTileEdgeMargin: calc(50% - calc($displayBoxWidth / 2));
     
         &:first-of-type {
-            margin-left: calc(50% - calc($displayBoxWidth / 2));
+            margin-left: $displayBoxEndTileEdgeMargin;
         }
         
         &:last-of-type {
-            margin-right: calc(50% - calc($displayBoxWidth / 2));
+            margin-right: $displayBoxEndTileEdgeMargin;
         }
     }
 }
@@ -180,13 +185,14 @@
     .displayBox {
         $displayBoxWidth: 800px;
         width: $displayBoxWidth;
+        $displayBoxEndTileEdgeMargin: calc(50% - calc($displayBoxWidth / 2));
     
         &:first-of-type {
-            margin-left: calc(50% - calc($displayBoxWidth / 2));
+            margin-left: $displayBoxEndTileEdgeMargin;
         }
         
         &:last-of-type {
-            margin-right: calc(50% - calc($displayBoxWidth / 2));
+            margin-right: $displayBoxEndTileEdgeMargin;
         }
     }
 }
