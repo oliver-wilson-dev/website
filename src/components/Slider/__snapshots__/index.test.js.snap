@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should render correctly 1`] = `
+<div
+  className="tileWrapper"
+>
+  <div
+    className="slider"
+  >
+    hello world
+  </div>
+</div>
+`;
