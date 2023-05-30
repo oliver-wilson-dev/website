@@ -27,7 +27,7 @@ exports[`<Footer/> should render correctly 1`] = `
         </span>
       </button>
     </span>
-    <div
+    <span
       className="footerDisclaimerText"
     >
       Icons made by
@@ -47,7 +47,7 @@ exports[`<Footer/> should render correctly 1`] = `
       >
         www.flaticon.com
       </a>
-    </div>
+    </span>
     <span
       className="footerDisclaimerText"
     >
