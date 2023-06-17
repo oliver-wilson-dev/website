@@ -7,7 +7,7 @@ import styles from './index.css';
 const Greeting = ({
   title, content, openingLine, reasonForCreation
 }) => (
-  <Section title={title}>
+  <Section title={title} additionalStyles={{ container: styles.sectionContainer }}>
     <p>
       {openingLine.start}
       {' '}
