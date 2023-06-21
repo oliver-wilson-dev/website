@@ -2,6 +2,11 @@
 
 exports[`<Education/> component should match snapshot 1`] = `
 <Section
+  additionalStyles={
+    Object {
+      "container": "sectionWrapper",
+    }
+  }
   title="test-title"
 >
   <h3
