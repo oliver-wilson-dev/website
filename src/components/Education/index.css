@@ -39,3 +39,7 @@
     margin-right: 10px;
     font-size: 30px;
 }
+
+.sectionWrapper {
+    display: block;
+}

@@ -2,6 +2,11 @@
 
 exports[`<Greeting/> component should match snapshot 1`] = `
 <Section
+  additionalStyles={
+    Object {
+      "container": "sectionContainer",
+    }
+  }
   title="test-title"
 >
   <p>

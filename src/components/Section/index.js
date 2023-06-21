@@ -17,9 +17,11 @@ const Section = ({ title, children, additionalStyles = {} }) => {
     )}
     >
       {title && <h2 className={styles.sectionTitle}>{title}</h2>}
-      <div className={additionalStyles.container}>
-        {children}
-      </div>
+      {additionalStyles.container ? (
+        <div className={additionalStyles.container}>
+          {children}
+        </div>
+      ) : <>{children}</>}
     </section>
   );
 };

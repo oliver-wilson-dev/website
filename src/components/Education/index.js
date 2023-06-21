@@ -10,7 +10,7 @@ const Education = ({
   courseName: { precedingInformation: courseNamePrefix, name: courseName },
   degreeClassification: { precedingInformation: degreePrefix, name: degreeClassification },
 }) => (
-  <Section title={title}>
+  <Section title={title} additionalStyles={{ container: styles.sectionWrapper }}>
     <h3 className={styles.universityTitle}>{universityName}</h3>
     <h4 className={styles.degreeTitle}>
       {courseNamePrefix}

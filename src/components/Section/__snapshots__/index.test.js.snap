@@ -12,22 +12,20 @@ exports[`<Section/> when children are provided should render correctly 1`] = `
     >
       test-title
     </h2>
-    <div>
-      <SomeComponent
-        key="1"
-      >
-        <p
-          key="test-key"
-        >
-          some component
-        </p>
-      </SomeComponent>
+    <SomeComponent
+      key="1"
+    >
       <p
         key="test-key"
       >
         some component
       </p>
-    </div>
+    </SomeComponent>
+    <p
+      key="test-key"
+    >
+      some component
+    </p>
   </section>
 </Section>
 `;
@@ -44,13 +42,11 @@ exports[`<Section/> when the children are HTML elements should render correctly 
     >
       test-title
     </h2>
-    <div>
-      <p
-        key="test-key"
-      >
-        this is some content
-      </p>
-    </div>
+    <p
+      key="test-key"
+    >
+      this is some content
+    </p>
   </section>
 </Section>
 `;
