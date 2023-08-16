@@ -5,21 +5,6 @@ exports[`<Contact/> component should match snapshot 1`] = `
   title="test-title"
 >
   <div
-    aria-label="my phone number is test-phone-number"
-  >
-    <h4
-      aria-hidden={true}
-      className="contactDetail"
-    >
-      Phone:
-    </h4>
-    <span
-      aria-hidden={true}
-    >
-      test-phone-number
-    </span>
-  </div>
-  <div
     aria-label="my email address is test-email"
   >
     <h4
