@@ -24,19 +24,27 @@ if (process.env.NODE_ENV === 'production') {
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
 
-  const initialisedClientConfig = clientConfig(undefined, { mode: 'development' });
+  const initialisedClientConfig = clientConfig(undefined, {
+    mode: 'development',
+  });
   const compiler = webpack(initialisedClientConfig);
 
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: initialisedClientConfig.output.publicPath,
-    writeToDisk: true
-  }));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: initialisedClientConfig.output.publicPath,
+      writeToDisk: true,
+    })
+  );
 
   app.use(webpackHotMiddleware(compiler));
 }
 
 // Allows cookies to be available on req.cookies in subsequent handlers
 app.use(cookieParser());
+
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public/sitemap.xml'));
+});
 
 // Handles any requests that don't match the ones above
 app.get('*', handleRender);

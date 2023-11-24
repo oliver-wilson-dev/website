@@ -4,24 +4,31 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import clientConfig from '../build/client.config';
 
+const mockRes = {
+  sendFile: jest.fn()
+};
+
 const mockUse = jest.fn();
-const mockGet = jest.fn();
+const mockGet = jest.fn((path, callback) => {
+  callback(undefined, mockRes);
+});
+
 const mockListen = jest.fn();
 
 jest.mock('express', () => () => ({
   use: mockUse,
   get: mockGet,
-  listen: mockListen
+  listen: mockListen,
 }));
 
 jest.mock('path', () => ({
   join: jest.fn(),
-  resolve: jest.fn()
+  resolve: jest.fn(),
 }));
 
 jest.mock('./handleRender', () => ({
   __esModule: true,
-  default: 'handle-render'
+  default: jest.fn(),
 }));
 jest.mock('cookie-parser');
 jest.mock('compression');
@@ -36,9 +43,10 @@ describe('server', () => {
   const consoleLog = console.log;
   const mockClientConfig = {
     output: {
-      publicPath: Symbol('test-client-public-path')
-    }
+      publicPath: Symbol('test-client-public-path'),
+    },
   };
+  let handleRender;
 
   beforeAll(() => {
     clientConfig.mockReturnValue(mockClientConfig);
@@ -54,6 +62,11 @@ describe('server', () => {
   afterAll(() => {
     console.log = consoleLog;
   });
+
+  beforeEach(() => {
+    handleRender = require('./handleRender').default;
+  });
+
 
   describe('when in production mode', () => {
     describe('app.use', () => {
@@ -84,7 +97,7 @@ describe('server', () => {
 
       it('should call app.use with the path to the dist folder', () => {
         require('./index');
-        expect(mockUse).toHaveBeenCalledWith('../dist',);
+        expect(mockUse).toHaveBeenCalledWith('../dist');
       });
 
       it('should call app.use with the cookieParser middleware', () => {
@@ -95,8 +108,20 @@ describe('server', () => {
   });
 
   describe('app.get', () => {
-    it('should call app.get with the correct path and a function', () => {
-      expect(mockGet).toHaveBeenCalledWith('*', 'handle-render');
+    describe('when rendering the application', () => {
+      it('should call app.get with the correct path and a function', () => {
+        expect(handleRender).toHaveBeenCalledTimes(1);
+        expect(mockGet).toHaveBeenCalledWith('*', handleRender);
+      });
+    });
+
+    describe('when getting the sitemap', () => {
+      it('should call app.get with the correct path and a function', () => {
+        expect(mockGet).toHaveBeenCalledWith(
+          '/sitemap.xml',
+          expect.any(Function)
+        );
+      });
     });
   });
 
@@ -122,7 +147,6 @@ describe('server', () => {
         process.env.PORT = mockPort;
         require('./index');
       });
-
 
       it('should call app.listen with the port provided by the environment variable', () => {
         expect(mockListen).toHaveBeenCalledWith(mockPort);

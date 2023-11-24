@@ -18,13 +18,15 @@
   "settings": {
     "import/core-modules": ["global"]
   },
-  "overrides": [{
+  "overrides": [
+    {
       "files": ["**/*.test*", "**/*constants*"],
       "rules": {
         "react/prop-types": "off",
         "import/prefer-default-export": "off"
       }
-  }],
+    }
+  ],
   "globals": {
     "IS_SERVER": true,
     "IS_CLIENT": true
