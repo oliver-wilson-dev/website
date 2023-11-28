@@ -5,6 +5,8 @@ import styles from './index.css';
 import NotificationEmoji from './notification.svg';
 import TickEmoji from './tick.svg';
 
+const textId = 'cookieText';
+
 const CookieDisclaimerMessage = ({ learnMoreClicked, cookiePolicyAccepted }) => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -32,6 +34,8 @@ const CookieDisclaimerMessage = ({ learnMoreClicked, cookiePolicyAccepted }) => 
 
   return !closed && (
     <div
+      role="region"
+      aria-labelledby={textId}
       className={cn(styles.container, {
         [styles.loaded]: loaded && !acknowledged,
         [styles.closed]: acknowledged
@@ -44,11 +48,13 @@ const CookieDisclaimerMessage = ({ learnMoreClicked, cookiePolicyAccepted }) => 
           styles.notificationElement
         )}
         />
-        <span className={cn(
-          styles.message,
-          styles.text,
-          styles.notificationElement,
-        )}
+        <span
+          id={textId}
+          className={cn(
+            styles.message,
+            styles.text,
+            styles.notificationElement,
+          )}
         >
           Attention! This site uses cookies.
           {' '}

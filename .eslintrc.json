@@ -4,7 +4,10 @@
     "node": true,
     "jest": true
   },
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:cypress/recommended"
+  ],
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": "off",
@@ -18,13 +21,15 @@
   "settings": {
     "import/core-modules": ["global"]
   },
-  "overrides": [{
+  "overrides": [
+    {
       "files": ["**/*.test*", "**/*constants*"],
       "rules": {
         "react/prop-types": "off",
         "import/prefer-default-export": "off"
       }
-  }],
+    }
+  ],
   "globals": {
     "IS_SERVER": true,
     "IS_CLIENT": true

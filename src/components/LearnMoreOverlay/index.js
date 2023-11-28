@@ -7,6 +7,9 @@ import styles from './index.css';
 import CrossIcon from '../Icons/cross.svg';
 import { preventScroll, allowScroll } from '../../utils';
 
+const dialogTitle = 'cookiePolicyDialogTitle';
+const dialogDesc = 'cookiePolicyDialogDesc';
+
 const LearnMoreOverlay = ({ learnMoreClicked }) => {
   const [acknowledged, setAcknowledged] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -37,19 +40,23 @@ const LearnMoreOverlay = ({ learnMoreClicked }) => {
         [styles.background__closed]: acknowledged,
       })}
       onTransitionEnd={onTransitionEnd}
+      role="dialog"
+      aria-labelledby={dialogTitle}
+      aria-describedby={dialogDesc}
     >
       <div className={styles.layout}>
         <div className={styles.overlayHeader}>
-          <h2 className={styles.title}>Cookie Policy</h2>
+          <h2 id={dialogTitle} className={styles.title}>Cookie Policy</h2>
           <button
             className={styles.crossBtn}
             type="button"
             onClick={acknowledgeBanner}
+            aria-label="close cookie policy modal"
           >
             <CrossIcon className={styles.crossIcon} />
           </button>
         </div>
-        <div className={cn(styles.information, styles.text)}>
+        <div id={dialogDesc} className={cn(styles.information, styles.text)}>
           <span>Last updated: 6th June 2020</span>
           <h3>What are cookies?</h3>
           <p className={styles.paragraph}>A “cookie” is a string of information which assigns you a unique identifier that we store on your computer. Your browser then provides that unique identifier to use each time you submit a query to the Site. We use cookies on the Site to, among other things, keep track of services you have used, record registration information, record your user preferences, keep you logged into the Site, facilitate purchase procedures, and track the pages you visit. Cookies help us understand how the Site is being used and improve your user experience.</p>
