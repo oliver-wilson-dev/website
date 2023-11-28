@@ -26,18 +26,15 @@
 
 Cypress.Commands.add('getCookieBanner', () => cy.get('[role="region"][aria-labelledby="cookieText"]').contains('Attention! This site uses cookies.'));
 
-Cypress.Commands.add('getCookiePolicyModal', () => cy.get('[role="dialog"][aria-labelledby="cookiePolicyDialogTitle"][aria-describedby="cookiePolicyDialogDesc"]').should('exist'));
-
 Cypress.Commands.add('cookieBannerLearnMore', () => {
   cy.getCookieBanner().within(() => {
     cy.get('button').contains('Learn More').click();
   });
 
-
-  cy.getCookiePolicyModal().within(() => {
-    cy.get('#cookiePolicyDialogTitle').should('exist');
-    cy.get('#cookiePolicyDialogDesc').should('exist');
-    cy.screenshot();
-    cy.get('button[aria-label="close cookie policy modal"]').click();
-  });
+  cy.get('[role="dialog"][aria-labelledby="cookiePolicyDialogTitle"][aria-describedby="cookiePolicyDialogDesc"]').should('exist')
+    .within(() => {
+      cy.get('#cookiePolicyDialogTitle').should('exist');
+      cy.get('#cookiePolicyDialogDesc').should('exist');
+      cy.get('button[aria-label="close cookie policy modal"]').click();
+    });
 });
