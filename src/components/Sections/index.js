@@ -15,6 +15,7 @@ import { IS_CLIENT } from '../../utils/clientOrServer';
 
 const Sections = ({ fetchContent, sections, sectionsContentFetched }) => {
   useEffect(() => {
+    console.log('client: ', sectionsContentFetched);
     if (!sectionsContentFetched) fetchContent();
   }, []);
 

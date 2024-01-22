@@ -61,6 +61,8 @@ const CookieDisclaimerMessage = ({ learnMoreClicked, cookiePolicyAccepted }) => 
           <button className={cn(styles.learnMoreBtn, styles.text)} type="button" onClick={learnMore}>Learn More</button>
         </span>
         <TickEmoji
+          role="button"
+          aria-label="accept cookie policy"
           className={cn(styles.tick, styles.notificationElement)}
           onClick={acknowledgeBanner}
         />

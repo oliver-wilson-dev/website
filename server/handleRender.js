@@ -55,21 +55,6 @@ const handleRender = async ({ cookies, url }, res) => {
   /*
     Create a new Redux store instance.
 
-    We're not fetching the sections data on the server side.
-    The action to fetch the sections data is fired in a useEffect hook,
-    which is not ran on the server. We could dispatch the request here,
-    but then we'd have to account for when this request fails and maybe
-    implement some logic to retry the request on the client. We could also
-    utilise the actual redux action that is used to facilitate the data fetching,
-    but this gets a bit tricky on the server, popular libraries like 'redial' are
-    used to facilitate this. One to investigate in the future.
-
-    This means that the sections segment of state will default to:
-      sections: {
-        sectionsContentFetched: false,
-        sections: {}
-      },
-
     We are still setting the theme and checkbox state based on the cookies sent to the server.
     We'll also not show the cookie disclaimer popup if the user has previously accepted it.
 
@@ -124,6 +109,8 @@ const handleRender = async ({ cookies, url }, res) => {
 
   // Grab the initial state from our Redux store
   const preloadedState = store.getState();
+
+  console.log('server: ', preloadedState);
 
   renderFullPage({
     html,
